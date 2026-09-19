@@ -1,0 +1,40 @@
+{
+	"m_AssetBundleInfos": [
+		{
+			"Key": 96,
+			"Value": {
+				"m_AssetBundleDependencies": [],
+				"m_AssetBundleHash": {
+					"m_Bytes__0": 88,
+					"m_Bytes__1": 217,
+					"m_Bytes__2": 45,
+					"m_Bytes__3": 148,
+					"m_Bytes__4": 245,
+					"m_Bytes__5": 197,
+					"m_Bytes__6": 154,
+					"m_Bytes__7": 172,
+					"m_Bytes__8": 152,
+					"m_Bytes__9": 111,
+					"m_Bytes_10": 236,
+					"m_Bytes_11": 125,
+					"m_Bytes_12": 250,
+					"m_Bytes_13": 162,
+					"m_Bytes_14": 19,
+					"m_Bytes_15": 13
+				}
+			}
+		}
+	],
+	"m_AssetBundleNames": [
+		{
+			"Key": 96,
+			"Value": "tutorial"
+		}
+	],
+	"m_AssetBundlesWithVariant": [],
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-e4ba7dbec84ca82e006b0387f14d1c10", "m_PathID": 0 },
+	"m_HideFlags": 0,
+	"m_Name": "AssetBundleManifest",
+	"m_PrefabAsset": { "m_Collection": "cab-e4ba7dbec84ca82e006b0387f14d1c10", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-e4ba7dbec84ca82e006b0387f14d1c10", "m_PathID": 0 }
+}

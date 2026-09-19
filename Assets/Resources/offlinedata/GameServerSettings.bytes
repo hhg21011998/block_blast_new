@@ -1,0 +1,423 @@
+{
+    "version": "AYL Woo Blast V-U4 offline",
+    "updatedBy": "Jacques on 24 April 2025 RED-2976",
+    "mode.classic.showReviveCountToPlay": false,
+    "mode.classic.scorePerBlock": 1,
+    "mode.classic.scorePerLineClear": 25,
+    "mode.classic.resetStreakAfterNonClearPlacements": 3,
+    "mode.daily.active": false,
+    "mode.tutorial.active": true,
+    "effects.cameraShake.enabled": true,
+    "effects.screenTapFeedback.enabled": false,
+    "mechanics.generate2x.enabled": true,
+    "support.email": "woodoku-blast-support@tripledotstudios.com",
+    "support.subject": "Woodoku Blast Support",
+    "screenNeverSleepEnabled": true,
+    "appsflyer_event_allowlist": [
+        "gdpr_view",
+        "gdpr_consent"
+    ],
+    "onboarding": {
+        "modeAfterTutorial": "Journey",
+        "journeyId": "",
+        "journeyLevelIdx": 0,
+        "showNotificationAfterScore": 1000,
+        "hideUnplaceableShapes": true,
+        "enableJourneySurfacing": true,
+        "showJourneyPopupAfterClassicStartCount": 4,
+        "enableBlockTransitionIntro": false,
+        "showNotificationBadgeAfterJourneyGames": 4
+    },
+    "multiplierMechanic": {
+        "enabled": false,
+        "maxMultiplierCellsOnBoard": 2,
+        "probability": {
+            "keys": [
+                {
+                    "time": 0,
+                    "value": 1,
+                    "inTangent": 0,
+                    "outTangent": 0,
+                    "inWeight": 0,
+                    "outWeight": 0.3333333433,
+                    "weightedMode": 0,
+                    "tangentMode": 69
+                },
+                {
+                    "time": 1,
+                    "value": 1,
+                    "inTangent": 0,
+                    "outTangent": 0,
+                    "inWeight": 0.3333333433,
+                    "outWeight": 0,
+                    "weightedMode": 0,
+                    "tangentMode": 69
+                }
+            ],
+            "length": 2,
+            "preWrapMode": 8,
+            "postWrapMode": 8
+        }
+    },
+    "scoreConfig": {
+        "alternateScoreConfig": {
+            "lineClearRewards": [
+                10,
+                20,
+                60,
+                100,
+                150,
+                250
+            ]
+        }
+    },
+    "scoreStreakMechanic": {
+        "streakEnabledAfterClears": 2,
+        "resetStreakAfterNonClearPlacements": 3,
+        "postFullClearResetStreakAfterNonClearPlacements": 7,
+        "legacyHudEnabledInGameModes": [
+            "Journey"
+        ],
+        "legacyHudEnabledInGoalTypes": [
+            "None"
+        ],
+        "heartHudEnabledInGameModes": [
+            "Classic",
+            "Journey"
+        ],
+        "heartHudEnabledInGoalTypes": [
+            "Score"
+        ],
+        "comboStreakTextEnabledInGameModes": [
+            "Classic",
+            "Journey",
+            "Tutorial"
+        ],
+        "comboStreakTextEnabledInGoalTypes": [
+            "None"
+        ],
+        "pointsNumberEnabledInGameModes": [
+            "Classic"
+        ],
+        "pointsNumberEnabledInGoalTypes": [
+            "None"
+        ],
+        "pointsNumberPopupOnClearOnly": true,
+        "feedbackTextEnabledInGameModes": [
+            "Classic",
+            "Journey",
+            "Tutorial"
+        ],
+        "feedbackTextEnabledInGoalTypes": [
+            "None"
+        ],
+        "disableStreakMultiplierCap": false,
+        "pointsNumberPopupShowsClearScoreOnly": true
+    },
+    "reviewUsConfig": {
+        "showReviewButtonInSettings": false,
+        "startingStarRating": 0,
+        "sendSupportIfStarsLessOrEqualTo": 2,
+        "showSystemRatePopupIfStarsGreaterOrEqualTo": 5,
+        "showReviewUsPopupAfterJourneyLevels": [
+            4,
+            10,
+            20,
+            35,
+            50,
+            70,
+            95,
+            120,
+            160,
+            210,
+            270,
+            360,
+            590,
+            750,
+            1000,
+            1300,
+            1690,
+            2050,
+            2550,
+            3000
+        ],
+        "showReviewUsPopupAfterClassicGames": 3,
+        "showReviewUsPopupAppStarts": [],
+        "minutesBetweenReviewUsPopups": 720
+    },
+    "shapeScaleInBankConfig":{
+        "defaultScale":0.5,
+        "bigBannerScale":0.4
+    },
+    "gameConfig": {
+        "unplaceableShapeAlpha": 1,
+        "unplaceableShapesCanBeDragged": true,
+        "gemSpawnPercentage": 0.9,
+        "delayAfterNoPlaceableShapes": 0.5,
+        "shapesShouldHaveRandomColors": true,
+        "greyOutShapesThatCantBePlaced": true,
+        "useSequentialCanBePlaced": false,
+        "shapeScaleInBank": 0.5,
+        "shapeBankSpawnDelay": 0.1000000014901161,
+        "hoverSourceScaleEdges": 1.25,
+        "hoverTargetScaleEdges": 0.25,
+        "hoverSourceScaleShapes": 1.25,
+        "hoverTargetScaleShapes": 0.25,
+        "hoverCanvasGroupAlpha": 0.5,
+        "dragOffset": {
+            "x": 0,
+            "y": 125
+        },
+        "cantBePlacedColor": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+        },
+        "shapePadding": {
+            "x": 288,
+            "y": 400
+        },
+        "placeGemsRandomly": true,
+        "showScorePopupOnScoresGreaterThan": 1,
+        "showDebugPanelInSettings": false,
+        "useMaxDragOffset": true
+    },
+    "effectsConfig": {
+        "cameraShakeEnabled": true,
+        "cameraShakeEnabledAfterClears": 3,
+        "screenTapFeedbackEnabled": false,
+        "shapeDropEffectEnabled": false,
+        "hitStopDuration": 0.2,
+        "hitStopTimeScale": 0
+    },
+    "classicConfig": {
+        "enabled": true,
+        "scorePerBlock": 1,
+        "scorePerLineClear": 25,
+        "showTopScorePopupOnStart": false,
+        "noSpaceLeftDuration": 0.75,
+        "useAlternateScoreMethod": true,
+        "enableBlockTransitionIntro": true,
+        "reviveConfig": {
+            "enabled": false,
+            "maxRevive": 0,
+            "minimumScoreForRevive": 10,
+            "minimumGoalCompletionPercentageForRevive": 10,
+            "showReviveCountToPlay": false,
+            "revivePerfectFitBanks": 0,
+            "reviveTerminatorIgnoreBanks": 3
+        }
+    },
+    "journeyConfig": {
+        "enabled": true,
+        "exitJourneyWhenGainingReward": true,
+        "useAlternateScoreMethod": true,
+        "showProgressOnPlayButton": false,
+        "enableBlockTransitionIntro": true,
+        "reviveConfig": {
+            "enabled": true,
+            "maxRevive": 3,
+            "minimumScoreForRevive": 0,
+            "minimumTargetObjectivePercentageForRevive": 0.5,
+            "showReviveCountToPlay": false,
+            "revivePerfectFitBanks": 0,
+            "reviveTerminatorIgnoreBanks": 3,
+            "minimumTargetObjectivePercentageForReviveIncZero": true
+        }
+    },
+    "boardClearConfig": {
+        "enabled": true,
+        "scoreMultiplier": 0,
+        "scorePerBoardClear": 300,
+        "minBrc": 1,
+        "showComboTextDuringClear": true,
+        "enabledInGameModes": [
+            "Classic",
+            "Journey"
+        ],
+        "enabledInGoalTypes": [
+            "None"
+        ]
+    },
+    "lobbyConfig": {
+        "lobbyVariant": 1
+    },
+    "hapticConfig": {
+        "configValues": {
+            "androidDurationInMsec": 7,
+            "androidNormalisedScale": 0.35,
+            "iosDurationInMsec": 7,
+            "iosNormalisedScale": 0.7,
+            "iosClearPreviewInMsec": 14,
+            "iosClearPreviewNormalisedScale": 0.6,
+            "androidClearPreviewInMsec": 10,
+            "androidClearPreviewNormalisedScale": 0.3,
+            "androidBigThumpNormalisedScale": 0.3,
+            "iosBigThumpNormalisedScale": 0.6,
+            "androidBigThumpDuration": 30,
+            "iosBigThumpDuration": 40
+        },
+        "enabled": true
+    },
+    "sagaConfig": {
+        "enabled": true
+    },
+    "snappingScrollConfig": {
+        "enabled": true,
+        "maxMagnitudeForSnap": 1250,
+        "snapSpeed": 10
+    },
+    "ftueVideoConfig": {
+        "enabled": false,
+        "version": "FTUE video 1.0",
+        "loopsBeforeAutoClose": 3,
+        "configs": [
+            {
+                "mechanic": "butterfly",
+                "assetbundlename": "ftue-butterflies",
+                "titleLocKey": "Ftue/Mechanics/Butterfly/Title",
+                "descriptionLockey": "Ftue/Mechanics/Butterfly/Description"
+            },
+            {
+                "mechanic": "balloon",
+                "assetbundlename": "ftue-balloons",
+                "titleLocKey": "Ftue/Mechanics/Balloon/Title",
+                "descriptionLockey": "Ftue/Mechanics/Balloon/Description"
+            },
+            {
+                "mechanic": "box",
+                "assetbundlename": "ftue-boxes",
+                "titleLocKey": "Ftue/Mechanics/Box/Title",
+                "descriptionLockey": "Ftue/Mechanics/Box/Description"
+            },
+            {
+                "mechanic": "flower",
+                "assetbundlename": "ftue-flowers",
+                "titleLocKey": "Ftue/Mechanics/Flower/Title",
+                "descriptionLockey": "Ftue/Mechanics/Flower/Description"
+            },
+            {
+                "mechanic": "fireworks",
+                "assetbundlename": "ftue-fireworks",
+                "titleLocKey": "Ftue/Mechanics/Fireworks/Title",
+                "descriptionLockey": "Ftue/Mechanics/Fireworks/Description"
+            },
+            {
+                "mechanic": "apple",
+                "assetbundlename": "ftue-apples",
+                "titleLocKey": "Ftue/Mechanics/Apples/Title",
+                "descriptionLockey": "Ftue/Mechanics/Apples/Description"
+            }
+        ]
+    },
+    "lobbyJourneyVideoConfig": {
+        "enabled": false,
+        "revealVideosEnabled": true,
+        "idleVideosEnabled": false,
+        "replayPreviousJourneyVideos": false,
+        "replayCurrentJourneyVideos": false
+    },
+    "downloadOrchestratorConfig": {
+        "maxParallelDownloads": 10,
+        "dataRequests": {
+            "maxRetries": 5,
+            "maxTimeout": 5.4321
+        },
+        "assetBundleRequests": {
+            "maxRetries": 6,
+            "maxTimeout": 10.54321
+        },
+        "priorityConfig": [
+            {
+                "typeOrName": "shared",
+                "priority": 1000
+            },
+            {
+                "typeOrName": "journey-rewards-bundle",
+                "priority": 900
+            },
+            {
+                "typeOrName": "journey-asset-bundle",
+                "priority": 800
+            },
+            {
+                "typeOrName": "journey-json-levels",
+                "priority": 700
+            },
+            {
+                "typeOrName": "invisible-hand-config",
+                "priority": 600
+            },
+            {
+                "typeOrName": "ftue-videos",
+                "priority": 500
+            },
+            {
+                "typeOrName": "journey-videos",
+                "priority": 450
+            },
+            {
+                "typeOrName": "gacha-asset-bundle",
+                "priority": 400
+            },
+            {
+                "typeOrName": "puzzle-asset-bundle",
+                "priority": 300
+            },
+            {
+                "typeOrName": "puzzle-gacha-configs",
+                "priority": 200
+            },
+            {
+                "typeOrName": "classic-config",
+                "priority": 100
+            },
+            {
+                "typeOrName": "future-journeys",
+                "priority": 90
+            }
+        ]
+    },
+    "journeyDifficultyTagConfig": {
+        "enabled": true,
+        "difficultyTags": [
+            {
+                "name": "Super Easy",
+                "difficulty": 1,
+                "enabled": true
+            },
+            {
+                "name": "Easy",
+                "difficulty": 2,
+                "enabled": true
+            },
+            {
+                "name": "Medium",
+                "difficulty": 3,
+                "enabled": true
+            },
+            {
+                "name": "Hard",
+                "difficulty": 4,
+                "enabled": true
+            },
+            {
+                "name": "Super Hard",
+                "difficulty": 5,
+                "enabled": true
+            }
+        ]
+    },
+    "straightToGameplayConfig": {
+        "enabled": false,
+        "journeyEnabled": false,
+        "classicEnabled": false
+    },
+    "backButtonConfig": {
+        "enabled": false,
+        "enabledClassic": false,
+        "enabledJourney": false,
+        "requiredJourneyLevelBeforeShowing": 0
+    }
+}

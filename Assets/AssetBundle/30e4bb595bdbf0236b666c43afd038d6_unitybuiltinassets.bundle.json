@@ -1,0 +1,21 @@
+{
+	"m_AssetBundleName": "30e4bb595bdbf0236b666c43afd038d6_unitybuiltinassets.bundle",
+	"m_Container": {},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-391ae08e78ed0001c952c100bd3e1c5a", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-391ae08e78ed0001c952c100bd3e1c5a", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "30e4bb595bdbf0236b666c43afd038d6_unitybuiltinassets.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-391ae08e78ed0001c952c100bd3e1c5a", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-391ae08e78ed0001c952c100bd3e1c5a", "m_PathID": 0 },
+	"m_PreloadTable": [],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

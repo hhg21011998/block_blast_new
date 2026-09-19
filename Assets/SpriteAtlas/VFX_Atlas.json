@@ -1,0 +1,6934 @@
+{
+	"m_CorrespondingSourceObject": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_EditorData": {
+		"m_BindAsDefault": true,
+		"m_CachedData": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+		"m_IsAtlasV2": false,
+		"m_Packables": [
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8193 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8373 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8092 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8338 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8381 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8417 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8290 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8031 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8401 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8305 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8252 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8029 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8406 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8190 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7918 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8021 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8379 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8049 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8184 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8062 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7897 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8427 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8426 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7905 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7902 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7899 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7907 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7903 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7944 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8146 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7998 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7927 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8195 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8155 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8301 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8167 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7950 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8272 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8123 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8127 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8099 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8246 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8149 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8210 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7970 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8263 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8315 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7924 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8334 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8348 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8321 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8283 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8201 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8094 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8172 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8056 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8375 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8140 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8131 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8346 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8002 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7992 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8226 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8391 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8262 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8299 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8200 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8176 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8121 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7942 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8054 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8072 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8276 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8173 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7960 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8257 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8323 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7941 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8006 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8370 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8209 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8423 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8420 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8387 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7919 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8196 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8378 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7955 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8361 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8342 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8208 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8405 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8422 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7922 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8000 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8033 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8219 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8038 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7953 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7965 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8255 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8399 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8308 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8362 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8311 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8232 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8354 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8251 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8317 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8395 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8287 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8105 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8310 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8239 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7963 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8078 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8233 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7925 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8084 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8206 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8349 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8343 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8156 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8335 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7912 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7932 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8254 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8133 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8085 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7948 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8138 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8024 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8048 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8071 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8438 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8437 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8430 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8436 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8434 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8429 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7900 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8432 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8431 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8435 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7904 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8428 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7906 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8433 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7908 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8160 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8248 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8175 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8008 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8086 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8068 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7938 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8124 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8220 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8397 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8132 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8424 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8306 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8374 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8302 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7928 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8097 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7979 },
+			{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7968 }
+		],
+		"m_PackedSpriteRenderDataKeys": [],
+		"m_PackingSettings": {
+			"m_AllowAlphaSplitting": false,
+			"m_BlockOffset": 1,
+			"m_EnableAlphaDilation": true,
+			"m_EnableRotation": true,
+			"m_EnableTightPacking": true,
+			"m_Padding": 2
+		},
+		"m_PlatformSettings": [],
+		"m_SecondaryTextureSettings": {},
+		"m_TextureSettings": {
+			"m_AnisoLevel": 1,
+			"m_CompressionQuality": 50,
+			"m_CrunchedCompression": false,
+			"m_FilterMode": 1,
+			"m_GenerateMipMaps": false,
+			"m_MaxTextureSize": 2048,
+			"m_Readable": false,
+			"m_SRGB": true,
+			"m_TextureCompression": 0
+		},
+		"m_VariantMultiplier": 1
+	},
+	"m_HideFlags": 0,
+	"m_IsVariant": false,
+	"m_MasterAtlas": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_Name": "VFX_Atlas",
+	"m_PackedSpriteNamesToIndex": [
+		"T_VFX_Butterfly_028",
+		"T_VFX_BlockHighLight_007",
+		"T_VFX_Combo_Circle_Color",
+		"T_VFX_PowerUp_Magnet_Glow",
+		"T_VFX_RoundedSquare_Blur",
+		"T_Apple_01_Spin3",
+		"T_VFX_Apple_Trail",
+		"T_VFX_GeometricShapesSharp_Circle",
+		"T_VFX_Glow_CircleOutline",
+		"T_VFX_BlockHighLight_011",
+		"T_Box_Piece1_04",
+		"T_VFX_Glow_Soft_Square",
+		"T_VFX_StarRounded",
+		"T_VFX_Butterfly_006",
+		"T_VFX_Butterfly_023",
+		"T_VFX_Butterfly_007",
+		"T_Apple_00_Spin1",
+		"T_Apple_01_Spin2",
+		"T_VFX_RoundedSquare_Thick",
+		"T_VFX_Diamond",
+		"VFX_CrumbleCubes_7",
+		"VFX_CrumbleCubes_6",
+		"VFX_CrumbleCubes_5",
+		"VFX_CrumbleCubes_4",
+		"VFX_CrumbleCubes_3",
+		"VFX_CrumbleCubes_2",
+		"VFX_CrumbleCubes_1",
+		"VFX_CrumbleCubes_0",
+		"T_VFX_Glow_Hard",
+		"T_VFX_Glow_Soft_Square_AB",
+		"T_Box_Piece2_03",
+		"T_VFX_CurtainFrame_01",
+		"T_VFX_Curtain2",
+		"T_VFX_Leaf_06",
+		"T_VFX_Leaf_01",
+		"T_Box_Splinter4",
+		"T_VFX_Butterfly_021",
+		"T_VFX_GeometricShapes_Trapezium_Blur",
+		"T_VFX_Leaf_05",
+		"T_VFX_Spikes",
+		"T_VFX_BlockHighLight_013",
+		"T_VFX_ElectricityCircle",
+		"T_VFX_Balloon_Pop_01",
+		"T_Box_Piece1_03",
+		"T_Apple_01_Spin1",
+		"T_VFX_Leaf_07",
+		"T_VFX_Butterfly_004",
+		"T_VFX_CurtainFrame_03",
+		"T_VFX_BlockHighLight_010",
+		"T_VFX_StarsHeartShapes_Star",
+		"T_VFX_Butterfly_013",
+		"T_VFX_GeometricShapesSharp_Square",
+		"T_VFX_Balloon_Pop_02",
+		"T_Box_Piece1_05",
+		"T_VFX_Butterfly_009",
+		"T_VFX_Butterfly_026",
+		"T_Box_Piece1_01",
+		"T_VFX_GeometricShapes_Kite_Blur",
+		"T_Box_Splinter3",
+		"T_VFX_BlockHighLight_003",
+		"T_VFX_Trail_Line",
+		"T_Box_Piece3_03",
+		"T_VFX_Butterfly_018",
+		"T_VFX_BlockHighLight_006",
+		"T_Box_Piece3_04",
+		"T_VFX_Star_Glow",
+		"T_VFX_Leaf_04",
+		"T_VFX_Noise_01",
+		"T_Apple_00_Spin2",
+		"T_VFX_Glow_Soft",
+		"T_VFX_Ripple_LineHeart",
+		"T_VFX_Butterfly_022",
+		"T_VFX_GeometricShapesSharp_SquareHollow",
+		"T_Box_3Hit",
+		"T_Apple_00_Spin3",
+		"T_Box_Piece1_02",
+		"T_VFX_Butterfly_000",
+		"T_VFX_Butterfly_029",
+		"T_VFX_Curtain1",
+		"T_VFX_BlockHighLight_001",
+		"T_Box_Piece1_08",
+		"T_VFX_CurtainFrame_02",
+		"T_Box_Piece3_02",
+		"T_VFX_Leaf_02",
+		"T_VFX_Butterfly_015",
+		"T_VFX_BlockHighLight_014",
+		"T_VFX_SquareBlurry",
+		"T_VFX_Flare",
+		"T_Box_1Hit",
+		"T_VFX_BlockGreyScale",
+		"T_Box_2Hit",
+		"T_Box_Piece2_02",
+		"T_VFX_Butterfly_019",
+		"T_VFX_Butterfly_014",
+		"T_Box_Piece2_04",
+		"T_VFX_DigitalSquare",
+		"T_VFX_BlockHighLight_002",
+		"T_VFX_Apple_Pulse",
+		"T_VFX_Leaf_03",
+		"T_Box_Piece1_07",
+		"T_Box_Splinter2",
+		"T_VFX_Heart_OverlayGradient",
+		"T_VFX_Gem_Landing_Glow",
+		"T_VFX_Butterfly_025",
+		"T_VFX_RoundedSquare",
+		"T_VFX_Butterfly_008",
+		"T_VFX_Butterfly_011",
+		"T_Box_Piece3_01",
+		"T_VFX_Curtain3",
+		"T_VFX_SquareGlow",
+		"T_VFX_Butterfly_005",
+		"T_VFX_Butterfly_027",
+		"T_VFX_Butterfly_024",
+		"T_VFX_BlockHighLight_012",
+		"T_VFX_Butterfly_010",
+		"T_VFX_Butterfly_001",
+		"T_Circle_Blur",
+		"T_VFX_Rocket_Flame",
+		"T_VFX_Bubble",
+		"T_Box_Splinter1",
+		"T_VFX_GeometricShapesSharp_Rounded",
+		"T_VFX_Balloon_Pop_03",
+		"T_VFX_ButterflyGlow",
+		"T_VFX_ShieldGlow",
+		"T_Box_Piece1_06",
+		"T_VFX_Butterfly_012",
+		"T_VFX_Ripple_LineWelldone",
+		"T_VFX_LineClearPreview_Outline",
+		"T_VFX_Butterfly_016",
+		"T_VFX_GeometricShapes_Square_Blur",
+		"T_VFX_BlockHighLight_004",
+		"T_VFX_BlockHighLight_008",
+		"T_VFX_ElectricityCircle03",
+		"T_VFX_ElectricityCircle01",
+		"VFX_LightningBolt_SpriteSheet_12",
+		"VFX_LightningBolt_SpriteSheet_13",
+		"VFX_LightningBolt_SpriteSheet_10",
+		"VFX_LightningBolt_SpriteSheet_11",
+		"VFX_LightningBolt_SpriteSheet_14",
+		"VFX_LightningBolt_SpriteSheet_7",
+		"VFX_LightningBolt_SpriteSheet_6",
+		"VFX_LightningBolt_SpriteSheet_5",
+		"VFX_LightningBolt_SpriteSheet_4",
+		"VFX_LightningBolt_SpriteSheet_3",
+		"VFX_LightningBolt_SpriteSheet_2",
+		"VFX_LightningBolt_SpriteSheet_1",
+		"VFX_LightningBolt_SpriteSheet_0",
+		"VFX_LightningBolt_SpriteSheet_9",
+		"VFX_LightningBolt_SpriteSheet_8",
+		"T_VFX_LineClear_Glow",
+		"T_VFX_BlockHighLight_009",
+		"T_Box_Piece2_01",
+		"T_VFX_ElectricityCircle02",
+		"T_VFX_CurtainFrame_00",
+		"T_VFX_SquareBorderSoft",
+		"T_VFX_SquareRoundedCornersLrg",
+		"T_VFX_Butterfly_017",
+		"T_VFX_Curtain0",
+		"T_VFX_BlockHighLight_005",
+		"T_VFX_Combo_Rays",
+		"T_VFX_Butterfly_003",
+		"T_VFX_GeometricShapes_Rectangle_Blur",
+		"T_VFX_Square",
+		"T_VFX_Butterfly_002",
+		"T_VFX_Spotlight",
+		"T_VFX_Butterfly_020",
+		"T_VFX_StarBurstRays",
+		"T_VFX_Leaf_00"
+	],
+	"m_PackedSprites": [
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8193 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8373 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8092 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8338 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8381 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8417 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8290 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8031 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8401 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8305 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8252 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8029 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8406 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8190 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7918 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8021 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8379 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8049 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8184 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8062 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7897 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8427 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8426 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7905 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7902 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7899 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7907 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7903 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7944 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8146 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7998 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7927 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8195 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8155 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8301 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8167 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7950 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8272 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8123 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8127 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8099 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8246 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8149 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8210 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7970 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8263 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8315 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7924 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8334 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8348 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8321 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8283 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8201 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8094 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8172 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8056 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8375 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8140 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8131 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8346 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8002 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7992 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8226 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8391 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8262 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8299 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8200 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8176 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8121 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7942 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8054 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8072 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8276 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8173 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7960 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8257 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8323 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7941 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8006 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8370 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8209 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8423 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8420 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8387 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7919 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8196 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8378 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7955 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8361 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8342 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8208 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8405 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8422 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7922 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8000 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8033 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8219 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8038 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7953 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7965 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8255 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8399 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8308 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8362 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8311 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8232 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8354 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8251 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8317 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8395 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8287 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8105 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8310 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8239 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7963 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8078 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8233 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7925 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8084 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8206 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8349 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8343 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8156 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8335 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7912 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7932 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8254 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8133 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8085 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7948 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8138 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8024 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8048 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8071 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8438 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8437 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8430 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8436 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8434 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8429 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7900 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8432 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8431 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8435 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7904 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8428 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7906 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8433 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7908 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8160 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8248 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8175 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8008 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8086 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8068 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7938 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8124 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8220 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8397 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8132 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8424 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8306 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8374 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8302 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7928 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8097 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7979 },
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 7968 }
+	],
+	"m_PrefabAsset": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_RenderDataMap": [
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 36492888,
+					"m_Data_1_": 1122547940,
+					"m_Data_2_": 2877395646,
+					"m_Data_3_": 3385874280
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1876,
+					"m_Y": 1009
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 87.93034,
+					"m_Width": 67.9345,
+					"m_X": 1906.0267,
+					"m_Y": 1029.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 30.02675,
+					"m_Y": 20.02675
+				},
+				"m_UvTransform": {
+					"m_W": 1073,
+					"m_X": 192,
+					"m_Y": 1940,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 105989982,
+					"m_Data_1_": 1112265338,
+					"m_Data_2_": 2207345308,
+					"m_Data_3_": 1595648123
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 984,
+					"m_Y": 821
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 984,
+					"m_Y": 821
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 885,
+					"m_X": 48,
+					"m_Y": 1048,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 116691541,
+					"m_Data_1_": 1232917101,
+					"m_Data_2_": 1776047290,
+					"m_Data_3_": 485550093
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 917,
+					"m_Y": -8
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 240.97418,
+					"m_Width": 249.97325,
+					"m_X": 923.02673,
+					"m_Y": 0.01291275
+				},
+				"m_TextureRectOffset": {
+					"m_X": 6.026751,
+					"m_Y": 8.012913
+				},
+				"m_UvTransform": {
+					"m_W": 120,
+					"m_X": 192,
+					"m_Y": 1045,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 173890637,
+					"m_Data_1_": 1225073439,
+					"m_Data_2_": 2350635181,
+					"m_Data_3_": 3601251471
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 985,
+					"m_Y": 953
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 128,
+					"m_X": 985,
+					"m_Y": 953
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 985,
+					"m_X": 192,
+					"m_Y": 1049,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 180869310,
+					"m_Data_1_": 1256265789,
+					"m_Data_2_": 1890225327,
+					"m_Data_3_": 1841159546
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1769,
+					"m_Y": 1613
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 64,
+					"m_X": 1769,
+					"m_Y": 1613
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1645,
+					"m_X": 192,
+					"m_Y": 1801,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 198800063,
+					"m_Data_1_": 1246355998,
+					"m_Data_2_": 460037801,
+					"m_Data_3_": 2062783567
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1691,
+					"m_Y": 531
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 112.93034,
+					"m_Width": 111.936966,
+					"m_X": 1702.0267,
+					"m_Y": 539.02673
+				},
+				"m_TextureRectOffset": {
+					"m_X": 11.026751,
+					"m_Y": 8.026751
+				},
+				"m_UvTransform": {
+					"m_W": 595,
+					"m_X": 48,
+					"m_Y": 1755,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 245119099,
+					"m_Data_1_": 1089402237,
+					"m_Data_2_": 1017983418,
+					"m_Data_3_": 1658381953
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1688,
+					"m_Y": 803
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 125.84776,
+					"m_X": 1689.0762,
+					"m_Y": 803
+				},
+				"m_TextureRectOffset": {
+					"m_X": 1.0761205,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 867,
+					"m_X": 192,
+					"m_Y": 1752,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 246576835,
+					"m_Data_1_": 1239424995,
+					"m_Data_2_": 935594662,
+					"m_Data_3_": 457971631
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1709,
+					"m_Y": 1680
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 64,
+					"m_X": 1709,
+					"m_Y": 1680
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1712,
+					"m_X": 192,
+					"m_Y": 1741,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 262591519,
+					"m_Data_1_": 1307438904,
+					"m_Data_2_": 2095575210,
+					"m_Data_3_": 1642765532
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1035,
+					"m_Y": 1189
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1035,
+					"m_Y": 1189
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1253,
+					"m_X": 192,
+					"m_Y": 1099,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 429005580,
+					"m_Data_1_": 1275252495,
+					"m_Data_2_": 236257189,
+					"m_Data_3_": 4132564641
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1035,
+					"m_Y": 1374
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1035,
+					"m_Y": 1374
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1438,
+					"m_X": 48,
+					"m_Y": 1099,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 444443962,
+					"m_Data_1_": 1223990238,
+					"m_Data_2_": 117367193,
+					"m_Data_3_": 1435500569
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1938,
+					"m_Y": 120
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 74,
+					"m_Width": 21,
+					"m_X": 1938,
+					"m_Y": 120
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 157,
+					"m_X": 192,
+					"m_Y": 1948.5,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 460291235,
+					"m_Data_1_": 1080569524,
+					"m_Data_2_": 1089287067,
+					"m_Data_3_": 561228015
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 0,
+					"m_Y": 1045
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 256,
+					"m_Width": 256,
+					"m_X": 0,
+					"m_Y": 1045
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1173,
+					"m_X": 192,
+					"m_Y": 128,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 462910271,
+					"m_Data_1_": 1515144372,
+					"m_Data_2_": 4069029560,
+					"m_Data_3_": 329925812
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1825,
+					"m_Y": 0
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 116,
+					"m_Width": 116,
+					"m_X": 1825,
+					"m_Y": 0
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 58,
+					"m_X": 100,
+					"m_Y": 1883,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 464811848,
+					"m_Data_1_": 1302111694,
+					"m_Data_2_": 1264350630,
+					"m_Data_3_": 977116279
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1570,
+					"m_Y": 1464
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 85.9465,
+					"m_Width": 125.91503,
+					"m_X": 1571.0762,
+					"m_Y": 1485.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 1.0761205,
+					"m_Y": 21.02675
+				},
+				"m_UvTransform": {
+					"m_W": 1528,
+					"m_X": 192,
+					"m_Y": 1634,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 466633824,
+					"m_Data_1_": 1174022344,
+					"m_Data_2_": 2215406220,
+					"m_Data_3_": 3054489509
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 350,
+					"m_Y": 1893
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 82.96034,
+					"m_Width": 100.84776,
+					"m_X": 365.0761,
+					"m_Y": 1915.013
+				},
+				"m_TextureRectOffset": {
+					"m_X": 15.07612,
+					"m_Y": 22.012913
+				},
+				"m_UvTransform": {
+					"m_W": 1957,
+					"m_X": 192,
+					"m_Y": 414,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 524488067,
+					"m_Data_1_": 1249018228,
+					"m_Data_2_": 2277649811,
+					"m_Data_3_": 2970121813
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 518,
+					"m_Y": 1428
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 85.89713,
+					"m_Width": 122.921936,
+					"m_X": 520.02673,
+					"m_Y": 1449.0762
+				},
+				"m_TextureRectOffset": {
+					"m_X": 2.026751,
+					"m_Y": 21.07612
+				},
+				"m_UvTransform": {
+					"m_W": 1492,
+					"m_X": 192,
+					"m_Y": 582,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 532772270,
+					"m_Data_1_": 1083006580,
+					"m_Data_2_": 415756698,
+					"m_Data_3_": 1804424162
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1682,
+					"m_Y": 1059
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 115.85168,
+					"m_Width": 106.89713,
+					"m_X": 1693.0762,
+					"m_Y": 1067.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 11.07612,
+					"m_Y": 8.026751
+				},
+				"m_UvTransform": {
+					"m_W": 1123,
+					"m_X": 48,
+					"m_Y": 1746,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 543774548,
+					"m_Data_1_": 1105411575,
+					"m_Data_2_": 397957784,
+					"m_Data_3_": 2530067544
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1806,
+					"m_Y": 531
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 115.84776,
+					"m_Width": 107.89713,
+					"m_X": 1818.0762,
+					"m_Y": 539.0761
+				},
+				"m_TextureRectOffset": {
+					"m_X": 12.07612,
+					"m_Y": 8.07612
+				},
+				"m_UvTransform": {
+					"m_W": 595,
+					"m_X": 48,
+					"m_Y": 1870,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 552831528,
+					"m_Data_1_": 1213614509,
+					"m_Data_2_": 755042987,
+					"m_Data_3_": 2247140367
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1438,
+					"m_Y": 144
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1438,
+					"m_Y": 144
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 208,
+					"m_X": 48,
+					"m_Y": 1502,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 558995620,
+					"m_Data_1_": 1328935044,
+					"m_Data_2_": 1463144886,
+					"m_Data_3_": 3001485170
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1167,
+					"m_Y": 1189
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1167,
+					"m_Y": 1189
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1253,
+					"m_X": 48,
+					"m_Y": 1231,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 561843936,
+					"m_Data_1_": 2320114484,
+					"m_Data_2_": 2573918615,
+					"m_Data_3_": 3321356355
+				},
+				"Value": -2120310404
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 732,
+					"m_Y": 821
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1116,
+					"m_Y": 821
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 885,
+					"m_X": 192,
+					"m_Y": 1180,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 561843936,
+					"m_Data_1_": 2320114484,
+					"m_Data_2_": 2573918615,
+					"m_Data_3_": 3321356355
+				},
+				"Value": -2022161077
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 992,
+					"m_Y": 693
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1248,
+					"m_Y": 821
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 885,
+					"m_X": 192,
+					"m_Y": 1312,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 561843936,
+					"m_Data_1_": 2320114484,
+					"m_Data_2_": 2573918615,
+					"m_Data_3_": 3321356355
+				},
+				"Value": -1270975624
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1054,
+					"m_Y": 330
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1438,
+					"m_Y": 458
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 522,
+					"m_X": 192,
+					"m_Y": 1502,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 561843936,
+					"m_Data_1_": 2320114484,
+					"m_Data_2_": 2573918615,
+					"m_Data_3_": 3321356355
+				},
+				"Value": -1108820383
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1045,
+					"m_Y": 1378
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1045,
+					"m_Y": 1506
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1570,
+					"m_X": 192,
+					"m_Y": 1109,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 561843936,
+					"m_Data_1_": 2320114484,
+					"m_Data_2_": 2573918615,
+					"m_Data_3_": 3321356355
+				},
+				"Value": -726773223
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1570,
+					"m_Y": 144
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1570,
+					"m_Y": 144
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 208,
+					"m_X": 192,
+					"m_Y": 1634,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 561843936,
+					"m_Data_1_": 2320114484,
+					"m_Data_2_": 2573918615,
+					"m_Data_3_": 3321356355
+				},
+				"Value": -172069677
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1252,
+					"m_Y": 693
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1380,
+					"m_Y": 821
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 885,
+					"m_X": 192,
+					"m_Y": 1444,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 561843936,
+					"m_Data_1_": 2320114484,
+					"m_Data_2_": 2573918615,
+					"m_Data_3_": 3321356355
+				},
+				"Value": 71441813
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 785,
+					"m_Y": 1505
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 913,
+					"m_Y": 1505
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1569,
+					"m_X": 192,
+					"m_Y": 977,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 561843936,
+					"m_Data_1_": 2320114484,
+					"m_Data_2_": 2573918615,
+					"m_Data_3_": 3321356355
+				},
+				"Value": 143703311
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1437,
+					"m_Y": 0
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1693,
+					"m_Y": 0
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 64,
+					"m_X": 192,
+					"m_Y": 1757,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 589655377,
+					"m_Data_1_": 1294172062,
+					"m_Data_2_": 492668850,
+					"m_Data_3_": 1988559645
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 0,
+					"m_Y": 1825
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 0,
+					"m_Y": 1825
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1889,
+					"m_X": 192,
+					"m_Y": 64,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 593019415,
+					"m_Data_1_": 1715799403,
+					"m_Data_2_": 256810656,
+					"m_Data_3_": 2862794675
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 0,
+					"m_Y": 1305
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 256,
+					"m_Width": 256,
+					"m_X": 0,
+					"m_Y": 1305
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1433,
+					"m_X": 100,
+					"m_Y": 128,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 603172786,
+					"m_Data_1_": 1189381626,
+					"m_Data_2_": 1173451189,
+					"m_Data_3_": 4218091682
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 647,
+					"m_Y": 1449
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 25,
+					"m_Width": 49,
+					"m_X": 647,
+					"m_Y": 1449
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1461.5,
+					"m_X": 192,
+					"m_Y": 671.5,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 623860880,
+					"m_Data_1_": 1148705220,
+					"m_Data_2_": 1016046009,
+					"m_Data_3_": 2502344809
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 910,
+					"m_Y": 1871
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 90.701294,
+					"m_Width": 32,
+					"m_X": 910,
+					"m_Y": 1890.1493
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 19.14935
+				},
+				"m_UvTransform": {
+					"m_W": 1935,
+					"m_X": 192,
+					"m_Y": 926,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 625561432,
+					"m_Data_1_": 1288428181,
+					"m_Data_2_": 1384915111,
+					"m_Data_3_": 3016365420
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1573,
+					"m_Y": 1666
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 128,
+					"m_X": 1573,
+					"m_Y": 1666
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1698,
+					"m_X": 192,
+					"m_Y": 1637,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 702671927,
+					"m_Data_1_": 1135929563,
+					"m_Data_2_": 1063730332,
+					"m_Data_3_": 1838396826
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 778,
+					"m_Y": 1717
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 32,
+					"m_Width": 29.89713,
+					"m_X": 778.0761,
+					"m_Y": 1717
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0.076120496,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1733,
+					"m_X": 192,
+					"m_Y": 794,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 738989787,
+					"m_Data_1_": 1298539859,
+					"m_Data_2_": 2506297018,
+					"m_Data_3_": 106484483
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1824,
+					"m_Y": 1842
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 32,
+					"m_Width": 23.84776,
+					"m_X": 1826.0762,
+					"m_Y": 1842
+				},
+				"m_TextureRectOffset": {
+					"m_X": 2.0761204,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1858,
+					"m_X": 192,
+					"m_Y": 1840,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 752091287,
+					"m_Data_1_": 1262948490,
+					"m_Data_2_": 2759547014,
+					"m_Data_3_": 3134154304
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1930,
+					"m_Y": 549
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 16,
+					"m_Width": 16,
+					"m_X": 1930,
+					"m_Y": 549
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 557,
+					"m_X": 192,
+					"m_Y": 1938,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 761624193,
+					"m_Data_1_": 1127475460,
+					"m_Data_2_": 3077276341,
+					"m_Data_3_": 1419139659
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1553,
+					"m_Y": 1714
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 87.89713,
+					"m_Width": 85.89737,
+					"m_X": 1573.0513,
+					"m_Y": 1734.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 20.051317,
+					"m_Y": 20.02675
+				},
+				"m_UvTransform": {
+					"m_W": 1778,
+					"m_X": 192,
+					"m_Y": 1617,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 786396666,
+					"m_Data_1_": 1315810252,
+					"m_Data_2_": 2198129083,
+					"m_Data_3_": 4093035300
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1895,
+					"m_Y": 1273
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 64,
+					"m_X": 1895,
+					"m_Y": 1273
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1305,
+					"m_X": 192,
+					"m_Y": 1927,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 811520630,
+					"m_Data_1_": 1108611117,
+					"m_Data_2_": 1251551110,
+					"m_Data_3_": 1435754450
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1943,
+					"m_Y": 36
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 32,
+					"m_Width": 23.89713,
+					"m_X": 1945.0762,
+					"m_Y": 36
+				},
+				"m_TextureRectOffset": {
+					"m_X": 2.0761204,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 52,
+					"m_X": 192,
+					"m_Y": 1959,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 853480342,
+					"m_Data_1_": 3662083637,
+					"m_Data_2_": 1883958708,
+					"m_Data_3_": 1537306973
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 909,
+					"m_Width": 919,
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 454.5,
+					"m_X": 100,
+					"m_Y": 459.5,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 861430949,
+					"m_Data_1_": 1213651522,
+					"m_Data_2_": 3942218913,
+					"m_Data_3_": 1122568819
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1567,
+					"m_Y": 275
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1567,
+					"m_Y": 275
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 339,
+					"m_X": 48,
+					"m_Y": 1631,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 890887913,
+					"m_Data_1_": 1328260028,
+					"m_Data_2_": 1728568208,
+					"m_Data_3_": 1886418104
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1701,
+					"m_Y": 132
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1701,
+					"m_Y": 132
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 196,
+					"m_X": 192,
+					"m_Y": 1765,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 938378791,
+					"m_Data_1_": 1074181701,
+					"m_Data_2_": 1661630123,
+					"m_Data_3_": 2122458016
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1630,
+					"m_Y": 1858
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 59.847755,
+					"m_Width": 64,
+					"m_X": 1630,
+					"m_Y": 1860.0762
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 2.0761204
+				},
+				"m_UvTransform": {
+					"m_W": 1890,
+					"m_X": 96,
+					"m_Y": 1662,
+					"m_Z": 96
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 973396200,
+					"m_Data_1_": 1283642927,
+					"m_Data_2_": 1071564734,
+					"m_Data_3_": 2818242594
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1864,
+					"m_Y": 1480
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 66,
+					"m_Width": 21,
+					"m_X": 1864,
+					"m_Y": 1480
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1513,
+					"m_X": 192,
+					"m_Y": 1874.5,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1020210754,
+					"m_Data_1_": 1306959679,
+					"m_Data_2_": 1325542558,
+					"m_Data_3_": 89789715
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1549,
+					"m_Y": 1241
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 115.89713,
+					"m_Width": 108.94344,
+					"m_X": 1559.0088,
+					"m_Y": 1249.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 10.008848,
+					"m_Y": 8.026751
+				},
+				"m_UvTransform": {
+					"m_W": 1305,
+					"m_X": 48,
+					"m_Y": 1613,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1021565098,
+					"m_Data_1_": 1338995977,
+					"m_Data_2_": 3789746108,
+					"m_Data_3_": 2286754311
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1346,
+					"m_Y": 142
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 28.930342,
+					"m_Width": 29.97325,
+					"m_X": 1346,
+					"m_Y": 144.04291
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 2.042908
+				},
+				"m_UvTransform": {
+					"m_W": 158,
+					"m_X": 192,
+					"m_Y": 1362,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1080772204,
+					"m_Data_1_": 1175887814,
+					"m_Data_2_": 4222891944,
+					"m_Data_3_": 1964940289
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1298,
+					"m_Y": 1694
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 85.84776,
+					"m_Width": 127.92388,
+					"m_X": 1298,
+					"m_Y": 1715.0762
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 21.07612
+				},
+				"m_UvTransform": {
+					"m_W": 1758,
+					"m_X": 192,
+					"m_Y": 1362,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1090039424,
+					"m_Data_1_": 1175196201,
+					"m_Data_2_": 948228534,
+					"m_Data_3_": 2559309681
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1808,
+					"m_Y": 615
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 207.84775,
+					"m_Width": 42.847755,
+					"m_X": 1818.0762,
+					"m_Y": 659.0761
+				},
+				"m_TextureRectOffset": {
+					"m_X": 10.07612,
+					"m_Y": 44.076122
+				},
+				"m_UvTransform": {
+					"m_W": 743,
+					"m_X": 192,
+					"m_Y": 1840,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1109583677,
+					"m_Data_1_": 1270576009,
+					"m_Data_2_": 867672990,
+					"m_Data_3_": 268641371
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 132,
+					"m_Y": 1825
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 132,
+					"m_Y": 1825
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1889,
+					"m_X": 48,
+					"m_Y": 196,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1130706093,
+					"m_Data_1_": 1336958965,
+					"m_Data_2_": 3102717330,
+					"m_Data_3_": 2680345202
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 778,
+					"m_Y": 1585
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 778,
+					"m_Y": 1585
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1649,
+					"m_X": 100,
+					"m_Y": 842,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1145627036,
+					"m_Data_1_": 1316148173,
+					"m_Data_2_": 2857651845,
+					"m_Data_3_": 3561451118
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1820,
+					"m_Y": 100
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 87.89713,
+					"m_Width": 101.9465,
+					"m_X": 1832.0267,
+					"m_Y": 120.076126
+				},
+				"m_TextureRectOffset": {
+					"m_X": 12.026751,
+					"m_Y": 20.07612
+				},
+				"m_UvTransform": {
+					"m_W": 164,
+					"m_X": 192,
+					"m_Y": 1884,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1214435419,
+					"m_Data_1_": 1081834418,
+					"m_Data_2_": 2458236033,
+					"m_Data_3_": 1209280234
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1710,
+					"m_Y": 1748
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 64,
+					"m_X": 1710,
+					"m_Y": 1748
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1780,
+					"m_X": 192,
+					"m_Y": 1742,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1240370056,
+					"m_Data_1_": 1314674791,
+					"m_Data_2_": 3678454147,
+					"m_Data_3_": 3729376832
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1042,
+					"m_Y": 1637
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 64,
+					"m_X": 1042,
+					"m_Y": 1637
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1669,
+					"m_X": 96,
+					"m_Y": 1074,
+					"m_Z": 96
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1284664165,
+					"m_Data_1_": 1192106545,
+					"m_Data_2_": 2294042046,
+					"m_Data_3_": 349165535
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 842,
+					"m_Y": 1958
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 22,
+					"m_Width": 49,
+					"m_X": 842,
+					"m_Y": 1958
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1969,
+					"m_X": 192,
+					"m_Y": 866.5,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1292103111,
+					"m_Data_1_": 1225247223,
+					"m_Data_2_": 2958768300,
+					"m_Data_3_": 2024186625
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 391,
+					"m_Y": 1805
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 86.910965,
+					"m_Width": 116.9465,
+					"m_X": 396.02676,
+					"m_Y": 1825.013
+				},
+				"m_TextureRectOffset": {
+					"m_X": 5.026751,
+					"m_Y": 20.012913
+				},
+				"m_UvTransform": {
+					"m_W": 1869,
+					"m_X": 192,
+					"m_Y": 455,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1294660500,
+					"m_Data_1_": 1155788295,
+					"m_Data_2_": 2439586483,
+					"m_Data_3_": 1877507217
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1777,
+					"m_Y": 1343
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 81.89713,
+					"m_Width": 59.921932,
+					"m_X": 1812.0267,
+					"m_Y": 1365.0762
+				},
+				"m_TextureRectOffset": {
+					"m_X": 35.026752,
+					"m_Y": 22.07612
+				},
+				"m_UvTransform": {
+					"m_W": 1407,
+					"m_X": 192,
+					"m_Y": 1841,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1301363566,
+					"m_Data_1_": 1294027003,
+					"m_Data_2_": 2916390047,
+					"m_Data_3_": 2289515125
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1903,
+					"m_Y": 1120
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 34,
+					"m_Width": 57,
+					"m_X": 1903,
+					"m_Y": 1120
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1137,
+					"m_X": 192,
+					"m_Y": 1931.5,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1367419382,
+					"m_Data_1_": 1097895235,
+					"m_Data_2_": 1205556155,
+					"m_Data_3_": 2829076404
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1279,
+					"m_Y": 1935
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 64,
+					"m_X": 1279,
+					"m_Y": 1935
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1967,
+					"m_X": 192,
+					"m_Y": 1311,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1378405046,
+					"m_Data_1_": 1132518633,
+					"m_Data_2_": 3242695103,
+					"m_Data_3_": 3901277178
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1804,
+					"m_Y": 1121
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 16,
+					"m_Width": 16,
+					"m_X": 1804,
+					"m_Y": 1121
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1129,
+					"m_X": 192,
+					"m_Y": 1812,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1379043741,
+					"m_Data_1_": 1131771686,
+					"m_Data_2_": 1056319134,
+					"m_Data_3_": 2766505111
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1699,
+					"m_Y": 275
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1699,
+					"m_Y": 275
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 339,
+					"m_X": 48,
+					"m_Y": 1763,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1395638994,
+					"m_Data_1_": 1211688754,
+					"m_Data_2_": 3722003094,
+					"m_Data_3_": 1652719505
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 910,
+					"m_Y": 1636
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 910,
+					"m_Y": 1636
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1700,
+					"m_X": 96,
+					"m_Y": 974,
+					"m_Z": 96
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1400575394,
+					"m_Data_1_": 1116714515,
+					"m_Data_2_": 4293776300,
+					"m_Data_3_": 2231392000
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1813,
+					"m_Y": 1451
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 25,
+					"m_Width": 64,
+					"m_X": 1813,
+					"m_Y": 1451
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1463.5,
+					"m_X": 192,
+					"m_Y": 1845,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1488933481,
+					"m_Data_1_": 1265686015,
+					"m_Data_2_": 1132497538,
+					"m_Data_3_": 1802369524
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1752,
+					"m_Y": 1501
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 87.87257,
+					"m_Width": 91.89713,
+					"m_X": 1769.0267,
+					"m_Y": 1521.0762
+				},
+				"m_TextureRectOffset": {
+					"m_X": 17.02675,
+					"m_Y": 20.07612
+				},
+				"m_UvTransform": {
+					"m_W": 1565,
+					"m_X": 192,
+					"m_Y": 1816,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1525961470,
+					"m_Data_1_": 1318778809,
+					"m_Data_2_": 1354876060,
+					"m_Data_3_": 3809825642
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1569,
+					"m_Y": 407
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1569,
+					"m_Y": 407
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 471,
+					"m_X": 48,
+					"m_Y": 1633,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1581165466,
+					"m_Data_1_": 1250548642,
+					"m_Data_2_": 590986386,
+					"m_Data_3_": 3813676567
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1084,
+					"m_Y": 1321
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 25,
+					"m_Width": 37,
+					"m_X": 1084,
+					"m_Y": 1321
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1333.5,
+					"m_X": 192,
+					"m_Y": 1102.5,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1657572283,
+					"m_Data_1_": 1240194821,
+					"m_Data_2_": 1197676466,
+					"m_Data_3_": 2974427437
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1837,
+					"m_Y": 1613
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 64,
+					"m_X": 1837,
+					"m_Y": 1613
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1645,
+					"m_X": 96,
+					"m_Y": 1869,
+					"m_Z": 96
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1671903880,
+					"m_Data_1_": 1120902511,
+					"m_Data_2_": 4108913323,
+					"m_Data_3_": 3472833427
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1504,
+					"m_Y": 1843
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 31.92388,
+					"m_Width": 31.97325,
+					"m_X": 1504,
+					"m_Y": 1843.0762
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0.076120496
+				},
+				"m_UvTransform": {
+					"m_W": 1859,
+					"m_X": 192,
+					"m_Y": 1520,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1674750167,
+					"m_Data_1_": 1139860932,
+					"m_Data_2_": 2871534722,
+					"m_Data_3_": 1669865306
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1035,
+					"m_Y": 1768
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1035,
+					"m_Y": 1768
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1832,
+					"m_X": 12,
+					"m_Y": 1099,
+					"m_Z": 12
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1678363750,
+					"m_Data_1_": 1212223796,
+					"m_Data_2_": 2401284999,
+					"m_Data_3_": 4131874985
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1155,
+					"m_Y": 1838
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 114.89713,
+					"m_Width": 107.90152,
+					"m_X": 1167.0718,
+					"m_Y": 1846.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 12.071734,
+					"m_Y": 8.026751
+				},
+				"m_UvTransform": {
+					"m_W": 1902,
+					"m_X": 48,
+					"m_Y": 1219,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1706911297,
+					"m_Data_1_": 1248935235,
+					"m_Data_2_": 1247675552,
+					"m_Data_3_": 963479719
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1295,
+					"m_Y": 953
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1295,
+					"m_Y": 953
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1017,
+					"m_X": 192,
+					"m_Y": 1359,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1779624820,
+					"m_Data_1_": 1163444694,
+					"m_Data_2_": 1392057744,
+					"m_Data_3_": 2938749363
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1701,
+					"m_Y": 1521
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 64,
+					"m_X": 1701,
+					"m_Y": 1521
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1585,
+					"m_X": 100,
+					"m_Y": 1733,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1862281940,
+					"m_Data_1_": 1167903661,
+					"m_Data_2_": 3836546457,
+					"m_Data_3_": 685272385
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1786,
+					"m_Y": 1253
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 87.84776,
+					"m_Width": 83.921936,
+					"m_X": 1807.0513,
+					"m_Y": 1273.0762
+				},
+				"m_TextureRectOffset": {
+					"m_X": 21.051317,
+					"m_Y": 20.07612
+				},
+				"m_UvTransform": {
+					"m_W": 1317,
+					"m_X": 192,
+					"m_Y": 1850,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1877872923,
+					"m_Data_1_": 1183029352,
+					"m_Data_2_": 1207708833,
+					"m_Data_3_": 1493531233
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1562,
+					"m_Y": 1825
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 64,
+					"m_X": 1562,
+					"m_Y": 1825
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1857,
+					"m_X": 192,
+					"m_Y": 1594,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1910305751,
+					"m_Data_1_": 1106661153,
+					"m_Data_2_": 2699016345,
+					"m_Data_3_": 1795060340
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1296,
+					"m_Y": 1320
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1296,
+					"m_Y": 1320
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1384,
+					"m_X": 192,
+					"m_Y": 1360,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1963747025,
+					"m_Data_1_": 1133029066,
+					"m_Data_2_": 3078214560,
+					"m_Data_3_": 1683151830
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1558,
+					"m_Y": 1361
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 111.89713,
+					"m_Width": 110.880974,
+					"m_X": 1570.043,
+					"m_Y": 1369.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 12.042908,
+					"m_Y": 8.026751
+				},
+				"m_UvTransform": {
+					"m_W": 1425,
+					"m_X": 48,
+					"m_Y": 1622,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 1997206394,
+					"m_Data_1_": 1245545680,
+					"m_Data_2_": 1011431841,
+					"m_Data_3_": 4239767212
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1347,
+					"m_Y": 1935
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 22,
+					"m_Width": 93,
+					"m_X": 1347,
+					"m_Y": 1935
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1946,
+					"m_X": 192,
+					"m_Y": 1393.5,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2103187100,
+					"m_Data_1_": 1128722570,
+					"m_Data_2_": 178342046,
+					"m_Data_3_": 1498780725
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1803,
+					"m_Y": 1163
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 84.89713,
+					"m_Width": 128,
+					"m_X": 1803,
+					"m_Y": 1184.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 21.02675
+				},
+				"m_UvTransform": {
+					"m_W": 1227,
+					"m_X": 192,
+					"m_Y": 1867,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2126464289,
+					"m_Data_1_": 1323147447,
+					"m_Data_2_": 2760029588,
+					"m_Data_3_": 20660850
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1138,
+					"m_Y": 124
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 87.89713,
+					"m_Width": 50.92743,
+					"m_X": 1177.0363,
+					"m_Y": 144.07613
+				},
+				"m_TextureRectOffset": {
+					"m_X": 39.036285,
+					"m_Y": 20.07612
+				},
+				"m_UvTransform": {
+					"m_W": 188,
+					"m_X": 192,
+					"m_Y": 1202,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2137778418,
+					"m_Data_1_": 1128700958,
+					"m_Data_2_": 1336849343,
+					"m_Data_3_": 2632880330
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1427,
+					"m_Y": 953
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1427,
+					"m_Y": 953
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1017,
+					"m_X": 192,
+					"m_Y": 1491,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2165133870,
+					"m_Data_1_": 1316301229,
+					"m_Data_2_": 2242152094,
+					"m_Data_3_": 3099840125
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1439,
+					"m_Y": 590
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1439,
+					"m_Y": 590
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 654,
+					"m_X": 48,
+					"m_Y": 1503,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2260887000,
+					"m_Data_1_": 1273143412,
+					"m_Data_2_": 1352238524,
+					"m_Data_3_": 1369312586
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 912,
+					"m_Y": 1189
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 70,
+					"m_Width": 20,
+					"m_X": 912,
+					"m_Y": 1189
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1224,
+					"m_X": 192,
+					"m_Y": 922,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2274116831,
+					"m_Data_1_": 1112212499,
+					"m_Data_2_": 4274663309,
+					"m_Data_3_": 4055187901
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1653,
+					"m_Y": 1731
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 122.84776,
+					"m_Width": 42.8575,
+					"m_X": 1663.0762,
+					"m_Y": 1734.0762
+				},
+				"m_TextureRectOffset": {
+					"m_X": 10.07612,
+					"m_Y": 3.0761204
+				},
+				"m_UvTransform": {
+					"m_W": 1795,
+					"m_X": 192,
+					"m_Y": 1685,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2280024783,
+					"m_Data_1_": 1229264414,
+					"m_Data_2_": 4010859198,
+					"m_Data_3_": 2223267502
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1845,
+					"m_Y": 1814
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 25,
+					"m_Width": 57,
+					"m_X": 1845,
+					"m_Y": 1814
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1826.5,
+					"m_X": 192,
+					"m_Y": 1873.5,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2388369102,
+					"m_Data_1_": 1082421442,
+					"m_Data_2_": 3329238179,
+					"m_Data_3_": 352304629
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 470,
+					"m_Y": 1916
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 32,
+					"m_Width": 29.89713,
+					"m_X": 470.0761,
+					"m_Y": 1916
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0.076120496,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1932,
+					"m_X": 192,
+					"m_Y": 486,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2432616288,
+					"m_Data_1_": 1185792557,
+					"m_Data_2_": 2997497260,
+					"m_Data_3_": 893502741
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1789,
+					"m_Y": 1009
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 87.9465,
+					"m_Width": 98.925545,
+					"m_X": 1803.0267,
+					"m_Y": 1029.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 14.026751,
+					"m_Y": 20.02675
+				},
+				"m_UvTransform": {
+					"m_W": 1073,
+					"m_X": 192,
+					"m_Y": 1853,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2436330088,
+					"m_Data_1_": 1261250499,
+					"m_Data_2_": 4118044338,
+					"m_Data_3_": 1436719135
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1511,
+					"m_Y": 722
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1511,
+					"m_Y": 722
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 786,
+					"m_X": 48,
+					"m_Y": 1575,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2449698974,
+					"m_Data_1_": 1196660008,
+					"m_Data_2_": 2412339134,
+					"m_Data_3_": 1772345583
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1777,
+					"m_Y": 1681
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 64,
+					"m_X": 1777,
+					"m_Y": 1681
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1713,
+					"m_X": 24,
+					"m_Y": 1809,
+					"m_Z": 24
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2513049777,
+					"m_Data_1_": 1083713142,
+					"m_Data_2_": 2204896146,
+					"m_Data_3_": 1007869671
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1558,
+					"m_Y": 854
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1558,
+					"m_Y": 854
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 918,
+					"m_X": 48,
+					"m_Y": 1622,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2550139389,
+					"m_Data_1_": 1180033348,
+					"m_Data_2_": 1861607048,
+					"m_Data_3_": 154086289
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1176,
+					"m_Y": 1451
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1176,
+					"m_Y": 1451
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1515,
+					"m_X": 192,
+					"m_Y": 1240,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2611821437,
+					"m_Data_1_": 1237813749,
+					"m_Data_2_": 2858773126,
+					"m_Data_3_": 1642335939
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1308,
+					"m_Y": 1452
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1308,
+					"m_Y": 1452
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1516,
+					"m_X": 192,
+					"m_Y": 1372,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2631086808,
+					"m_Data_1_": 1166178864,
+					"m_Data_2_": 1340367542,
+					"m_Data_3_": 1218345834
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1177,
+					"m_Y": 1583
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1177,
+					"m_Y": 1583
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1647,
+					"m_X": 192,
+					"m_Y": 1241,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2639577151,
+					"m_Data_1_": 1136673794,
+					"m_Data_2_": 1856054150,
+					"m_Data_3_": 2517362865
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 946,
+					"m_Y": 1916
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 25,
+					"m_Width": 49,
+					"m_X": 946,
+					"m_Y": 1916
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1928.5,
+					"m_X": 192,
+					"m_Y": 970.5,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2698310367,
+					"m_Data_1_": 1145503679,
+					"m_Data_2_": 3601698473,
+					"m_Data_3_": 787854279
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1392,
+					"m_Y": 1822
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 87.921936,
+					"m_Width": 89.921936,
+					"m_X": 1410.0267,
+					"m_Y": 1842.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 18.02675,
+					"m_Y": 20.02675
+				},
+				"m_UvTransform": {
+					"m_W": 1886,
+					"m_X": 192,
+					"m_Y": 1456,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2731494016,
+					"m_Data_1_": 1096292363,
+					"m_Data_2_": 1594475183,
+					"m_Data_3_": 323644202
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1852,
+					"m_Y": 639
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 87.84776,
+					"m_Width": 99.89713,
+					"m_X": 1865.0267,
+					"m_Y": 659.0761
+				},
+				"m_TextureRectOffset": {
+					"m_X": 13.026751,
+					"m_Y": 20.07612
+				},
+				"m_UvTransform": {
+					"m_W": 703,
+					"m_X": 192,
+					"m_Y": 1916,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2732707010,
+					"m_Data_1_": 1155618642,
+					"m_Data_2_": 3515468677,
+					"m_Data_3_": 3441845940
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1775,
+					"m_Y": 1816
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 25,
+					"m_Width": 48,
+					"m_X": 1775,
+					"m_Y": 1816
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1828.5,
+					"m_X": 192,
+					"m_Y": 1799,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2742374611,
+					"m_Data_1_": 1267207006,
+					"m_Data_2_": 983759260,
+					"m_Data_3_": 213308505
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1232,
+					"m_Y": 144
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 64,
+					"m_X": 1232,
+					"m_Y": 144
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 176,
+					"m_X": 192,
+					"m_Y": 1264,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2753528121,
+					"m_Data_1_": 1108646862,
+					"m_Data_2_": 1759943834,
+					"m_Data_3_": 2317830123
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1559,
+					"m_Y": 986
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1559,
+					"m_Y": 986
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1050,
+					"m_X": 48,
+					"m_Y": 1623,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2754952691,
+					"m_Data_1_": 1279659849,
+					"m_Data_2_": 2055385256,
+					"m_Data_3_": 1217330208
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1504,
+					"m_Y": 1923
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 29,
+					"m_Width": 128,
+					"m_X": 1504,
+					"m_Y": 1923
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1937.5,
+					"m_X": 192,
+					"m_Y": 1568,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2797790353,
+					"m_Data_1_": 1178161905,
+					"m_Data_2_": 3390443197,
+					"m_Data_3_": 4159505415
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1232,
+					"m_Y": 210
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 28.89713,
+					"m_Width": 30.92388,
+					"m_X": 1232,
+					"m_Y": 212.07613
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 2.0761204
+				},
+				"m_UvTransform": {
+					"m_W": 226,
+					"m_X": 192,
+					"m_Y": 1248,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2839546114,
+					"m_Data_1_": 1284787540,
+					"m_Data_2_": 1578716862,
+					"m_Data_3_": 1386554701
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1845,
+					"m_Y": 1681
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 48,
+					"m_Width": 36,
+					"m_X": 1845,
+					"m_Y": 1681
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1705,
+					"m_X": 192,
+					"m_Y": 1863,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2865792858,
+					"m_Data_1_": 1337270716,
+					"m_Data_2_": 2012908218,
+					"m_Data_3_": 2114878840
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1698,
+					"m_Y": 1880
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 16,
+					"m_Width": 16,
+					"m_X": 1698,
+					"m_Y": 1880
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1888,
+					"m_X": 192,
+					"m_Y": 1706,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2881532191,
+					"m_Data_1_": 1179825380,
+					"m_Data_2_": 489336255,
+					"m_Data_3_": 546871889
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 0,
+					"m_Y": 1565
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 256,
+					"m_Width": 256,
+					"m_X": 0,
+					"m_Y": 1565
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1693,
+					"m_X": 192,
+					"m_Y": 128,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2927805724,
+					"m_Data_1_": 1285562844,
+					"m_Data_2_": 163523741,
+					"m_Data_3_": 657950661
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1830,
+					"m_Y": 263
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1830,
+					"m_Y": 263
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 327,
+					"m_X": 96,
+					"m_Y": 1894,
+					"m_Z": 96
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2946764541,
+					"m_Data_1_": 1128035907,
+					"m_Data_2_": 1263939200,
+					"m_Data_3_": 1187356501
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1872,
+					"m_Y": 373
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 81.9465,
+					"m_Width": 74.9465,
+					"m_X": 1900.0267,
+					"m_Y": 395.02676
+				},
+				"m_TextureRectOffset": {
+					"m_X": 28.02675,
+					"m_Y": 22.02675
+				},
+				"m_UvTransform": {
+					"m_W": 437,
+					"m_X": 192,
+					"m_Y": 1936,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 2986562620,
+					"m_Data_1_": 1094492710,
+					"m_Data_2_": 990717345,
+					"m_Data_3_": 2572605738
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1309,
+					"m_Y": 1584
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1309,
+					"m_Y": 1584
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1648,
+					"m_X": 192,
+					"m_Y": 1373,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3016653961,
+					"m_Data_1_": 1333666810,
+					"m_Data_2_": 1881721252,
+					"m_Data_3_": 2267563745
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1680,
+					"m_Y": 1318
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 85.9465,
+					"m_Width": 119.93034,
+					"m_X": 1684.043,
+					"m_Y": 1339.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 4.0429077,
+					"m_Y": 21.02675
+				},
+				"m_UvTransform": {
+					"m_W": 1382,
+					"m_X": 192,
+					"m_Y": 1744,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3042701773,
+					"m_Data_1_": 1334388284,
+					"m_Data_2_": 965905067,
+					"m_Data_3_": 3268775674
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1691,
+					"m_Y": 1409
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 87.921936,
+					"m_Width": 108.9465,
+					"m_X": 1700.0267,
+					"m_Y": 1429.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 9.026751,
+					"m_Y": 20.02675
+				},
+				"m_UvTransform": {
+					"m_W": 1473,
+					"m_X": 192,
+					"m_Y": 1755,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3051607610,
+					"m_Data_1_": 1207483456,
+					"m_Data_2_": 1629495691,
+					"m_Data_3_": 44966595
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1300,
+					"m_Y": 144
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 25,
+					"m_Width": 42,
+					"m_X": 1300,
+					"m_Y": 144
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 156.5,
+					"m_X": 192,
+					"m_Y": 1321,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3091355260,
+					"m_Data_1_": 1111124159,
+					"m_Data_2_": 2300893617,
+					"m_Data_3_": 47058191
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1430,
+					"m_Y": 1775
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 128,
+					"m_X": 1430,
+					"m_Y": 1775
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1807,
+					"m_X": 192,
+					"m_Y": 1494,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3198037758,
+					"m_Data_1_": 1106361653,
+					"m_Data_2_": 2164820626,
+					"m_Data_3_": 2054277444
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 260,
+					"m_Y": 1045
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 256,
+					"m_Width": 256,
+					"m_X": 260,
+					"m_Y": 1045
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1173,
+					"m_X": 96,
+					"m_Y": 388,
+					"m_Z": 96
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3207278171,
+					"m_Data_1_": 1271580705,
+					"m_Data_2_": 2146431632,
+					"m_Data_3_": 1292786784
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 264,
+					"m_Y": 1804
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 85.89713,
+					"m_Width": 127.91503,
+					"m_X": 264.0761,
+					"m_Y": 1825.0762
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0.076120496,
+					"m_Y": 21.07612
+				},
+				"m_UvTransform": {
+					"m_W": 1868,
+					"m_X": 192,
+					"m_Y": 328,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3241139925,
+					"m_Data_1_": 1331246744,
+					"m_Data_2_": 2198826133,
+					"m_Data_3_": 1709489378
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 686,
+					"m_Y": 1870
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 87.9465,
+					"m_Width": 82.87257,
+					"m_X": 708.05133,
+					"m_Y": 1890.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 22.051317,
+					"m_Y": 20.02675
+				},
+				"m_UvTransform": {
+					"m_W": 1934,
+					"m_X": 192,
+					"m_Y": 750,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3249433900,
+					"m_Data_1_": 1261035481,
+					"m_Data_2_": 4100564406,
+					"m_Data_3_": 2290974996
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1844,
+					"m_Y": 729
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 81.880974,
+					"m_Width": 88.9465,
+					"m_X": 1865.0267,
+					"m_Y": 751.0761
+				},
+				"m_TextureRectOffset": {
+					"m_X": 21.02675,
+					"m_Y": 22.07612
+				},
+				"m_UvTransform": {
+					"m_W": 793,
+					"m_X": 192,
+					"m_Y": 1908,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3251864025,
+					"m_Data_1_": 1341341732,
+					"m_Data_2_": 3830673569,
+					"m_Data_3_": 3470446332
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1298,
+					"m_Y": 1085
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1298,
+					"m_Y": 1085
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1149,
+					"m_X": 48,
+					"m_Y": 1362,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3262309617,
+					"m_Data_1_": 1138584887,
+					"m_Data_2_": 2626162873,
+					"m_Data_3_": 3264409528
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1565,
+					"m_Y": 1555
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 86.96034,
+					"m_Width": 112.9465,
+					"m_X": 1572.0267,
+					"m_Y": 1575.013
+				},
+				"m_TextureRectOffset": {
+					"m_X": 7.026751,
+					"m_Y": 20.012913
+				},
+				"m_UvTransform": {
+					"m_W": 1619,
+					"m_X": 192,
+					"m_Y": 1629,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3270112244,
+					"m_Data_1_": 1222548250,
+					"m_Data_2_": 1889143681,
+					"m_Data_3_": 547015733
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1279,
+					"m_Y": 1825
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 84.921936,
+					"m_Width": 128,
+					"m_X": 1279,
+					"m_Y": 1846.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 21.02675
+				},
+				"m_UvTransform": {
+					"m_W": 1889,
+					"m_X": 192,
+					"m_Y": 1343,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3295742617,
+					"m_Data_1_": 2537723306,
+					"m_Data_2_": 847375009,
+					"m_Data_3_": 2596599594
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1710,
+					"m_Y": 1816
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 61,
+					"m_Width": 61,
+					"m_X": 1710,
+					"m_Y": 1816
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1846.5,
+					"m_X": 192,
+					"m_Y": 1740.5,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3330260864,
+					"m_Data_1_": 1292929546,
+					"m_Data_2_": 1506268076,
+					"m_Data_3_": 787129593
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1673,
+					"m_Y": 935
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 96.84776,
+					"m_X": 1690.0762,
+					"m_Y": 935
+				},
+				"m_TextureRectOffset": {
+					"m_X": 17.07612,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 999,
+					"m_X": 192,
+					"m_Y": 1737,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3349636117,
+					"m_Data_1_": 3830204994,
+					"m_Data_2_": 3351077276,
+					"m_Data_3_": 1901324400
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1430,
+					"m_Y": 1117
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1430,
+					"m_Y": 1117
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1181,
+					"m_X": 157.53847,
+					"m_Y": 1494,
+					"m_Z": 157.53847
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3365712840,
+					"m_Data_1_": 1256098167,
+					"m_Data_2_": 1323266193,
+					"m_Data_3_": 2804357433
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 936,
+					"m_Y": 1189
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 16,
+					"m_Width": 16,
+					"m_X": 936,
+					"m_Y": 1189
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1197,
+					"m_X": 192,
+					"m_Y": 944,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3374767789,
+					"m_Data_1_": 1307646331,
+					"m_Data_2_": 2655173027,
+					"m_Data_3_": 329919973
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1929,
+					"m_Y": 481
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 64,
+					"m_X": 1929,
+					"m_Y": 481
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 513,
+					"m_X": 192,
+					"m_Y": 1961,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3407501197,
+					"m_Data_1_": 1130481981,
+					"m_Data_2_": 3522492081,
+					"m_Data_3_": 1837970235
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1299,
+					"m_Y": 1217
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 63.923878,
+					"m_X": 1299,
+					"m_Y": 1217
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1249,
+					"m_X": 96,
+					"m_Y": 1331,
+					"m_Z": 96
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3449543991,
+					"m_Data_1_": 1287527040,
+					"m_Data_2_": 3208617406,
+					"m_Data_3_": 2179949045
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1791,
+					"m_Y": 935
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 90,
+					"m_Width": 128,
+					"m_X": 1791,
+					"m_Y": 935
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 980,
+					"m_X": 192,
+					"m_Y": 1855,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3505437757,
+					"m_Data_1_": 1091335205,
+					"m_Data_2_": 104471943,
+					"m_Data_3_": 3149701509
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1427,
+					"m_Y": 1248
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1427,
+					"m_Y": 1248
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1312,
+					"m_X": 48,
+					"m_Y": 1491,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3526364448,
+					"m_Data_1_": 1084584958,
+					"m_Data_2_": 1314440376,
+					"m_Data_3_": 2217017757
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 946,
+					"m_Y": 1890
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 22,
+					"m_Width": 60,
+					"m_X": 946,
+					"m_Y": 1890
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1901,
+					"m_X": 192,
+					"m_Y": 976,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3579832752,
+					"m_Data_1_": 1160717302,
+					"m_Data_2_": 3496685247,
+					"m_Data_3_": 3045086508
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1427,
+					"m_Y": 294
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 87.9465,
+					"m_Width": 103.921936,
+					"m_X": 1438.0267,
+					"m_Y": 314.02676
+				},
+				"m_TextureRectOffset": {
+					"m_X": 11.026751,
+					"m_Y": 20.02675
+				},
+				"m_UvTransform": {
+					"m_W": 358,
+					"m_X": 192,
+					"m_Y": 1491,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3605872986,
+					"m_Data_1_": 1275941190,
+					"m_Data_2_": 504270212,
+					"m_Data_3_": 3712642317
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1832,
+					"m_Y": 395
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 64,
+					"m_X": 1832,
+					"m_Y": 395
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 459,
+					"m_X": 192,
+					"m_Y": 1864,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3612742598,
+					"m_Data_1_": 1322683356,
+					"m_Data_2_": 2734743478,
+					"m_Data_3_": 1123290268
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 260,
+					"m_Y": 1305
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 256,
+					"m_Width": 256,
+					"m_X": 260,
+					"m_Y": 1305
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1433,
+					"m_X": 192,
+					"m_Y": 388,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3642725397,
+					"m_Data_1_": 1281980090,
+					"m_Data_2_": 124376976,
+					"m_Data_3_": 576044850
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 249,
+					"m_Y": 1895
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 87.89713,
+					"m_Width": 96.925545,
+					"m_X": 264.02676,
+					"m_Y": 1915.0762
+				},
+				"m_TextureRectOffset": {
+					"m_X": 15.026751,
+					"m_Y": 20.07612
+				},
+				"m_UvTransform": {
+					"m_W": 1959,
+					"m_X": 192,
+					"m_Y": 313,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3659497313,
+					"m_Data_1_": 1149633094,
+					"m_Data_2_": 466154673,
+					"m_Data_3_": 2568920359
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 842,
+					"m_Y": 1890
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 64,
+					"m_X": 842,
+					"m_Y": 1890
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1922,
+					"m_X": 192,
+					"m_Y": 874,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3709484518,
+					"m_Data_1_": 1198173811,
+					"m_Data_2_": 1827945102,
+					"m_Data_3_": 4206638266
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1439,
+					"m_Y": 1380
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1439,
+					"m_Y": 1380
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1444,
+					"m_X": 48,
+					"m_Y": 1503,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3728153747,
+					"m_Data_1_": 1130234967,
+					"m_Data_2_": 1707654273,
+					"m_Data_3_": 2057482720
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1562,
+					"m_Y": 1118
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1562,
+					"m_Y": 1118
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1182,
+					"m_X": 48,
+					"m_Y": 1626,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3731772996,
+					"m_Data_1_": 1086811562,
+					"m_Data_2_": 87535752,
+					"m_Data_3_": 197527272
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1166,
+					"m_Y": 1714
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1166,
+					"m_Y": 1714
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1778,
+					"m_X": 192,
+					"m_Y": 1230,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3759728852,
+					"m_Data_1_": 1256589649,
+					"m_Data_2_": 3907764881,
+					"m_Data_3_": 2872144696
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1440,
+					"m_Y": 1512
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1440,
+					"m_Y": 1512
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1576,
+					"m_X": 192,
+					"m_Y": 1504,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3766945040,
+					"m_Data_1_": 575284438,
+					"m_Data_2_": 1130685838,
+					"m_Data_3_": 3330191055
+				},
+				"Value": -1866541906
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 923,
+					"m_Y": -87
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 68,
+					"m_Width": 512,
+					"m_X": 923,
+					"m_Y": 461
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 495,
+					"m_X": 100,
+					"m_Y": 1179,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3766945040,
+					"m_Data_1_": 575284438,
+					"m_Data_2_": 1130685838,
+					"m_Data_3_": 3330191055
+				},
+				"Value": -783680606
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 780,
+					"m_Y": 297
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 68,
+					"m_Width": 512,
+					"m_X": 780,
+					"m_Y": 1117
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1151,
+					"m_X": 100,
+					"m_Y": 1036,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3766945040,
+					"m_Data_1_": 575284438,
+					"m_Data_2_": 1130685838,
+					"m_Data_3_": 3330191055
+				},
+				"Value": -403496214
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 520,
+					"m_Y": 421
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 68,
+					"m_Width": 512,
+					"m_X": 520,
+					"m_Y": 1377
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1411,
+					"m_X": 100,
+					"m_Y": 776,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3766945040,
+					"m_Data_1_": 575284438,
+					"m_Data_2_": 1130685838,
+					"m_Data_3_": 3330191055
+				},
+				"Value": -86160448
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 923,
+					"m_Y": 337
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 68,
+					"m_Width": 512,
+					"m_X": 923,
+					"m_Y": 749
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 783,
+					"m_X": 100,
+					"m_Y": 1179,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3766945040,
+					"m_Data_1_": 575284438,
+					"m_Data_2_": 1130685838,
+					"m_Data_3_": 3330191055
+				},
+				"Value": 163442842
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1177,
+					"m_Y": -816
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 68,
+					"m_Width": 512,
+					"m_X": 1177,
+					"m_Y": 72
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 106,
+					"m_X": 100,
+					"m_Y": 1433,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3766945040,
+					"m_Data_1_": 575284438,
+					"m_Data_2_": 1130685838,
+					"m_Data_3_": 3330191055
+				},
+				"Value": 443567145
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 923,
+					"m_Y": -91
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 68,
+					"m_Width": 512,
+					"m_X": 923,
+					"m_Y": 389
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 423,
+					"m_X": 100,
+					"m_Y": 1179,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3766945040,
+					"m_Data_1_": 575284438,
+					"m_Data_2_": 1130685838,
+					"m_Data_3_": 3330191055
+				},
+				"Value": 640578692
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 520,
+					"m_Y": 1542
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 68,
+					"m_Width": 512,
+					"m_X": 520,
+					"m_Y": 1818
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1852,
+					"m_X": 100,
+					"m_Y": 776,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3766945040,
+					"m_Data_1_": 575284438,
+					"m_Data_2_": 1130685838,
+					"m_Data_3_": 3330191055
+				},
+				"Value": 908955078
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 923,
+					"m_Y": -79
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 68,
+					"m_Width": 512,
+					"m_X": 923,
+					"m_Y": 605
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 639,
+					"m_X": 100,
+					"m_Y": 1179,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3766945040,
+					"m_Data_1_": 575284438,
+					"m_Data_2_": 1130685838,
+					"m_Data_3_": 3330191055
+				},
+				"Value": 933945990
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 923,
+					"m_Y": -83
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 68,
+					"m_Width": 512,
+					"m_X": 923,
+					"m_Y": 533
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 567,
+					"m_X": 100,
+					"m_Y": 1179,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3766945040,
+					"m_Data_1_": 575284438,
+					"m_Data_2_": 1130685838,
+					"m_Data_3_": 3330191055
+				},
+				"Value": 1125184544
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 923,
+					"m_Y": 333
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 68,
+					"m_Width": 512,
+					"m_X": 923,
+					"m_Y": 677
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 711,
+					"m_X": 100,
+					"m_Y": 1179,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3766945040,
+					"m_Data_1_": 575284438,
+					"m_Data_2_": 1130685838,
+					"m_Data_3_": 3330191055
+				},
+				"Value": 1198560535
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 923,
+					"m_Y": 313
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 68,
+					"m_Width": 512,
+					"m_X": 923,
+					"m_Y": 317
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 351,
+					"m_X": 100,
+					"m_Y": 1179,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3766945040,
+					"m_Data_1_": 575284438,
+					"m_Data_2_": 1130685838,
+					"m_Data_3_": 3330191055
+				},
+				"Value": 1225834996
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1177,
+					"m_Y": -752
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 68,
+					"m_Width": 512,
+					"m_X": 1177,
+					"m_Y": 0
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 34,
+					"m_X": 100,
+					"m_Y": 1433,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3766945040,
+					"m_Data_1_": 575284438,
+					"m_Data_2_": 1130685838,
+					"m_Data_3_": 3330191055
+				},
+				"Value": 1789439407
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 520,
+					"m_Y": 1097
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 68,
+					"m_Width": 512,
+					"m_X": 520,
+					"m_Y": 1305
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1339,
+					"m_X": 100,
+					"m_Y": 776,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3766945040,
+					"m_Data_1_": 575284438,
+					"m_Data_2_": 1130685838,
+					"m_Data_3_": 3330191055
+				},
+				"Value": 2009069756
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 923,
+					"m_Y": 173
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 68,
+					"m_Width": 512,
+					"m_X": 923,
+					"m_Y": 245
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 279,
+					"m_X": 100,
+					"m_Y": 1179,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3766945040,
+					"m_Data_1_": 575284438,
+					"m_Data_2_": 1130685838,
+					"m_Data_3_": 3330191055
+				},
+				"Value": 2092001330
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 780,
+					"m_Y": 905
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 68,
+					"m_Width": 512,
+					"m_X": 780,
+					"m_Y": 1045
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1079,
+					"m_X": 100,
+					"m_Y": 1036,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3889665383,
+					"m_Data_1_": 1103736604,
+					"m_Data_2_": 2148240017,
+					"m_Data_3_": 660055775
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": -22,
+					"m_Y": 913
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 980.4142,
+					"m_X": 0.29289246,
+					"m_Y": 913
+				},
+				"m_TextureRectOffset": {
+					"m_X": 22.292892,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 977,
+					"m_X": 192,
+					"m_Y": 490,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3920845594,
+					"m_Data_1_": 1233619298,
+					"m_Data_2_": 3898889396,
+					"m_Data_3_": 7328872
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1570,
+					"m_Y": 539
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1570,
+					"m_Y": 539
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 603,
+					"m_X": 48,
+					"m_Y": 1634,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3928065751,
+					"m_Data_1_": 1203632306,
+					"m_Data_2_": 1255604140,
+					"m_Data_3_": 3162616197
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1036,
+					"m_Y": 1321
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 25,
+					"m_Width": 44,
+					"m_X": 1036,
+					"m_Y": 1321
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1333.5,
+					"m_X": 192,
+					"m_Y": 1058,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3933527571,
+					"m_Data_1_": 1160922409,
+					"m_Data_2_": 2200853387,
+					"m_Data_3_": 3153442873
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1441,
+					"m_Y": 1644
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1441,
+					"m_Y": 1644
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1708,
+					"m_X": 192,
+					"m_Y": 1505,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3995025173,
+					"m_Data_1_": 1241175176,
+					"m_Data_2_": 146823822,
+					"m_Data_3_": 3149453697
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 785,
+					"m_Y": 1874
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 95.89713,
+					"m_Width": 42.897125,
+					"m_X": 795.02673,
+					"m_Y": 1890.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 10.026751,
+					"m_Y": 16.02675
+				},
+				"m_UvTransform": {
+					"m_W": 1938,
+					"m_X": 192,
+					"m_Y": 817,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 3999636164,
+					"m_Data_1_": 3779767932,
+					"m_Data_2_": 3607816114,
+					"m_Data_3_": 2129983542
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 777,
+					"m_Y": 1449
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 132,
+					"m_Width": 132,
+					"m_X": 777,
+					"m_Y": 1449
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1515,
+					"m_X": 100,
+					"m_Y": 843,
+					"m_Z": 100
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 4021974545,
+					"m_Data_1_": 1113285906,
+					"m_Data_2_": 3200087438,
+					"m_Data_3_": 2155760872
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1642,
+					"m_Y": 671
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1642,
+					"m_Y": 671
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 735,
+					"m_X": 192,
+					"m_Y": 1706,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 4079613830,
+					"m_Data_1_": 1300767756,
+					"m_Data_2_": 1573656489,
+					"m_Data_3_": 3180948313
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 501,
+					"m_Y": 1869
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 87.9465,
+					"m_Width": 94.925545,
+					"m_X": 517.02673,
+					"m_Y": 1889.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 16.02675,
+					"m_Y": 20.02675
+				},
+				"m_UvTransform": {
+					"m_W": 1933,
+					"m_X": 192,
+					"m_Y": 565,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 4091716409,
+					"m_Data_1_": 1195127760,
+					"m_Data_2_": 2241482379,
+					"m_Data_3_": 1638152928
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1865,
+					"m_Y": 837
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 32,
+					"m_X": 1865,
+					"m_Y": 837
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 869,
+					"m_X": 192,
+					"m_Y": 1881,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 4131445775,
+					"m_Data_1_": 1221237379,
+					"m_Data_2_": 2075216054,
+					"m_Data_3_": 3053587766
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1701,
+					"m_Y": 407
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 3,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 128,
+					"m_Width": 128,
+					"m_X": 1701,
+					"m_Y": 407
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 471,
+					"m_X": 48,
+					"m_Y": 1765,
+					"m_Z": 48
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 4142719686,
+					"m_Data_1_": 1307177569,
+					"m_Data_2_": 2877071491,
+					"m_Data_3_": 3736422464
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 518,
+					"m_Y": 1562
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 251.94868,
+					"m_Width": 254.98709,
+					"m_X": 519.01294,
+					"m_Y": 1562
+				},
+				"m_TextureRectOffset": {
+					"m_X": 1.0129125,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1690,
+					"m_X": 192,
+					"m_Y": 646,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 4153320687,
+					"m_Data_1_": 1320912979,
+					"m_Data_2_": 784214705,
+					"m_Data_3_": 2053741775
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 780,
+					"m_Y": 1168
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 85.84776,
+					"m_Width": 128,
+					"m_X": 780,
+					"m_Y": 1189.0762
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 21.07612
+				},
+				"m_UvTransform": {
+					"m_W": 1232,
+					"m_X": 192,
+					"m_Y": 844,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 4183740956,
+					"m_Data_1_": 1236922167,
+					"m_Data_2_": 3710343102,
+					"m_Data_3_": 4234446828
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1778,
+					"m_Y": 1749
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 64,
+					"m_Width": 64,
+					"m_X": 1778,
+					"m_Y": 1749
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1781,
+					"m_X": 192,
+					"m_Y": 1810,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 4197816158,
+					"m_Data_1_": 1237276598,
+					"m_Data_2_": 802426266,
+					"m_Data_3_": 1639796179
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1901,
+					"m_Y": 837
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 32,
+					"m_Width": 32,
+					"m_X": 1901,
+					"m_Y": 837
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 853,
+					"m_X": 12,
+					"m_Y": 1917,
+					"m_Z": 12
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 4210202331,
+					"m_Data_1_": 1083793372,
+					"m_Data_2_": 166024338,
+					"m_Data_3_": 1890003248
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1672,
+					"m_Y": 1229
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 84.936966,
+					"m_Width": 128,
+					"m_X": 1672,
+					"m_Y": 1250.0267
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 21.02675
+				},
+				"m_UvTransform": {
+					"m_W": 1293,
+					"m_X": 192,
+					"m_Y": 1736,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 4210445968,
+					"m_Data_1_": 1335017263,
+					"m_Data_2_": 993373612,
+					"m_Data_3_": 3920543891
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 260,
+					"m_Y": 1565
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 256,
+					"m_Width": 256,
+					"m_X": 260,
+					"m_Y": 1565
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1693,
+					"m_X": 192,
+					"m_Y": 388,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 4232762261,
+					"m_Data_1_": 1190506190,
+					"m_Data_2_": 1446420368,
+					"m_Data_3_": 1256983833
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 597,
+					"m_Y": 1870
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 87.89713,
+					"m_Width": 87.921936,
+					"m_X": 616.02673,
+					"m_Y": 1890.0762
+				},
+				"m_TextureRectOffset": {
+					"m_X": 19.02675,
+					"m_Y": 20.07612
+				},
+				"m_UvTransform": {
+					"m_W": 1934,
+					"m_X": 192,
+					"m_Y": 661,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 4254132850,
+					"m_Data_1_": 1256313874,
+					"m_Data_2_": 2151144355,
+					"m_Data_3_": 80797117
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 520,
+					"m_Y": 1045
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 256,
+					"m_Width": 256,
+					"m_X": 520,
+					"m_Y": 1045
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0
+				},
+				"m_UvTransform": {
+					"m_W": 1173,
+					"m_X": 192,
+					"m_Y": 648,
+					"m_Z": 192
+				}
+			}
+		},
+		{
+			"Key": {
+				"Key": {
+					"m_Data_0_": 4276604450,
+					"m_Data_1_": 1314736566,
+					"m_Data_2_": 4140627351,
+					"m_Data_3_": 4169405592
+				},
+				"Value": 21300000
+			},
+			"Value": {
+				"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+				"m_AtlasRectOffset": {
+					"m_X": 1945,
+					"m_Y": 0
+				},
+				"m_DownscaleMultiplier": 1,
+				"m_SecondaryTextures": [],
+				"m_SettingsRaw": 67,
+				"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 148 },
+				"m_TextureRect": {
+					"m_Height": 31.948683,
+					"m_Width": 31.957092,
+					"m_X": 1945,
+					"m_Y": 0.05131668
+				},
+				"m_TextureRectOffset": {
+					"m_X": 0,
+					"m_Y": 0.05131668
+				},
+				"m_UvTransform": {
+					"m_W": 16,
+					"m_X": 192,
+					"m_Y": 1961,
+					"m_Z": 192
+				}
+			}
+		}
+	],
+	"m_Tag": "VFX_Atlas"
+}

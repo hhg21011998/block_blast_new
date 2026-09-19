@@ -1,0 +1,630 @@
+{
+    "version": "JIH 1 Clear Mechs Long (BakedIn)",
+    "maxBrc": 100,
+    "brcValueOnClear": 1,
+    "clearBankRefreshCountOnRevive": false,
+    "emptyBoardMod": 0,
+    "emptyBoardCurve": {
+        "serializedVersion": "2",
+        "m_Curve": [
+            {
+                "serializedVersion": "3",
+                "time": 0,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0,
+                "outWeight": 0.3333333433
+            },
+            {
+                "serializedVersion": "3",
+                "time": 1,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0.3333333433,
+                "outWeight": 0
+            }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+    },
+    "alreadyInBankCurve": {
+        "serializedVersion": "2",
+        "m_Curve": [
+            {
+                "serializedVersion": "3",
+                "time": 0,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0,
+                "outWeight": 0.3333333433
+            },
+            {
+                "serializedVersion": "3",
+                "time": 1,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0.3333333433,
+                "outWeight": 0
+            }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+    },
+    "canBePlacedMod": 0,
+    "canBePlacedCurve": {
+        "serializedVersion": "2",
+        "m_Curve": [
+            {
+                "serializedVersion": "3",
+                "time": 0,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0,
+                "outWeight": 0.3333333433
+            },
+            {
+                "serializedVersion": "3",
+                "time": 1,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0.3333333433,
+                "outWeight": 0
+            }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+    },
+    "inBankModValue": 0,
+    "bigShapeMultiplier": 0,
+    "boardStartingPosition": 1,
+    "bigShapeCurve": {
+        "serializedVersion": "2",
+        "m_Curve": [
+            {
+                "serializedVersion": "3",
+                "time": 0,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0,
+                "outWeight": 0.3333333433
+            },
+            {
+                "serializedVersion": "3",
+                "time": 1,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0.3333333433,
+                "outWeight": 0
+            }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+    },
+    "complexShapeMultiplier": 3,
+    "complexShapeCurve": {
+        "serializedVersion": "2",
+        "m_Curve": [
+            {
+                "serializedVersion": "3",
+                "time": 0,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0,
+                "outWeight": 0.3333333433
+            },
+            {
+                "serializedVersion": "3",
+                "time": 1,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0.3333333433,
+                "outWeight": 0
+            }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+    },
+    "mercyMod": 0,
+    "terminatorMod": 1,
+    "sequentialTerminator": false,
+    "terminatorCurve": {
+        "serializedVersion": "2",
+        "m_Curve": [
+            {
+                "serializedVersion": "3",
+                "time": 0,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0,
+                "outWeight": 0.3333333433
+            },
+            {
+                "serializedVersion": "3",
+                "time": 0.03,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 1.808510638297872,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0.3333333433,
+                "outWeight": 0.3333333433
+            },
+            {
+                "serializedVersion": "3",
+                "time": 0.5,
+                "value": 0.85,
+                "inSlope": 1.808510638297872,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0.3333333433,
+                "outWeight": 0.3333333433
+            },
+            {
+                "serializedVersion": "3",
+                "time": 1,
+                "value": 0.85,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0.3333333433,
+                "outWeight": 0
+            }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+    },
+    "complementaryFitCurve": {
+        "serializedVersion": "2",
+        "m_Curve": [
+            {
+                "serializedVersion": "3",
+                "time": 0,
+                "value": 0.9,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0,
+                "outWeight": 0.3333333433
+            },
+            {
+                "serializedVersion": "3",
+                "time": 0.25,
+                "value": 0.9,
+                "inSlope": 0,
+                "outSlope": -0.8000000000000002,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0.3333333433,
+                "outWeight": 0.3333333433
+            },
+            {
+                "serializedVersion": "3",
+                "time": 1,
+                "value": 0.3,
+                "inSlope": -0.8000000000000002,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0.3333333433,
+                "outWeight": 0
+            }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+    },
+    "perfectFitModValue": 100,
+    "perfectFitComplexShapeBonus": 1,
+    "perfectFit100PercentBonus": 0,
+    "minimumPerfectFitPercentage": 0.67,
+    "minimumCellsFilledPercentage": 0.26,
+    "perfectFitWeightedRandomness": false,
+    "perfectFitIgnoreSameCellsCalculations": true,
+    "perfectFitCurve": {
+        "serializedVersion": "2",
+        "m_Curve": [
+            {
+                "serializedVersion": "3",
+                "time": 0,
+                "value": 0.9,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0,
+                "outWeight": 0.3333333433
+            },
+            {
+                "serializedVersion": "3",
+                "time": 0.02,
+                "value": 0.9,
+                "inSlope": 0,
+                "outSlope": -40,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0.3333333433,
+                "outWeight": 0.3333333433
+            },
+            {
+                "serializedVersion": "3",
+                "time": 0.04,
+                "value": 0.1,
+                "inSlope": -40,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0.3333333433,
+                "outWeight": 0.3333333433
+            },
+            {
+                "serializedVersion": "3",
+                "time": 1,
+                "value": 0.1,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0.3333333433,
+                "outWeight": 0
+            }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+    },
+    "seenBeforeModValue": 0,
+    "clearSeenBeforeModValueAfterBanks": 0,
+    "seenBeforeRotModValue": 0,
+    "clearSeenBeforeRotModValueAfterBanks": 0,
+    "seenBeforeExactCurve": {
+        "serializedVersion": "2",
+        "m_Curve": [
+            {
+                "serializedVersion": "3",
+                "time": 0,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0,
+                "outWeight": 0.3333333433
+            },
+            {
+                "serializedVersion": "3",
+                "time": 1,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0.3333333433,
+                "outWeight": 0
+            }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+    },
+    "seenBeforeRotatedCurve": {
+        "serializedVersion": "2",
+        "m_Curve": [
+            {
+                "serializedVersion": "3",
+                "time": 0,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0,
+                "outWeight": 0.3333333433
+            },
+            {
+                "serializedVersion": "3",
+                "time": 1,
+                "value": 0,
+                "inSlope": 0,
+                "outSlope": 0,
+                "tangentMode": 69,
+                "weightedMode": 0,
+                "inWeight": 0.3333333433,
+                "outWeight": 0
+            }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+    },
+    "rngStrategy": 2,
+    "cherryPickRange": 100,
+    "shapes": [
+        {
+            "shapeGuid": "Shape_1_0",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 10
+        },
+        {
+            "shapeGuid": "Shape_1_1",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 10
+        },
+        {
+            "shapeGuid": "Shape_1_2",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 10
+        },
+        {
+            "shapeGuid": "Shape_1_3",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 10
+        },
+        {
+            "shapeGuid": "Shape_2_0",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 20
+        },
+        {
+            "shapeGuid": "Shape_2_1",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 20
+        },
+        {
+            "shapeGuid": "Shape_3_0",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 25
+        },
+        {
+            "shapeGuid": "Shape_3_1",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 25
+        },
+        {
+            "shapeGuid": "Shape_4_0",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 50
+        },
+        {
+            "shapeGuid": "Shape_4_1",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 50
+        },
+        {
+            "shapeGuid": "Shape_5_0",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 50
+        },
+        {
+            "shapeGuid": "Shape_5_1",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 50
+        },
+        {
+            "shapeGuid": "Shape_6_0",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 50
+        },
+        {
+            "shapeGuid": "Shape_7_0",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 41
+        },
+        {
+            "shapeGuid": "Shape_7_1",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 41
+        },
+        {
+            "shapeGuid": "Shape_7_2",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 41
+        },
+        {
+            "shapeGuid": "Shape_7_3",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 41
+        },
+        {
+            "shapeGuid": "Shape_8_0",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 38
+        },
+        {
+            "shapeGuid": "Shape_8_1",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 38
+        },
+        {
+            "shapeGuid": "Shape_8_2",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 38
+        },
+        {
+            "shapeGuid": "Shape_8_3",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 38
+        },
+        {
+            "shapeGuid": "Shape_9_0",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 38
+        },
+        {
+            "shapeGuid": "Shape_9_1",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 38
+        },
+        {
+            "shapeGuid": "Shape_9_2",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 38
+        },
+        {
+            "shapeGuid": "Shape_9_3",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 38
+        },
+        {
+            "shapeGuid": "Shape_10_0",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 41
+        },
+        {
+            "shapeGuid": "Shape_10_1",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 41
+        },
+        {
+            "shapeGuid": "Shape_10_2",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 41
+        },
+        {
+            "shapeGuid": "Shape_10_3",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 41
+        },
+        {
+            "shapeGuid": "Shape_10_4",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 41
+        },
+        {
+            "shapeGuid": "Shape_10_5",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 41
+        },
+        {
+            "shapeGuid": "Shape_10_6",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 41
+        },
+        {
+            "shapeGuid": "Shape_10_7",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 41
+        },
+        {
+            "shapeGuid": "Shape_11_0",
+            "onlyShowShapeAfterBrcValue": 10,
+            "shapeScore": 10
+        },
+        {
+            "shapeGuid": "Shape_11_1",
+            "onlyShowShapeAfterBrcValue": 10,
+            "shapeScore": 10
+        },
+        {
+            "shapeGuid": "Shape_12_0",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 10
+        },
+        {
+            "shapeGuid": "Shape_12_1",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 10
+        },
+        {
+            "shapeGuid": "Shape_13_0",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 50
+        },
+        {
+            "shapeGuid": "Shape_14_0",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 50
+        },
+        {
+            "shapeGuid": "Shape_14_1",
+            "onlyShowShapeAfterBrcValue": 0,
+            "shapeScore": 50
+        },
+        {
+            "shapeGuid": "Shape_16_0",
+            "onlyShowShapeAfterBrcValue": 20,
+            "shapeScore": 8
+        },
+        {
+            "shapeGuid": "Shape_16_1",
+            "onlyShowShapeAfterBrcValue": 20,
+            "shapeScore": 8
+        },
+        {
+            "shapeGuid": "Shape_16_2",
+            "onlyShowShapeAfterBrcValue": 20,
+            "shapeScore": 8
+        },
+        {
+            "shapeGuid": "Shape_16_3",
+            "onlyShowShapeAfterBrcValue": 20,
+            "shapeScore": 8
+        },
+        {
+            "shapeGuid": "Shape_17_0",
+            "onlyShowShapeAfterBrcValue": 20,
+            "shapeScore": 8
+        },
+        {
+            "shapeGuid": "Shape_17_1",
+            "onlyShowShapeAfterBrcValue": 20,
+            "shapeScore": 8
+        },
+        {
+            "shapeGuid": "Shape_17_2",
+            "onlyShowShapeAfterBrcValue": 20,
+            "shapeScore": 8
+        },
+        {
+            "shapeGuid": "Shape_17_3",
+            "onlyShowShapeAfterBrcValue": 20,
+            "shapeScore": 8
+        }
+    ],
+    "OnReviveOnlyGenTheseShapeNames": [
+        "Shape_0_0",
+        "Shape_0_0",
+        "Shape_0_0"
+    ]
+}

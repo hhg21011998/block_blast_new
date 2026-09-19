@@ -1,0 +1,147 @@
+{
+	"m_ConfigObjects": {},
+	"m_HideFlags": 0,
+	"m_Scenes": [
+		{
+			"m_Enabled": true,
+			"m_Guid": {
+				"m_Data_0_": 0,
+				"m_Data_1_": 0,
+				"m_Data_2_": 0,
+				"m_Data_3_": 0
+			},
+			"m_Path": "Assets/Scenes/0-SplashScreen.unity"
+		},
+		{
+			"m_Enabled": true,
+			"m_Guid": {
+				"m_Data_0_": 0,
+				"m_Data_1_": 0,
+				"m_Data_2_": 0,
+				"m_Data_3_": 0
+			},
+			"m_Path": "Assets/Scenes/1-LoadingScreen.unity"
+		},
+		{
+			"m_Enabled": true,
+			"m_Guid": {
+				"m_Data_0_": 0,
+				"m_Data_1_": 0,
+				"m_Data_2_": 0,
+				"m_Data_3_": 0
+			},
+			"m_Path": "Assets/Scenes/2-CollectAwards.unity"
+		},
+		{
+			"m_Enabled": true,
+			"m_Guid": {
+				"m_Data_0_": 0,
+				"m_Data_1_": 0,
+				"m_Data_2_": 0,
+				"m_Data_3_": 0
+			},
+			"m_Path": "Assets/Scenes/3-Game.unity"
+		},
+		{
+			"m_Enabled": true,
+			"m_Guid": {
+				"m_Data_0_": 0,
+				"m_Data_1_": 0,
+				"m_Data_2_": 0,
+				"m_Data_3_": 0
+			},
+			"m_Path": "Assets/Scenes/5-Settings.unity"
+		},
+		{
+			"m_Enabled": true,
+			"m_Guid": {
+				"m_Data_0_": 0,
+				"m_Data_1_": 0,
+				"m_Data_2_": 0,
+				"m_Data_3_": 0
+			},
+			"m_Path": "Assets/Scenes/8-ReviewUs.unity"
+		},
+		{
+			"m_Enabled": true,
+			"m_Guid": {
+				"m_Data_0_": 0,
+				"m_Data_1_": 0,
+				"m_Data_2_": 0,
+				"m_Data_3_": 0
+			},
+			"m_Path": "Assets/Scenes/9-AssetsLoading.unity"
+		},
+		{
+			"m_Enabled": true,
+			"m_Guid": {
+				"m_Data_0_": 0,
+				"m_Data_1_": 0,
+				"m_Data_2_": 0,
+				"m_Data_3_": 0
+			},
+			"m_Path": "Assets/Scenes/10-JourneyPopup.unity"
+		},
+		{
+			"m_Enabled": true,
+			"m_Guid": {
+				"m_Data_0_": 0,
+				"m_Data_1_": 0,
+				"m_Data_2_": 0,
+				"m_Data_3_": 0
+			},
+			"m_Path": "Assets/Scenes/2-MainMenu-1.unity"
+		},
+		{
+			"m_Enabled": true,
+			"m_Guid": {
+				"m_Data_0_": 0,
+				"m_Data_1_": 0,
+				"m_Data_2_": 0,
+				"m_Data_3_": 0
+			},
+			"m_Path": "Assets/Scenes/11-ConfirmationPopup.unity"
+		},
+		{
+			"m_Enabled": true,
+			"m_Guid": {
+				"m_Data_0_": 0,
+				"m_Data_1_": 0,
+				"m_Data_2_": 0,
+				"m_Data_3_": 0
+			},
+			"m_Path": "Assets/Scenes/12-SpecialShapePopup.unity"
+		},
+		{
+			"m_Enabled": true,
+			"m_Guid": {
+				"m_Data_0_": 0,
+				"m_Data_1_": 0,
+				"m_Data_2_": 0,
+				"m_Data_3_": 0
+			},
+			"m_Path": "Assets/Scenes/14-IQPuzzleCollectionScreen.unity"
+		},
+		{
+			"m_Enabled": true,
+			"m_Guid": {
+				"m_Data_0_": 0,
+				"m_Data_1_": 0,
+				"m_Data_2_": 0,
+				"m_Data_3_": 0
+			},
+			"m_Path": "Assets/Scenes/15-IQ-Puzzle-Game.unity"
+		},
+		{
+			"m_Enabled": true,
+			"m_Guid": {
+				"m_Data_0_": 0,
+				"m_Data_1_": 0,
+				"m_Data_2_": 0,
+				"m_Data_3_": 0
+			},
+			"m_Path": "Assets/Scenes/16-FTUE.unity"
+		}
+	],
+	"m_UseUCBPForAssetBundles": false
+}

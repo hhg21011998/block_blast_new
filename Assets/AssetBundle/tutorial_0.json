@@ -1,0 +1,27 @@
+{
+	"m_AssetBundleName": "tutorial",
+	"m_Container": {
+		"assets/data/tutorial/defaulttutorialdata.asset": {
+			"m_Asset": { "m_Collection": "cab-20f9aeffab36968e28163c52f5415b0d", "m_PathID": 2821140663328630548 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 25
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-20f9aeffab36968e28163c52f5415b0d", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 0,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-20f9aeffab36968e28163c52f5415b0d", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "tutorial",
+	"m_PathFlags": 7,
+	"m_PrefabAsset": { "m_Collection": "cab-20f9aeffab36968e28163c52f5415b0d", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-20f9aeffab36968e28163c52f5415b0d", "m_PathID": 0 },
+	"m_PreloadTable": [],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

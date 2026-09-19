@@ -1,0 +1,420 @@
+{
+	"m_AssetBundleName": "213cc9b1fe216b2be033eead08d4ef6a.bundle",
+	"m_Container": {
+		"Assets/Prefabs/BlastBoost/BlastBoost_Popup_GameStart.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -6833825449314639342 },
+			"m_PreloadIndex": 26986,
+			"m_PreloadSize": 618
+		},
+		"Assets/Prefabs/Gacha/Screen_GachaChest.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -6361211060847031805 },
+			"m_PreloadIndex": 19710,
+			"m_PreloadSize": 1548
+		},
+		"Assets/Prefabs/GoldenBlock/Screens/Screen_GoldenBlock.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 2540103519304952820 },
+			"m_PreloadIndex": 9938,
+			"m_PreloadSize": 1066
+		},
+		"Assets/Prefabs/GoldenBlock/Screens/Screen_GoldenBlock_EventEnd.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 8927533068664806423 },
+			"m_PreloadIndex": 35647,
+			"m_PreloadSize": 849
+		},
+		"Assets/Prefabs/GoldenBlock/Screens/Screen_GoldenBlock_Info.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 6775234360356056268 },
+			"m_PreloadIndex": 25972,
+			"m_PreloadSize": 912
+		},
+		"Assets/Prefabs/Input/LoadingScreen.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 7253326518315160719 },
+			"m_PreloadIndex": 15772,
+			"m_PreloadSize": 152
+		},
+		"Assets/Prefabs/JourneyWin/Popup_Journey_Win_Victory.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -5529665563705545912 },
+			"m_PreloadIndex": 17314,
+			"m_PreloadSize": 799
+		},
+		"Assets/Prefabs/Leaderboards/Elements/Leaderboards_PlayerEntry.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 8377528433798909245 },
+			"m_PreloadIndex": 9138,
+			"m_PreloadSize": 698
+		},
+		"Assets/Prefabs/Leaderboards/PopUps/Popup_Leaderboards_FTUE.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -5196167850784559775 },
+			"m_PreloadIndex": 11465,
+			"m_PreloadSize": 1099
+		},
+		"Assets/Prefabs/Leaderboards/Prefabs/Chest_Tooltip.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 7545560906677262162 },
+			"m_PreloadIndex": 31912,
+			"m_PreloadSize": 25
+		},
+		"Assets/Prefabs/Leaderboards/Screens/Screen_Leaderboards.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -778431634605800365 },
+			"m_PreloadIndex": 34190,
+			"m_PreloadSize": 1304
+		},
+		"Assets/Prefabs/Leaderboards/Screens/Screen_Leaderboards_EventEnd.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -2427527152463889139 },
+			"m_PreloadIndex": 16026,
+			"m_PreloadSize": 1237
+		},
+		"Assets/Prefabs/Leaderboards/Screens/Screen_Leaderboards_Info.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 1600697936384127852 },
+			"m_PreloadIndex": 13121,
+			"m_PreloadSize": 1045
+		},
+		"Assets/Prefabs/Leaderboards/Screens/Screen_Leaderboards_NewEvent.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 5508754966727692385 },
+			"m_PreloadIndex": 3178,
+			"m_PreloadSize": 971
+		},
+		"Assets/Prefabs/PercentageDone/PercentageDone_Popup_Mascot.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 6209226150687724317 },
+			"m_PreloadIndex": 31665,
+			"m_PreloadSize": 196
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_00.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 3263977992761505548 },
+			"m_PreloadIndex": 17263,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_01.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 6486427033690258745 },
+			"m_PreloadIndex": 26884,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_02.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 3158987305909441935 },
+			"m_PreloadIndex": 6711,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_03.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 2168049649408032338 },
+			"m_PreloadIndex": 18113,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_04.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 5122773722841293265 },
+			"m_PreloadIndex": 6762,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_05.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -3806249915041855383 },
+			"m_PreloadIndex": 36547,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_06.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 3558327124794800963 },
+			"m_PreloadIndex": 5830,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_07.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -2044819975335455405 },
+			"m_PreloadIndex": 12615,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_08.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 6631471320659719360 },
+			"m_PreloadIndex": 5728,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_09.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -4473930413539870171 },
+			"m_PreloadIndex": 35494,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_10.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -7780473230984131608 },
+			"m_PreloadIndex": 9836,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_11.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -5297999347280268775 },
+			"m_PreloadIndex": 19659,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_12.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -3544398930839266142 },
+			"m_PreloadIndex": 19557,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_13.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 134605807509533405 },
+			"m_PreloadIndex": 8832,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_14.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -4558117128469488540 },
+			"m_PreloadIndex": 34037,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_15.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 502333653126846333 },
+			"m_PreloadIndex": 15975,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_16.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 2683297572076140618 },
+			"m_PreloadIndex": 35596,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_17.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -6063455358944347884 },
+			"m_PreloadIndex": 11004,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_18.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 8332947057938474899 },
+			"m_PreloadIndex": 26935,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_19.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -7445722842025178146 },
+			"m_PreloadIndex": 8781,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_20.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -540483035280010026 },
+			"m_PreloadIndex": 9887,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_21.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 8820574405928338448 },
+			"m_PreloadIndex": 12564,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_22.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -4297981181883982773 },
+			"m_PreloadIndex": 21258,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_23.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 6875523504108452395 },
+			"m_PreloadIndex": 9087,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_24.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -2164723801494863004 },
+			"m_PreloadIndex": 8934,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_25.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 8038391551885949795 },
+			"m_PreloadIndex": 19455,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_26.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -4641085027778853419 },
+			"m_PreloadIndex": 36496,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_27.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -692750308386624103 },
+			"m_PreloadIndex": 5779,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_28.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 6208972216313902262 },
+			"m_PreloadIndex": 19506,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_29.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 762042148281900232 },
+			"m_PreloadIndex": 8883,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_30.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -3390702482539108064 },
+			"m_PreloadIndex": 15924,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_31.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 7612254928736266243 },
+			"m_PreloadIndex": 19608,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_32.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 1724193404228140736 },
+			"m_PreloadIndex": 9036,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_33.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -5194432335805443918 },
+			"m_PreloadIndex": 7834,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_34.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -3244151134906478025 },
+			"m_PreloadIndex": 11055,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_35.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -2558513600608822412 },
+			"m_PreloadIndex": 24460,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_36.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -3245614105061032780 },
+			"m_PreloadIndex": 34139,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_37.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 6871347217334288157 },
+			"m_PreloadIndex": 34088,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_38.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 7684673878761116746 },
+			"m_PreloadIndex": 8985,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_39.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -9077876630319962065 },
+			"m_PreloadIndex": 8730,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_40.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -7444271176129224281 },
+			"m_PreloadIndex": 7154,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_41.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 6316779798538335010 },
+			"m_PreloadIndex": 35545,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/Avatars/PlayerProfile_Avatar_42.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -6352133369831702836 },
+			"m_PreloadIndex": 31861,
+			"m_PreloadSize": 51
+		},
+		"Assets/Prefabs/PlayerProfile/PlayerProfile_EditScreen.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -6190229442295833328 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 882
+		},
+		"Assets/Prefabs/PlayerProfile/PlayerProfile_Screen.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 123146505313304715 },
+			"m_PreloadIndex": 4149,
+			"m_PreloadSize": 732
+		},
+		"Assets/Prefabs/PlayerProfile/PlayerProfile_Status.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 2452575473381809510 },
+			"m_PreloadIndex": 18164,
+			"m_PreloadSize": 441
+		},
+		"Assets/Prefabs/SeasonPass/Screens/Screen_SeasonPass.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -7555461672396608413 },
+			"m_PreloadIndex": 29940,
+			"m_PreloadSize": 1725
+		},
+		"Assets/Prefabs/SeasonPass/Screens/Screen_SeasonPass_EventEnd.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 4288983085303095358 },
+			"m_PreloadIndex": 7885,
+			"m_PreloadSize": 845
+		},
+		"Assets/Prefabs/SeasonPass/Screens/Screen_SeasonPass_Info.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 2300702753347564977 },
+			"m_PreloadIndex": 4881,
+			"m_PreloadSize": 847
+		},
+		"Assets/Prefabs/Shop/Screen_Shop.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 4691774935925551242 },
+			"m_PreloadIndex": 882,
+			"m_PreloadSize": 2296
+		},
+		"Assets/Prefabs/UI/Confirmation/ConfirmationPopup.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 924919425249681976 },
+			"m_PreloadIndex": 12666,
+			"m_PreloadSize": 455
+		},
+		"Assets/Prefabs/UI/Screen_RewardClaim.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 3391673231426030401 },
+			"m_PreloadIndex": 33436,
+			"m_PreloadSize": 601
+		},
+		"Assets/Prefabs/UI/Screen_Rewards.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 2561957577424453317 },
+			"m_PreloadIndex": 31937,
+			"m_PreloadSize": 1499
+		},
+		"Assets/Prefabs/UI_Canvas/Canvas_Game_Popups_BlastPass_Info.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 2593164544949580083 },
+			"m_PreloadIndex": 18605,
+			"m_PreloadSize": 850
+		},
+		"Assets/Prefabs/UI_Canvas/Canvas_Game_Popups_Confirmation_Restart.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -8536575842441827243 },
+			"m_PreloadIndex": 21309,
+			"m_PreloadSize": 1107
+		},
+		"Assets/Prefabs/UI_Canvas/Canvas_Game_Popups_Failed_GameOver_Hybrid.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 6148753062598410336 },
+			"m_PreloadIndex": 22416,
+			"m_PreloadSize": 2044
+		},
+		"Assets/Prefabs/UI_Canvas/Canvas_Game_Popups_Failed_LoseMessage.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -7252867394718580276 },
+			"m_PreloadIndex": 6813,
+			"m_PreloadSize": 341
+		},
+		"Assets/Prefabs/UI_Canvas/Canvas_Game_Popups_Failed_Refill_Lives.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -2477661012364382894 },
+			"m_PreloadIndex": 14166,
+			"m_PreloadSize": 1606
+		},
+		"Assets/Prefabs/UI_Canvas/Canvas_Game_Popups_Failed_Revive_Hybrid.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 3113916740484403230 },
+			"m_PreloadIndex": 27604,
+			"m_PreloadSize": 2336
+		},
+		"Assets/Prefabs/UI_Canvas/Canvas_Game_UI_Transparent_Background.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -8643557631896536773 },
+			"m_PreloadIndex": 6684,
+			"m_PreloadSize": 27
+		},
+		"Assets/Prefabs/UI_Canvas/Canvas_Popup_Freecash.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 949313126507144428 },
+			"m_PreloadIndex": 5881,
+			"m_PreloadSize": 803
+		},
+		"Assets/Prefabs/UI_Canvas/Canvas_Popup_PreGame.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": -1256723216668707474 },
+			"m_PreloadIndex": 24511,
+			"m_PreloadSize": 1461
+		},
+		"Assets/Prefabs/UI_Debug/DebugScreen.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 840660766237319700 },
+			"m_PreloadIndex": 7205,
+			"m_PreloadSize": 629
+		},
+		"Assets/Prefabs/WebView/Screen_WebView.prefab": {
+			"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 4651229203743870301 },
+			"m_PreloadIndex": 11106,
+			"m_PreloadSize": 359
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 0 },
+	"m_Dependencies": [
+		"cab-391ae08e78ed0001c952c100bd3e1c5a",
+		"cab-9e0c3e89d49de3fd95b4fd743df94db6"
+	],
+	"m_ExplicitDataLayout": 1,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "213cc9b1fe216b2be033eead08d4ef6a.bundle",
+	"m_PathFlags": 0,
+	"m_PrefabAsset": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-dde25ffd9f122887beaf868f49442439", "m_PathID": 0 },
+	"m_PreloadTable": [],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

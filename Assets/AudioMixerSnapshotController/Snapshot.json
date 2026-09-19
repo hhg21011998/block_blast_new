@@ -1,0 +1,170 @@
+{
+	"m_AudioMixer": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 8443 },
+	"m_CorrespondingSourceObject": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_FloatValues": [
+		{
+			"Key": {
+				"m_Data_0_": 3707913659,
+				"m_Data_1_": 1200453568,
+				"m_Data_2_": 1013552037,
+				"m_Data_3_": 4097760079
+			},
+			"Value": -5
+		},
+		{
+			"Key": {
+				"m_Data_0_": 4294575622,
+				"m_Data_1_": 1184581978,
+				"m_Data_2_": 2594933680,
+				"m_Data_3_": 1008060414
+			},
+			"Value": 1
+		},
+		{
+			"Key": {
+				"m_Data_0_": 3994317803,
+				"m_Data_1_": 1277728390,
+				"m_Data_2_": 2509716647,
+				"m_Data_3_": 4233488093
+			},
+			"Value": -2
+		},
+		{
+			"Key": {
+				"m_Data_0_": 2051493732,
+				"m_Data_1_": 1172062379,
+				"m_Data_2_": 431722926,
+				"m_Data_3_": 1531141456
+			},
+			"Value": 1
+		},
+		{
+			"Key": {
+				"m_Data_0_": 2263305365,
+				"m_Data_1_": 1262365056,
+				"m_Data_2_": 3870477484,
+				"m_Data_3_": 4244797366
+			},
+			"Value": -10
+		},
+		{
+			"Key": {
+				"m_Data_0_": 1245024910,
+				"m_Data_1_": 1082124184,
+				"m_Data_2_": 1343041176,
+				"m_Data_3_": 1991608273
+			},
+			"Value": 1
+		},
+		{
+			"Key": {
+				"m_Data_0_": 2162276228,
+				"m_Data_1_": 1256076086,
+				"m_Data_2_": 3900081054,
+				"m_Data_3_": 1141352627
+			},
+			"Value": -8
+		},
+		{
+			"Key": {
+				"m_Data_0_": 1763779375,
+				"m_Data_1_": 1165594347,
+				"m_Data_2_": 989565628,
+				"m_Data_3_": 4181565383
+			},
+			"Value": 0.95
+		},
+		{
+			"Key": {
+				"m_Data_0_": 3181657796,
+				"m_Data_1_": 1303519067,
+				"m_Data_2_": 1135988142,
+				"m_Data_3_": 1307570070
+			},
+			"Value": -7
+		},
+		{
+			"Key": {
+				"m_Data_0_": 107830835,
+				"m_Data_1_": 1321076811,
+				"m_Data_2_": 90712492,
+				"m_Data_3_": 3147515615
+			},
+			"Value": 1
+		},
+		{
+			"Key": {
+				"m_Data_0_": 2063915363,
+				"m_Data_1_": 1283875411,
+				"m_Data_2_": 3524792462,
+				"m_Data_3_": 1317295335
+			},
+			"Value": -10
+		},
+		{
+			"Key": {
+				"m_Data_0_": 3122099345,
+				"m_Data_1_": 1323507612,
+				"m_Data_2_": 3441205949,
+				"m_Data_3_": 2268502200
+			},
+			"Value": 2
+		},
+		{
+			"Key": {
+				"m_Data_0_": 635646486,
+				"m_Data_1_": 1305012395,
+				"m_Data_2_": 1980119948,
+				"m_Data_3_": 3263578051
+			},
+			"Value": 0.1
+		},
+		{
+			"Key": {
+				"m_Data_0_": 3334954044,
+				"m_Data_1_": 1208272472,
+				"m_Data_2_": 3463485587,
+				"m_Data_3_": 2612094830
+			},
+			"Value": 0.3
+		},
+		{
+			"Key": {
+				"m_Data_0_": 3566231603,
+				"m_Data_1_": 1126524725,
+				"m_Data_2_": 689256339,
+				"m_Data_3_": 4070128092
+			},
+			"Value": 0
+		},
+		{
+			"Key": {
+				"m_Data_0_": 4181870942,
+				"m_Data_1_": 1221829275,
+				"m_Data_2_": 1479490448,
+				"m_Data_3_": 636154785
+			},
+			"Value": 10
+		},
+		{
+			"Key": {
+				"m_Data_0_": 437545194,
+				"m_Data_1_": 1211904360,
+				"m_Data_2_": 1326762673,
+				"m_Data_3_": 2391996092
+			},
+			"Value": 1
+		}
+	],
+	"m_HideFlags": 0,
+	"m_Name": "Snapshot",
+	"m_PrefabAsset": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_SnapshotID": {
+		"m_Data_0_": 2662375602,
+		"m_Data_1_": 1306235801,
+		"m_Data_2_": 2706910881,
+		"m_Data_3_": 4069446114
+	},
+	"m_TransitionOverrides": []
+}

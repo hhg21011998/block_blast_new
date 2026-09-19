@@ -1,0 +1,34 @@
+{
+    "events": [
+        {
+            "priority": 13,
+            "countdown_start_time": "2023-09-12T00:00:00Z",
+            "start_time": "2023-09-14T16:22:00Z",
+            "end_time": "2023-10-01T00:00:00Z",
+            "id": 29,
+            "title_translation_key": "Journey/Journey-01-title",
+            "subtitle_translation_key": "Journey/Journey-01-subtitle",
+            "config": {
+                "levels_file_id": 95,
+                "journey_levels_url": "https://gs-stg-cdn.tripledotapi.com/store/files/block_party/files/e35ab21cc63e0dba7bf01f7b8b691a9f.json"
+            },
+            "asset_bundle_main": "blocktava-journey-01",
+            "asset_bundle_rewards": "blocktava-journey-01-rewards"
+        },
+        {
+            "priority": 4,
+            "countdown_start_time": "2023-09-12T00:00:00Z",
+            "start_time": "2023-09-13T00:00:00Z",
+            "end_time": "2023-09-14T16:15:00Z",
+            "id": 30,
+            "title_translation_key": "Journey/Journey-04-title",
+            "subtitle_translation_key": "Journey/Journey-04-subtitle",
+            "config": {
+                "levels_file_id": 97,
+                "journey_levels_url": "https://gs-stg-cdn.tripledotapi.com/store/files/block_party/files/8aca7f6725bbaeaac5d7751994ba1837.json"
+            },
+            "asset_bundle_main": "blocktava-journey-04",
+            "asset_bundle_rewards": "blocktava-journey-04-rewards"
+        }
+    ]
+}

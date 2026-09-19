@@ -1,0 +1,255 @@
+{
+  "version":"BakedIn",
+  "updated": "2024-10-15-15-58",
+  "enabled": false,
+  "PuzzleConfigDataModel": {
+    "GrandPrizePuzzles": [
+    ],
+    "Puzzles": [
+    ],
+    "lockedTextShowsRemainingChests": false
+  },
+  "GachaConfigDataModel": {
+    "chestsBeforeRvEnabled": 2,
+    "gachaDataModels": [
+    ],
+    "journeyGachaConfig": {
+      "canObtainGacha": true,
+      "returnToLobbyAfterGacha": false,
+      "startingGachaRewardSchedule": {
+        "maxScheduleIndex": 10,
+        "rewardSchedule": [
+          {
+            "gachaRarity": "bronze",
+            "scheduleIndex": 2
+          },
+          {
+            "gachaRarity": "silver",
+            "scheduleIndex": 4
+          },
+          {
+            "gachaRarity": "gold",
+            "scheduleIndex": 6
+          },
+          {
+            "gachaRarity": "bronze",
+            "scheduleIndex": 8
+          },
+          {
+            "gachaRarity": "platinum",
+            "scheduleIndex": 10
+          }
+        ]
+      },
+      "repeatingGachaRewardSchedule": {
+        "maxScheduleIndex": 10,
+        "rewardSchedule": [
+          {
+            "gachaRarity": "bronze",
+            "scheduleIndex": 2
+          },
+          {
+            "gachaRarity": "silver",
+            "scheduleIndex": 4
+          },
+          {
+            "gachaRarity": "gold",
+            "scheduleIndex": 6
+          },
+          {
+            "gachaRarity": "platinum",
+            "scheduleIndex": 10
+          }
+        ]
+      }
+    },
+    "classicGachaConfig": {
+      "canObtainGacha": true,
+      "returnToLobbyAfterGacha": false,
+      "maxCumulativeScore": 200,
+      "minimumScoreRequiredForGachaChance": 100,
+      "probability": {
+        "keys": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inTangent": 0.0,
+            "outTangent": 0.0,
+            "inWeight": 0.0,
+            "outWeight": 0.0,
+            "weightedMode": 0,
+            "tangentMode": 0
+          },
+          {
+            "time": 1.0,
+            "value": 1.0,
+            "inTangent": 2.0,
+            "outTangent": 2.0,
+            "inWeight": 0.0,
+            "outWeight": 0.0,
+            "weightedMode": 0,
+            "tangentMode": 0
+          }
+        ],
+        "length": 2,
+        "preWrapMode": 8,
+        "postWrapMode": 8
+      },
+      "startingGachaSchedule": {
+        "maxScheduleIndex": 20,
+        "rewardSchedule": [
+          {
+            "gachaRarity": "bronze",
+            "scheduleIndex": 0
+          },
+          {
+            "gachaRarity": "silver",
+            "scheduleIndex": 5
+          },
+          {
+            "gachaRarity": "gold",
+            "scheduleIndex": 10
+          },
+          {
+            "gachaRarity": "platinum",
+            "scheduleIndex": 15
+          }
+        ]
+      },
+      "repeatingGachaSchedule": {
+        "maxScheduleIndex": 7,
+        "rewardSchedule": [
+          {
+            "gachaRarity": "bronze",
+            "scheduleIndex": 0
+          },
+          {
+            "gachaRarity": "silver",
+            "scheduleIndex": 3
+          },
+          {
+            "gachaRarity": "gold",
+            "scheduleIndex": 5
+          },
+          {
+            "gachaRarity": "bronze",
+            "scheduleIndex": 6
+          },
+          {
+            "gachaRarity": "platinum",
+            "scheduleIndex": 7
+          }
+        ]
+      }
+    }
+  },
+  "puzzleGameConfig": {
+    "dragOffset": {
+      "x": 0.0,
+      "y": 72.0,
+      "normalized": {
+        "x": 0.0,
+        "y": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 72.0,
+      "sqrMagnitude": 5184.0
+    },
+    "maxDragOffset": {
+      "x": 0.0,
+      "y": 1000.0,
+      "normalized": {
+        "x": 0.0,
+        "y": 1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 1000.0,
+      "sqrMagnitude": 1000000.0
+    },
+    "useMaxDragOffset": false,
+    "minOverlapNormalizedPercentage": 1.0,
+    "puzzlePiecesBankConfig": {
+      "cellSpacing": {
+        "x": 64.0,
+        "y": 42.0,
+        "normalized": {
+          "x": 0.8360479,
+          "y": 0.548656464,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 76.55064,
+        "sqrMagnitude": 5860.0
+      },
+      "gridConfigRanges": [
+        {
+          "minPiecesInc": 0,
+          "maxPiecesInc": 3,
+          "rows": 1,
+          "cellSize": 400.0
+        },
+        {
+          "minPiecesInc": 4,
+          "maxPiecesInc": 6,
+          "rows": 2,
+          "cellSize": 400.0
+        },
+        {
+          "minPiecesInc": 7,
+          "maxPiecesInc": 9,
+          "rows": 3,
+          "cellSize": 300.0
+        },
+        {
+          "minPiecesInc": 10,
+          "maxPiecesInc": 12,
+          "rows": 3,
+          "cellSize": 250.0
+        },
+        {
+          "minPiecesInc": 13,
+          "maxPiecesInc": 16,
+          "rows": 4,
+          "cellSize": 250.0
+        },
+        {
+          "minPiecesInc": 17,
+          "maxPiecesInc": 99,
+          "rows": 4,
+          "cellSize": 150.0
+        }
+      ]
+    }
+  },
+  "ftueConfigDataModel": {
+    "enabled": true,
+    "returnToLobbyAfterFtueGacha": true,
+    "ftuePuzzleId": "puzzle-01",
+    "ftuePieceId": "puzzle-01-0",
+    "ftueFirstGachaForcedResults": {
+      "gachaRarity": "platinum",
+      "gachaSource": 0,
+      "journeyLevelRewardedAt": 0,
+      "piecesAwarded": [
+        "puzzle-01-0",
+        "puzzle-01-1",
+        "puzzle-01-2",
+        "puzzle-01-3",
+        "puzzle-01-4"
+      ],
+      "rewardedVideoPieces": []
+    },
+    "puzzleFtueHandMovement": {
+      "delaybeforeFade": 0.15,
+      "ftueFadeTime": 0.25,
+      "delayBeforeMovingToPiece": 0.35,
+      "delayBeforePickingUp": 0.25,
+      "delayAfterPickingUp": 0.25,
+      "delayBeforeDropping": 0.25,
+      "handMoveTime": 0.75,
+      "handMoveEase": 9
+    }
+  }
+}

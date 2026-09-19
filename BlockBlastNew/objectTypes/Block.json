@@ -1,0 +1,52 @@
+{
+	"name": "Block",
+	"plugin-id": "Sprite",
+	"sid": 196721626622958,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 129,
+						"height": 128,
+						"originX": 0.5038759689922481,
+						"originY": 0.49609375,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5075077,
+						"collisionPoly": {
+							"points": [
+								0.007751937984496124,
+								0.0078125,
+								0.9922480620155039,
+								0.0078125,
+								0.9922480620155039,
+								0.9921875,
+								0.007751937984496124,
+								0.9921875
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 774469268400397,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

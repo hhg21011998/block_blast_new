@@ -1,0 +1,214 @@
+{
+	"m_AudioMixerGroupViews": [
+		{
+			"m_Guids": [
+				{
+					"m_Data_0_": 2653620301,
+					"m_Data_1_": 1193264008,
+					"m_Data_2_": 4193450147,
+					"m_Data_3_": 1613680095
+				},
+				{
+					"m_Data_0_": 262288902,
+					"m_Data_1_": 1205786668,
+					"m_Data_2_": 3656061079,
+					"m_Data_3_": 4182101075
+				},
+				{
+					"m_Data_0_": 3705718404,
+					"m_Data_1_": 1204635360,
+					"m_Data_2_": 1694774455,
+					"m_Data_3_": 837999436
+				},
+				{
+					"m_Data_0_": 1272189566,
+					"m_Data_1_": 1169984492,
+					"m_Data_2_": 2251784381,
+					"m_Data_3_": 2580643113
+				},
+				{
+					"m_Data_0_": 3090723169,
+					"m_Data_1_": 1224631461,
+					"m_Data_2_": 403524769,
+					"m_Data_3_": 2468288690
+				}
+			],
+			"m_Name": "View"
+		}
+	],
+	"m_CorrespondingSourceObject": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_CurrentViewIndex": 0,
+	"m_EnableSuspend": true,
+	"m_ExposedParameters": [],
+	"m_HideFlags": 0,
+	"m_MasterGroup": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 8445 },
+	"m_MixerConstant": {
+		"m_EffectGUIDs": [
+			{
+				"m_Data_0_": 1807195501,
+				"m_Data_1_": 1187972404,
+				"m_Data_2_": 826237360,
+				"m_Data_3_": 2957237907
+			},
+			{
+				"m_Data_0_": 3870487396,
+				"m_Data_1_": 1261408594,
+				"m_Data_2_": 2227996861,
+				"m_Data_3_": 696888039
+			}
+		],
+		"m_Effects": [
+			{
+				"m_Bypass": false,
+				"m_GroupConstantIndex": 3,
+				"m_ParameterIndices": [],
+				"m_PrevEffectIndex": 4294967295,
+				"m_SendTargetEffectIndex": 4294967295,
+				"m_Type": -2,
+				"m_WetMixLevelIndex": 4294967295
+			},
+			{
+				"m_Bypass": false,
+				"m_GroupConstantIndex": 3,
+				"m_ParameterIndices": [
+					10,
+					11,
+					12,
+					13,
+					14,
+					15,
+					16
+				],
+				"m_PrevEffectIndex": 0,
+				"m_SendTargetEffectIndex": 4294967295,
+				"m_Type": -5,
+				"m_WetMixLevelIndex": 4294967295
+			}
+		],
+		"m_ExposedParameterIndices": [],
+		"m_ExposedParameterNames": [],
+		"m_GroupGUIDs": [
+			{
+				"m_Data_0_": 2653620301,
+				"m_Data_1_": 1193264008,
+				"m_Data_2_": 4193450147,
+				"m_Data_3_": 1613680095
+			},
+			{
+				"m_Data_0_": 262288902,
+				"m_Data_1_": 1205786668,
+				"m_Data_2_": 3656061079,
+				"m_Data_3_": 4182101075
+			},
+			{
+				"m_Data_0_": 3705718404,
+				"m_Data_1_": 1204635360,
+				"m_Data_2_": 1694774455,
+				"m_Data_3_": 837999436
+			},
+			{
+				"m_Data_0_": 1272189566,
+				"m_Data_1_": 1169984492,
+				"m_Data_2_": 2251784381,
+				"m_Data_3_": 2580643113
+			},
+			{
+				"m_Data_0_": 3090723169,
+				"m_Data_1_": 1224631461,
+				"m_Data_2_": 403524769,
+				"m_Data_3_": 2468288690
+			}
+		],
+		"m_GroupNameBuffer": "TWFzdGVyAFNvdW5kRWZmZWN0cwBNdXNpYwBWTwBDbGVhclN0aW5nZXJzAAA=",
+		"m_Groups": [
+			{
+				"m_BypassEffects": false,
+				"m_Mute": false,
+				"m_ParentConstantIndex": -1,
+				"m_PitchIndex": 1,
+				"m_Solo": false,
+				"m_VolumeIndex": 0
+			},
+			{
+				"m_BypassEffects": false,
+				"m_Mute": false,
+				"m_ParentConstantIndex": 0,
+				"m_PitchIndex": 3,
+				"m_Solo": false,
+				"m_VolumeIndex": 2
+			},
+			{
+				"m_BypassEffects": false,
+				"m_Mute": false,
+				"m_ParentConstantIndex": 0,
+				"m_PitchIndex": 5,
+				"m_Solo": false,
+				"m_VolumeIndex": 4
+			},
+			{
+				"m_BypassEffects": false,
+				"m_Mute": false,
+				"m_ParentConstantIndex": 0,
+				"m_PitchIndex": 7,
+				"m_Solo": false,
+				"m_VolumeIndex": 6
+			},
+			{
+				"m_BypassEffects": false,
+				"m_Mute": false,
+				"m_ParentConstantIndex": 0,
+				"m_PitchIndex": 9,
+				"m_Solo": false,
+				"m_VolumeIndex": 8
+			}
+		],
+		"m_NumSideChainBuffers": 1,
+		"m_PluginEffectNameBuffer": "AA==",
+		"m_SnapshotGUIDs": [
+			{
+				"m_Data_0_": 2662375602,
+				"m_Data_1_": 1306235801,
+				"m_Data_2_": 2706910881,
+				"m_Data_3_": 4069446114
+			}
+		],
+		"m_SnapshotNameBuffer": "U25hcHNob3QAAA==",
+		"m_Snapshots": [
+			{
+				"m_NameHash": 3577444195,
+				"m_TransitionIndices": [],
+				"m_TransitionTypes": [],
+				"m_Values": [
+					-5,
+					1,
+					-2,
+					1,
+					-10,
+					1,
+					-8,
+					0.95,
+					-7,
+					1,
+					-10,
+					2,
+					0.1,
+					0.3,
+					0,
+					10,
+					1
+				]
+			}
+		]
+	},
+	"m_Name": "GameMixer",
+	"m_OutputGroup": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_PrefabAsset": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_Snapshots": [
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 8449 }
+	],
+	"m_StartSnapshot": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 8449 },
+	"m_SuspendThreshold": -80,
+	"m_TargetSnapshot": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 8449 },
+	"m_UpdateMode": 0
+}

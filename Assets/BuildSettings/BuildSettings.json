@@ -1,0 +1,44 @@
+{
+	"m_AuthToken": "f3810473f50e043aff5b8bff55f8b40cf5fd9194",
+	"m_BuildTags": [],
+	"m_EnabledVRDevices": [],
+	"m_EnableDynamicBatching": false,
+	"m_GraphicsAPIs": [
+		21,
+		11
+	],
+	"m_HasAdvancedVersion": true,
+	"m_HasClusterRendering": false,
+	"m_HasLocalLightShadows": true,
+	"m_HasPROVersion": true,
+	"m_HasPublishingRights": true,
+	"m_HasShadows": true,
+	"m_HasSoftShadows": true,
+	"m_HideFlags": 0,
+	"m_IsEducationalBuild": false,
+	"m_IsEmbedded": false,
+	"m_IsNoWatermarkBuild": true,
+	"m_IsPrototypingBuild": false,
+	"m_IsTrial": false,
+	"m_PreloadedPlugins": [
+		"libVuplexWebViewAndroid"
+	],
+	"m_Scenes": [
+		"Assets/Scenes/0-SplashScreen.unity",
+		"Assets/Scenes/1-LoadingScreen.unity",
+		"Assets/Scenes/2-CollectAwards.unity",
+		"Assets/Scenes/3-Game.unity",
+		"Assets/Scenes/5-Settings.unity",
+		"Assets/Scenes/8-ReviewUs.unity",
+		"Assets/Scenes/9-AssetsLoading.unity",
+		"Assets/Scenes/10-JourneyPopup.unity",
+		"Assets/Scenes/2-MainMenu-1.unity",
+		"Assets/Scenes/11-ConfirmationPopup.unity",
+		"Assets/Scenes/12-SpecialShapePopup.unity",
+		"Assets/Scenes/14-IQPuzzleCollectionScreen.unity",
+		"Assets/Scenes/15-IQ-Puzzle-Game.unity",
+		"Assets/Scenes/16-FTUE.unity"
+	],
+	"m_UsesOnMouseEvents": false,
+	"m_Version": "6000.3.15f1"
+}

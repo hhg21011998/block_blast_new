@@ -1,0 +1,9 @@
+# README
+
+These are the firebase config files for iOS and Android.
+
+The main files are:
+
+`google-services.json`
+`GoogleService-Info.plist`
+

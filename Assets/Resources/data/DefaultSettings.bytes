@@ -1,0 +1,8 @@
+﻿{
+  "musicEnabled" : true,
+  "musicVolume" : 1.0,
+  "soundEnabled" : true,
+  "soundVolume" : 1.0,
+  "hapticsEnabled" : true,
+  "hapticsStrength" : 1.0
+}

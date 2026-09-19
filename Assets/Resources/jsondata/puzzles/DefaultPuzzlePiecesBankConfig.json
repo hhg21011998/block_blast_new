@@ -1,0 +1,38 @@
+{
+    "cellSpacing": {
+        "x": 64,
+        "y": 64
+    },
+    "gridConfigRanges": [
+        {
+            "minPiecesInc": 0,
+            "maxPiecesInc": 3,
+            "rows": 1,
+            "cellSize": 400.0
+        },
+        {
+            "minPiecesInc": 4,
+            "maxPiecesInc": 6,
+            "rows": 2,
+            "cellSize": 400.0
+        },
+        {
+            "minPiecesInc": 7,
+            "maxPiecesInc": 12,
+            "rows": 3,
+            "cellSize": 250
+        },
+        {
+            "minPiecesInc": 13,
+            "maxPiecesInc": 15,
+            "rows": 4,
+            "cellSize": 175
+        },
+        {
+            "minPiecesInc": 16,
+            "maxPiecesInc": 99,
+            "rows": 4,
+            "cellSize": 150
+        }
+    ]
+}

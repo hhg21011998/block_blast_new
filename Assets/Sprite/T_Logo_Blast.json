@@ -1,0 +1,222 @@
+{
+	"m_AtlasRD": {
+		"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+		"m_AtlasRectOffset": {
+			"m_X": 0,
+			"m_Y": 0
+		},
+		"m_Bindpose": [],
+		"m_DownscaleMultiplier": 0,
+		"m_IndexBuffer": "",
+		"m_SecondaryTextures": [],
+		"m_SettingsRaw": 0,
+		"m_SubMeshes": [],
+		"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+		"m_TextureRect": {
+			"m_Height": 0,
+			"m_Width": 0,
+			"m_X": 0,
+			"m_Y": 0
+		},
+		"m_TextureRectOffset": {
+			"m_X": 0,
+			"m_Y": 0
+		},
+		"m_UvTransform": {
+			"m_W": 0,
+			"m_X": 0,
+			"m_Y": 0,
+			"m_Z": 0
+		},
+		"m_VertexData": {
+			"m_Channels": [],
+			"m_Data": "",
+			"m_VertexCount": 0
+		}
+	},
+	"m_AtlasTags": [],
+	"m_Bones": [],
+	"m_Border": {
+		"m_W": 0,
+		"m_X": 0,
+		"m_Y": 0,
+		"m_Z": 0
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_Extrude": 1,
+	"m_HideFlags": 0,
+	"m_IsPolygon": false,
+	"m_Name": "T_Logo_Blast",
+	"m_Offset": {
+		"m_X": 0,
+		"m_Y": 0
+	},
+	"m_PackingTag": "",
+	"m_PhysicsShape": [],
+	"m_Pivot": {
+		"m_X": 0.5,
+		"m_Y": 0.5
+	},
+	"m_PixelsToUnits": 192,
+	"m_PrefabAsset": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_RD": {
+		"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+		"m_AtlasRectOffset": {
+			"m_X": 1028,
+			"m_Y": 0
+		},
+		"m_Bindpose": [],
+		"m_DownscaleMultiplier": 1,
+		"m_IndexBuffer": "YwBZAE4AWgBOAFkAYgBOAFoAYQBOAGIATQBOAGEAYABfAF4AXQBeAF8AWQBeAF0AXABZAF0AWwBZAFwAWABZAFsAWgBZAFgAVwBWAFQAVQBUAFYAUwBUAFUAUgBUAFMAUABSAFMAUQBSAFAASABRAFAATwBIAFAATgBIAE8ATQBIAE4ATABIAE0ASwBIAEwASgBIAEsASQBIAEoARwBIAEkARgBIAEcAJABGAEcARQBGACQARABFACQAQwBEACQAQgBDACQAQQBCACQAQABBACQAPwBAACQAPgA/ACQAPQA+ACQAOQA9ACQAPAA9ADkAOgA8ADkAOwA6ADkAOAA5ACQANwA4ACQANgA3ACQANQA2ACQANAA1ACQAMwA0ACQAMgAzACQAMQAyACQAMAAxACQALwAwACQALgAvACQALQAuACQALAAtACQAKwAsACQAKgArACQAKQAqACQAKAApACQAJwAoACQAJgAnACQAJQAmACQAIQAlACQAIwAhACQAIgAhACMAIAAhACIAHgAhACAAHwAeACAABgAeAB8ABQAeAAYAHQAeAAUAHAAdAAUAGgAdABwAGwAaABwAFQAaABsAGQAaABUAGAAZABUAFwAYABUAFgAXABUAEwAWABUAFAATABUAEgATABQAEQATABIADwARABIAEAARAA8ADgAQAA8ACwAOAA8ADAAOAAsADQAMAAsAAQACAAkACAAJAAIACgAJAAgACAACAAcABgAEAAUAAwAFAAQAAAADAAQAAQADAAAAAgABAAAA",
+		"m_SecondaryTextures": [],
+		"m_SettingsRaw": 67,
+		"m_SubMeshes": [
+			{
+				"m_BaseVertex": 0,
+				"m_FirstByte": 0,
+				"m_FirstVertex": 0,
+				"m_IndexCount": 294,
+				"m_LocalAABB": {
+					"m_Center": {
+						"m_X": 0,
+						"m_Y": 0,
+						"m_Z": 0
+					},
+					"m_Extent": {
+						"m_X": 0,
+						"m_Y": 0,
+						"m_Z": 0
+					}
+				},
+				"m_Topology": 0,
+				"m_VertexCount": 100
+			}
+		],
+		"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 67 },
+		"m_TextureRect": {
+			"m_Height": 384,
+			"m_Width": 768,
+			"m_X": 1028,
+			"m_Y": 0
+		},
+		"m_TextureRectOffset": {
+			"m_X": 0,
+			"m_Y": 0
+		},
+		"m_UvTransform": {
+			"m_W": 192,
+			"m_X": 192,
+			"m_Y": 1412,
+			"m_Z": 192
+		},
+		"m_VertexData": {
+			"m_Channels": [
+				{
+					"m_Dimension": 3,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 2,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 1
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				}
+			],
+			"m_Data": "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",
+			"m_VertexCount": 100
+		}
+	},
+	"m_Rect": {
+		"m_Height": 384,
+		"m_Width": 768,
+		"m_X": 1028,
+		"m_Y": 0
+	},
+	"m_RenderDataKey": {
+		"Key": {
+			"m_Data_0_": 1826455909,
+			"m_Data_1_": 1222898481,
+			"m_Data_2_": 179905429,
+			"m_Data_3_": 44877928
+		},
+		"Value": 21300000
+	},
+	"m_ScriptableObjects": [],
+	"m_SpriteAtlas": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_SpriteID": ""
+}

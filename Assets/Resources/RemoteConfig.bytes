@@ -1,0 +1,708 @@
+{
+  "goober.max_move_range_in_cells": 99,
+  "liveops_attributes": {
+    "ab_variant_ids": []
+  },
+  "configs": {
+    "localizations": {
+      "url": "https://localisations-server-production-cdn.tripledotapi.com/api/v1/localisations?app_id=30&timestamp=1767870357&type=live"
+    },
+    "adjust_config": {
+      "url": "https://gs-prd-web-cdn.tripledotapi.com/api/v4/adjust_config?application_id=28&id%5B%5D=1510&id%5B%5D=1509&id%5B%5D=1508&id%5B%5D=1507&id%5B%5D=1506&id%5B%5D=1505&id%5B%5D=1504&id%5B%5D=1503&id%5B%5D=1417&id%5B%5D=1198&id%5B%5D=1197&id%5B%5D=1196&id%5B%5D=1195&id%5B%5D=1194&id%5B%5D=1193&id%5B%5D=1192&id%5B%5D=1191&id%5B%5D=1190&id%5B%5D=1189&id%5B%5D=1188&id%5B%5D=1187&id%5B%5D=1186&id%5B%5D=1185&id%5B%5D=1184&id%5B%5D=1183&id%5B%5D=1182&id%5B%5D=1181&id%5B%5D=1180&id%5B%5D=1179&id%5B%5D=1178&id%5B%5D=1177&id%5B%5D=1176&id%5B%5D=1175&id%5B%5D=1174&id%5B%5D=1173&id%5B%5D=1172&id%5B%5D=1171&id%5B%5D=1170&id%5B%5D=1169&id%5B%5D=1168&id%5B%5D=1167&id%5B%5D=1166&id%5B%5D=1165&id%5B%5D=1164&id%5B%5D=1163&id%5B%5D=1162&id%5B%5D=1716&timestamp=82232589495"
+    },
+    "firebase_config": {
+      "url": "https://gs-prd-web-cdn.tripledotapi.com/api/v4/firebase_config?application_id=28&id%5B%5D=1811&id%5B%5D=1810&id%5B%5D=1809&id%5B%5D=1168&id%5B%5D=1166&timestamp=8764059179"
+    },
+    "classic_config": {
+      "url": "https://gs-prd-cdn.tripledotapi.com/store/files/block_party/files/c4247e97b4ca35367abcd72da4d6576d.json"
+    },
+    "invisible_hand_config": {
+      "url": "https://gs-prd-cdn.tripledotapi.com/store/files/block_party/files/a030ae62052db1639f5ae8515739e56b.json"
+    },
+    "invisible_hand_config_journey": {
+      "url": "https://gs-prd-cdn.tripledotapi.com/store/files/block_party/files/965edd953656917d3c69e18cb4768d85.json"
+    },
+    "iq_puzzle_config": {
+      "url": "https://gs-prd-cdn.tripledotapi.com/store/files/block_party/files/12971e2a11e7223853ef6915e0792d49.json"
+    },
+    "mechanic_configs": {
+      "url": "https://gs-prd-cdn.tripledotapi.com/store/files/block_party/files/1891321d05d00eec93be5f7939b4025e.json"
+    },
+    "activation_events": {
+      "url": "https://gs-prd-web-cdn.tripledotapi.com/api/v4/activation_journeys?application_id=28&level_banks_mapping%5B171%5D=3972&level_banks_mapping%5B172%5D=3973&level_banks_mapping%5B175%5D=3974&level_banks_mapping%5B177%5D=3975&level_banks_mapping%5B179%5D=4034&level_banks_mapping%5B180%5D=3977&level_banks_mapping%5B181%5D=3978&level_banks_mapping%5B182%5D=3979&level_banks_mapping%5B214%5D=3928&level_banks_mapping%5B215%5D=3966&level_banks_mapping%5B216%5D=4033&level_banks_mapping%5B249%5D=3981&level_banks_mapping%5B250%5D=3982&level_banks_mapping%5B251%5D=3983&level_banks_mapping%5B252%5D=3984&level_banks_mapping%5B278%5D=3985&level_banks_mapping%5B279%5D=3986&level_banks_mapping%5B280%5D=3987&level_banks_mapping%5B319%5D=3988&level_banks_mapping%5B326%5D=4026&os_family=other&timestamp=35369528802"
+    },
+    "saga_rewards_config": {
+      "url": ""
+    }
+  },
+  "version": "AYL - 1.04.00+ Journey transition off",
+  "gameConfig": {
+    "shapeScaleInBank": 0.5,
+    "hoverCanvasGroupAlpha": 0.5,
+    "delayAfterNoPlaceableShapes": 1,
+    "shapesShouldHaveRandomColors": true,
+    "unplaceableShapesCanBeDragged": true,
+    "horizontal_drag_offset_enabled": false,
+    "showScorePopupOnScoresGreaterThan": 1
+  },
+  "onboarding": {
+    "modeAfterTutorial": "Journey",
+    "enableJourneySurfacing": false,
+    "showJourneyPopupAfterClassicStartCount": 4
+  },
+  "sagaConfig": {
+    "enabled": true
+  },
+  "hapticConfig": {
+    "enabled": true
+  },
+  "time_scale": {
+    "enabled": false,
+    "value": 1.0
+  },
+  "board_size_ergonomics": {
+    "enabled": false
+  },
+  "classicConfig": {
+    "showTopScorePopupOnStart": false,
+    "enableBlockTransitionIntro": true,
+    "reviveConfig": {
+      "enabled": false,
+      "maxRevive": 0,
+      "showReviveCountToPlay": false,
+      "minimumScoreForRevive": 0,
+      "minimumTargetObjectivePercentageForRevive": 0,
+      "minimumTargetObjectivePercentageForReviveIncZero": false,
+      "reviveTerminatorIgnoreBanks": 0,
+      "revivePerfectFitBanks": 0
+    }
+  },
+  "classic_config": {
+    "back_to_lobby_button_on_game_end": false
+  },  
+  "classic_mode_config": {
+    "enabled": true
+  },
+  "effectsConfig": {
+    "screenTapFeedbackEnabled": false
+  },
+  "journeyConfig": {
+    "reviveConfig": {
+      "enabled": true,
+      "maxRevive": 3,
+      "minimumScoreForRevive": 0,
+      "revivePerfectFitBanks": 0,
+      "showReviveCountToPlay": false,
+      "reviveTerminatorIgnoreBanks": 3,
+      "minimumTargetObjectivePercentageForRevive": 0.5,
+      "minimumTargetObjectivePercentageForReviveIncZero": true
+    },
+    "enableBlockTransitionIntro": false,
+    "enableClassicButtonForWinFlow" : false,
+    "enableAutoRestartOnLoss" : false
+  },
+  "support.email": "woodoku-blast-support@tripledotstudios.com",
+  "reviewUsConfig": {
+    "showSystemRatePopupIfStarsGreaterOrEqualTo": 4
+  },
+  "support.subject": "Woodoku Blast Support",
+  "boardClearConfig": {
+    "enabledInGameModes": [
+      "Classic",
+      "Journey"
+    ],
+    "enabledInGoalTypes": [
+      "Score",
+      "Gems",
+      "Balloons",
+      "Fireworks"
+    ]
+  },
+  "mode.daily.active": false,
+  "scoreStreakMechanic": {
+    "newStreakVisualsEnabled" : false,
+    "newStreakVisualsJourney" : false,
+    "streakEnabledAfterClears": 2,
+    "disableStreakMultiplierCap": false,
+    "multilineStreakEnabled" : false,
+    "streakMovesCounterClassicEnabled" : false,
+    "newStreakLossAnimationClassicEnabled" : false,
+    "newScoreVisualsEnabled" : false,
+    "heartHudEnabledInGameModes": [
+      "Classic",
+      "Journey"
+    ],
+    "heartHudEnabledInGoalTypes": [
+      "Score"
+    ],
+    "legacyHudEnabledInGameModes": [
+      "Journey"
+    ],
+    "legacyHudEnabledInGoalTypes": [
+      "None"
+    ],
+    "feedbackTextEnabledInGameModes": [
+      "Classic",
+      "Journey",
+      "Tutorial"
+    ],
+    "feedbackTextEnabledInGoalTypes": [
+      "None"
+    ],
+    "pointsNumberEnabledInGameModes": [
+      "Classic"
+    ],
+    "pointsNumberEnabledInGoalTypes": [
+      "None"
+    ],
+    "comboStreakTextEnabledInGameModes": [
+      "Classic",
+      "Journey",
+      "Tutorial"
+    ],
+    "comboStreakTextEnabledInGoalTypes": [
+      "None"
+    ],
+    "resetStreakAfterNonClearPlacements": 3,
+    "pointsNumberPopupShowsClearScoreOnly": false,
+    "postFullClearResetStreakAfterNonClearPlacements": 7
+  },
+  "mode.tutorial.active": true,
+  "shapeScaleInBankConfig": {
+    "bigBannerScale": 0.4
+  },
+  "screenNeverSleepEnabled": true,
+  "appsflyer_event_allowlist": [
+    "gdpr_view",
+    "gdpr_consent"
+  ],
+  "ios_idfa_request_enabled": true,
+  "ios_idfa_explainer_popup_enabled": false,
+  "ios_idfa_fake_native_popup_enabled": false,
+  "ios_idfa_native_popup_enabled": true,
+  "popups": {
+    "order": [
+      "IDFA",
+      "Allow_Notifications",
+      "Google_CMP",
+      "GDPR",
+      "PushNotifications_Retry_OptIn"
+    ],
+    "triggers": {
+      "Allow_Notifications": {
+        "conditions": [
+          {
+            "app_starts": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ],
+            "game_starts": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          }
+        ]
+      },
+      "IDFA": {
+        "conditions": [
+          {
+            "app_starts": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ],
+            "game_starts": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          }
+        ]
+      },
+      "Google_CMP": {
+        "conditions": [
+          {
+            "app_starts": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ],
+            "game_starts": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "appsflyer_client_ad_revenue_timeframe": 336.0,
+  "appsflyer_client_ad_revenue_threshold": 0.01,
+  "ads_max_sdk_key": "iVl5w_UosHrmgUipNCzIaXBnUwkC-PZgwJmqJFb9XRvCxc0IpzbOVnA-guBfIlLC260LLcVu3P5-05Hq3tDTeN",
+  "ads_max_ios_banner_id": "9e76334509df51d6",
+  "ads_max_ios_interstitial_id": "5e96dc8307fda929",
+  "ads_max_ios_rewarded_video_id": "d0a63d5b777b162d",
+  "ads_max_android_banner_id": "1fc3c93297c729d0",
+  "ads_max_android_interstitial_id": "e15cb7ceb70cecd3",
+  "ads_max_android_rewarded_video_id": "c2f9aa34b68c14fd",
+  "ccrtcumulative_thresholds": [
+    0.06
+  ],
+  "new_gameplay_system_enabled": true,
+  "journeys": {
+    "invisible_hand_overrides": {
+      "JIH 1": "https://gs-prd-cdn.tripledotapi.com/store/files/block_party/files/4327fc14d66f16be4b6ca08237561e3c.json",
+      "JIH 2": "https://gs-prd-cdn.tripledotapi.com/store/files/block_party/files/8563e45f630f32ae320b4e173b94148c.json",
+      "JIH 4": "https://gs-prd-cdn.tripledotapi.com/store/files/block_party/files/606f3d11acdb25aa62b368d5a3cd6732.json",
+      "JIH 5": "https://gs-prd-cdn.tripledotapi.com/store/files/block_party/files/5805e0278029100e586e51f4753cb874.json",
+      "JIH 6": "https://gs-prd-cdn.tripledotapi.com/store/files/block_party/files/606f3d11acdb25aa62b368d5a3cd6732.json",
+      "JIH 7": "https://gs-prd-cdn.tripledotapi.com/store/files/block_party/files/ba249378fd423166509a52882e07f7c9.json",
+      "JIH 8": "https://gs-prd-cdn.tripledotapi.com/store/files/block_party/files/cc56d5853f18d93bc57e14ed08b3061b.json",
+      "JIH 9": "https://gs-prd-cdn.tripledotapi.com/store/files/block_party/files/f112163c101b1b79065654d037bccfd9.json"
+    }
+  },
+  "telemetry": {
+    "activation_rate": 0.05,
+    "enabled": true,
+    "enabled_metrics": [
+      "FirstLoadTime",
+      "SubsequentLoadTime",
+      "FrameStability",
+      "FrameStabilityAverage",
+      "RuntimeMemory",
+      "ThermalState"
+    ],
+    "low_end_devices_enabled": true
+  },
+  "ad_remote_config": {
+    "amazon": {
+      "android_banner_id": "5ffdf555-6734-4fb3-92cb-55ad3553ac26",
+      "android_interstitial_id": "61829aae-4330-4cea-97f0-e00c013e182e",
+      "android_leaderboard_id": "57e93819-9e47-498f-b5c5-2bfbaa80e110",
+      "android_sdk_key": "8adf7f5e-a306-4f8d-8434-459646e46372",
+      "ios_banner_id": "68f34a35-87a5-4ee4-a323-83ebdd2c9c09",
+      "ios_interstitial_id": "8ca48e13-4a5f-4c7c-b306-2f67497722a6",
+      "ios_leaderboard_id": "cb1f3d8f-81c3-4d63-8fa4-73db69f0d929",
+      "ios_sdk_key": "0165059d-79fd-4f94-b76d-0f09ba72ed6c"
+    },
+    "interstitial_adslots": {
+      "adslots": {
+        "382.411": {
+          "adunits": [
+            {
+              "ranking_multiplier": 1.0,
+              "adunit": {
+                "mediation": "max",
+                "tag": "0",
+                "ios_adunit_id": "d7e7a859ca39121c",
+                "android_adunit_id": "1c59d64f7be7a1dd",
+                "retry_enabled": false,
+                "sequential_loading_enabled": true
+              },
+              "cpm_floor": {
+                "waterfall": {
+                  "lines": [
+                    {
+                      "type": "fixed",
+                      "value": 5.0
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "ranking_multiplier": 1.0,
+              "adunit": {
+                "mediation": "max",
+                "tag": "2",
+                "ios_adunit_id": "5e96dc8307fda929",
+                "android_adunit_id": "e15cb7ceb70cecd3",
+                "retry_enabled": true,
+                "sequential_loading_enabled": true
+              },
+              "cpm_floor": {
+                "waterfall": {
+                  "lines": [
+                    {
+                      "type": "fixed",
+                      "value": 0.25
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "rewarded_video_adslots": {
+      "adslots": {
+        "478.481": {
+          "adunits": [
+            {
+              "ranking_multiplier": 1.0,
+              "adunit": {
+                "mediation": "max",
+                "tag": "2",
+                "ios_adunit_id": "d0a63d5b777b162d",
+                "android_adunit_id": "c2f9aa34b68c14fd",
+                "retry_enabled": true,
+                "sequential_loading_enabled": true
+              },
+              "cpm_floor": {
+                "waterfall": {
+                  "lines": [
+                    {
+                      "type": "fixed",
+                      "value": 0.01
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "rewarded_video_placements": [],
+    "max_rewarded_videos": [
+      {
+        "ios_adunit_id": "d0a63d5b777b162d",
+        "android_adunit_id": "c2f9aa34b68c14fd",
+        "tag": "2",
+        "retry_enabled": true,
+        "sequential_loading_enabled": true,
+        "request_count_limit": 1000,
+        "cpm_floor": 0.01
+      }
+    ],
+    "placements": {
+      "game_end_classic_lose_after_anim": {
+        "interstitial_probability": 1.0,
+        "interstitial": {
+          "newcomers_restrictions": {
+            "first_session_only": false,
+            "block_first_seconds": 0,
+            "block_first_impressions": 15,
+            "timer_counts_in_background": false
+          },
+          "ad_frequency_restrictions": {
+            "operator": "and",
+            "rules": [
+              {
+                "operator": "and",
+                "rules": [
+                  {
+                    "type": "time_based",
+                    "reset_timer_after_rewarded_video": true,
+                    "reset_timer_after_interstitial": true,
+                    "min_time_between_interstitials": 120,
+                    "timer_counts_in_background": false,
+                    "min_time_placements": [
+                      "any_int",
+                      "any_rv"
+                    ],
+                    "min_time_adjustment": 0,
+                    "min_time_multiplier": 1.0,
+                    "min_time_min_value": 0,
+                    "min_time_max_value": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "game_end_journey_lose_after_anim": {
+        "interstitial_probability": 1.0,
+        "interstitial": {
+          "newcomers_restrictions": {
+            "first_session_only": false,
+            "block_first_seconds": 0,
+            "block_first_impressions": 15,
+            "timer_counts_in_background": false
+          },
+          "ad_frequency_restrictions": {
+            "operator": "and",
+            "rules": [
+              {
+                "operator": "and",
+                "rules": [
+                  {
+                    "type": "time_based",
+                    "reset_timer_after_rewarded_video": true,
+                    "reset_timer_after_interstitial": true,
+                    "min_time_between_interstitials": 120,
+                    "timer_counts_in_background": false,
+                    "min_time_placements": [
+                      "any_int",
+                      "any_rv"
+                    ],
+                    "min_time_adjustment": 0,
+                    "min_time_multiplier": 1.0,
+                    "min_time_min_value": 0,
+                    "min_time_max_value": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "game_end_journey_win_after_anim": {
+        "interstitial_probability": 1.0,
+        "interstitial": {
+          "newcomers_restrictions": {
+            "first_session_only": false,
+            "block_first_seconds": 0,
+            "block_first_impressions": 15,
+            "timer_counts_in_background": false
+          },
+          "ad_frequency_restrictions": {
+            "operator": "and",
+            "rules": [
+              {
+                "operator": "and",
+                "rules": [
+                  {
+                    "type": "time_based",
+                    "reset_timer_after_rewarded_video": true,
+                    "reset_timer_after_interstitial": true,
+                    "min_time_between_interstitials": 120,
+                    "timer_counts_in_background": false,
+                    "min_time_placements": [
+                      "any_int",
+                      "any_rv"
+                    ],
+                    "min_time_adjustment": 0,
+                    "min_time_multiplier": 1.0,
+                    "min_time_min_value": 0,
+                    "min_time_max_value": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "game_start_restart_settings": {
+        "interstitial_probability": 1.0,
+        "interstitial": {
+          "newcomers_restrictions": {
+            "first_session_only": false,
+            "block_first_seconds": 0,
+            "block_first_impressions": 15,
+            "timer_counts_in_background": false
+          },
+          "ad_frequency_restrictions": {
+            "operator": "and",
+            "rules": [
+              {
+                "operator": "and",
+                "rules": [
+                  {
+                    "type": "time_based",
+                    "reset_timer_after_rewarded_video": true,
+                    "reset_timer_after_interstitial": true,
+                    "min_time_between_interstitials": 120,
+                    "timer_counts_in_background": false,
+                    "min_time_placements": [
+                      "any_int",
+                      "any_rv"
+                    ],
+                    "min_time_adjustment": 0,
+                    "min_time_multiplier": 1.0,
+                    "min_time_min_value": 0,
+                    "min_time_max_value": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "ad_request_refresh_period": 1,
+    "ad_request_refresh_period_increment_value": "4.0",
+    "ad_request_refresh_period_max_value": 16,
+    "enable_banners": true,
+    "banner_position": "top"
+  },
+  "ads_amazon_ios_sdk_key": "0165059d-79fd-4f94-b76d-0f09ba72ed6c",
+  "ads_amazon_ios_interstitial_id": "8ca48e13-4a5f-4c7c-b306-2f67497722a6",
+  "ads_amazon_ios_banner_id": "68f34a35-87a5-4ee4-a323-83ebdd2c9c09",
+  "ads_amazon_ios_leaderboard_id": "cb1f3d8f-81c3-4d63-8fa4-73db69f0d929",
+  "ads_amazon_android_sdk_key": "8adf7f5e-a306-4f8d-8434-459646e46372",
+  "ads_amazon_android_interstitial_id": "61829aae-4330-4cea-97f0-e00c013e182e",
+  "ads_amazon_android_banner_id": "5ffdf555-6734-4fb3-92cb-55ad3553ac26",
+  "ads_amazon_android_leaderboard_id": "57e93819-9e47-498f-b5c5-2bfbaa80e110",
+  "magnetPowerupConfig": {
+    "enabled" : false
+  },
+  "shufflePowerupConfig" : {
+    "enabled" : false
+  },
+  "bankTornadoPowerupConfig" : {
+    "enabled" : false
+  },
+  "lightningPowerupConfig": {
+    "enabled": false,
+    "journeyUnlockLevel": 0,
+    "amountGivenOnUnlock": 0,
+    "amountGivenOnAdWatch": 0
+  },
+  "coins_lives_config": {
+    "enabled": false,
+    "initial_balance": 0,
+    "coins_for_journey_wins": {
+      "schema": []
+    },
+    "coins_multiplier_config": {
+      "multiplier_value": 0,
+      "multiplier_unlock_condition": "",
+      "multiplier_unlock_value": 0,
+      "continue_button_delay": 0
+    },
+    "powerup_config": {
+      "purchase_flow": "",
+      "rvs_remaining_display": false,
+      "rvs_cap": 0
+    },
+    "revive_offers_delay": 0.0,
+    "revive_config": {
+      "revive_flow": "",
+      "rvs_remaining_display": false,
+      "rvs_cap": 0,
+      "timer_surfacing_for_coins": false,
+      "timer_duration": 0,
+      "confirmation_popup": false
+    },
+    "lives_config": {
+      "max_lives": 5,
+      "refill_lives_rvs_cap": 0,
+      "free_lives_rvs_remaining_display": false,
+      "life_regeneration_time": 0
+    },
+    "return_to_lobby_on_journey_win": false
+  },
+  "asset_bundle_config": {
+    "version": "embedded-default",
+    "updated": "",
+    "value": {}
+  },
+  "debug": {
+    "debug_menu_enabled": false,
+    "logging_enabled": false,
+    "slack_config": {
+      "token": "",
+      "channel": "",
+      "webhook_url": ""
+    }
+  },
+  "json_config": {
+    "json_move_serialized_files": false
+  },
+  "golden_blocks_config": {
+    "enabled": false
+  },
+  "incent_events": {
+    "game_end_blocktava": [],
+    "journey_game_end": [],
+    "journey_level_won": []
+  },
+  "leaderboards_config": {
+    "is_feature_enabled": false
+  },
+  "levels_multipliers_config": {
+    "hard_levels": 1,
+    "super_hard_levels": 1
+  },
+  "ml_journey_difficulty_generation": {
+    "enabled": false,
+    "number_of_events": 0
+  },
+  "season_pass_config": {
+    "is_feature_enabled": false
+  },
+  "user_profile_config": {
+    "is_feature_enabled": false
+  },
+  "complimentary_fit_placement_feedback": {
+    "enabled": false
+  },
+  "perfect_fit_placement_feedback": {
+    "enabled": false,
+    "cooldown": 0
+  },
+  "powerups_config": {
+    "hint_feature": {
+      "enabled": false
+    }
+  }
+}

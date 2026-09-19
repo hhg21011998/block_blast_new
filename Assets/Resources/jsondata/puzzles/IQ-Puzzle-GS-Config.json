@@ -1,0 +1,259 @@
+{
+    "enabled": true,
+    "PuzzleConfigDataModel": {
+        "GrandPrizePuzzles": [
+            {
+                "VisualDataID": "grandprize_imperial_state_crown",
+                "Rarity": "grand_prize",
+                "UnlockLevel": 0,
+                "CompletionReward": "",
+                "CollectionSortOrder": 0,
+                "Pieces": [
+                    {
+                        "PieceIndex": 0,
+                        "id": "grandprize_1_piece_1",
+                        "name": "Grand Prize 1 Piece 1",
+                        "description": ""
+                    },
+                    {
+                        "PieceIndex": 1,
+                        "id": "grandprize_1_piece_2",
+                        "name": "Grand Prize 1 Piece 2",
+                        "description": ""
+                    },
+                    {
+                        "PieceIndex": 2,
+                        "id": "grandprize_1_piece_3",
+                        "name": "Grand Prize 1 Piece 3",
+                        "description": ""
+                    }
+                ],
+                "id": "grandprize_1",
+                "name": "Imperial State Crown",
+                "description": "Imperial State Crown Grand Prize Puzzle"
+            }
+        ],
+        "Puzzles": [
+            {
+                "VisualDataID": "puzzle-00",                
+                "Rarity": "common",
+                "UnlockLevel": 0,
+                "CompletionReward": "grandprize_0_piece_0",
+                "CollectionSortOrder": 0,
+                "maskImageName":"puzzle-image",
+                "revealImageName":"puzzle-reveal-image",
+                "aspectRatio":1, 
+                "assetBundleId": "puzzle-00",
+                "titleLocalizationKey":"puzzle/puzzle-00-title",
+                "gridSize":
+                {
+                    "rows":9,
+                    "cols":9
+                },
+                "Pieces": [
+                    {
+                        "PieceIndex": 0,
+                        "id": "puzzle-00-0",
+                        "name": "Puzzle 0 Piece 0",
+                        "color":"#FF5733",
+                        "cells": [ 4, 12, 13, 14, 21, 22, 23 ]
+                    },
+                    {
+                        "PieceIndex": 1,
+                        "id": "puzzle-00-1",
+                        "name": "Puzzle 0 Piece 1",
+                        "color":"#33FF7D",
+                        "cells": [ 27, 28, 29, 36, 37, 38, 47 ]
+                    },
+                    {
+                        "PieceIndex": 2,
+                        "id": "puzzle-00-2",
+                        "name": "Puzzle 0 Piece 2",
+                        "color":"#33CEFF",
+                        "cells": [ 30, 31, 32, 39, 40, 41, 48, 49, 50 ]
+                    },
+                    {
+                        "PieceIndex": 3,
+                        "id": "puzzle-00-3",
+                        "name": "Puzzle 0 Piece 3",
+                        "color":"#3342FF",
+                        "cells": [ 33, 34, 35, 42, 43, 44, 51, 52 ]
+                    },
+                    {
+                        "PieceIndex": 4,
+                        "id": "puzzle-00-4",
+                        "name": "Puzzle 0 Piece 4",
+                        "color":"#E933FF",
+                        "cells": [ 56, 57, 58, 65, 66, 67, 73, 74, 75 ]
+                    },
+                    {
+                        "PieceIndex": 5,
+                        "id": "puzzle-00-5",
+                        "name": "Puzzle 0 Piece 5",
+                        "color":"#E93311",
+                        "cells": [ 59, 60, 68, 69, 77, 78, 79 ]
+                    }
+                ],                
+                "id": "puzzle-00",
+                "name": "Star",
+                "description": "IQ Puzzle that is a star"
+            },
+            {
+                "VisualDataID": "puzzle_cat",
+                "Rarity": "common",
+                "UnlockLevel": 0,
+                "CompletionReward": "grandprize_1_piece_1",
+                "CollectionSortOrder": 0,
+                "Pieces": [
+                    {
+                        "PieceIndex": 0,
+                        "id": "puzzle_1_piece_1",
+                        "name": "Puzzle 1 Piece 1",
+                        "description": ""
+                    },
+                    {
+                        "PieceIndex": 1,
+                        "id": "puzzle_1_piece_2",
+                        "name": "Puzzle 1 Piece 2",
+                        "description": ""
+                    },
+                    {
+                        "PieceIndex": 2,
+                        "id": "puzzle_1_piece_3",
+                        "name": "Puzzle 1 Piece 3",
+                        "description": ""
+                    }
+                ],
+                "id": "puzzle_1",
+                "name": "Cat",
+                "description": "IQ Puzzle that is a cat"
+            },
+            {
+                "VisualDataID": "puzzle_not_cat",
+                "Rarity": "rare",
+                "UnlockLevel": 0,
+                "CompletionReward": "grandprize_1_piece_2",
+                "CollectionSortOrder": 1,
+                "Pieces": [
+                    {
+                        "PieceIndex": 0,
+                        "id": "puzzle_2_piece_1",
+                        "name": "Puzzle 2 Piece 1",
+                        "description": ""
+                    },
+                    {
+                        "PieceIndex": 1,
+                        "id": "puzzle_2_piece_2",
+                        "name": "Puzzle 2 Piece 2",
+                        "description": ""
+                    },
+                    {
+                        "PieceIndex": 2,
+                        "id": "puzzle_2_piece_3",
+                        "name": "Puzzle 2 Piece 3",
+                        "description": ""
+                    }
+                ],
+                "id": "puzzle_2",
+                "name": "Not Cat",
+                "description": "IQ Puzzle that is not a cat"
+            },
+            {
+                "VisualDataID": "puzzle_maybe_cat",
+                "Rarity": "legendary",
+                "UnlockLevel": 20,
+                "CompletionReward": "grandprize_1_piece_3",
+                "CollectionSortOrder": 2,
+                "Pieces": [
+                    {
+                        "PieceIndex": 0,
+                        "id": "puzzle_3_piece_1",
+                        "name": "Puzzle 3 Piece 1",
+                        "description": ""
+                    },
+                    {
+                        "PieceIndex": 1,
+                        "id": "puzzle_3_piece_2",
+                        "name": "Puzzle 3 Piece 2",
+                        "description": ""
+                    },
+                    {
+                        "PieceIndex": 2,
+                        "id": "puzzle_3_piece_3",
+                        "name": "Puzzle 3 Piece 3",
+                        "description": ""
+                    }
+                ],
+                "id": "puzzle_3",
+                "name": "Maybe a cat",
+                "description": "IQ Puzzle that is maybe a cat"
+            }
+        ]
+    },
+    "GachaConfigDataModel": {
+        "ReturnToLobbyAfterGacha": false,
+        "CanObtainGachaFromClassic": false,
+        "ClassicCompletePointsRewardMinMax": {
+            "x": 50.0,
+            "y": 50.0,
+            "normalized": {
+                "x": 0.707106769,
+                "y": 0.707106769,
+                "magnitude": 1.0,
+                "sqrMagnitude": 0.99999994
+            },
+            "magnitude": 70.71068,
+            "sqrMagnitude": 5000.0
+        },
+        "CanObtainGachaFromJourney": true,
+        "JourneyCompletePointsRewardMinMax": {
+            "x": 50.0,
+            "y": 50.0,
+            "normalized": {
+                "x": 0.707106769,
+                "y": 0.707106769,
+                "magnitude": 1.0,
+                "sqrMagnitude": 0.99999994
+            },
+            "magnitude": 70.71068,
+            "sqrMagnitude": 5000.0
+        },
+        "PointsRequiredForGacha": 100,
+        "GachaDataModels": [
+            {
+                "Rarity": "bronze",
+                "RewardAmount": 1,
+                "id": "IQPuzzleGacha_Common_1",
+                "name": "IQPuzzleGacha_Common_1",
+                "description": "Data model for the Common IQ Puzzle Gacha"
+            },
+            {
+                "Rarity": "silver",
+                "RewardAmount": 2,
+                "id": "IQPuzzleGacha_Rare_1",
+                "name": "IQPuzzleGacha_Rare_1",
+                "description": "Data model for the Rare IQ Puzzle Gacha"
+            },
+            {
+                "Rarity": "gold",
+                "RewardAmount": 3,
+                "id": "IQPuzzleGacha_Legendary_1",
+                "name": "IQPuzzleGacha_Legendary_1",
+                "description": "Data model for the Legendary IQ Puzzle Gacha"
+            },
+            {
+                "Rarity": "platinum",
+                "RewardAmount": 4,
+                "id": "IQPuzzleGacha_Platinum_1",
+                "name": "IQPuzzleGacha_Platinum_1",
+                "description": "Data model for the Platinum IQ Puzzle Gacha"
+            }
+        ],
+        "id": "IQPuzzleGachaConfig_1",
+        "name": "IQPuzzleGachaConfig_1",
+        "description": "Data model for the global Gacha config"
+    },
+    "id": "IQPuzzle_1",
+    "name": "IQPuzzle_1",
+    "description": "Data model for the global IQ Puzzle config"
+}

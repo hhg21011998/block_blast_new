@@ -1,0 +1,68 @@
+{
+	"m_AssetBundleInfos": [
+		{
+			"Key": 18,
+			"Value": {
+				"m_AssetBundleDependencies": [],
+				"m_AssetBundleHash": {
+					"m_Bytes__0": 58,
+					"m_Bytes__1": 136,
+					"m_Bytes__2": 192,
+					"m_Bytes__3": 44,
+					"m_Bytes__4": 183,
+					"m_Bytes__5": 129,
+					"m_Bytes__6": 158,
+					"m_Bytes__7": 196,
+					"m_Bytes__8": 202,
+					"m_Bytes__9": 149,
+					"m_Bytes_10": 90,
+					"m_Bytes_11": 164,
+					"m_Bytes_12": 40,
+					"m_Bytes_13": 202,
+					"m_Bytes_14": 39,
+					"m_Bytes_15": 254
+				}
+			}
+		},
+		{
+			"Key": 69,
+			"Value": {
+				"m_AssetBundleDependencies": [],
+				"m_AssetBundleHash": {
+					"m_Bytes__0": 92,
+					"m_Bytes__1": 179,
+					"m_Bytes__2": 249,
+					"m_Bytes__3": 248,
+					"m_Bytes__4": 5,
+					"m_Bytes__5": 70,
+					"m_Bytes__6": 237,
+					"m_Bytes__7": 37,
+					"m_Bytes__8": 212,
+					"m_Bytes__9": 159,
+					"m_Bytes_10": 129,
+					"m_Bytes_11": 158,
+					"m_Bytes_12": 205,
+					"m_Bytes_13": 136,
+					"m_Bytes_14": 245,
+					"m_Bytes_15": 232
+				}
+			}
+		}
+	],
+	"m_AssetBundleNames": [
+		{
+			"Key": 18,
+			"Value": "blocktava-journey-03-rewards-v3"
+		},
+		{
+			"Key": 69,
+			"Value": "blocktava-journey-03-v3"
+		}
+	],
+	"m_AssetBundlesWithVariant": [],
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-8d9b5c2a527c8c31320c3d0324e91ebe", "m_PathID": 0 },
+	"m_HideFlags": 0,
+	"m_Name": "AssetBundleManifest",
+	"m_PrefabAsset": { "m_Collection": "cab-8d9b5c2a527c8c31320c3d0324e91ebe", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-8d9b5c2a527c8c31320c3d0324e91ebe", "m_PathID": 0 }
+}

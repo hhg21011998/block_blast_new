@@ -1,0 +1,27 @@
+{
+	"m_AssetBundleName": "blocktava-journey-03-rewards-v3",
+	"m_Container": {
+		"assets/assetbundlesource/blocktava-journey-03-awards/awards_art.spriteatlasv2": {
+			"m_Asset": { "m_Collection": "cab-e3798496e95d9a318c8c96e11958f5bc", "m_PathID": -6166609106945115097 },
+			"m_PreloadIndex": 0,
+			"m_PreloadSize": 10
+		}
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "cab-e3798496e95d9a318c8c96e11958f5bc", "m_PathID": 0 },
+	"m_Dependencies": [],
+	"m_ExplicitDataLayout": 0,
+	"m_HideFlags": 0,
+	"m_IsStreamedSceneAssetBundle": false,
+	"m_MainAsset": {
+		"m_Asset": { "m_Collection": "cab-e3798496e95d9a318c8c96e11958f5bc", "m_PathID": 0 },
+		"m_PreloadIndex": 0,
+		"m_PreloadSize": 0
+	},
+	"m_Name": "blocktava-journey-03-rewards-v3",
+	"m_PathFlags": 7,
+	"m_PrefabAsset": { "m_Collection": "cab-e3798496e95d9a318c8c96e11958f5bc", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "cab-e3798496e95d9a318c8c96e11958f5bc", "m_PathID": 0 },
+	"m_PreloadTable": [],
+	"m_RuntimeCompatibility": 1,
+	"m_SceneHashes": {}
+}

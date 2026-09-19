@@ -1,0 +1,38 @@
+{
+    "version": "8/08/2024",
+    "guid": "Star",
+    "aspectRatio":1,
+    "resourcesImagePath":"PuzzlePieces/star-512",
+    "resourcesImageRevealPath":"PuzzlePieces/star-reveal-512x1024",
+    "gridSize":
+    {
+        "rows":9,
+        "cols":9
+    },
+    "pieces": [
+        {
+            "color":"#FF5733",
+            "cells": [ 4, 12, 13, 14, 21, 22, 23 ]
+        },
+        {
+            "color":"#33FF7D",
+            "cells": [ 27, 28, 29, 36, 37, 38, 47 ]
+        },
+        {
+            "color":"#33CEFF",
+            "cells": [ 30, 31, 32, 39, 40, 41, 48, 49, 50 ]
+        },
+        {
+            "color":"#3342FF",
+            "cells": [ 33, 34, 35, 42, 43, 44, 51, 52 ]
+        },
+        {
+            "color":"#E933FF",
+            "cells": [ 56, 57, 58, 65, 66, 67, 73, 74, 75 ]
+        },
+        {
+            "color":"#E93311",
+            "cells": [ 59, 60, 68, 69, 77, 78, 79 ]
+        }
+    ]
+}

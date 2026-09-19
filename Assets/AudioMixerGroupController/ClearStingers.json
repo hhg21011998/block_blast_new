@@ -1,0 +1,40 @@
+{
+	"m_AudioMixer": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 8443 },
+	"m_BypassEffects": false,
+	"m_Children": [],
+	"m_CorrespondingSourceObject": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_Effects": [
+		{ "m_Collection": "globalgamemanagers.assets", "m_PathID": 6 }
+	],
+	"m_GroupID": {
+		"m_Data_0_": 3090723169,
+		"m_Data_1_": 1224631461,
+		"m_Data_2_": 403524769,
+		"m_Data_3_": 2468288690
+	},
+	"m_HideFlags": 0,
+	"m_Mute": false,
+	"m_Name": "ClearStingers",
+	"m_Pitch": {
+		"m_Data_0_": 107830835,
+		"m_Data_1_": 1321076811,
+		"m_Data_2_": 90712492,
+		"m_Data_3_": 3147515615
+	},
+	"m_PrefabAsset": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_Send": {
+		"m_Data_0_": 0,
+		"m_Data_1_": 0,
+		"m_Data_2_": 0,
+		"m_Data_3_": 0
+	},
+	"m_Solo": false,
+	"m_UserColorIndex": 0,
+	"m_Volume": {
+		"m_Data_0_": 3181657796,
+		"m_Data_1_": 1303519067,
+		"m_Data_2_": 1135988142,
+		"m_Data_3_": 1307570070
+	}
+}

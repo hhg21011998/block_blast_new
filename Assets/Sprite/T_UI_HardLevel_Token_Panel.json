@@ -1,0 +1,347 @@
+{
+	"m_AtlasRD": {
+		"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+		"m_AtlasRectOffset": {
+			"m_X": 0,
+			"m_Y": 0
+		},
+		"m_Bindpose": [],
+		"m_DownscaleMultiplier": 0,
+		"m_IndexBuffer": "",
+		"m_SecondaryTextures": [],
+		"m_SettingsRaw": 0,
+		"m_SubMeshes": [],
+		"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+		"m_TextureRect": {
+			"m_Height": 0,
+			"m_Width": 0,
+			"m_X": 0,
+			"m_Y": 0
+		},
+		"m_TextureRectOffset": {
+			"m_X": 0,
+			"m_Y": 0
+		},
+		"m_UvTransform": {
+			"m_W": 0,
+			"m_X": 0,
+			"m_Y": 0,
+			"m_Z": 0
+		},
+		"m_VertexData": {
+			"m_Channels": [],
+			"m_Data": "",
+			"m_VertexCount": 0
+		}
+	},
+	"m_AtlasTags": [],
+	"m_Bones": [],
+	"m_Border": {
+		"m_W": 30,
+		"m_X": 28,
+		"m_Y": 30,
+		"m_Z": 28
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_Extrude": 1,
+	"m_HideFlags": 0,
+	"m_IsPolygon": false,
+	"m_Name": "T_UI_HardLevel_Token_Panel",
+	"m_Offset": {
+		"m_X": 0,
+		"m_Y": 0
+	},
+	"m_PackingTag": "",
+	"m_PhysicsShape": [
+		[
+			{
+				"m_X": 0.114583336,
+				"m_Y": 0.16666667
+			},
+			{
+				"m_X": -0.10416667,
+				"m_Y": 0.16666667
+			},
+			{
+				"m_X": -0.16666667,
+				"m_Y": 0.14583334
+			},
+			{
+				"m_X": -0.16666667,
+				"m_Y": -0.10416667
+			},
+			{
+				"m_X": -0.109375,
+				"m_Y": -0.16666667
+			},
+			{
+				"m_X": 0.098958336,
+				"m_Y": -0.16666667
+			},
+			{
+				"m_X": 0.16666667,
+				"m_Y": -0.08854167
+			},
+			{
+				"m_X": 0.16666667,
+				"m_Y": 0.07291667
+			},
+			{
+				"m_X": 0.15625,
+				"m_Y": 0.114583336
+			}
+		],
+		[
+			{
+				"m_X": -0.08854167,
+				"m_Y": -0.083333336
+			},
+			{
+				"m_X": -0.114583336,
+				"m_Y": -0.041666668
+			},
+			{
+				"m_X": -0.114583336,
+				"m_Y": -0.020833334
+			},
+			{
+				"m_X": -0.11979167,
+				"m_Y": 0.015625
+			},
+			{
+				"m_X": -0.114583336,
+				"m_Y": 0.020833334
+			},
+			{
+				"m_X": -0.114583336,
+				"m_Y": 0.041666668
+			},
+			{
+				"m_X": -0.078125,
+				"m_Y": 0.09375
+			},
+			{
+				"m_X": -0.041666668,
+				"m_Y": 0.109375
+			},
+			{
+				"m_X": -0.036458336,
+				"m_Y": 0.114583336
+			},
+			{
+				"m_X": 0.041666668,
+				"m_Y": 0.114583336
+			},
+			{
+				"m_X": 0.08854167,
+				"m_Y": 0.083333336
+			},
+			{
+				"m_X": 0.114583336,
+				"m_Y": 0.041666668
+			},
+			{
+				"m_X": 0.114583336,
+				"m_Y": 0.020833334
+			},
+			{
+				"m_X": 0.11979167,
+				"m_Y": -0.015625
+			},
+			{
+				"m_X": 0.114583336,
+				"m_Y": -0.020833334
+			},
+			{
+				"m_X": 0.114583336,
+				"m_Y": -0.041666668
+			},
+			{
+				"m_X": 0.078125,
+				"m_Y": -0.09375
+			},
+			{
+				"m_X": 0.041666668,
+				"m_Y": -0.109375
+			},
+			{
+				"m_X": 0.036458336,
+				"m_Y": -0.114583336
+			},
+			{
+				"m_X": -0.041666668,
+				"m_Y": -0.114583336
+			},
+			{
+				"m_X": -0.041666668,
+				"m_Y": -0.109375
+			}
+		]
+	],
+	"m_Pivot": {
+		"m_X": 0.5,
+		"m_Y": 0.5
+	},
+	"m_PixelsToUnits": 192,
+	"m_PrefabAsset": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_RD": {
+		"m_AlphaTexture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+		"m_AtlasRectOffset": {
+			"m_X": 89,
+			"m_Y": 1564
+		},
+		"m_Bindpose": [],
+		"m_DownscaleMultiplier": 1,
+		"m_IndexBuffer": "BwAGAAQABQAEAAYAAAAEAAUAAwAEAAAAAQADAAAAAgABAAAA",
+		"m_SecondaryTextures": [],
+		"m_SettingsRaw": 67,
+		"m_SubMeshes": [
+			{
+				"m_BaseVertex": 0,
+				"m_FirstByte": 0,
+				"m_FirstVertex": 0,
+				"m_IndexCount": 18,
+				"m_LocalAABB": {
+					"m_Center": {
+						"m_X": 0,
+						"m_Y": 0,
+						"m_Z": 0
+					},
+					"m_Extent": {
+						"m_X": 0,
+						"m_Y": 0,
+						"m_Z": 0
+					}
+				},
+				"m_Topology": 0,
+				"m_VertexCount": 8
+			}
+		],
+		"m_Texture": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 149 },
+		"m_TextureRect": {
+			"m_Height": 64,
+			"m_Width": 64,
+			"m_X": 89,
+			"m_Y": 1564
+		},
+		"m_TextureRectOffset": {
+			"m_X": 0,
+			"m_Y": 0
+		},
+		"m_UvTransform": {
+			"m_W": 1596,
+			"m_X": 192,
+			"m_Y": 121,
+			"m_Z": 192
+		},
+		"m_VertexData": {
+			"m_Channels": [
+				{
+					"m_Dimension": 3,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 2,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 1
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				}
+			],
+			"m_Data": "VVUFPquqKj4AAAAAq6oqPquqyr0AAAAAq6oqPgAAID4AAAAAAAAAPquqKr4AAAAAVVXVvauqKr4AAAAAVVX1vauqKj4AAAAAq6oqvquqyj0AAAAAq6oqvlVV9b0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+			"m_VertexCount": 8
+		}
+	},
+	"m_Rect": {
+		"m_Height": 64,
+		"m_Width": 64,
+		"m_X": 89,
+		"m_Y": 1564
+	},
+	"m_RenderDataKey": {
+		"Key": {
+			"m_Data_0_": 3160898105,
+			"m_Data_1_": 1950415458,
+			"m_Data_2_": 4257856900,
+			"m_Data_3_": 4106658505
+		},
+		"Value": 21300000
+	},
+	"m_ScriptableObjects": [],
+	"m_SpriteAtlas": { "m_Collection": "globalgamemanagers.assets", "m_PathID": 0 },
+	"m_SpriteID": ""
+}
