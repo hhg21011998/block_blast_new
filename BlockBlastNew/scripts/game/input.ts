@@ -93,7 +93,11 @@ export function pollLayoutPos(runtime: IRuntime): Pointer {
 	return { x: 0, y: 0 };
 }
 
-export function instanceContains(inst: IWorldInstance, x: number, y: number): boolean {
+export function instanceContains(
+	inst: { x: number; y: number; width: number; height: number },
+	x: number,
+	y: number
+): boolean {
 	const hw = inst.width / 2;
 	const hh = inst.height / 2;
 	return x >= inst.x - hw && x <= inst.x + hw && y >= inst.y - hh && y <= inst.y + hh;

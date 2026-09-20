@@ -16,9 +16,23 @@ Clone of **Block Blast / Woodoku Blast**. Gameplay is a Construct 3 project. The
 - Bank of **3** polyominoes. Refill after all three are placed.
 - Clear **full rows and full columns**.
 - Lose when **no remaining bank piece** can be placed.
-- Unplaceable bank pieces grey out but remain draggable.
+- Bank pieces stay fully opaque even if they cannot be placed. The drag ghost is opaque; the board snap-shadow is faded.
 - Portrait **1080×1920**, letterbox.
 - Numbers (score table, drag offset, combo, shapes) live in `Docs/phan-tich-assets-block-blast.md`. Read it before implementing scoring, piece spawn, or feel.
+
+## Graft first (required)
+
+Before reading or editing source, **query `graft/`** — do not start by opening whole files.
+
+From repo root:
+
+1. `graft ask "<what you need to change>"`
+2. `graft grep "<symbol or keyword>"`
+3. `graft callers <symbol>` for blast radius
+
+Cards live under `graft/` with exact `file:line`. Open a source file only to edit that span. If graft looks stale vs the tree, `graft build` then ask again.
+
+How-to: skill `graft-first`.
 
 ## Where code goes
 
@@ -32,7 +46,7 @@ Clone of **Block Blast / Woodoku Blast**. Gameplay is a Construct 3 project. The
 
 ## Skills and agents
 
-Project skills (`.grok/skills/`): `block-blast-gameplay`, `construct3-edit`, `block-blast-assets`.  
+Project skills (`.grok/skills/`): `graft-first`, `block-blast-gameplay`, `construct3-edit`, `block-blast-assets`.  
 Project agents (`.grok/agents/`): `c3-implementer`, `asset-analyst`.
 
 Load the matching skill before implementing. Spawn `asset-analyst` for dump research; `c3-implementer` for Construct 3 edits.

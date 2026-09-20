@@ -96,6 +96,16 @@ export class Board {
 		return this.findAnyOrigin(shape) !== null;
 	}
 
+	/** Clone-place and return rows/cols that would clear. Empty if not placeable. */
+	wouldClear(shape: Shape, originCol: number, originRow: number): LineClear {
+		if (!this.canPlace(shape, originCol, originRow)) {
+			return { rows: [], cols: [] };
+		}
+		const next = this.clone();
+		next.place(shape, originCol, originRow);
+		return next.findFullLines();
+	}
+
 	findFullLines(): LineClear {
 		const rows: number[] = [];
 		const cols: number[] = [];

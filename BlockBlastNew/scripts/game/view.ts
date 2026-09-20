@@ -14,7 +14,6 @@ import {
 	HIT_STOP_AFTER_LINES,
 	HIT_STOP_MS,
 	PREVIEW_OPACITY,
-	UNPLACEABLE_OPACITY,
 	cellCenterX,
 	cellCenterY
 } from "./constants.js";
@@ -22,14 +21,28 @@ import { hitBankSlot, instanceContains, snapOrigin } from "./input.js";
 import { Session } from "./session.js";
 import type { Shape } from "./shape.js";
 
+/** Construct's WorldInstance has no setAnimation; Block sprites do. */
+type BlockSprite = {
+	x: number;
+	y: number;
+	width: number;
+	height: number;
+	opacity: number;
+	setAnimation(name: string): void;
+	destroy(): void;
+	moveToTop?(): void;
+};
+
 export class GameApp {
 	readonly session: Session;
 	private readonly runtime: IRuntime;
 	private readonly grid: IWorldInstance[] = [];
-	private filled: IWorldInstance[] = [];
-	private bankSprites: IWorldInstance[][] = [[], [], []];
-	private ghost: IWorldInstance[] = [];
-	private preview: IWorldInstance[] = [];
+	private filled: (BlockSprite | null)[] = emptyFilled();
+	private highlighted: number[] = [];
+	private hintKey = "";
+	private bankSprites: BlockSprite[][] = [[], [], []];
+	private ghost: BlockSprite[] = [];
+	private preview: BlockSprite[] = [];
 	private drag: { slot: number; shape: Shape } | null = null;
 	private dragging = false;
 
@@ -78,8 +91,8 @@ export class GameApp {
 		const { slot, shape } = this.drag;
 		this.dragging = false;
 		const origin = snapOrigin(shape, x, y);
-		const result = this.session.tryPlace(slot, origin.col, origin.row);
 		this.clearGhost();
+		const result = this.session.tryPlace(slot, origin.col, origin.row);
 		if (result.ok) {
 			this.renderFilled();
 			this.renderBank();
@@ -119,22 +132,22 @@ export class GameApp {
 	}
 
 	private renderFilled(): void {
-		for (const inst of this.filled) inst.destroy();
-		this.filled = [];
+		for (const inst of this.filled) inst?.destroy();
+		this.filled = emptyFilled();
+		this.highlighted = [];
+		this.hintKey = "";
 		const board = this.session.board;
 		for (let row = 0; row < BOARD_SIZE; row++) {
 			for (let col = 0; col < BOARD_SIZE; col++) {
 				const color = board.get(col, row);
 				if (color === 0) continue;
-				this.filled.push(
-					this.spawn(
-						BOARD_LAYER,
-						cellCenterX(col),
-						cellCenterY(row),
-						CELL_SIZE,
-						animationFor(color),
-						1
-					)
+				this.filled[cellIndex(col, row)] = this.spawn(
+					BOARD_LAYER,
+					cellCenterX(col),
+					cellCenterY(row),
+					CELL_SIZE,
+					animationFor(color),
+					1
 				);
 			}
 		}
@@ -146,14 +159,13 @@ export class GameApp {
 			this.bankSprites[slot] = [];
 			const shape = this.session.bank[slot];
 			if (!shape) continue;
-			const unplaceable = !this.session.slotPlaceable(slot);
 			this.bankSprites[slot] = this.spawnShape(
 				shape,
 				BANK_LAYER,
 				BANK_X[slot]!,
 				BANK_Y,
 				BANK_SCALE,
-				unplaceable ? UNPLACEABLE_OPACITY : 1
+				1
 			);
 		}
 	}
@@ -176,15 +188,15 @@ export class GameApp {
 		const h = shape.rows * CELL_STRIDE;
 		const cx = fingerX;
 		const cy = fingerY - DRAG_OFFSET_Y - h / 2;
-		const opacity = valid ? 0.95 : 0.45;
 		if (recreate || this.ghost.length === 0) {
 			this.clearGhost();
-			this.ghost = this.spawnShape(shape, DRAG_LAYER, cx, cy, 1, opacity);
+			this.ghost = this.spawnShape(shape, DRAG_LAYER, cx, cy, 1, 1);
 		} else {
 			this.positionShape(this.ghost, shape, cx, cy, 1);
-			for (const inst of this.ghost) inst.opacity = opacity;
+			for (const inst of this.ghost) inst.opacity = 1;
 		}
 		this.syncPreview(shape, origin, valid);
+		this.syncClearHint(shape, origin, valid);
 	}
 
 	private syncPreview(
@@ -217,11 +229,12 @@ export class GameApp {
 			const inst = this.preview[i]!;
 			inst.x = cellCenterX(origin.col + cell.col);
 			inst.y = cellCenterY(origin.row + cell.row);
+			inst.opacity = PREVIEW_OPACITY;
 		}
 	}
 
 	private positionShape(
-		insts: IWorldInstance[],
+		insts: BlockSprite[],
 		shape: Shape,
 		centerX: number,
 		centerY: number,
@@ -239,7 +252,53 @@ export class GameApp {
 		}
 	}
 
+	private syncClearHint(
+		shape: Shape,
+		origin: { col: number; row: number },
+		valid: boolean
+	): void {
+		const key = valid ? `${origin.col},${origin.row},${shape.guid}` : "";
+		if (key === this.hintKey) return;
+		this.clearClearHint();
+		this.hintKey = key;
+		if (!valid) return;
+		const lines = this.session.board.wouldClear(shape, origin.col, origin.row);
+		if (lines.rows.length + lines.cols.length === 0) return;
+		const anim = animationFor(shape.color);
+		const marked = new Set<number>();
+		for (const row of lines.rows) {
+			for (let col = 0; col < BOARD_SIZE; col++) {
+				marked.add(cellIndex(col, row));
+			}
+		}
+		for (const col of lines.cols) {
+			for (let row = 0; row < BOARD_SIZE; row++) {
+				marked.add(cellIndex(col, row));
+			}
+		}
+		for (const i of marked) {
+			const inst = this.filled[i];
+			if (!inst) continue;
+			inst.setAnimation(anim);
+			this.highlighted.push(i);
+		}
+	}
+
+	private clearClearHint(): void {
+		for (const i of this.highlighted) {
+			const inst = this.filled[i];
+			if (!inst) continue;
+			const col = i % BOARD_SIZE;
+			const row = (i / BOARD_SIZE) | 0;
+			const color = this.session.board.get(col, row);
+			if (color !== 0) inst.setAnimation(animationFor(color));
+		}
+		this.highlighted = [];
+		this.hintKey = "";
+	}
+
 	private clearGhost(): void {
+		this.clearClearHint();
 		for (const inst of this.ghost) inst.destroy();
 		this.ghost = [];
 		for (const inst of this.preview) inst.destroy();
@@ -248,11 +307,7 @@ export class GameApp {
 
 	private setBankVisible(slot: number, visible: boolean): void {
 		for (const inst of this.bankSprites[slot] ?? []) {
-			inst.opacity = visible
-				? this.session.slotPlaceable(slot)
-					? 1
-					: UNPLACEABLE_OPACITY
-				: 0;
+			inst.opacity = visible ? 1 : 0;
 		}
 	}
 
@@ -263,13 +318,13 @@ export class GameApp {
 		centerY: number,
 		scale: number,
 		opacity: number
-	): IWorldInstance[] {
+	): BlockSprite[] {
+		const out: BlockSprite[] = [];
 		const size = CELL_SIZE * scale;
 		const stride = CELL_SIZE * scale;
 		const originX = centerX - (shape.cols * stride) / 2 + stride / 2;
 		const originY = centerY - (shape.rows * stride) / 2 + stride / 2;
 		const anim = animationFor(shape.color);
-		const out: IWorldInstance[] = [];
 		for (const cell of shape.cells) {
 			out.push(
 				this.spawn(
@@ -292,8 +347,12 @@ export class GameApp {
 		size: number,
 		animation: string,
 		opacity: number
-	): IWorldInstance {
-		const inst = this.runtime.objects.Block.createInstance(layer, x, y);
+	): BlockSprite {
+		const inst = this.runtime.objects.Block.createInstance(
+			layer,
+			x,
+			y
+		) as BlockSprite;
 		inst.width = size;
 		inst.height = size;
 		inst.opacity = opacity;
@@ -311,8 +370,10 @@ export class GameApp {
 
 	private destroyAllDynamic(): void {
 		this.clearGhost();
-		for (const inst of this.filled) inst.destroy();
-		this.filled = [];
+		for (const inst of this.filled) inst?.destroy();
+		this.filled = emptyFilled();
+		this.highlighted = [];
+		this.hintKey = "";
 		for (const slot of this.bankSprites) {
 			for (const inst of slot) inst.destroy();
 		}
@@ -320,4 +381,12 @@ export class GameApp {
 		this.drag = null;
 		this.dragging = false;
 	}
+}
+
+function emptyFilled(): (BlockSprite | null)[] {
+	return Array.from({ length: BOARD_SIZE * BOARD_SIZE }, () => null);
+}
+
+function cellIndex(col: number, row: number): number {
+	return row * BOARD_SIZE + col;
 }

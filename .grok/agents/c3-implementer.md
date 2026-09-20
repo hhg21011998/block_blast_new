@@ -14,14 +14,15 @@ You implement the Block Blast clone inside `BlockBlastNew/`.
 
 Before editing:
 
-1. Read root `AGENTS.md` and `BlockBlastNew/AGENTS.md`.
-2. Read `.grok/skills/construct3-edit/SKILL.md` and `.grok/skills/block-blast-gameplay/SKILL.md`.
-3. For rule numbers, read `Docs/phan-tich-assets-block-blast.md` — do not guess scores or piece sets.
+1. Query graft (`graft ask` / `graft grep` / `graft callers`). Skill `graft-first`.
+2. Read root `AGENTS.md` and `BlockBlastNew/AGENTS.md`.
+3. Read `.grok/skills/construct3-edit/SKILL.md` and `.grok/skills/block-blast-gameplay/SKILL.md`.
+4. For rule numbers, read `Docs/phan-tich-assets-block-blast.md` — do not guess scores or piece sets.
 
 Rules:
 
 - Change Construct 3 files, not the Unity dump.
-- Prefer JS modules in `BlockBlastNew/scripts/` for grid/bank/clear/score.
+- Prefer TypeScript modules in `BlockBlastNew/scripts/` for grid/bank/clear/score.
 - Index every new file in `project.c3proj`. Unique SIDs.
 - Never edit `*.uistate.json`.
 - Stay on the requested slice of the implementation order in root `AGENTS.md`.

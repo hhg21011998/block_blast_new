@@ -4,6 +4,8 @@ This folder is a Construct 3 project. Format notes: `llm-context.md`. Official g
 
 ## Always
 
+- Before editing scripts here, run graft from the repo root (`graft ask` / `graft grep` / `graft callers`). See root `AGENTS.md`.
+
 - Viewport is **1080×1920**, portrait, `letterbox-scale`.
 - `project.c3proj` is the index. New files are invisible until listed there.
 - Ignore `*.uistate.json`.
