@@ -18,7 +18,20 @@ interface IRuntime {
 	readonly mouse?: IMouseObject;
 	readonly touch?: ITouchObject;
 	timeScale: number;
+	viewportWidth?: number;
+	viewportHeight?: number;
+	platformInfo?: IPlatformInfo;
 	addEventListener(name: string, callback: (event?: unknown) => void): void;
+}
+
+interface IPlatformInfo {
+	os?: string;
+	windowInnerWidth?: number;
+	windowInnerHeight?: number;
+	canvasCssWidth?: number;
+	canvasCssHeight?: number;
+	canvasClientX?: number;
+	canvasClientY?: number;
 }
 
 interface IMouseObject {
@@ -36,12 +49,22 @@ interface ITouchObject {
 
 interface ILayout {
 	readonly name: string;
+	scrollX?: number;
+	scrollY?: number;
 	addEventListener(name: string, callback: () => void): void;
 	getLayer(name: string): ILayer | null;
 }
 
 interface ILayer {
 	cssPxToLayer?(clientX: number, clientY: number): unknown;
+	getViewport?(): {
+		x?: number;
+		y?: number;
+		left?: number;
+		top?: number;
+		width: number;
+		height: number;
+	};
 }
 
 interface IObjectType {

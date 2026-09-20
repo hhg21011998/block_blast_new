@@ -3,11 +3,10 @@ export const BOARD_SIZE = 8;
 export const LAYOUT_WIDTH = 1080;
 export const LAYOUT_HEIGHT = 1920;
 
+/** Design-time portrait defaults. Live playfield geom is `hud` in hud.ts. */
 export const CELL_STRIDE = 120;
-/** Same as stride so cells in a piece sit flush. Remaining gap is sprite padding. */
 export const CELL_SIZE = CELL_STRIDE;
 export const BOARD_PIXEL = BOARD_SIZE * CELL_STRIDE;
-
 export const BOARD_LEFT = (LAYOUT_WIDTH - BOARD_PIXEL) / 2;
 export const BOARD_TOP = 340;
 
@@ -75,18 +74,4 @@ export function applyClassicConfig(data: ClassicFile): void {
 	HIT_STOP_AFTER_LINES = data.feel.hitStopAfterLines;
 }
 
-export function cellCenterX(col: number): number {
-	return BOARD_LEFT + col * CELL_STRIDE + CELL_STRIDE / 2;
-}
 
-export function cellCenterY(row: number): number {
-	return BOARD_TOP + row * CELL_STRIDE + CELL_STRIDE / 2;
-}
-
-export function worldToCol(x: number): number {
-	return Math.floor((x - BOARD_LEFT) / CELL_STRIDE);
-}
-
-export function worldToRow(y: number): number {
-	return Math.floor((y - BOARD_TOP) / CELL_STRIDE);
-}

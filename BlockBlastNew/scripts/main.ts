@@ -4,6 +4,7 @@
  * Pointer + layout start are bound here.
  */
 import { loadGameData } from "./game/data.js";
+import { applyHud, hudWindowKey } from "./game/hud.js";
 import type { GameEventMap, GameEventName } from "./game/events.js";
 import { isPointerHeld, pollLayoutPos } from "./game/input.js";
 import { GameApp } from "./game/view.js";
@@ -23,6 +24,7 @@ export function getApp(): GameApp | null {
 
 export function initLayout(runtime: IRuntime): void {
 	if (runtime.layout.name !== "Game") return;
+	applyHud(runtime);
 	app?.dispose();
 	app = new GameApp(runtime);
 	app.start();
@@ -85,7 +87,22 @@ async function boot(runtime: IRuntime): Promise<void> {
 	if (!pointerBound) {
 		pointerBound = true;
 		bindPointer(runtime);
+		bindHudResize(runtime);
 	}
+}
+
+function bindHudResize(runtime: IRuntime): void {
+	let lastKey = "";
+	const sync = () => {
+		if (runtime.layout.name !== "Game" || !app) return;
+		const key = hudWindowKey(runtime);
+		if (key === lastKey) return;
+		lastKey = key;
+		applyHud(runtime);
+		app.relayout();
+	};
+	runtime.addEventListener("resize", sync);
+	runtime.addEventListener("tick", sync);
 }
 
 function bindPointer(runtime: IRuntime): void {

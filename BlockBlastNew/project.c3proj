@@ -181,6 +181,14 @@
 							"script-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "hud.ts",
+							"type": "application/typescript",
+							"sid": 581029384756217,
+							"script-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [],
@@ -355,7 +363,7 @@
 			1,
 			0
 		],
-		"orientations": "portrait",
+		"orientations": "any",
 		"webgpu": "auto",
 		"multitexturing": "auto",
 		"gpuPreference": "high-performance",

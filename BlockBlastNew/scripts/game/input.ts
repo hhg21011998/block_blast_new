@@ -1,14 +1,5 @@
-import {
-	BANK_COUNT,
-	BANK_HIT_RADIUS,
-	BANK_X,
-	BANK_Y,
-	BOARD_LAYER,
-	CELL_STRIDE,
-	DRAG_OFFSET_Y,
-	worldToCol,
-	worldToRow
-} from "./constants.js";
+import { BANK_COUNT, BOARD_LAYER } from "./constants.js";
+import { hud, worldToCol, worldToRow } from "./hud.js";
 import type { Shape } from "./shape.js";
 
 export interface Pointer {
@@ -105,10 +96,10 @@ export function instanceContains(
 
 export function hitBankSlot(x: number, y: number): number | null {
 	let best = -1;
-	let bestDist = BANK_HIT_RADIUS;
+	let bestDist = hud.bankHitRadius;
 	for (let i = 0; i < BANK_COUNT; i++) {
-		const dx = x - BANK_X[i]!;
-		const dy = y - BANK_Y;
+		const dx = x - hud.bankX[i]!;
+		const dy = y - hud.bankY[i]!;
 		const d = Math.hypot(dx, dy);
 		if (d < bestDist) {
 			bestDist = d;
@@ -123,12 +114,13 @@ export function snapOrigin(shape: Shape, fingerX: number, fingerY: number): {
 	col: number;
 	row: number;
 } {
-	const w = shape.cols * CELL_STRIDE;
-	const h = shape.rows * CELL_STRIDE;
+	const cell = hud.cellSize;
+	const w = shape.cols * cell;
+	const h = shape.rows * cell;
 	const left = fingerX - w / 2;
-	const top = fingerY - DRAG_OFFSET_Y - h;
+	const top = fingerY - hud.dragOffsetY - h;
 	return {
-		col: worldToCol(left + CELL_STRIDE / 2),
-		row: worldToRow(top + CELL_STRIDE / 2)
+		col: worldToCol(left + cell / 2),
+		row: worldToRow(top + cell / 2)
 	};
 }

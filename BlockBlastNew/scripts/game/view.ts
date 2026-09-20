@@ -2,21 +2,14 @@ import { animationFor } from "./colors.js";
 import {
 	BANK_COUNT,
 	BANK_LAYER,
-	BANK_SCALE,
-	BANK_X,
-	BANK_Y,
 	BOARD_LAYER,
 	BOARD_SIZE,
-	CELL_SIZE,
-	CELL_STRIDE,
 	DRAG_LAYER,
-	DRAG_OFFSET_Y,
 	HIT_STOP_AFTER_LINES,
 	HIT_STOP_MS,
-	PREVIEW_OPACITY,
-	cellCenterX,
-	cellCenterY
+	PREVIEW_OPACITY
 } from "./constants.js";
+import { cellCenterX, cellCenterY, hud } from "./hud.js";
 import { hitBankSlot, instanceContains, snapOrigin } from "./input.js";
 import { Session } from "./session.js";
 import type { Shape } from "./shape.js";
@@ -57,6 +50,13 @@ export class GameApp {
 		this.session.start();
 		this.renderBank();
 		this.renderFilled();
+	}
+
+	relayout(): void {
+		if (this.dragging) this.cancelDrag();
+		this.repositionGrid();
+		this.renderFilled();
+		this.renderBank();
 	}
 
 	dispose(): void {
@@ -114,7 +114,10 @@ export class GameApp {
 	}
 
 	private ensureGrid(): void {
-		if (this.grid.length > 0) return;
+		if (this.grid.length > 0) {
+			this.repositionGrid();
+			return;
+		}
 		const gridType = this.runtime.objects.Grid;
 		for (let row = 0; row < BOARD_SIZE; row++) {
 			for (let col = 0; col < BOARD_SIZE; col++) {
@@ -123,10 +126,28 @@ export class GameApp {
 					cellCenterX(col),
 					cellCenterY(row)
 				);
-				inst.width = CELL_SIZE;
-				inst.height = CELL_SIZE;
+				inst.width = hud.cellSize;
+				inst.height = hud.cellSize;
 				inst.opacity = 1;
 				this.grid.push(inst);
+			}
+		}
+	}
+
+	private repositionGrid(): void {
+		if (this.grid.length === 0) {
+			this.ensureGrid();
+			return;
+		}
+		let i = 0;
+		for (let row = 0; row < BOARD_SIZE; row++) {
+			for (let col = 0; col < BOARD_SIZE; col++) {
+				const inst = this.grid[i++];
+				if (!inst) continue;
+				inst.x = cellCenterX(col);
+				inst.y = cellCenterY(row);
+				inst.width = hud.cellSize;
+				inst.height = hud.cellSize;
 			}
 		}
 	}
@@ -145,7 +166,7 @@ export class GameApp {
 					BOARD_LAYER,
 					cellCenterX(col),
 					cellCenterY(row),
-					CELL_SIZE,
+					hud.cellSize,
 					animationFor(color),
 					1
 				);
@@ -162,9 +183,9 @@ export class GameApp {
 			this.bankSprites[slot] = this.spawnShape(
 				shape,
 				BANK_LAYER,
-				BANK_X[slot]!,
-				BANK_Y,
-				BANK_SCALE,
+				hud.bankX[slot]!,
+				hud.bankY[slot]!,
+				hud.bankScale,
 				1
 			);
 		}
@@ -185,9 +206,9 @@ export class GameApp {
 		const { shape } = this.drag;
 		const origin = snapOrigin(shape, fingerX, fingerY);
 		const valid = this.session.board.canPlace(shape, origin.col, origin.row);
-		const h = shape.rows * CELL_STRIDE;
+		const h = shape.rows * hud.cellSize;
 		const cx = fingerX;
-		const cy = fingerY - DRAG_OFFSET_Y - h / 2;
+		const cy = fingerY - hud.dragOffsetY - h / 2;
 		if (recreate || this.ghost.length === 0) {
 			this.clearGhost();
 			this.ghost = this.spawnShape(shape, DRAG_LAYER, cx, cy, 1, 1);
@@ -217,7 +238,7 @@ export class GameApp {
 					BOARD_LAYER,
 					cellCenterX(origin.col + cell.col),
 					cellCenterY(origin.row + cell.row),
-					CELL_SIZE,
+					hud.cellSize,
 					anim,
 					PREVIEW_OPACITY
 				)
@@ -240,7 +261,7 @@ export class GameApp {
 		centerY: number,
 		scale: number
 	): void {
-		const stride = CELL_SIZE * scale;
+		const stride = hud.cellSize * scale;
 		const originX = centerX - (shape.cols * stride) / 2 + stride / 2;
 		const originY = centerY - (shape.rows * stride) / 2 + stride / 2;
 		for (let i = 0; i < shape.cells.length; i++) {
@@ -320,8 +341,8 @@ export class GameApp {
 		opacity: number
 	): BlockSprite[] {
 		const out: BlockSprite[] = [];
-		const size = CELL_SIZE * scale;
-		const stride = CELL_SIZE * scale;
+		const size = hud.cellSize * scale;
+		const stride = hud.cellSize * scale;
 		const originX = centerX - (shape.cols * stride) / 2 + stride / 2;
 		const originY = centerY - (shape.rows * stride) / 2 + stride / 2;
 		const anim = animationFor(shape.color);
