@@ -1,5 +1,5 @@
 import { BANK_COUNT, BOARD_LAYER } from "./constants.js";
-import { hud, worldToCol, worldToRow } from "./hud.js";
+import { hud, liftedDragPoint, worldToCol, worldToRow } from "./hud.js";
 import type { Shape } from "./shape.js";
 
 export interface Pointer {
@@ -26,6 +26,43 @@ function runtimeMouse(runtime: IRuntime): RuntimeMouse | undefined {
 
 function runtimeTouch(runtime: IRuntime): RuntimeTouch | undefined {
 	return (runtime as IRuntime & { touch?: RuntimeTouch }).touch;
+}
+
+function xy(value: unknown): Pointer {
+	if (Array.isArray(value) && typeof value[0] === "number" && typeof value[1] === "number") {
+		return { x: value[0], y: value[1] };
+	}
+	if (value !== null && typeof value === "object" && "x" in value && "y" in value) {
+		const v = value as { x: unknown; y: unknown };
+		if (typeof v.x === "number" && typeof v.y === "number") {
+			return { x: v.x, y: v.y };
+		}
+	}
+	return { x: 0, y: 0 };
+}
+
+/** Convert a Construct pointer/mouse event (client CSS px) to Board layer coords. */
+export function layoutPosFromEvent(runtime: IRuntime, event?: unknown): Pointer {
+	const e = event as { clientX?: number; clientY?: number } | undefined;
+	const layer = runtime.layout.getLayer(BOARD_LAYER);
+	if (layer?.cssPxToLayer && e && typeof e.clientX === "number" && typeof e.clientY === "number") {
+		return xy(layer.cssPxToLayer(e.clientX, e.clientY));
+	}
+	return pollLayoutPos(runtime);
+}
+
+export function isPrimaryButton(event?: unknown): boolean {
+	const button = (event as { button?: number } | undefined)?.button;
+	return button === undefined || button === 0;
+}
+
+export function isMouseHeld(runtime: IRuntime): boolean {
+	try {
+		const mouse = runtimeMouse(runtime);
+		return !!(mouse?.isMouseButtonDown && mouse.isMouseButtonDown(0));
+	} catch {
+		return false;
+	}
 }
 
 /** True while left mouse is down or at least one touch is active. */
@@ -117,8 +154,9 @@ export function snapOrigin(shape: Shape, fingerX: number, fingerY: number): {
 	const cell = hud.cellSize;
 	const w = shape.cols * cell;
 	const h = shape.rows * cell;
-	const left = fingerX - w / 2;
-	const top = fingerY - hud.dragOffsetY - h;
+	const p = liftedDragPoint(fingerX, fingerY, h);
+	const left = p.x - w / 2;
+	const top = p.y - h;
 	return {
 		col: worldToCol(left + cell / 2),
 		row: worldToRow(top + cell / 2)

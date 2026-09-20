@@ -4,9 +4,14 @@
  * Pointer + layout start are bound here.
  */
 import { loadGameData } from "./game/data.js";
-import { applyHud, hudWindowKey } from "./game/hud.js";
+import { applyHud, hudWindowKey, setPrecisionPointer } from "./game/hud.js";
 import type { GameEventMap, GameEventName } from "./game/events.js";
-import { isPointerHeld, pollLayoutPos } from "./game/input.js";
+import {
+	isMouseHeld,
+	layoutPosFromEvent,
+	isPrimaryButton,
+	pollLayoutPos
+} from "./game/input.js";
 import { GameApp } from "./game/view.js";
 
 let app: GameApp | null = null;
@@ -107,17 +112,47 @@ function bindHudResize(runtime: IRuntime): void {
 
 function bindPointer(runtime: IRuntime): void {
 	let held = false;
+	let source: "none" | "pointer" | "mouse" = "none";
+
+	const down = (p: { x: number; y: number }, src: "pointer" | "mouse", event?: unknown) => {
+		if (!autoInput || !app || held) return;
+		held = true;
+		source = src;
+		const pointerType = (event as { pointerType?: string } | undefined)?.pointerType;
+		setPrecisionPointer(src === "mouse" || pointerType === "mouse" || pointerType === "pen");
+		pointerDown(p.x, p.y);
+	};
+	const move = (p: { x: number; y: number }) => {
+		if (!autoInput || !held) return;
+		pointerMove(p.x, p.y);
+	};
+	const up = (p: { x: number; y: number }) => {
+		if (!autoInput || !held) return;
+		held = false;
+		source = "none";
+		pointerUp(p.x, p.y);
+	};
+
+	runtime.addEventListener("pointerdown", (event?: unknown) => {
+		if (!isPrimaryButton(event)) return;
+		down(layoutPosFromEvent(runtime, event), "pointer", event);
+	});
+	runtime.addEventListener("pointermove", (event?: unknown) => {
+		move(layoutPosFromEvent(runtime, event));
+	});
+	const pointerUpEv = (event?: unknown) => {
+		up(layoutPosFromEvent(runtime, event));
+	};
+	runtime.addEventListener("pointerup", pointerUpEv);
+	runtime.addEventListener("pointercancel", pointerUpEv);
+
 	runtime.addEventListener("tick", () => {
 		if (!autoInput || !app) return;
-		const nowHeld = isPointerHeld(runtime);
+		if (source === "pointer") return;
+		const mouseHeld = isMouseHeld(runtime);
 		const p = pollLayoutPos(runtime);
-		if (nowHeld && !held) {
-			pointerDown(p.x, p.y);
-		} else if (nowHeld && held) {
-			pointerMove(p.x, p.y);
-		} else if (!nowHeld && held) {
-			pointerUp(p.x, p.y);
-		}
-		held = nowHeld;
+		if (mouseHeld && !held) down(p, "mouse");
+		else if (mouseHeld && held) move(p);
+		else if (!mouseHeld && held) up(p);
 	});
 }

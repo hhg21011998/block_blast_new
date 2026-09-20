@@ -9,7 +9,7 @@ import {
 	HIT_STOP_MS,
 	PREVIEW_OPACITY
 } from "./constants.js";
-import { cellCenterX, cellCenterY, hud } from "./hud.js";
+import { cellCenterX, cellCenterY, hud, liftedDragPoint } from "./hud.js";
 import { hitBankSlot, instanceContains, snapOrigin } from "./input.js";
 import { Session } from "./session.js";
 import type { Shape } from "./shape.js";
@@ -70,7 +70,7 @@ export class GameApp {
 	}
 
 	pointerDown(x: number, y: number): void {
-		if (this.session.lost) return;
+		if (this.dragging || this.session.lost) return;
 		const slot = this.hitBank(x, y);
 		if (slot === null) return;
 		const shape = this.session.bank[slot];
@@ -207,8 +207,9 @@ export class GameApp {
 		const origin = snapOrigin(shape, fingerX, fingerY);
 		const valid = this.session.board.canPlace(shape, origin.col, origin.row);
 		const h = shape.rows * hud.cellSize;
-		const cx = fingerX;
-		const cy = fingerY - hud.dragOffsetY - h / 2;
+		const p = liftedDragPoint(fingerX, fingerY, h);
+		const cx = p.x;
+		const cy = p.y - h / 2;
 		if (recreate || this.ghost.length === 0) {
 			this.clearGhost();
 			this.ghost = this.spawnShape(shape, DRAG_LAYER, cx, cy, 1, 1);

@@ -29,6 +29,46 @@ export interface HudState {
 	uiWidth: number;
 }
 
+/** Mouse/pen: piece sits on the cursor. Touch: lift so the finger does not cover the board. */
+let precisionPointer = false;
+
+export function setPrecisionPointer(enabled: boolean): void {
+	precisionPointer = enabled;
+}
+
+/**
+ * Touch: finger at the bottom of the board → piece stays ~150px above the finger.
+ * Finger at the middle of the board → piece already sits at the top.
+ * Mouse/pen: identity.
+ */
+export function liftedDragPoint(
+	fingerX: number,
+	fingerY: number,
+	pieceHeight: number
+): { x: number; y: number } {
+	if (precisionPointer) {
+		return { x: fingerX, y: fingerY };
+	}
+	const cell = hud.cellSize;
+	const boardTop = hud.boardTop;
+	const boardH = BOARD_SIZE * cell;
+	const boardBottom = boardTop + boardH;
+	const boardMid = boardTop + boardH * 0.5;
+	const span = Math.max(cell, boardBottom - boardMid);
+	const t = clamp01((boardBottom - fingerY) / span);
+	const minLift = 150;
+	const yNear = fingerY - minLift;
+	const yAtTop = boardTop + Math.max(pieceHeight, cell);
+	const y = yNear + t * (yAtTop - yNear);
+	return { x: fingerX, y };
+}
+
+function clamp01(n: number): number {
+	if (n < 0) return 0;
+	if (n > 1) return 1;
+	return n;
+}
+
 export const hud: HudState = {
 	landscape: false,
 	cellSize: 120,
