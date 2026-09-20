@@ -1,0 +1,1015 @@
+{
+  "version": 1,
+  "source": "Assets/Resources/jsondata/shapedatabases/ShapeDatabase-All.json families 0-14",
+  "shapes": [
+    {
+      "guid": "Shape_0_0",
+      "rows": 1,
+      "cols": 1,
+      "color": 5,
+      "brc": 300,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        }
+      ]
+    },
+    {
+      "guid": "Shape_1_0",
+      "rows": 2,
+      "cols": 2,
+      "color": 1,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_1_1",
+      "rows": 2,
+      "cols": 2,
+      "color": 5,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_1_2",
+      "rows": 2,
+      "cols": 2,
+      "color": 4,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_1_3",
+      "rows": 2,
+      "cols": 2,
+      "color": 1,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_2_0",
+      "rows": 2,
+      "cols": 1,
+      "color": 4,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_2_1",
+      "rows": 1,
+      "cols": 2,
+      "color": 6,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        }
+      ]
+    },
+    {
+      "guid": "Shape_3_0",
+      "rows": 3,
+      "cols": 1,
+      "color": 3,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 0,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_3_1",
+      "rows": 1,
+      "cols": 3,
+      "color": 6,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 2,
+          "row": 0
+        }
+      ]
+    },
+    {
+      "guid": "Shape_4_0",
+      "rows": 4,
+      "cols": 1,
+      "color": 4,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 0,
+          "row": 2
+        },
+        {
+          "col": 0,
+          "row": 3
+        }
+      ]
+    },
+    {
+      "guid": "Shape_4_1",
+      "rows": 1,
+      "cols": 4,
+      "color": 4,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 2,
+          "row": 0
+        },
+        {
+          "col": 3,
+          "row": 0
+        }
+      ]
+    },
+    {
+      "guid": "Shape_5_0",
+      "rows": 5,
+      "cols": 1,
+      "color": 6,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 0,
+          "row": 2
+        },
+        {
+          "col": 0,
+          "row": 3
+        },
+        {
+          "col": 0,
+          "row": 4
+        }
+      ]
+    },
+    {
+      "guid": "Shape_5_1",
+      "rows": 1,
+      "cols": 5,
+      "color": 4,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 2,
+          "row": 0
+        },
+        {
+          "col": 3,
+          "row": 0
+        },
+        {
+          "col": 4,
+          "row": 0
+        }
+      ]
+    },
+    {
+      "guid": "Shape_6_0",
+      "rows": 3,
+      "cols": 3,
+      "color": 1,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 2,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 1
+        },
+        {
+          "col": 2,
+          "row": 1
+        },
+        {
+          "col": 0,
+          "row": 2
+        },
+        {
+          "col": 1,
+          "row": 2
+        },
+        {
+          "col": 2,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_7_0",
+      "rows": 3,
+      "cols": 3,
+      "color": 5,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 2,
+          "row": 0
+        },
+        {
+          "col": 2,
+          "row": 1
+        },
+        {
+          "col": 0,
+          "row": 2
+        },
+        {
+          "col": 1,
+          "row": 2
+        },
+        {
+          "col": 2,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_7_1",
+      "rows": 3,
+      "cols": 3,
+      "color": 2,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 0,
+          "row": 2
+        },
+        {
+          "col": 1,
+          "row": 2
+        },
+        {
+          "col": 2,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_7_2",
+      "rows": 3,
+      "cols": 3,
+      "color": 6,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 2,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 0,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_7_3",
+      "rows": 3,
+      "cols": 3,
+      "color": 6,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 2,
+          "row": 0
+        },
+        {
+          "col": 2,
+          "row": 1
+        },
+        {
+          "col": 2,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_8_0",
+      "rows": 2,
+      "cols": 3,
+      "color": 2,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 1
+        },
+        {
+          "col": 2,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_8_1",
+      "rows": 3,
+      "cols": 2,
+      "color": 6,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 1
+        },
+        {
+          "col": 0,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_8_2",
+      "rows": 2,
+      "cols": 3,
+      "color": 2,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 2,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_8_3",
+      "rows": 3,
+      "cols": 2,
+      "color": 5,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_9_0",
+      "rows": 2,
+      "cols": 3,
+      "color": 3,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 1
+        },
+        {
+          "col": 2,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_9_1",
+      "rows": 3,
+      "cols": 2,
+      "color": 3,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 1
+        },
+        {
+          "col": 0,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_9_2",
+      "rows": 2,
+      "cols": 3,
+      "color": 6,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 2,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_9_3",
+      "rows": 3,
+      "cols": 2,
+      "color": 4,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_10_0",
+      "rows": 2,
+      "cols": 3,
+      "color": 6,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 2,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 1
+        },
+        {
+          "col": 2,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_10_1",
+      "rows": 3,
+      "cols": 2,
+      "color": 4,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 0,
+          "row": 2
+        },
+        {
+          "col": 1,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_10_2",
+      "rows": 2,
+      "cols": 3,
+      "color": 4,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 2,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_10_3",
+      "rows": 3,
+      "cols": 2,
+      "color": 3,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_10_4",
+      "rows": 2,
+      "cols": 3,
+      "color": 4,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 1
+        },
+        {
+          "col": 2,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_10_5",
+      "rows": 3,
+      "cols": 2,
+      "color": 2,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 0,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_10_6",
+      "rows": 2,
+      "cols": 3,
+      "color": 5,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 2,
+          "row": 0
+        },
+        {
+          "col": 2,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_10_7",
+      "rows": 3,
+      "cols": 2,
+      "color": 1,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 1
+        },
+        {
+          "col": 0,
+          "row": 2
+        },
+        {
+          "col": 1,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_11_0",
+      "rows": 3,
+      "cols": 3,
+      "color": 3,
+      "brc": 30,
+      "cells": [
+        {
+          "col": 2,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 1
+        },
+        {
+          "col": 0,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_11_1",
+      "rows": 3,
+      "cols": 3,
+      "color": 6,
+      "brc": 30,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 1
+        },
+        {
+          "col": 2,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "guid": "Shape_12_0",
+      "rows": 2,
+      "cols": 2,
+      "color": 3,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_12_1",
+      "rows": 2,
+      "cols": 2,
+      "color": 5,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_13_0",
+      "rows": 2,
+      "cols": 2,
+      "color": 5,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_14_0",
+      "rows": 2,
+      "cols": 3,
+      "color": 4,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 2,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 1
+        },
+        {
+          "col": 2,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "guid": "Shape_14_1",
+      "rows": 3,
+      "cols": 2,
+      "color": 2,
+      "brc": 0,
+      "cells": [
+        {
+          "col": 0,
+          "row": 0
+        },
+        {
+          "col": 1,
+          "row": 0
+        },
+        {
+          "col": 0,
+          "row": 1
+        },
+        {
+          "col": 1,
+          "row": 1
+        },
+        {
+          "col": 0,
+          "row": 2
+        },
+        {
+          "col": 1,
+          "row": 2
+        }
+      ]
+    }
+  ]
+}

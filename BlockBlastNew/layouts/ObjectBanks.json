@@ -10,7 +10,7 @@
 					"type": "Block",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Default",
+						"initial-animation": "Red",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -23,12 +23,78 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 175,
-						"y": 122,
+						"x": 316,
+						"y": 303,
 						"width": 129,
 						"height": 128,
 						"originX": 0.5038759689922481,
 						"originY": 0.49609375,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Block_Blue",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2,
+					"sid": 405571684284132,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 114,
+						"y": 308,
+						"width": 117,
+						"height": 117,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Grid",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 3,
+					"sid": 584555374492959,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 504,
+						"y": 298,
+						"width": 128,
+						"height": 128,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

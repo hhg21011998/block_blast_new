@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "source": "Assets/Resources/offlinedata/GameServerSettings.bytes",
+  "boardSize": 8,
+  "bankCount": 3,
+  "score": {
+    "perCell": 1,
+    "lineClears": [10, 20, 60, 100, 150, 250],
+    "boardClear": 300,
+    "streakStartAfterClears": 2,
+    "resetStreakAfterNonClears": 3,
+    "resetStreakAfterBoardClear": 7
+  },
+  "feel": {
+    "dragOffsetY": 125,
+    "bankScale": 0.5,
+    "loseDelayMs": 500,
+    "hitStopMs": 200,
+    "hitStopAfterLines": 3
+  }
+}

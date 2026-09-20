@@ -29,7 +29,7 @@ When adding something:
 | `images/` | `object-animation-000.png` for sprites; lowercase object name for tiled/9-patch |
 | `layouts/` | Layout JSON (layers + instances) |
 | `eventSheets/` | Event sheet JSON |
-| `scripts/` | JS modules (`scriptsType` is `module`) |
+| `scripts/` | TypeScript modules (`scriptsType` is `module`). List each `.ts` in `project.c3proj` with `script-info.purpose`: `main` (exactly one), `imports-for-events` (event-sheet imports), or `none`. |
 | `sounds/` `music/` | Audio (prefer WebM Opus for C3; dump wav/ogg may need convert) |
 | `fonts/` | WOFF |
 | `files/` | Extra data (e.g. shape JSON copies) |
@@ -41,13 +41,11 @@ When adding something:
 
 ## Scripts vs events
 
-Prefer `scripts/` for grid math, placement, clears, score. Use `E_Game` for:
+Prefer TypeScript in `scripts/` for grid math, placement, clears, score. Do not fill `E_Game` unless the user asks — they own the event sheet.
 
-- On start of layout → init
-- Touch / pointer → pick up, drag, drop
-- Call into exported JS functions
+Event sheets may call into TypeScript via `importsForEvents.ts` (`Game.pointerDown(x, y)`, `Game.on("cleared", ...)`).
 
-Keep event JSON valid: existing empty sheet is `{ "name": "E_Game", "events": [], "sid": ... }`. If you add events, copy the structure of a real C3 event (conditions/actions/sid) — do not invent keys.
+Keep event JSON valid. Copy the structure of a real C3 event (conditions/actions/sid) — do not invent keys. Script blocks: `{ "eventType": "script", "language": "typescript", "script": "..." }`.
 
 ## Sprites
 

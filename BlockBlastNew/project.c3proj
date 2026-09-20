@@ -8,18 +8,48 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
 			"author": "Scirra",
 			"bundled": false
 		}
 	],
 	"uniqueId": "ovcrx62dotz",
 	"objectTypes": {
-		"items": [
-			"Block"
-		],
-		"subfolders": []
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"Mouse",
+					"Touch"
+				],
+				"subfolders": [],
+				"name": "System"
+			},
+			{
+				"items": [
+					"Block",
+					"Block_Blue",
+					"Grid"
+				],
+				"subfolders": [],
+				"name": "Game"
+			}
+		]
 	},
 	"functionsName": "Functions",
 	"autosaveData": null,
@@ -30,8 +60,8 @@
 	},
 	"layouts": {
 		"items": [
-			"Game",
-			"ObjectBanks"
+			"ObjectBanks",
+			"Game"
 		],
 		"subfolders": []
 	},
@@ -43,8 +73,125 @@
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [],
-			"subfolders": []
+			"items": [
+				{
+					"name": "main.ts",
+					"type": "application/typescript",
+					"sid": 581029384756201,
+					"script-info": {
+						"purpose": "main"
+					}
+				},
+				{
+					"name": "importsForEvents.ts",
+					"type": "application/typescript",
+					"sid": 581029384756202,
+					"script-info": {
+						"purpose": "imports-for-events"
+					}
+				}
+			],
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "constants.ts",
+							"type": "application/typescript",
+							"sid": 581029384756203,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "board.ts",
+							"type": "application/typescript",
+							"sid": 581029384756204,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "view.ts",
+							"type": "application/typescript",
+							"sid": 581029384756205,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "shape.ts",
+							"type": "application/typescript",
+							"sid": 581029384756206,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "shapes.ts",
+							"type": "application/typescript",
+							"sid": 581029384756207,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "colors.ts",
+							"type": "application/typescript",
+							"sid": 581029384756208,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "events.ts",
+							"type": "application/typescript",
+							"sid": 581029384756209,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "score.ts",
+							"type": "application/typescript",
+							"sid": 581029384756213,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "session.ts",
+							"type": "application/typescript",
+							"sid": 581029384756214,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "input.ts",
+							"type": "application/typescript",
+							"sid": 581029384756215,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "data.ts",
+							"type": "application/typescript",
+							"sid": 581029384756216,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "game"
+				},
+				{
+					"items": [],
+					"subfolders": [],
+					"name": "types"
+				}
+			]
 		},
 		"sound": {
 			"items": [],
@@ -124,7 +271,32 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "shapes.json",
+					"type": "application/json",
+					"sid": 581029384756301,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "colors.json",
+					"type": "application/json",
+					"sid": 581029384756302,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "classic.json",
+					"type": "application/json",
+					"sid": 581029384756303,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},
@@ -161,7 +333,7 @@
 		"zAxisScale": "regular",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
-		"fullscreenMode": "letterbox-scale",
+		"fullscreenMode": "scale-outer",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
@@ -206,5 +378,5 @@
 	},
 	"viewportWidth": 1080,
 	"viewportHeight": 1920,
-	"firstLayout": null
+	"firstLayout": "Game"
 }

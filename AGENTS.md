@@ -22,8 +22,10 @@ Clone of **Block Blast / Woodoku Blast**. Gameplay is a Construct 3 project. The
 
 ## Where code goes
 
-- Prefer JavaScript modules in `BlockBlastNew/scripts/` for grid, bank, placement, clears, score.
-- Event sheets are glue (start of layout, input). Do not hand-author huge event JSON if a script can do it.
+- Prefer **TypeScript** modules in `BlockBlastNew/scripts/` for grid, bank, placement, clears, score. Construct compiles `.ts` in the project (no sibling `.js`).
+- Event sheets (`E_Game`) are owned by the user. Do not add gameplay events there unless asked.
+- TypeScript starts itself on Game layout (`beforelayoutstart`). Event sheets may call `Game.pointerDown/Move/Up(x, y)` and `Game.on(...)` via `importsForEvents.ts`.
+- `main.ts` is the Main script. Other `.ts` files must be imported from it (or from a module it imports) or they will not load.
 - Register every new object, script, layout, event sheet, sound, or font in `BlockBlastNew/project.c3proj`.
 - Never edit `*.uistate.json` (editor chrome only).
 - Do not copy Unity C#, prefabs, or Sentis into Construct 3.
