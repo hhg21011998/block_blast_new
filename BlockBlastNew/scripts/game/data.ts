@@ -1,22 +1,26 @@
 import { applyClassicConfig } from "./constants.js";
 import { applyColorsJson } from "./colors.js";
+import { applyHandJson, type HandFile } from "./hand.js";
 import { applyShapesJson } from "./shapes.js";
 
 const FILES = {
 	shapes: "shapes.json",
 	colors: "colors.json",
-	classic: "classic.json"
+	classic: "classic.json",
+	hand: "hand-classic.json"
 } as const;
 
 export async function loadGameData(runtime: IRuntime): Promise<void> {
-	const [shapes, colors, classic] = await Promise.all([
+	const [shapes, colors, classic, hand] = await Promise.all([
 		fetchProjectJson(runtime, FILES.shapes),
 		fetchProjectJson(runtime, FILES.colors),
-		fetchProjectJson(runtime, FILES.classic)
+		fetchProjectJson(runtime, FILES.classic),
+		fetchProjectJson(runtime, FILES.hand)
 	]);
 	applyShapesJson(shapes as { shapes: import("./shape.js").Shape[] });
 	applyColorsJson(colors as Parameters<typeof applyColorsJson>[0]);
 	applyClassicConfig(classic as Parameters<typeof applyClassicConfig>[0]);
+	applyHandJson(hand as HandFile);
 }
 
 async function fetchProjectJson(runtime: IRuntime, filename: string): Promise<unknown> {

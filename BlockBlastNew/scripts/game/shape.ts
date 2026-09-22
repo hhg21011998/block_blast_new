@@ -8,7 +8,7 @@ export interface Shape {
 	readonly rows: number;
 	readonly cols: number;
 	readonly color: number;
-	/** Unlock BRC. 0 = normal spawn. Shape_0 is 300 (revive). */
+	/** Catalog gate from ShapeDatabase. Classic spawn uses hand-classic.json. */
 	readonly brc: number;
 	readonly cells: readonly CellOffset[];
 }

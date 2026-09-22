@@ -1,6 +1,7 @@
 import { Board } from "./board.js";
 import { BANK_COUNT, LOSE_DELAY_MS, RESET_STREAK_AFTER_NON_CLEARS } from "./constants.js";
 import { EventBus } from "./events.js";
+import { advanceBrc, spawnBank } from "./hand.js";
 import {
 	createScoreState,
 	noteClear,
@@ -11,7 +12,6 @@ import {
 	type ScoreState
 } from "./score.js";
 import type { Shape } from "./shape.js";
-import { getSpawnShapes } from "./shapes.js";
 
 export interface PlaceOk {
 	ok: true;
@@ -41,6 +41,8 @@ export class Session {
 	readonly events = new EventBus();
 	readonly bank: (Shape | null)[] = [null, null, null];
 	readonly score: ScoreState = createScoreState();
+	/** Lines cleared this run, capped by the classic hand. */
+	brc = 0;
 	lost = false;
 	private loseTimer: ReturnType<typeof setTimeout> | null = null;
 	private readonly rng: () => number;
@@ -58,6 +60,7 @@ export class Session {
 		this.score.consecutiveClears = 0;
 		this.score.nonClearStreak = 0;
 		this.score.nonClearLimit = RESET_STREAK_AFTER_NON_CLEARS;
+		this.brc = 0;
 		this.refillBank();
 		this.events.emit("started", { score: 0 });
 		this.events.emit("score", { score: 0 });
@@ -100,6 +103,7 @@ export class Session {
 			boardClear = this.board.isAllEmpty();
 			clearDelta = scoreForLines(lineCount, boardClear);
 			scoreDelta += noteClear(this.score, lineCount, boardClear);
+			this.brc = advanceBrc(this.brc, lineCount);
 		} else {
 			noteNonClear(this.score);
 		}
@@ -157,14 +161,9 @@ export class Session {
 	}
 
 	private refillBank(): void {
-		const catalog = getSpawnShapes();
-		const pool = catalog.filter((s) => this.board.canPlaceAnywhere(s));
-		const source = pool.length > 0 ? pool : catalog;
-		if (source.length === 0) {
-			throw new Error("shapes.json produced an empty spawn catalog");
-		}
+		const picked = spawnBank(this.board, this.brc, this.rng);
 		for (let i = 0; i < BANK_COUNT; i++) {
-			this.bank[i] = pick(source, this.rng);
+			this.bank[i] = picked[i] ?? null;
 		}
 		this.events.emit("bankRefill", {
 			guids: this.bank.map((s) => s?.guid ?? "")
@@ -204,9 +203,4 @@ export class Session {
 			this.loseTimer = null;
 		}
 	}
-}
-
-function pick<T>(list: readonly T[], rng: () => number): T {
-	const i = Math.min(list.length - 1, Math.floor(rng() * list.length));
-	return list[i]!;
 }

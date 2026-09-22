@@ -189,6 +189,14 @@
 							"script-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "hand.ts",
+							"type": "application/typescript",
+							"sid": 581029384756218,
+							"script-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [],
@@ -300,6 +308,14 @@
 					"name": "classic.json",
 					"type": "application/json",
 					"sid": 581029384756303,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "hand-classic.json",
+					"type": "application/json",
+					"sid": 581029384756304,
 					"file-info": {
 						"purpose": "none"
 					}

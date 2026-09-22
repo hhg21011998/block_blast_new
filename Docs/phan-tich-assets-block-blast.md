@@ -102,9 +102,9 @@ File: `Assets/Resources/jsondata/shapedatabases/ShapeDatabase-All.json`
 - **165** variant, **46** họ (`Shape_0` … `Shape_45`).
 - `shapeData`: mảng row-major. `0` = lỗ, số khác = color id 1–6.
 - `rows` × `cols`: bounding box.
-- `modifier`: ~nghịch đảo kích thước (quân nhỏ “đắt” hơn khi sinh).
+- `modifier`: ~nghịch đảo kích thước (quân thẳng `edges = 4` đúng bằng `3.75 / số ô`). Database này **không** phải trọng số lúc sinh.
 - `rarityTier`: 0–5.
-- `onlyShowShapeAfterBrcValue`: khóa quân theo BRC (board-run counter).
+- `onlyShowShapeAfterBrcValue`: cổng trong catalog. Cổng thật lúc sinh nằm trong `inv-hand-*.bytes` và khác catalog (ví dụ `Shape_0_0` catalog 300, Classic hand 500; `Shape_11` catalog 30, Classic hand 0).
 
 ### 4.1 Họ lõi — clone trước (rarity 0)
 
@@ -260,44 +260,89 @@ FTUE video (tắt): butterfly, balloon, box, flower, fireworks, apple.
 
 ## 8. Invisible Hand — sinh quân
 
-Không random đều. Đây là hệ thống độ khó cốt lõi.
+Không random đều 165 quân. Dump chỉ có **config chấm điểm**, không có C# cộng các số này lại. Curve Unity là nội suy tuyến tính; trục X là `brc / maxBrc`.
 
-| File | Dùng cho |
+| File | Version |
 |---|---|
-| `inv-hand-classic.bytes` | Classic — version “Super Easy (Better End Game)” |
-| `inv-hand-journey.bytes` | Journey — “JOURNEY-JIH 2+ Clear Mechs WB” |
-| `invisiblehandconfigs/*.bytes` | 4 biến thể hashed |
+| `inv-hand-classic.bytes` | `Super Easy (Better End Game) - (Classic BakedIn)`, 26 Feb 2025 |
+| `inv-hand-journey.bytes` | `JOURNEY-JIH 2+ Clear Mechs WB` |
+| `invisiblehandconfigs/6323289c….bytes` | `JIH 1 Clear Mechs Short WB` |
+| `invisiblehandconfigs/d607b997….bytes` | `JIH 1 Clear Mechs Long WB` |
+| `invisiblehandconfigs/05b6973f….bytes` | `JIH 1 Clear Mechs Long (BakedIn)` |
+| `invisiblehandconfigs/965edd95….bytes` | `JIH 2+ Clear Mechs WB` (trùng journey) |
 
-### Tham số chung
+75 level Journey trỏ `invisibleHandOverrideKey`: JIH 1 (25), JIH 7 (13), JIH 11 (11), JIH 4 (11), JIH 10 (9), JIH 2 (5), JIH 5 (1). File curve của **JIH 4, 5, 7, 10, 11 không có** trong dump này.
 
-| Tham số | Classic | Journey |
-|---|---|---|
-| `maxBrc` | 100 | 100 |
-| `brcValueOnClear` | +1 | +1 |
-| `complexShapeMultiplier` | **3** | 0 |
-| `terminatorMod` | 1 | 1 |
-| `perfectFitModValue` | (có) | 100 |
-| `minimumPerfectFitPercentage` | — | 0.67 |
-| `minimumCellsFilledPercentage` | — | 0.26 |
-| `rngStrategy` | — | 2 |
-| `cherryPickRange` | — | 100 |
+### Tham số đang bật (mọi profile baked giống nhau, trừ chỗ ghi)
 
-BRC (board-run counter) 0–100, tăng mỗi lần xóa line. Dùng làm trục X của các curve.
+| Tham số | Giá trị |
+|---|---|
+| `maxBrc` / `brcValueOnClear` | 100 / +1 mỗi clear |
+| `perfectFitModValue` | **100** (Classic lẫn Journey) |
+| `minimumPerfectFitPercentage` | 0.67 |
+| `minimumCellsFilledPercentage` | 0.26 |
+| `perfectFitWeightedRandomness` | false |
+| `perfectFitIgnoreSameCellsCalculations` | true |
+| `perfectFitComplexShapeBonus` | 1 |
+| `perfectFit100PercentBonus` | 0 |
+| `terminatorMod` | 1 |
+| `sequentialTerminator` | false |
+| `rngStrategy` / `cherryPickRange` | 2 / 100 |
+| `complexShapeMultiplier` | Classic **3** (curve phẳng 0.5); Journey và JIH 2+ = 0; JIH 1 Long BakedIn = 3 nhưng curve = 0 |
+| `boardStartingPosition` | 1 |
 
-### Các trọng số chấm điểm quân
+Tắt hết (mod 0 và curve phẳng 0): `emptyBoard`, `alreadyInBank`, `canBePlaced`, `bigShape`, `mercy`, `seenBefore` exact/rotated.
 
-- **Terminator** — quân khó, tăng theo BRC (Classic: 0 → 0.15 @0.26 → 0.8 @0.36 → 1.5 @1.0).
-- **Perfect fit** — thưởng khớp lỗ trên bàn.
-- **Complementary fit** — quân điền phần còn lại.
-- **Complex shape** — Classic nhân 3.
-- **Mercy** — cứu khi sắp thua.
-- **Can be placed / empty board / already in bank / seen before** — phạt trùng, thưởng đặt được.
+### Curve đang sống (time = BRC/100)
 
-Journey IH chỉ whitelist subset Shape_1–17 (không 1×1 thường, không họ hiếm). Revive: ba `Shape_0_0`.
+Classic — giúp lâu, siết cuối ván:
 
-Unity **Sentis** (shader NN) có trong `Assets/Resources/sentis/` — có thể hỗ trợ sinh quân phía client. **Không bắt buộc** cho bản clone đầu; bắt đầu bằng weighted random + perfect-fit.
+| Curve | 0 | mốc giữa | 1.0 |
+|---|---|---|---|
+| `perfectFitCurve` | 0.95 | 0.95 @0.26 → 0.1 @0.36, giữ 0.1 | 0.1 |
+| `terminatorCurve` | 0 | 0.15 @0.26 → 0.8 @0.36, giữ tới 0.5 | 1.5 |
+| `complementaryFitCurve` | 0.9 | 0.9 @0.5 → 0.3 @0.6 | 0.1 |
 
-Level Journey có `invisibleHandOverrideKey` (`JIH 1`, `JIH 4`, `JIH 7`, `JIH 10`, `JIH 11`…) để chọn profile IH theo level.
+Journey / JIH 2+ — hết “vừa khít” rất sớm, terminator không bao giờ gắt:
+
+| Curve | 0 | mốc giữa | 1.0 |
+|---|---|---|---|
+| `perfectFitCurve` | 1 | 0.9 @0.03 → 0.4 @0.04 | 0.4 |
+| `terminatorCurve` | 0 | 0 tới 0.08 → 0.25 @0.2 | 0.4 |
+| `complementaryFitCurve` | 1 | 0.9 @0.2 → 0.4 @0.45 | 0.4 |
+
+JIH 1 Short: perfect-fit về 0.1 ở BRC 4%, terminator lên 0.85 ở BRC 10%. JIH 1 Long: perfect-fit cũng chết ở ~4%, terminator chỉ tới 0.85 ở BRC 50%.
+
+Thưởng perfect-fit thực tế = `100 × curve`. Classic đầu ván là **+95**, át trọng số gốc của quân (0.42–12.5).
+
+### Pool
+
+Classic 50 quân, trọng số field `modifier` (quân thẳng ≈ `12.5 / số ô`; T/S/chéo/plus thấp hơn nhiều):
+
+- BRC ≥ 0: 39 quân, họ 4–11 và 13–17 (I4, I5, 3×3, L, T, S, J, vuông, chữ nhật 2×3, plus, U).
+- BRC ≥ 16: thêm `Shape_1` (L 3 ô), `Shape_2` (I2), `Shape_3` (I3), `Shape_12` (chéo 2 ô).
+- BRC ≥ 500: `Shape_0_0` (1×1). `maxBrc` chỉ 100 nên quân này không vào pool thường.
+
+Journey 48 quân, field `shapeScore` (càng cao càng được ưu tiên khi hòa): I4/I5/3×3/vuông/chữ nhật = 50, L5 và J = 41, T/S = 38, I3 = 25, I2 = 20, L3 và chéo = 10, U/`Shape_17` = 8. Không có `Shape_0`, không có plus `Shape_15`. `Shape_11` mở ở BRC 10; `Shape_16`/`17` mở ở BRC 20.
+
+Revive (`OnReviveOnlyGenTheseShapeNames` và `journeyConfig.reviveConfig.reviveTerminatorIgnoreBanks`): ba `Shape_0_0`, 3 bank kế tiếp bỏ qua terminator. Classic `reviveConfig.enabled = false`.
+
+`gameConfig.shapesShouldHaveRandomColors = true` — màu ghi trong hand không phải màu lúc chơi.
+
+`Assets/Resources/sentis/` chỉ là shader toán tử Sentis, không có model sinh quân.
+
+### Bản clone Classic
+
+`BlockBlastNew/files/hand-classic.json` chép số từ `inv-hand-classic.bytes`. `scripts/game/hand.ts` chấm và rút 3 quân. Dump không có công thức cộng điểm, nên clone chốt như sau:
+
+- BRC +1 mỗi line, trần 100. Bank mới đọc BRC sau nước xóa.
+- Cổng lấy từ hand, không lấy `brc` trong `shapes.json`. `Shape_15`–`17` có trong hand, chưa có matrix nên chưa vào pool.
+- Perfect fit: bàn đầy ≥ 26% và một chỗ đặt có ≥ 67% số ô của quân nằm trên line vừa xóa.
+- `edges > 4` cộng `3 × complexCurve` (luôn 1.5), và +1 nếu quân đó cũng perfect fit.
+- Quân không perfect fit là terminator, cộng `terminatorCurve` (0 đến 1.5).
+- Complementary cộng đúng giá trị curve khi chỗ đặt được chọn xóa hàng/cột mà slot trước trong bank chưa xóa.
+- Rút có trọng số trong biên `cherryPickRange` (100) kể từ điểm cao nhất.
+- Còn quân đặt được thì chỉ rút trong số đó. Hết chỗ thì rút cả pool, bank xám, ván thua.
 
 ---
 
