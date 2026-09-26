@@ -7,29 +7,7 @@
 			"title": "TypeScript bridge",
 			"description": "Layout start calls into scripts/. Grid math lives in TypeScript, not this sheet.",
 			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 581029384756211
-						}
-					],
-					"actions": [],
-					"sid": 581029384756212,
-					"children": [
-						{
-							"eventType": "script",
-							"language": "typescript",
-							"script": [
-								"Game.initLayout(runtime);"
-							]
-						}
-					]
-				}
-			],
+			"children": [],
 			"sid": 581029384756210
 		}
 	],

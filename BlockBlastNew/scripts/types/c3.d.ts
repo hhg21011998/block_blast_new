@@ -22,6 +22,8 @@ interface IRuntime {
 	viewportHeight?: number;
 	platformInfo?: IPlatformInfo;
 	addEventListener(name: string, callback: (event?: unknown) => void): void;
+	removeEventListener(name: string, callback: (event?: unknown) => void): void;
+	getLayout(layoutNameOrIndex: string | number): ILayout;
 }
 
 interface IPlatformInfo {

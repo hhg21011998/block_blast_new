@@ -2,8 +2,14 @@
  * Main script. Construct loads this on startup.
  * Event sheets may call Game.* via importsForEvents.ts — they are not required.
  * Pointer + layout start are bound here.
+ *
+ * Startup order: data JSON + high score load async in `boot`. The Game layout is
+ * built only from `boot` (first run) and the Game layout's `beforelayoutstart`
+ * listener (later runs), and only once data is ready. Event sheets must NOT call
+ * initLayout on start of layout; if they do, the guard below makes it a no-op.
  */
 import { loadGameData } from "./game/data.js";
+import { loadHighScore } from "./game/storage.js";
 import { applyHud, hudWindowKey, setPrecisionPointer } from "./game/hud.js";
 import type { GameEventMap, GameEventName } from "./game/events.js";
 import {
@@ -17,6 +23,10 @@ import { GameApp } from "./game/view.js";
 let app: GameApp | null = null;
 let pointerBound = false;
 let autoInput = true;
+/** Shapes/colors/classic/hand JSON applied. Building before this throws in spawnBank. */
+let dataReady = false;
+/** Game layout already built for the current run of that layout. */
+let builtThisRun = false;
 
 /** Set false if the event sheet drives Touch/Mouse into pointerDown/Move/Up. */
 export function setAutoInput(enabled: boolean): void {
@@ -27,12 +37,37 @@ export function getApp(): GameApp | null {
 	return app;
 }
 
+/**
+ * Build the Game layout. Idempotent per layout run and ignored until data has loaded,
+ * so a stray extra call (e.g. from an event sheet) cannot build twice.
+ */
 export function initLayout(runtime: IRuntime): void {
+	if (!dataReady || builtThisRun) return;
 	if (runtime.layout.name !== "Game") return;
 	applyHud(runtime);
-	app?.dispose();
-	app = new GameApp(runtime);
-	app.start();
+	if (app) {
+		try {
+			app.dispose();
+		} catch (err) {
+			console.warn("[BlockBlast] dispose of previous game failed", err);
+		}
+		app = null;
+	}
+	const next = new GameApp(runtime);
+	try {
+		next.start();
+	} catch (err) {
+		// Leave builtThisRun false so a later call (next layout start) can retry.
+		console.error("[BlockBlast] failed to build Game layout", err);
+		try {
+			next.dispose();
+		} catch {
+			// ignore
+		}
+		return;
+	}
+	app = next;
+	builtThisRun = true;
 }
 
 export function pointerDown(x: number, y: number): void {
@@ -49,6 +84,11 @@ export function pointerUp(x: number, y: number): void {
 
 export function cancelDrag(): void {
 	app?.cancelDrag();
+}
+
+/** Start a new run on the current layout (same as the game-over Replay button). */
+export function replay(): void {
+	app?.replay();
 }
 
 export function getBoard() {
@@ -77,22 +117,36 @@ export function on<K extends GameEventName>(
 
 runOnStartup(async (runtime: IRuntime) => {
 	runtime.addEventListener("beforeprojectstart", () => {
-		void boot(runtime);
+		boot(runtime).catch((err: unknown) => {
+			console.error("[BlockBlast] boot failed", err);
+		});
 	});
 });
 
 async function boot(runtime: IRuntime): Promise<void> {
-	await loadGameData(runtime);
-	runtime.layout.addEventListener("beforelayoutstart", () => {
-		initLayout(runtime);
-	});
-	if (runtime.layout.name === "Game") {
-		initLayout(runtime);
-	}
+	// Input + resize handlers first: they only act when `app` exists, and must not
+	// depend on the layout build succeeding.
 	if (!pointerBound) {
 		pointerBound = true;
 		bindPointer(runtime);
 		bindHudResize(runtime);
+	}
+	await Promise.all([loadGameData(runtime), loadHighScore(runtime)]);
+	dataReady = true;
+	const gameLayout = runtime.getLayout("Game");
+	// Later runs of the Game layout (restart / goToLayout).
+	gameLayout.addEventListener("beforelayoutstart", () => {
+		initLayout(runtime);
+	});
+	gameLayout.addEventListener("afterlayoutend", () => {
+		// Construct already destroyed the instances; just stop timers/listeners.
+		app?.detach();
+		app = null;
+		builtThisRun = false;
+	});
+	// First run: the layout started while data was still loading.
+	if (runtime.layout.name === "Game") {
+		initLayout(runtime);
 	}
 }
 

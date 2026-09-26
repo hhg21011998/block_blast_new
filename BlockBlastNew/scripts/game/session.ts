@@ -197,6 +197,12 @@ export class Session {
 		}, LOSE_DELAY_MS);
 	}
 
+	/** Stop pending timers and drop listeners. Call when the view/layout goes away. */
+	dispose(): void {
+		this.clearLoseTimer();
+		this.events.clear();
+	}
+
 	private clearLoseTimer(): void {
 		if (this.loseTimer !== null) {
 			clearTimeout(this.loseTimer);

@@ -13,6 +13,11 @@ import { cellCenterX, cellCenterY, hud, liftedDragPoint } from "./hud.js";
 import { hitBankSlot, instanceContains, snapOrigin } from "./input.js";
 import { Session } from "./session.js";
 import type { Shape } from "./shape.js";
+import { getHighScore, submitScore } from "./storage.js";
+import { GameUi } from "./ui.js";
+
+/** Opacity of board + bank while the game-over overlay is up. */
+const GAME_OVER_DIM = 0.3;
 
 /** Construct's WorldInstance has no setAnimation; Block sprites do. */
 type BlockSprite = {
@@ -38,18 +43,39 @@ export class GameApp {
 	private preview: BlockSprite[] = [];
 	private drag: { slot: number; shape: Shape } | null = null;
 	private dragging = false;
+	private readonly ui: GameUi;
+	/** Replay button was pressed; fire on release inside it. */
+	private replayArmed = false;
+	/** Stored best when this run began; decides "NEW BEST!" on game over. */
+	private bestAtStart = 0;
 
 	constructor(runtime: IRuntime, rng?: () => number) {
 		this.runtime = runtime;
 		this.session = new Session(rng);
+		this.ui = new GameUi(runtime);
+		this.session.events.on("score", ({ score }) => this.updateHud(score));
+		this.session.events.on("lose", ({ score }) => this.onLose(score));
 	}
 
 	start(): void {
+		this.saveBest();
+		this.ui.hideGameOver();
+		this.replayArmed = false;
+		this.bestAtStart = getHighScore();
 		this.destroyAllDynamic();
 		this.ensureGrid();
+		this.setBoardDim(false);
+		// Core board first; the HUD is optional and fail-safe (see ui.ts).
 		this.session.start();
 		this.renderBank();
 		this.renderFilled();
+		this.ui.create();
+		this.updateHud(this.session.score.score);
+	}
+
+	/** New run on the same layout (game-over replay button). */
+	replay(): void {
+		this.start();
 	}
 
 	relayout(): void {
@@ -57,12 +83,25 @@ export class GameApp {
 		this.repositionGrid();
 		this.renderFilled();
 		this.renderBank();
+		this.ui.layout();
+		if (this.session.lost) this.setBoardDim(true);
 	}
 
 	dispose(): void {
+		this.saveBest();
+		this.session.dispose();
+		this.ui.dispose();
 		this.destroyAllDynamic();
 		for (const inst of this.grid) inst.destroy();
 		this.grid.length = 0;
+	}
+
+	/** Layout already ended (Construct destroyed the instances): only stop timers/listeners. */
+	detach(): void {
+		this.saveBest();
+		this.session.dispose();
+		// Drops the HUD tick listener; destroying dead instances is caught in ui.ts.
+		this.ui.dispose();
 	}
 
 	isDragging(): boolean {
@@ -70,6 +109,10 @@ export class GameApp {
 	}
 
 	pointerDown(x: number, y: number): void {
+		if (this.ui.isGameOverVisible()) {
+			this.replayArmed = this.ui.hitReplay(x, y);
+			return;
+		}
 		if (this.dragging || this.session.lost) return;
 		const slot = this.hitBank(x, y);
 		if (slot === null) return;
@@ -87,6 +130,12 @@ export class GameApp {
 	}
 
 	pointerUp(x: number, y: number): void {
+		if (this.ui.isGameOverVisible()) {
+			const fire = this.replayArmed && this.ui.hitReplay(x, y);
+			this.replayArmed = false;
+			if (fire) this.replay();
+			return;
+		}
 		if (!this.dragging || !this.drag) return;
 		const { slot, shape } = this.drag;
 		this.dragging = false;
@@ -381,6 +430,41 @@ export class GameApp {
 		inst.setAnimation(animation);
 		inst.moveToTop?.();
 		return inst;
+	}
+
+	private updateHud(score: number): void {
+		// Persist the record the moment it is beaten, so leaving mid-run keeps it.
+		if (score > getHighScore()) submitScore(this.runtime, score);
+		this.ui.setValues({
+			score,
+			combo: this.session.score.combo,
+			best: getHighScore()
+		});
+	}
+
+	private onLose(score: number): void {
+		this.cancelDrag();
+		submitScore(this.runtime, score);
+		const newBest = score > this.bestAtStart;
+		this.updateHud(score);
+		this.setBoardDim(true);
+		this.ui.showGameOver({ score, best: getHighScore(), newBest });
+	}
+
+	/** Idempotent: only writes when the current score beats the stored best. */
+	private saveBest(): void {
+		submitScore(this.runtime, this.session.score.score);
+	}
+
+	private setBoardDim(dim: boolean): void {
+		const opacity = dim ? GAME_OVER_DIM : 1;
+		for (const inst of this.grid) inst.opacity = opacity;
+		for (const inst of this.filled) {
+			if (inst) inst.opacity = opacity;
+		}
+		for (const slot of this.bankSprites) {
+			for (const inst of slot) inst.opacity = opacity;
+		}
 	}
 
 	private hitStop(): void {
