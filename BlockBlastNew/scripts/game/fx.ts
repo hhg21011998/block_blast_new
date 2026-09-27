@@ -15,7 +15,7 @@
  * combo popup and the lose timer keep running.
  */
 import { animationFor } from "./colors.js";
-import { BOARD_LAYER, BOARD_SIZE, DRAG_LAYER } from "./constants.js";
+import { BOARD_LAYER, BOARD_SIZE, DRAG_LAYER, SCORE_LAYER } from "./constants.js";
 import { cellCenterX, cellCenterY } from "./hud.js";
 import type { ComboShownInfo, ComboSprite } from "./comboFx.js";
 
@@ -112,9 +112,18 @@ export const FX = {
 	clearBurstCount: 36, // per line, split across the 3 square sprites
 	clearBurstMax: 180, // cap for one move with many lines
 	clearBurstSpreadCells: 0.85, // perpendicular spread
-	/** Floating "+N" (own). */
-	floatRiseCells: 1.1,
-	floatSec: 0.7,
+	/**
+	 * "+N" holds big over the clear, then darts into the HUD.
+	 * The label counts and zooms for scoreCountSec (own).
+	 */
+	scorePopSec: 0.62,
+	scoreZipSec: 0.28,
+	/** Popup size while it holds, as a multiple of the HUD glyph height. */
+	scorePopScale: 1.08,
+	scoreCountSec: 0.62,
+	/** Short swell when the points land. Not locked to the count. */
+	scorePunchSec: 0.34,
+	scorePunchPeak: 1.16,
 	/** Camera shake on >= HIT_STOP_AFTER_LINES lines (own amplitude). */
 	shakeCells: 0.08,
 	/** Bank refill pop (0.1s spawn delay is from the Docs). */
@@ -587,26 +596,98 @@ export class Fx {
 		return { x: cellCenterX(index), y: y0 + (y1 - y0) * t };
 	}
 
-	// ---- 4. floating "+N" -------------------------------------------------
+	// ---- 4. score flies into the HUD -------------------------------------
 
-	/** "+N" rises about one cell above (x, y) and fades out. */
-	floatScore(x: number, y: number, amount: number, cellSize: number): void {
-		if (amount <= 0) return;
-		const t = this.spawnText(DRAG_LAYER, `+${amount}`, cellSize * 0.5, [1, 1, 1]);
-		if (!t) return;
-		const rise = cellSize * FX.floatRiseCells;
-		const w = cellSize * 4;
-		const h = cellSize;
-		this.tween({
+	/**
+	 * "+N" holds at a fixed size over the clear, then darts into the score label.
+	 * `target` is read every frame so a resize retargets the flight. Returns
+	 * null if the text cannot be created. `cancel` drops the text without
+	 * calling `onArrive`. `shelter` / `resume` keep it alive across `cancelAll`.
+	 */
+	flyScore(
+		fromX: number,
+		fromY: number,
+		amount: number,
+		target: () => { x: number; y: number; fontPx: number },
+		onArrive: () => void
+	): ScoreFly | null {
+		if (amount <= 0 || this.cancelling) return null;
+		const end0 = target();
+		const hudFont0 = Math.max(8, end0.fontPx);
+		const inst = this.spawnText(SCORE_LAYER, `+${amount}`, hudFont0, [1, 1, 1]);
+		if (!inst) return null;
+		inst.opacity = 0;
+		let arrive = true;
+		let dead = false;
+		let sheltered = false;
+		const dur = FX.scorePopSec + FX.scoreZipSec;
+		const popEnd = FX.scorePopSec / dur;
+		const tw = this.tween({
 			group: "ui",
 			delay: 0,
-			dur: FX.floatSec,
+			dur,
 			update: (k) => {
-				placeCentered(t, x, y - rise * ease.outCubic(k), w, h);
-				t.opacity = k < 0.55 ? 1 : 1 - (k - 0.55) / 0.45;
+				const end = target();
+				const hudFont = Math.max(8, end.fontPx);
+				const big = hudFont * FX.scorePopScale;
+				let x = fromX;
+				let y = fromY;
+				let font = big;
+				if (k < popEnd) {
+					const p = k / popEnd;
+					// Short hit: small, then past the hold size, then back. The rest of the pop just sits.
+					const bloom = Math.min(1, p / 0.16);
+					const grow = Math.max(0, ease.outBack(bloom));
+					font = lerp(big * 0.4, big, Math.min(grow, 1.22));
+					inst.opacity = Math.min(1, p / 0.08);
+				} else {
+					const z = Math.pow((k - popEnd) / (1 - popEnd), 3);
+					x = lerp(fromX, end.x, z);
+					y = lerp(fromY, end.y, z);
+					font = lerp(big, hudFont, z);
+					inst.opacity = 1;
+				}
+				inst.sizePt = font;
+				placeCentered(inst, x, y, font * 4, font * 1.4);
 			},
-			done: () => this.release(t)
+			done: () => {
+				dead = true;
+				this.release(inst);
+				if (arrive) onArrive();
+			}
 		});
+		const drop = (): void => {
+			if (!sheltered) this.detachTween(tw, inst);
+			this.release(inst);
+		};
+		return {
+			shelter: () => {
+				if (dead || sheltered) return;
+				sheltered = true;
+				this.detachTween(tw, inst);
+			},
+			resume: () => {
+				if (dead || !sheltered) return;
+				sheltered = false;
+				this.attachTween(tw, inst);
+			},
+			cancel: () => {
+				if (dead) return;
+				dead = true;
+				arrive = false;
+				drop();
+			}
+		};
+	}
+
+	private detachTween(tw: Tween, inst: FxText): void {
+		this.tweens = this.tweens.filter((t) => t !== tw);
+		this.owned.delete(inst);
+	}
+
+	private attachTween(tw: Tween, inst: FxText): void {
+		if (!this.tweens.includes(tw)) this.tweens.push(tw);
+		this.owned.add(inst);
 	}
 
 	// ---- 6. hit-stop + shake ----------------------------------------------
@@ -993,8 +1074,8 @@ export class Fx {
 }
 
 /**
- * Score count-up for the HUD: the shown number eases to the real score over
- * ~0.35s. The real score is never delayed; only the displayed text is.
+ * Score count-up for the HUD. The real score is never delayed; only the
+ * displayed text eases toward it.
  */
 export class ScoreCounter {
 	private from = 0;
@@ -1002,8 +1083,12 @@ export class ScoreCounter {
 	private t = 1;
 	private readonly dur: number;
 
-	constructor(durSec = 0.35) {
+	constructor(durSec = FX.scoreCountSec) {
 		this.dur = durSec;
+	}
+
+	busy(): boolean {
+		return this.t < 1;
 	}
 
 	/** Jump without animating (new run, relayout). */
@@ -1029,8 +1114,16 @@ export class ScoreCounter {
 
 	shown(): number {
 		if (this.t >= 1) return this.to;
-		return Math.round(this.from + (this.to - this.from) * ease.outCubic(this.t));
+		return Math.round(this.from + (this.to - this.from) * ease.outQuad(this.t));
 	}
+}
+
+export interface ScoreFly {
+	/** Pull the flight out of cancelAll, then put it back with `resume`. */
+	shelter(): void;
+	resume(): void;
+	/** Destroy the flyer and do not run its arrival callback. */
+	cancel(): void;
 }
 
 function unit(x: number, y: number): Pt {
@@ -1065,6 +1158,10 @@ function magnetPull(k: number): number {
 	const t = k < 0 ? 0 : k > 1 ? 1 : k;
 	const yank = t * t * t * t;
 	return t * 0.08 + yank * 0.92;
+}
+
+function lerp(a: number, b: number, t: number): number {
+	return a + (b - a) * t;
 }
 
 function setSize(s: FxSprite, size: number): void {

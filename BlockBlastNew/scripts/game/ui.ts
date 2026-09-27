@@ -11,6 +11,7 @@
  * throws, the HUD hides itself and gameplay keeps running.
  */
 import { BOARD_LAYER, BOARD_SIZE, DRAG_LAYER, SCORE_LAYER } from "./constants.js";
+import { ease, FX, ScoreCounter } from "./fx.js";
 import { hud } from "./hud.js";
 
 export const HUD_TEXT_OBJECT = "HudText";
@@ -189,12 +190,29 @@ export class GameUi {
 	private textBroken = false;
 	private refitTicks = 0;
 	private drawLayer: DrawLayer | null = null;
+	/** Number drawn on the big score. Trails the real score while a clear flies in. */
+	private readonly counter = new ScoreCounter(FX.scoreCountSec);
+	/** 1 at rest. A short swell when points land, then back to 1. */
+	private punch = 1;
+	private punchT = 1;
+	private lastTime = -1;
 	private readonly onAfterDraw = (): void => {
 		if (activeUi === this) fitFrame++;
 	};
 	private readonly onTick = (): void => {
-		if (this.refitTicks <= 0) return;
-		this.refitTicks--;
+		const dt = this.frameDt();
+		let anim = false;
+		if (this.counter.step(dt)) anim = true;
+		if (this.punchT < 1) {
+			this.punchT = Math.min(1, this.punchT + dt / FX.scorePunchSec);
+			this.punch = scorePunch(this.punchT);
+			anim = true;
+		}
+		if (this.refitTicks > 0) {
+			this.refitTicks--;
+			anim = true;
+		}
+		if (!anim) return;
 		this.guard("refit HUD", () => {
 			this.fitHud();
 			if (this.overlay) this.fitOverlay(this.overlay);
@@ -225,9 +243,40 @@ export class GameUi {
 		});
 	}
 
-	setValues(values: HudValues): void {
-		this.values = values;
-		this.guard("update HUD", () => this.layoutHud());
+	/** Real score and best. The big digits stay on `shown` until snap or countTo. */
+	setReal(score: number, best: number): void {
+		this.values = { score, best };
+		this.guard("update HUD", () => this.fitHud());
+	}
+
+	/** Show this number now, no zoom. */
+	showScore(n: number): void {
+		this.counter.reset(Math.max(0, Math.round(n)));
+		this.punch = 1;
+		this.punchT = 1;
+		this.guard("show score", () => this.fitHud());
+	}
+
+	/** Jump the big digits to this value and stop the zoom. */
+	snapScore(n: number): void {
+		this.showScore(n);
+	}
+
+	/** Count from whatever is on screen up to `target`, with one zoom. */
+	countTo(target: number): void {
+		this.counter.set(Math.max(0, Math.round(target)));
+		if (!this.counter.busy()) return;
+		this.punchT = 0;
+		this.punch = 1;
+	}
+
+	isScoreBusy(): boolean {
+		return this.counter.busy() || this.punchT < 1;
+	}
+
+	/** Glyph height of the score label, before the zoom. */
+	scoreFontPx(): number {
+		return this.hudBoxes().score.size;
 	}
 
 	/** Re-place everything after a HUD/viewport change. */
@@ -356,7 +405,20 @@ export class GameUi {
 		const { score, best } = this.values;
 		const boxes = this.hudBoxes();
 		place(this.bestText, boxes.best, `BEST ${Math.max(best, score)}`);
-		place(this.scoreText, boxes.score, String(score));
+		const scoreBox = boxes.score;
+		const punch = this.punch;
+		place(
+			this.scoreText,
+			{ ...scoreBox, size: scoreBox.size * punch, h: scoreBox.h * punch },
+			String(this.counter.shown())
+		);
+	}
+
+	private frameDt(): number {
+		const now = performance.now() / 1000;
+		const d = this.lastTime < 0 ? 1 / 60 : now - this.lastTime;
+		this.lastTime = now;
+		return Math.min(Math.max(d, 0), 0.1);
 	}
 
 	private fitOverlay(o: Overlay): void {
@@ -520,6 +582,19 @@ export class GameUi {
 		hudWarned = true;
 		console.warn(`[BlockBlast] ${message}; HUD hidden, gameplay continues`, err ?? "");
 	}
+}
+
+/** Quick swell, then a longer settle. One hit, not a symmetric bounce. */
+function scorePunch(t: number): number {
+	if (t >= 1) return 1;
+	const peak = FX.scorePunchPeak;
+	const attack = 0.28;
+	if (t < attack) return lerp(1, peak, ease.outQuad(t / attack));
+	return lerp(peak, 1, ease.outCubic((t - attack) / (1 - attack)));
+}
+
+function lerp(a: number, b: number, t: number): number {
+	return a + (b - a) * t;
 }
 
 function box(cx: number, cy: number, w: number, sizePx: number, align: HAlign): Box {

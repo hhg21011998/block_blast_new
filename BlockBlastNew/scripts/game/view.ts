@@ -15,7 +15,7 @@ import { hitBankSlot, instanceContains, snapOrigin } from "./input.js";
 import { Session } from "./session.js";
 import type { Shape } from "./shape.js";
 import { ComboFx } from "./comboFx.js";
-import type { Fx, FxSprite } from "./fx.js";
+import type { Fx, FxSprite, ScoreFly } from "./fx.js";
 import { comboFxMin } from "./score.js";
 import { flushHighScore, getHighScore, submitScore } from "./storage.js";
 import { StreakHeart } from "./streakHeart.js";
@@ -59,6 +59,7 @@ export class GameApp {
 	private losePending = false;
 	/** Clear points of the move being placed (from "cleared"), for the "+N" popups. */
 	private lastClear: { lineScore: number; bonus: number } | null = null;
+	private scoreFly: ScoreFly | null = null;
 
 	/** Shared effect engine (created by ComboFx, see fx.ts). */
 	private get fx(): Fx {
@@ -94,6 +95,8 @@ export class GameApp {
 		this.saveBest();
 		this.ui.hideGameOver();
 		this.comboFx.resetRun();
+		this.cancelScoreFly();
+		this.lastClear = null;
 		// Drop leftover effects (grey-out, shake, clears) before resetting opacity.
 		this.fx.cancelAll();
 		this.losePending = false;
@@ -120,12 +123,15 @@ export class GameApp {
 
 	relayout(): void {
 		if (this.dragging) this.cancelDrag();
+		// Keep a score flight aimed at the score; everything else ends here.
+		this.scoreFly?.shelter();
 		// Before repositioning: ending the shake restores the old grid positions.
 		this.fx.cancelAll();
 		this.repositionGrid();
 		this.renderFilled();
 		this.renderBank();
 		this.ui.layout();
+		this.scoreFly?.resume();
 		this.streakHeart.layout(this.ui.scoreAnchor());
 		// Resize during the 0.5s lose delay: the grey-out was cut short, stay dimmed.
 		if (this.session.lost || this.losePending) this.setBoardDim(true);
@@ -134,6 +140,7 @@ export class GameApp {
 
 	dispose(): void {
 		this.saveBest();
+		this.cancelScoreFly();
 		this.session.dispose();
 		this.comboFx.dispose();
 		this.streakHeart.dispose();
@@ -146,6 +153,7 @@ export class GameApp {
 	/** Layout already ended (Construct destroyed the instances): only stop timers/listeners. */
 	detach(): void {
 		this.saveBest();
+		this.cancelScoreFly();
 		this.session.dispose();
 		this.comboFx.dispose();
 		this.streakHeart.dispose();
@@ -504,10 +512,78 @@ export class GameApp {
 	private updateHud(score: number): void {
 		// Persist the record the moment it is beaten, so leaving mid-run keeps it.
 		if (score > getHighScore()) submitScore(this.runtime, score);
-		this.ui.setValues({
-			score,
-			best: getHighScore()
+		this.ui.setReal(score, getHighScore());
+		const clearPts = this.clearPointsPending();
+		if (clearPts <= 0) {
+			this.cancelScoreFly();
+			this.ui.snapScore(score);
+			return;
+		}
+		// Hold the clear points off the label until the "+N" arrives.
+		if (!this.scoreFly && !this.ui.isScoreBusy()) {
+			this.ui.showScore(score - clearPts);
+		}
+	}
+
+	private clearPointsPending(): number {
+		if (!this.lastClear) return 0;
+		return this.lastClear.lineScore + this.lastClear.bonus;
+	}
+
+	/**
+	 * Park +N off the combo cluster. The cluster is centred on the cleared lines
+	 * and drifts up, so the number sits below that centre, or off to the side
+	 * when the bottom of the board has no room.
+	 */
+	private scorePopupOrigin(rows: readonly number[], cols: readonly number[]): { x: number; y: number } {
+		const cell = hud.cellSize;
+		const mid = (BOARD_SIZE - 1) / 2;
+		const cx =
+			cols.length > 0
+				? cols.reduce((sum, col) => sum + cellCenterX(col), 0) / cols.length
+				: cellCenterX(mid);
+		const cy =
+			rows.length > 0
+				? rows.reduce((sum, row) => sum + cellCenterY(row), 0) / rows.length
+				: cellCenterY(mid);
+		const left = cellCenterX(0);
+		const right = cellCenterX(BOARD_SIZE - 1);
+		const top = cellCenterY(0);
+		const bottom = cellCenterY(BOARD_SIZE - 1);
+		let x = cx;
+		let y = cy + cell * 1.85;
+		if (y > bottom) {
+			y = Math.min(cy + cell * 0.15, bottom);
+			x = cx >= cellCenterX(mid) ? cx - cell * 3.1 : cx + cell * 3.1;
+		}
+		return {
+			x: Math.min(right, Math.max(left, x)),
+			y: Math.min(bottom, Math.max(top, y))
+		};
+	}
+
+	private launchScoreFly(x: number, y: number, amount: number): void {
+		this.cancelScoreFly();
+		const target = () => ({
+			x: this.ui.scoreAnchor().x,
+			y: this.ui.scoreAnchor().y,
+			fontPx: this.ui.scoreFontPx()
 		});
+		const fly = this.fx.flyScore(x, y, amount, target, () => {
+			this.scoreFly = null;
+			this.ui.countTo(this.session.score.score);
+		});
+		if (!fly) {
+			this.ui.countTo(this.session.score.score);
+			return;
+		}
+		this.scoreFly = fly;
+	}
+
+	private cancelScoreFly(): void {
+		const fly = this.scoreFly;
+		this.scoreFly = null;
+		fly?.cancel();
 	}
 
 	private onLose(score: number): void {
@@ -568,8 +644,6 @@ export class GameApp {
 			placed.push({ sprite: inst, fromX: from.x, fromY: from.y, toX: inst.x, toY: inst.y });
 		}
 		fx.placePull(placed, cs);
-		const pieceCol = r.originCol + (shape.cols - 1) / 2;
-		const pieceRow = r.originRow + (shape.rows - 1) / 2;
 		if (r.lines > 0) {
 			fx.lineClear({
 				rows: r.rows,
@@ -585,15 +659,17 @@ export class GameApp {
 				for (const inst of this.filled) if (inst && !seating.has(inst)) targets.push(inst);
 				fx.hitStop(HIT_STOP_MS, targets, cs);
 			}
-			// "+N" shows the clear points only (original: pointsNumberPopupShowsClearScoreOnly);
-			// no popup on a non-clearing move, placement points never included.
+			// One "+N" for the whole clear (line points x combo, plus 300 on a board clear).
+			// It flies into the HUD; the label counts up when it arrives.
 			const clear = this.lastClear;
-			fx.floatScore(cellCenterX(pieceCol), cellCenterY(pieceRow), clear?.lineScore ?? 0, cs);
+			const gained = (clear?.lineScore ?? 0) + (clear?.bonus ?? 0);
+			if (gained > 0) {
+				const at = this.scorePopupOrigin(r.rows, r.cols);
+				this.launchScoreFly(at.x, at.y, gained);
+			}
 			if (r.boardClear) {
 				const mid = (BOARD_SIZE - 1) / 2;
 				fx.boardClear(cellCenterX(mid), cellCenterY(mid), cs);
-				// Board-clear bonus as its own "+300" under "CLEAR!".
-				fx.floatScore(cellCenterX(mid), cellCenterY(mid) + cs * 1.6, clear?.bonus ?? 0, cs);
 			}
 		}
 		this.lastClear = null;
