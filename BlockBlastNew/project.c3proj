@@ -41,7 +41,12 @@
 			"NumberCombo",
 			"ComboText",
 			"T_UI_Streak_Indicator_Heart",
-			"T_VFX_Heart_OverlayGradient"
+			"T_VFX_Heart_OverlayGradient",
+			"T_VFX_FireBall_Front",
+			"T_VFX_FireballTail",
+			"T_VFX_RoundedSquare_Gradient",
+			"T_VFX_RoundedSquare_Edge_Gradient",
+			"T_VFX_RoundedSquare"
 		],
 		"subfolders": [
 			{

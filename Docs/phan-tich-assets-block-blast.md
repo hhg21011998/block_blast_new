@@ -497,3 +497,100 @@ Construct 3: `fullscreenMode = scale-outer`, `orientations = any` (không letter
 - Combo audio là một phần feel, không phải trang trí.
 - Độ khó nằm ở **sinh quân**, không ở tốc độ rơi.
 - Journey là lớp goal chồng lên cùng engine Classic, không phải engine khác.
+
+---
+
+## 16. Brief FX xóa hàng / cột — nhờ animator
+
+Đây là kịch bản đang chạy trong clone (`BlockBlastNew/scripts/game/fx.ts`, hàm `lineClear`). Số giây và tỉ lệ kích thước là bản tạm của code, **không** lấy từ dump Unity. Animator xem để chỉnh nhịp, hướng sprite, mật độ hạt và màu.
+
+Mỗi hàng đầy hoặc cột đầy chơi **một lần** kịch bản bên dưới. Xóa hai hàng và một cột thì có ba lần, chơi cùng lúc. Tâm là **giữa hình học của dòng đó** (giữa ô 4 và ô 5 trên dòng 8 ô), không phải chỗ quân vừa thả.
+
+Màu của mọi sprite trong lần đó là màu quân vừa đặt. Sprite gốc là trắng, nhân `colorRgb` rồi blend **additive**.
+
+| id | Tên | RGB |
+|---|---|---|
+| 1 | blue | 0.24, 0.66, 0.99 |
+| 2 | indigo | 0.49, 0.36, 1.00 |
+| 3 | green | 0.24, 0.86, 0.59 |
+| 4 | orange | 1.00, 0.69, 0.13 |
+| 5 | red | 1.00, 0.36, 0.48 |
+| 6 | violet | 0.75, 0.52, 0.99 |
+| 7 | yellow | 1.00, 0.88, 0.30 |
+
+Ô bàn thiết kế 120 px. Trên máy thật ô co giãn theo màn hình; mọi kích thước dưới đây là bội số của ô đang chơi.
+
+Xóa từ 3 dòng trở lên thì cả hiệu ứng này **đứng hình 0.2 giây** (hit-stop) ngay khung đầu, rồi mới chạy. Dưới 3 dòng thì chạy ngay.
+
+### 16.1 Năm sprite
+
+Nằm trong `BlockBlastNew/objectTypes/` và `BlockBlastNew/images/`. Mỗi object một frame, không tự chạy animation. Gốc sprite ở giữa.
+
+| Object | File PNG | Kích thước gốc | Art đọc được |
+|---|---|---|---|
+| `T_VFX_FireBall_Front` | `t_vfx_fireball_front-default-000.png` | 122×119 | Đầu lửa gần vuông. Cạnh trái đặc và sáng, cạnh phải mờ. Hướng "mũi" của art lúc góc 0 là **sang trái**. |
+| `T_VFX_FireballTail` | `t_vfx_fireballtail-default-000.png` | 361×117 | Vệt dài ngang. Đầu trái sáng, đầu phải tan. Góc 0: phía mờ chỉ **sang phải**. |
+| `T_VFX_RoundedSquare` | `t_vfx_roundedsquare-default-000.png` | 101×101 | Vuông bo góc, lõi trắng đặc, ngoài trong suốt. |
+| `T_VFX_RoundedSquare_Gradient` | `t_vfx_roundedsquare_gradient-default-000.png` | 366×366 | Quầng mềm, trắng, phủ gần hết khung. |
+| `T_VFX_RoundedSquare_Edge_Gradient` | `t_vfx_roundedsquare_edge_gradient-default-000.png` | 256×256 | Viền sáng, lòng trong suốt. |
+
+Góc trong game là radian, chiều dương xoay **kim đồng hồ** (trục Y đi xuống). Code xoay cả sprite để mũi sáng của đầu lửa chỉ đúng hướng bay, và để đầu mờ của vệt chỉ ra phía ngoài.
+
+### 16.2 Kịch bản một dòng
+
+Thứ tự bắt buộc:
+
+1. Hai `T_VFX_FireBall_Front`, mỗi đầu một cái, đi **từ ngoài vào giữa**, rồi mất dần.
+2. Khi hai đầu lửa đi **gần tới giữa**, tạo hai `T_VFX_FireballTail` đi **từ giữa ra hai cạnh ngoài**. Chạm cạnh thì biến mất rất nhanh.
+3. Đúng lúc hai vệt bắt đầu đi ra, tạo rất nhiều `T_VFX_RoundedSquare_Gradient`, `T_VFX_RoundedSquare` và `T_VFX_RoundedSquare_Edge_Gradient`. Chúng toả quanh dòng vừa xóa, **dày ở giữa, thưa dần về hai đầu**.
+4. Cả năm loại sprite đều nhuộm màu quân vừa đặt.
+
+Hàng thì mọi thứ chạy ngang. Cột thì cùng kịch bản, xoay dọc.
+
+### 16.3 Bản code hiện tại — số để animator sửa
+
+**Bước 1 — hai đầu lửa vào giữa**
+
+- Xuất phát: cách tâm ô ngoài cùng thêm **0.9 ô** ra ngoài bàn.
+- Đích: tâm hình học của dòng.
+- Thời gian bay: **0.20 giây**. Ease `outQuad` (nhanh lúc xuất phát, chậm lại khi vào giữa).
+- Opacity giữ 1 cho tới **55%** quãng đường, rồi giảm đều về 0 lúc chạm giữa.
+- Cao khi vẽ: **1.15 ô**. Rộng giữ tỉ lệ 122/119.
+- Mũi sáng xoay về phía đang bay (vào giữa).
+
+**Bước 2 — hai vệt từ giữa ra**
+
+- Bắt đầu khi đầu lửa đã đi được **70%** đường (khoảng **0.14 giây** sau lúc xóa). Lúc này đầu lửa đang mờ dần, chưa tắt hẳn.
+- Mỗi vệt cắm gốc ở giữa dòng. Đầu mờ của art chỉ ra ngoài. Bề ngang kéo từ gần 0 tới đúng khoảng cách giữa → mép.
+- Mép đích: ra ngoài tâm ô cuối **0.45 ô**.
+- Cao vệt: **0.9 ô**.
+- Thời gian **0.15 giây**. **78%** đầu là lúc kéo dài ra (ease `outQuad`). **22%** cuối (khoảng **0.033 giây**) đứng yên ở mép và opacity rơi về 0.
+
+**Bước 3 — ô vuông toả ra**
+
+- Cùng thời điểm với bước 2. **26** hạt mỗi dòng, lần lượt glow → lõi → viền.
+- Vị trí dọc theo dòng lấy ngẫu nhiên rồi mũ **1.7**, nên đám đông nằm gần giữa và thưa ở hai đầu.
+- Lệch vuông góc với dòng tối đa **0.85 ô**.
+- Hạt bắt đầu gần giữa (khoảng **25%** khoảng cách tới chỗ của nó) rồi trôi ra tới gần hết đoạn đó, đồng thời lệch vuông góc nhân **1.35**.
+- Cỡ lúc sinh, theo ô:
+  - Gradient: 0.85–1.55
+  - Viền: 0.50–0.90
+  - Lõi: 0.28–0.60
+- Trong lúc bay, cỡ tăng thêm **35%**.
+- Thời gian mỗi hạt **0.21–0.32 giây** (0.28 giây nhân 0.75–1.15). 20% đầu fade in, phần còn lại fade out. Gradient chỉ đạt opacity **0.75**.
+- Xoay ngẫu nhiên trong khoảng ±0.3 radian.
+
+**Bước 4 — màu**
+
+Bảng RGB ở đầu mục. Không trộn sang trắng, không đổi màu giữa đường bay.
+
+### 16.4 Việc animator cần chốt
+
+Code đang bám đúng thứ tự bốn bước, nhưng nhịp và hình dáng là ước lượng. Cần animator trả lời, có số thì càng tốt:
+
+- 0.20 giây bay vào giữa là nhanh hay chậm? Hai đầu có nên biến mất **trước** khi vệt xuất hiện, hay chồng lên nhau như hiện tại (vệt nổ lúc đầu lửa còn 30% đường)?
+- Vệt lửa nên **kéo dài từ giữa ra mép** (đang làm) hay là một dải dài cố định **trượt** từ giữa ra rồi tắt?
+- 0.033 giây tắt ở mép đã đủ "rất nhanh" chưa?
+- 26 hạt có ít không? Chúng được phép bay lệch khỏi dòng bao nhiêu, hay chỉ được nằm trên các ô của dòng vừa xóa?
+- Additive có làm mất màu quân không (nhất là vàng và cam)? Có cần bản nhạt hơn RGB block không?
+- Hit-stop 0.2 giây trước khi đầu lửa chịu bay, khi xóa 3 dòng trở lên, có nên giữ không?

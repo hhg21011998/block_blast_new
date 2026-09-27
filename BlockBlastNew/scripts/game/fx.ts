@@ -6,17 +6,41 @@
  * Ownership:
  *  - Sprites passed in by the view (filled cells, bank pieces, grid) stay owned by
  *    the view. Fx only tweens their size/position/opacity and never destroys them.
- *  - Sprites Fx creates itself (line-clear copies, "+N" texts, particles, big text)
+ *  - Sprites Fx creates itself (clear sweep, "+N" texts, particles, big text)
  *    are owned by Fx and destroyed when their effect ends, on cancelAll(), or on
  *    dispose().
  *
- * Hit-stop: pauses only the "board" tween group (line-clear copies, place bounce)
+ * Hit-stop: pauses only the "board" tween group (line-clear sweep, place pull)
  * for HIT_STOP_MS. It does not touch runtime.timeScale, so input, UI tweens, the
  * combo popup and the lose timer keep running.
  */
 import { animationFor } from "./colors.js";
-import { BOARD_LAYER, DRAG_LAYER } from "./constants.js";
+import { BOARD_LAYER, BOARD_SIZE, DRAG_LAYER } from "./constants.js";
+import { cellCenterX, cellCenterY } from "./hud.js";
 import type { ComboShownInfo, ComboSprite } from "./comboFx.js";
+
+const CLEAR_GLOW = "T_VFX_RoundedSquare_Gradient";
+const CLEAR_EDGE = "T_VFX_RoundedSquare_Edge_Gradient";
+const CLEAR_CORE = "T_VFX_RoundedSquare";
+const CLEAR_FRONT = "T_VFX_FireBall_Front";
+const CLEAR_TAIL = "T_VFX_FireballTail";
+/** Native art sizes. Width and height stay in this ratio when drawn. */
+const FIRE_FRONT_W = 122;
+const FIRE_FRONT_H = 119;
+const FIRE_TAIL_W = 361;
+const FIRE_TAIL_H = 117;
+
+type ClearSprite = FxSprite & {
+	angle: number;
+	blendMode: string;
+	colorRgb: [number, number, number];
+	animationFrame: number;
+	isCollisionEnabled: boolean;
+	stopAnimation?(): void;
+};
+
+type Rgb = readonly [number, number, number];
+type Pt = { x: number; y: number };
 
 /** Sprites Fx can animate (Block sprites have a centred origin). */
 export type FxSprite = {
@@ -66,14 +90,28 @@ export type TweenGroup = "board" | "ui";
 
 /** All timings in seconds. Numbers marked (own) are our design, not from the original. */
 export const FX = {
-	/** Place bounce: scale peak and duration (own). */
-	placeBounceScale: 1.15,
-	placeBounceSec: 0.12,
-	/** Line clear per cell (own): stagger between rings, glow phase, total. */
-	clearStaggerSec: 0.02,
-	clearGlowScale: 1.12,
-	clearGlowSec: 0.06,
-	clearSec: 0.3,
+	/** Place: the board yanks the piece into the cell (own). */
+	placePullSec: 0.05,
+	/** Shortest travel, in cells, so a drop that is already aligned still seats. */
+	placePullMinCells: 0.16,
+	/** Starts slightly large and settles to 1 as it locks. No rebound. */
+	placePullScale: 1.045,
+	/**
+	 * Line clear, Giang's script: two fire heads fly in from both ends and fade
+	 * near the middle; as they arrive, two tails shoot from the middle out to
+	 * the edges and vanish fast on touching them; at the same moment many
+	 * glow / core / edge squares spread around the line, dense at the middle and
+	 * thinning toward the edges. Everything is tinted with the placed piece.
+	 */
+	clearFrontSec: 0.1, // heads: outside the end to the middle
+	clearFrontOutsideCells: 0.9,
+	clearMeet: 0.7, // fraction of the head's distance at which tails + squares start
+	clearTailSec: 0.1, // middle to the edge
+	clearTailVanishSec: 0.03, // "biến mất rất nhanh" once at the edge
+	clearBurstSec: 0.3, // square life (each varies 0.75x-1.15x)
+	clearBurstCount: 36, // per line, split across the 3 square sprites
+	clearBurstMax: 180, // cap for one move with many lines
+	clearBurstSpreadCells: 0.85, // perpendicular spread
 	/** Floating "+N" (own). */
 	floatRiseCells: 1.1,
 	floatSec: 0.7,
@@ -170,6 +208,9 @@ export class Fx {
 	private shake: Shake | null = null;
 	private attached = true;
 	private lastTime = -1;
+	private readonly vfxMiss = new Set<string>();
+	/** True while cancelAll() finishes tweens: follow-up effects must not spawn. */
+	private cancelling = false;
 	private readonly onTick = (): void => this.tick();
 
 	constructor(runtime: IRuntime) {
@@ -183,9 +224,14 @@ export class Fx {
 	cancelAll(): void {
 		const list = this.tweens;
 		this.tweens = [];
-		for (const tw of list) {
-			safe(() => tw.update(1));
-			safe(() => tw.done?.());
+		this.cancelling = true;
+		try {
+			for (const tw of list) {
+				safe(() => tw.update(1));
+				safe(() => tw.done?.());
+			}
+		} finally {
+			this.cancelling = false;
 		}
 		this.combo = null;
 		this.stopShake();
@@ -223,7 +269,7 @@ export class Fx {
 
 	/**
 	 * Call before destroying board sprites that may still be animated (place
-	 * bounce tweens tagged with the sprite, hit-stop shake targets). Their tweens
+	 * pull tweens tagged with the sprite, hit-stop shake targets). Their tweens
 	 * are dropped without a final write and they leave the shake list, so no
 	 * effect ever writes to a destroyed instance.
 	 */
@@ -322,25 +368,50 @@ export class Fx {
 		this.runtime.removeEventListener("tick", this.onTick);
 	}
 
-	// ---- 2. place bounce --------------------------------------------------
+	// ---- 2. place pull ----------------------------------------------------
 
-	/** Placed cells pop to 1.15 and settle back (each sprite scales about its centre). */
-	placeBounce(sprites: FxSprite[]): void {
-		for (const s of sprites) {
-			const base = s.width;
-			const peak = FX.placeBounceScale;
+	/**
+	 * Each placed cell is drawn at `from` (where the drag let go) and accelerates
+	 * into `to` (the cell centre). The "ui" group keeps moving through hit-stop,
+	 * so a big clear does not freeze the piece in mid-air.
+	 */
+	placePull(
+		parts: { sprite: FxSprite; fromX: number; fromY: number; toX: number; toY: number }[],
+		cellSize: number
+	): void {
+		const min = Math.max(0, cellSize) * FX.placePullMinCells;
+		for (const part of parts) {
+			const s = part.sprite;
+			let dx = part.fromX - part.toX;
+			let dy = part.fromY - part.toY;
+			const len = Math.hypot(dx, dy);
+			if (len < min) {
+				if (len < 1) {
+					dx = 0;
+					dy = -min;
+				} else {
+					const fit = min / len;
+					dx *= fit;
+					dy *= fit;
+				}
+			}
+			const fromX = part.toX + dx;
+			const fromY = part.toY + dy;
+			const size = s.width;
+			s.x = fromX;
+			s.y = fromY;
+			setSize(s, size * FX.placePullScale);
 			this.tween({
-				group: "board",
+				group: "ui",
 				delay: 0,
-				dur: FX.placeBounceSec,
+				dur: FX.placePullSec,
 				tag: s,
 				update: (k) => {
-					// up in the first 40%, back in the rest
-					const sc =
-						k < 0.4
-							? 1 + (peak - 1) * ease.outQuad(k / 0.4)
-							: peak - (peak - 1) * ease.inOutQuad((k - 0.4) / 0.6);
-					setSize(s, base * sc);
+					const u = magnetPull(k);
+					s.x = fromX + (part.toX - fromX) * u;
+					s.y = fromY + (part.toY - fromY) * u;
+					const sc = FX.placePullScale + (1 - FX.placePullScale) * u;
+					setSize(s, size * sc);
 				}
 			});
 		}
@@ -349,38 +420,171 @@ export class Fx {
 	// ---- 3. line clear ----------------------------------------------------
 
 	/**
-	 * Visual copies of cleared cells glow, shrink and fade. `cells` are cell
-	 * centres; `animation` is the placed piece's colour (matches the clear hint).
-	 * Stagger grows with distance (in cells) from `from`, ~20ms per ring.
+	 * Each cleared row and column plays the same beat, all on the same frame
+	 * (see FX.clear*). Sprites are created invisible at their start point, so a
+	 * hit-stop that pauses the "board" group right after this never shows them
+	 * parked in the middle.
 	 */
-	lineClear(
-		cells: { x: number; y: number; col: number; row: number }[],
-		size: number,
-		animation: string,
-		from: { col: number; row: number }
-	): void {
-		for (const c of cells) {
-			const inst = this.spawnBlock(BOARD_LAYER, c.x, c.y, size, animation, 1);
-			if (!inst) continue;
-			const ring = Math.max(Math.abs(c.col - from.col), Math.abs(c.row - from.row));
-			const glowK = FX.clearGlowSec / FX.clearSec;
+	lineClear(info: {
+		rows: readonly number[];
+		cols: readonly number[];
+		cellSize: number;
+		color: Rgb;
+	}): void {
+		const cell = info.cellSize;
+		if (!(cell > 0)) return;
+		const lines = info.rows.length + info.cols.length;
+		if (lines === 0) return;
+		const squares = Math.max(9, Math.min(FX.clearBurstCount, Math.floor(FX.clearBurstMax / lines)));
+		for (const row of info.rows) this.playClearLine("row", row, cell, info.color, squares);
+		for (const col of info.cols) this.playClearLine("col", col, cell, info.color, squares);
+	}
+
+	private playClearLine(axis: "row" | "col", index: number, cell: number, tint: Rgb, squares: number): void {
+		const mid = this.linePoint(axis, index, (BOARD_SIZE - 1) / 2);
+		const ends = [0, BOARD_SIZE - 1].map((i) => this.linePoint(axis, index, i));
+		// 1. Two heads, from just outside each end to the middle, fading out.
+		const heads: { sprite: ClearSprite; from: Pt }[] = [];
+		const h = cell * 1.15;
+		const w = FIRE_FRONT_W * (h / FIRE_FRONT_H);
+		for (const end of ends) {
+			const from = past(end, mid, cell * FX.clearFrontOutsideCells);
+			const travel = unit(mid.x - from.x, mid.y - from.y);
+			// Head art points its nose left at angle 0: turn it to face the travel.
+			const angle = Math.atan2(-travel.y, -travel.x);
+			const sprite = this.spawnVfx(CLEAR_FRONT, from.x, from.y, w, h, angle, tint);
+			if (!sprite) continue;
+			sprite.opacity = 0;
+			heads.push({ sprite, from });
+		}
+		let started = false;
+		const start = (): void => {
+			if (started || this.cancelling) return;
+			started = true;
+			this.sendTails(cell, tint, mid, ends);
+			this.burstSquares(axis, cell, tint, mid, squares);
+		};
+		if (heads.length === 0) {
+			start();
+			return;
+		}
+		this.tween({
+			group: "board",
+			delay: 0,
+			dur: FX.clearFrontSec,
+			update: (k) => {
+				const u = ease.outQuad(k);
+				const fade = k < 0.55 ? 1 : 1 - (k - 0.55) / 0.45;
+				for (const head of heads) {
+					head.sprite.x = head.from.x + (mid.x - head.from.x) * u;
+					head.sprite.y = head.from.y + (mid.y - head.from.y) * u;
+					head.sprite.opacity = Math.max(0, fade);
+				}
+				if (u >= FX.clearMeet) start(); // head has covered 70% of its trip
+			},
+			done: () => {
+				for (const head of heads) this.release(head.sprite);
+				start();
+			}
+		});
+	}
+
+	/** 2. Two tails grow from the middle to the outer edges, then vanish fast. */
+	private sendTails(cell: number, tint: Rgb, mid: Pt, ends: Pt[]): void {
+		const moveSec = FX.clearTailSec;
+		const total = moveSec + FX.clearTailVanishSec;
+		for (const end of ends) {
+			const tip = past(end, mid, cell * 0.5); // outer edge of the end cell
+			const travel = unit(tip.x - mid.x, tip.y - mid.y);
+			// Tail art: bright end left, faded end right at angle 0. The bright
+			// end leads, so the faded end trails back toward the middle.
+			const angle = Math.atan2(-travel.y, -travel.x);
+			const hgt = cell * 0.9;
+			const sprite = this.spawnVfx(CLEAR_TAIL, mid.x, mid.y, cell * 0.2, hgt, angle, tint);
+			if (!sprite) continue;
+			sprite.opacity = 0;
 			this.tween({
 				group: "board",
-				delay: ring * FX.clearStaggerSec,
-				dur: FX.clearSec,
+				delay: 0,
+				dur: total,
 				update: (k) => {
-					if (k < glowK) {
-						setSize(inst, size * (1 + (FX.clearGlowScale - 1) * ease.outQuad(k / glowK)));
-						inst.opacity = 1;
-					} else {
-						const p = ease.inQuad((k - glowK) / (1 - glowK));
-						setSize(inst, size * (FX.clearGlowScale - (FX.clearGlowScale - 0.1) * p));
-						inst.opacity = 1 - p;
-					}
+					const sec = k * total;
+					const u = ease.outQuad(Math.min(1, sec / moveSec));
+					const x = mid.x + (tip.x - mid.x) * u;
+					const y = mid.y + (tip.y - mid.y) * u;
+					const len = Math.max(cell * 0.2, Math.hypot(x - mid.x, y - mid.y));
+					// Keep the aspect of the art in check: never thicker than long.
+					sprite.width = len;
+					sprite.height = Math.min(hgt, len * (FIRE_TAIL_H / FIRE_TAIL_W) * 3);
+					sprite.x = (mid.x + x) / 2;
+					sprite.y = (mid.y + y) / 2;
+					sprite.opacity = sec <= moveSec ? 1 : Math.max(0, 1 - (sec - moveSec) / FX.clearTailVanishSec);
 				},
-				done: () => this.release(inst)
+				done: () => this.release(sprite)
 			});
 		}
+	}
+
+	/**
+	 * 3. Glow, core and edge squares spread around the line from the middle.
+	 * Positions pack at the middle and thin out toward the edges.
+	 */
+	private burstSquares(axis: "row" | "col", cell: number, tint: Rgb, mid: Pt, count: number): void {
+		const half = (BOARD_SIZE * cell) / 2;
+		const tangent = axis === "row" ? { x: 1, y: 0 } : { x: 0, y: 1 };
+		const normal = axis === "row" ? { x: 0, y: 1 } : { x: 1, y: 0 };
+		const names = [CLEAR_GLOW, CLEAR_CORE, CLEAR_EDGE];
+		for (let i = 0; i < count; i++) {
+			const span = Math.random() * 2 - 1;
+			const along = Math.sign(span) * Math.pow(Math.abs(span), 1.7);
+			const perp = (Math.random() * 2 - 1) * cell * FX.clearBurstSpreadCells;
+			const name = names[i % names.length]!;
+			const size =
+				name === CLEAR_GLOW
+					? cell * (0.7 + Math.random() * 0.6)
+					: name === CLEAR_EDGE
+						? cell * (0.4 + Math.random() * 0.4)
+						: cell * (0.15 + Math.random() * 0.3);
+			const from = {
+				x: mid.x + tangent.x * along * half * 0.2 + normal.x * perp * 0.15,
+				y: mid.y + tangent.y * along * half * 0.2 + normal.y * perp * 0.15
+			};
+			const to = {
+				x: mid.x + tangent.x * along * half + normal.x * perp * 1.4,
+				y: mid.y + tangent.y * along * half + normal.y * perp * 1.4
+			};
+			const sprite = this.spawnVfx(name, from.x, from.y, size, size, (Math.random() - 0.5) * 0.6, tint);
+			if (!sprite) continue;
+			sprite.opacity = 0;
+			const peak = name === CLEAR_GLOW ? 0.7 : 1;
+			this.tween({
+				group: "board",
+				delay: Math.abs(along) * 0.04, // the far ones leave a touch later
+				dur: FX.clearBurstSec * (0.75 + Math.random() * 0.4),
+				update: (k) => {
+					const u = ease.outCubic(k);
+					sprite.x = from.x + (to.x - from.x) * u;
+					sprite.y = from.y + (to.y - from.y) * u;
+					const fade = k < 0.15 ? k / 0.15 : 1 - ease.inQuad((k - 0.15) / 0.85);
+					sprite.opacity = Math.max(0, fade) * peak;
+					const grow = 1 + 0.3 * u;
+					sprite.width = size * grow;
+					sprite.height = size * grow;
+				},
+				done: () => this.release(sprite)
+			});
+		}
+	}
+
+	/** Point on a cleared row or column. `along` is 0 at the first cell and 7 at the last. */
+	private linePoint(axis: "row" | "col", index: number, along: number): Pt {
+		const x0 = cellCenterX(0);
+		const y0 = cellCenterY(0);
+		const x1 = cellCenterX(BOARD_SIZE - 1);
+		const y1 = cellCenterY(BOARD_SIZE - 1);
+		const t = along / (BOARD_SIZE - 1);
+		if (axis === "row") return { x: x0 + (x1 - x0) * t, y: cellCenterY(index) };
+		return { x: cellCenterX(index), y: y0 + (y1 - y0) * t };
 	}
 
 	// ---- 4. floating "+N" -------------------------------------------------
@@ -687,6 +891,50 @@ export class Fx {
 		safeDestroy(inst);
 	}
 
+	private spawnVfx(
+		name: string,
+		x: number,
+		y: number,
+		w: number,
+		h: number,
+		angle: number,
+		tint: Rgb
+	): ClearSprite | null {
+		if (this.cancelling) return null;
+		const type = (this.runtime.objects as unknown as Record<string, IObjectType | undefined>)[name];
+		if (!type) {
+			if (!this.vfxMiss.has(name)) {
+				this.vfxMiss.add(name);
+				console.warn(`[BlockBlast] object type "${name}" is missing; clear fx partial`);
+			}
+			return null;
+		}
+		try {
+			const inst = type.createInstance(BOARD_LAYER, x, y) as unknown as ClearSprite;
+			inst.stopAnimation?.();
+			inst.animationFrame = 0;
+			inst.width = w;
+			inst.height = h;
+			inst.angle = angle;
+			inst.opacity = 1;
+			inst.colorRgb = [tint[0], tint[1], tint[2]];
+			// Purely visual: the ObjectBanks template has collisions on, turn them off per instance.
+			safe(() => {
+				inst.isCollisionEnabled = false;
+			});
+			trySetBlend(inst, "additive");
+			inst.moveToTop?.();
+			this.owned.add(inst);
+			return inst;
+		} catch (err) {
+			if (!this.vfxMiss.has(name)) {
+				this.vfxMiss.add(name);
+				console.warn(`[BlockBlast] could not create ${name}`, err);
+			}
+			return null;
+		}
+	}
+
 	private spawnBlock(
 		layer: string,
 		x: number,
@@ -783,6 +1031,40 @@ export class ScoreCounter {
 		if (this.t >= 1) return this.to;
 		return Math.round(this.from + (this.to - this.from) * ease.outCubic(this.t));
 	}
+}
+
+function unit(x: number, y: number): Pt {
+	const len = Math.hypot(x, y);
+	if (len < 1e-4) return { x: 1, y: 0 };
+	return { x: x / len, y: y / len };
+}
+
+/** `extra` layout px past `end`, continuing away from `mid`. */
+function past(end: Pt, mid: Pt, extra: number): Pt {
+	const d = unit(end.x - mid.x, end.y - mid.y);
+	return { x: end.x + d.x * extra, y: end.y + d.y * extra };
+}
+
+function trySetBlend(inst: { blendMode: string }, mode: string): void {
+	let proto: object | null = inst;
+	while (proto) {
+		if (Object.getOwnPropertyDescriptor(proto, "blendMode")?.set) {
+			try {
+				inst.blendMode = mode;
+			} catch {
+				// Normal blend still reads as a white flash.
+			}
+			return;
+		}
+		proto = Object.getPrototypeOf(proto);
+	}
+}
+
+/** Almost still, then a hard yank. Most of the travel is in the last quarter. */
+function magnetPull(k: number): number {
+	const t = k < 0 ? 0 : k > 1 ? 1 : k;
+	const yank = t * t * t * t;
+	return t * 0.08 + yank * 0.92;
 }
 
 function setSize(s: FxSprite, size: number): void {

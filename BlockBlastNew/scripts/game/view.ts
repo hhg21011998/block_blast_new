@@ -1,4 +1,4 @@
-import { animationFor } from "./colors.js";
+import { animationFor, rgbFor } from "./colors.js";
 import {
 	BANK_COUNT,
 	BOARD_CLEAR_BONUS,
@@ -194,7 +194,7 @@ export class GameApp {
 		if (result.ok) {
 			this.renderFilled();
 			this.renderBank();
-			this.playPlaceFx(shape, result);
+			this.playPlaceFx(shape, result, x, y);
 		} else {
 			this.setBankVisible(slot, true);
 		}
@@ -250,7 +250,7 @@ export class GameApp {
 	}
 
 	private renderFilled(): void {
-		// Stop bounce tweens and leave the hit-stop shake first, so no effect
+		// Stop place tweens and leave the hit-stop shake first, so no effect
 		// writes to the cells destroyed here.
 		this.fx.forgetSprites(this.filled);
 		for (const inst of this.filled) inst?.destroy();
@@ -357,6 +357,20 @@ export class GameApp {
 			inst.y = cellCenterY(origin.row + cell.row);
 			inst.opacity = PREVIEW_OPACITY;
 		}
+	}
+
+	/** Where this cell of the drag ghost was when the finger let go. */
+	private dragCellPoint(
+		shape: Shape,
+		fingerX: number,
+		fingerY: number,
+		cell: { col: number; row: number }
+	): { x: number; y: number } {
+		const stride = hud.cellSize;
+		const p = liftedDragPoint(fingerX, fingerY, shape.rows * stride);
+		const originX = p.x - (shape.cols * stride) / 2 + stride / 2;
+		const originY = p.y - shape.rows * stride + stride / 2;
+		return { x: originX + cell.col * stride, y: originY + cell.row * stride };
 	}
 
 	private positionShape(
@@ -539,38 +553,36 @@ export class GameApp {
 			scoreDelta: number;
 			refilled: boolean;
 			lost: boolean;
-		}
+		},
+		fingerX: number,
+		fingerY: number
 	): void {
 		const fx = this.fx;
 		const cs = hud.cellSize;
-		// Place bounce on the placed cells that survived the clear.
-		const placed: FxSprite[] = [];
+		// Cells that survived the clear are pulled from the drop point into the grid.
+		const placed: { sprite: FxSprite; fromX: number; fromY: number; toX: number; toY: number }[] = [];
 		for (const cell of shape.cells) {
 			const inst = this.filled[cellIndex(r.originCol + cell.col, r.originRow + cell.row)];
-			if (inst) placed.push(inst);
+			if (!inst) continue;
+			const from = this.dragCellPoint(shape, fingerX, fingerY, cell);
+			placed.push({ sprite: inst, fromX: from.x, fromY: from.y, toX: inst.x, toY: inst.y });
 		}
-		fx.placeBounce(placed);
+		fx.placePull(placed, cs);
 		const pieceCol = r.originCol + (shape.cols - 1) / 2;
 		const pieceRow = r.originRow + (shape.rows - 1) / 2;
 		if (r.lines > 0) {
-			const seen = new Set<number>();
-			const cells: { x: number; y: number; col: number; row: number }[] = [];
-			const add = (col: number, row: number) => {
-				const i = cellIndex(col, row);
-				if (seen.has(i)) return;
-				seen.add(i);
-				cells.push({ x: cellCenterX(col), y: cellCenterY(row), col, row });
-			};
-			for (const row of r.rows) for (let col = 0; col < BOARD_SIZE; col++) add(col, row);
-			for (const col of r.cols) for (let row = 0; row < BOARD_SIZE; row++) add(col, row);
-			fx.lineClear(cells, cs, animationFor(shape.color), {
-				col: Math.round(pieceCol),
-				row: Math.round(pieceRow)
+			fx.lineClear({
+				rows: r.rows,
+				cols: r.cols,
+				cellSize: cs,
+				color: rgbFor(shape.color)
 			});
 			if (r.lines >= HIT_STOP_AFTER_LINES) {
 				// Replaces the old runtime.timeScale = 0: only board tweens pause.
+				// The piece just placed keeps its own pull, so the shake does not pin it.
+				const seating = new Set<FxSprite>(placed.map((p) => p.sprite));
 				const targets: FxSprite[] = [...this.grid];
-				for (const inst of this.filled) if (inst) targets.push(inst);
+				for (const inst of this.filled) if (inst && !seating.has(inst)) targets.push(inst);
 				fx.hitStop(HIT_STOP_MS, targets, cs);
 			}
 			// "+N" shows the clear points only (original: pointsNumberPopupShowsClearScoreOnly);
