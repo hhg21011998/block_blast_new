@@ -83,13 +83,20 @@ Nguồn: `Assets/Resources/offlinedata/GameServerSettings.bytes`
 | Xóa 6 line | 250 |
 | Xóa sạch cả bàn | 300 |
 
+**Nhân combo (bản của mình, `score.comboScoreMultiplier` trong `classic.json`, mặc định bật):** điểm xóa line/cột của nước đó × combo sau khi đã +1 cho nước này (nước xóa đầu tiên là combo 1 → ×1). Điểm đặt ô và thưởng xóa sạch bàn **không** nhân. `comboMultiplierCap` = 0 hoặc không có → không giới hạn hệ số.
+
+Công thức mỗi nước: `số ô × perCell + lineClears[min(n, 6) − 1] × combo + (xóa sạch bàn ? 300 : 0)`.
+
+Ví dụ (chỉ phần xóa): 1 line combo 1 → 10; combo 2 → 20; combo 10 → 100; 2 line cùng lúc combo 3 → 20 × 3 = 60.
+
 Legacy (không dùng khi `useAlternateScoreMethod = true`): `scorePerLineClear = 25`.
 
 ### Streak / combo
 
-- Streak bật sau **2 lần xóa liên tiếp**.
-- Reset sau **3 nước không xóa**.
-- Sau full-board clear: reset sau **7 nước không xóa**.
+- Combo: mỗi nước có xóa +1 (xóa nhiều line cùng lúc vẫn chỉ +1); nước xóa đầu tiên cho combo 1. Hiệu ứng combo hiện khi combo ≥ **2** (`streakStartAfterClears`).
+- Đếm số nước không xóa liên tiếp; đủ **3 nước** thì combo về 0. Nước xóa thường reset bộ đếm về 0 và ngưỡng về 3.
+- Sau full-board clear: ngưỡng là **7 nước không xóa** (`resetStreakAfterBoardClear`).
+- Replay / restart layout: combo và bộ đếm về 0. Combo nhân điểm xóa line (xem mục điểm ở trên). Ví dụ: xóa, trượt, trượt, xóa → 1, 1, 1, 2; xóa, trượt ×3, xóa → 1, 1, 1, 0, 1.
 - Combo stinger audio: `BT_Sting_Clear0` … `Clear15`.
 - VO: amazing, awesome, great job, lovely, perfect, boom, fantastic, genius, spectacular, impressive, nice work.
 
@@ -335,7 +342,7 @@ Revive (`OnReviveOnlyGenTheseShapeNames` và `journeyConfig.reviveConfig.reviveT
 
 `BlockBlastNew/files/hand-classic.json` chép số từ `inv-hand-classic.bytes`. `scripts/game/hand.ts` chấm và rút 3 quân. Dump không có công thức cộng điểm, nên clone chốt như sau:
 
-- BRC +1 mỗi line, trần 100. Bank mới đọc BRC sau nước xóa.
+- BRC +1 mỗi nước có xóa (`brcValueOnClear`; xóa nhiều line vẫn +1), trần 100. Bank mới đọc BRC sau nước xóa.
 - Cổng lấy từ hand, không lấy `brc` trong `shapes.json`. `Shape_15`–`17` có trong hand, chưa có matrix nên chưa vào pool.
 - Perfect fit: bàn đầy ≥ 26% và một chỗ đặt có ≥ 67% số ô của quân nằm trên line vừa xóa.
 - `edges > 4` cộng `3 × complexCurve` (luôn 1.5), và +1 nếu quân đó cũng perfect fit.
@@ -448,7 +455,7 @@ D:\Code\BlockBlastNew\
     └── objectTypes\Block   sprite ~128×128
 ```
 
-Construct 3: `fullscreenMode = letterbox-scale`, `orientations = portrait`.
+Construct 3: `fullscreenMode = scale-outer`, `orientations = any` (không letterbox). Viewport thiết kế 1080×1920; mobile / cửa sổ dọc dùng bố cục portrait, PC/web cửa sổ ngang dùng bố cục landscape (dải HUD trái, bàn giữa, bank cột phải) — xem `scripts/game/hud.ts`.
 
 ---
 
@@ -486,7 +493,7 @@ Construct 3: `fullscreenMode = letterbox-scale`, `orientations = portrait`.
 
 - Gameplay 2D sprite, không cần mesh 3D trừ VFX shuffle cube.
 - Màu 7 sắc kẹo bóng, bo góc, atlas chung.
-- Portrait 1080×1920, letterbox.
+- Viewport 1080×1920, `scale-outer`, orientation any: dọc trên mobile, ngang trên PC/web (không letterbox).
 - Combo audio là một phần feel, không phải trang trí.
 - Độ khó nằm ở **sinh quân**, không ở tốc độ rơi.
 - Journey là lớp goal chồng lên cùng engine Classic, không phải engine khác.

@@ -224,6 +224,30 @@
 							"script-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "comboGlyphs.ts",
+							"type": "application/typescript",
+							"sid": 581029384756221,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "comboFx.ts",
+							"type": "application/typescript",
+							"sid": 581029384756222,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "fx.ts",
+							"type": "application/typescript",
+							"sid": 418273645190527,
+							"script-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [],

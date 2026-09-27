@@ -2,7 +2,7 @@
  * Classic Invisible Hand from `files/hand-classic.json`
  * (dump `inv-hand-classic.bytes`, “Super Easy (Better End Game)”).
  *
- * BRC advances by `brcPerLine` per cleared line, capped at `maxBrc`.
+ * BRC advances by `brcValueOnClear` per clearing move (any line count), capped at `maxBrc`.
  * Curve time is `brc / maxBrc`, piecewise linear.
  *
  * Perfect fit: the board is at least `minimumCellsFilledPercentage` full
@@ -41,7 +41,7 @@ interface HandShape {
 export interface HandFile {
 	version: string;
 	maxBrc: number;
-	brcPerLine: number;
+	brcValueOnClear: number;
 	perfectFitModValue: number;
 	minimumPerfectFitPercentage: number;
 	minimumCellsFilledPercentage: number;
@@ -92,9 +92,11 @@ export function applyHandJson(data: HandFile): void {
 	};
 }
 
+/** +brcValueOnClear once per clearing move; a multi-line clear still counts once. */
 export function advanceBrc(brc: number, lineCount: number): number {
 	const cfg = requireConfig();
-	const next = brc + lineCount * cfg.brcPerLine;
+	if (lineCount <= 0) return brc;
+	const next = brc + cfg.brcValueOnClear;
 	if (next < 0) return 0;
 	return Math.min(cfg.maxBrc, next);
 }

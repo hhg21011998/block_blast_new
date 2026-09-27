@@ -53,9 +53,20 @@ Keep event JSON valid. Copy the structure of a real C3 event (conditions/actions
 - New animations: add frames under `images/` and list them in the object type JSON `animations.items`.
 - Families group object types that share events/behaviors.
 
-## Viewport
+## Viewport and display
 
-Do not change `viewportWidth` / `viewportHeight` (1080×1920) or `orientations: portrait` unless the user asks.
+Current `project.c3proj` values (approved setup; do not change unless the user asks):
+
+- `viewportWidth` / `viewportHeight`: **1080 × 1920** (design size).
+- `properties.fullscreenMode`: **`scale-outer`** (no letterbox; the visible area grows on the long axis).
+- `properties.orientations`: **`any`**.
+- `properties.viewportFit`: `auto`; `firstLayout`: `Game`.
+
+Mobile and PC/web are both supported. Layout is computed in TypeScript, not by the editor:
+
+- `scripts/game/hud.ts` `applyHud()` picks the fixed mobile layout on phones, a portrait layout for tall windows, or a landscape layout for wide PC/web windows (left HUD strip, board, bank column), from the visible viewport (`readViewport()`).
+- `main.ts` re-runs `applyHud()` + `GameApp.relayout()` on resize / rotation; animators hook `onHudRelayout` (comboFx.ts).
+- Place new on-screen UI from `hud` geometry / `readViewport()`, never from fixed 1080×1920 coordinates, and re-place it on relayout.
 
 ## After edits
 

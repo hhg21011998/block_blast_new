@@ -3,9 +3,18 @@ import {
 	BANK_SCALE,
 	BOARD_LAYER,
 	BOARD_SIZE,
+	CELL_STRIDE,
+	DRAG_OFFSET_Y,
 	LAYOUT_HEIGHT,
 	LAYOUT_WIDTH
 } from "./constants.js";
+
+/** Longest piece side in cells (I5); the bank must fit it at bank scale. */
+const MAX_PIECE_CELLS = 5;
+/** Fraction of a bank slot a piece may fill (leaves a gap between slots). */
+const BANK_SLOT_FILL = 0.9;
+/** Vertical padding above/below the portrait bank row, in layout px. */
+const BANK_PAD = 24;
 
 export interface ViewRect {
 	left: number;
@@ -37,7 +46,7 @@ export function setPrecisionPointer(enabled: boolean): void {
 }
 
 /**
- * Touch: finger at the bottom of the board → piece stays ~150px above the finger.
+ * Touch: finger at the bottom of the board → piece stays getDragLift() px above the finger.
  * Finger at the middle of the board → piece already sits at the top.
  * Mouse/pen: identity.
  */
@@ -56,11 +65,23 @@ export function liftedDragPoint(
 	const boardMid = boardTop + boardH * 0.5;
 	const span = Math.max(cell, boardBottom - boardMid);
 	const t = clamp01((boardBottom - fingerY) / span);
-	const minLift = 150;
-	const yNear = fingerY - minLift;
+	const yNear = fingerY - getDragLift();
 	const yAtTop = boardTop + Math.max(pieceHeight, cell);
 	const y = yNear + t * (yAtTop - yNear);
 	return { x: fingerX, y };
+}
+
+/**
+ * Touch drag lift in layout px: `feel.dragOffsetY` from classic.json (125 at the
+ * 120 px design cell), scaled to the live cell size. Updated by applyHud().
+ */
+export function getDragLift(): number {
+	return hud.dragOffsetY;
+}
+
+/** classic.json dragOffsetY scaled from the design cell (CELL_STRIDE) to `cell`. */
+function scaledDragOffset(cell: number): number {
+	return Math.round((cell * DRAG_OFFSET_Y) / CELL_STRIDE);
 }
 
 function clamp01(n: number): number {
@@ -121,7 +142,7 @@ function layoutMobileOriginal(): void {
 	hud.bankY = [1640, 1640, 1640];
 	hud.bankScale = BANK_SCALE;
 	hud.bankHitRadius = 150;
-	hud.dragOffsetY = 125;
+	hud.dragOffsetY = scaledDragOffset(hud.cellSize);
 	hud.uiLeft = 0;
 	hud.uiWidth = 0;
 }
@@ -130,17 +151,26 @@ function layoutPortrait(view: ViewRect): void {
 	hud.landscape = false;
 	const marginX = Math.max(24, view.width * 0.04);
 	const topHud = Math.min(340, view.height * 0.18);
-	const bankBand = Math.min(360, view.height * 0.22);
-	const availH = Math.max(120, view.height - topHud - bankBand);
+	const minBand = Math.min(360, view.height * 0.22);
+	const slotW = view.width / BANK_COUNT;
+	// Bank row must hold a 5-cell piece at BANK_SCALE, both across its slot and in
+	// its band height; the board shrinks instead of the bank overflowing (near-square).
+	const bankCells = MAX_PIECE_CELLS * BANK_SCALE;
+	const restH = view.height - topHud;
+	const cellByWidth = (view.width - marginX * 2) / BOARD_SIZE;
+	const cellBySlot = (slotW * BANK_SLOT_FILL) / bankCells;
+	const cellByBand = (restH - minBand) / BOARD_SIZE;
+	const cellByBank = (restH - BANK_PAD * 2) / (BOARD_SIZE + bankCells);
 	const cell = Math.max(
 		24,
-		Math.floor(Math.min((view.width - marginX * 2) / BOARD_SIZE, availH / BOARD_SIZE))
+		Math.floor(Math.min(cellByWidth, cellBySlot, cellByBand, cellByBank))
 	);
+	const bankBand = Math.max(minBand, bankCells * cell + BANK_PAD * 2);
+	const availH = Math.max(120, restH - bankBand);
 	const boardPx = cell * BOARD_SIZE;
 	hud.cellSize = cell;
 	hud.boardLeft = view.left + (view.width - boardPx) / 2;
 	hud.boardTop = view.top + topHud + Math.max(0, (availH - boardPx) / 2);
-	const slotW = view.width / BANK_COUNT;
 	const bankY = view.top + view.height - bankBand / 2;
 	hud.bankX = [];
 	hud.bankY = [];
@@ -148,9 +178,15 @@ function layoutPortrait(view: ViewRect): void {
 		hud.bankX.push(view.left + slotW * (i + 0.5));
 		hud.bankY.push(bankY);
 	}
-	hud.bankScale = BANK_SCALE;
+	// Safety net for the 24 px cell floor on tiny windows.
+	const maxPiece = MAX_PIECE_CELLS * cell;
+	hud.bankScale = Math.min(
+		BANK_SCALE,
+		(slotW * BANK_SLOT_FILL) / maxPiece,
+		Math.max(1, bankBand - BANK_PAD * 2) / maxPiece
+	);
 	hud.bankHitRadius = Math.max(120, cell * 1.25);
-	hud.dragOffsetY = Math.round(cell * (125 / 120));
+	hud.dragOffsetY = scaledDragOffset(cell);
 	hud.uiLeft = view.left;
 	hud.uiWidth = 0;
 }
@@ -179,13 +215,16 @@ function layoutLandscape(view: ViewRect): void {
 		hud.bankX.push(bankCx);
 		hud.bankY.push(hud.boardTop + slotH * (i + 0.5));
 	}
-	const maxPiece = 5 * cell;
-	hud.bankScale = Math.min(0.85, (slotH * 0.78) / Math.max(1, maxPiece));
+	// Fit the longest piece in its slot height and in the column width.
+	const maxPiece = Math.max(1, MAX_PIECE_CELLS * cell);
+	const colW = Math.max(1, bankRight - bankLeft);
+	hud.bankScale = Math.min(0.85, (slotH * 0.78) / maxPiece, (colW * BANK_SLOT_FILL) / maxPiece);
 	hud.bankHitRadius = Math.max(90, cell * hud.bankScale * 2.2);
-	hud.dragOffsetY = Math.round(cell * (125 / 120));
+	hud.dragOffsetY = scaledDragOffset(cell);
 }
 
-function readViewport(runtime: IRuntime): ViewRect {
+/** Visible layout-space rect of the Board layer (scale-outer aware). */
+export function readViewport(runtime: IRuntime): ViewRect {
 	const css = cssSize(runtime);
 	const layer = runtime.layout.getLayer(BOARD_LAYER) as ILayer & {
 		getViewport?: () => {

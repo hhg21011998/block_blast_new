@@ -9,7 +9,9 @@
     "boardClear": 300,
     "streakStartAfterClears": 2,
     "resetStreakAfterNonClears": 3,
-    "resetStreakAfterBoardClear": 7
+    "resetStreakAfterBoardClear": 7,
+    "comboScoreMultiplier": true,
+    "comboMultiplierCap": 0
   },
   "feel": {
     "dragOffsetY": 125,

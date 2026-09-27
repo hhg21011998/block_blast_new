@@ -15,11 +15,16 @@ export type GameEventMap = {
 		cellsRemoved: number;
 		boardClear: boolean;
 		combo: number;
+		/** Combo multiplier applied to the line points of this move (1 when disabled). */
+		multiplier: number;
+		/** Line points x multiplier + board-clear bonus (placement points excluded). */
 		scoreDelta: number;
 		score: number;
 	};
 	bankRefill: { guids: string[] };
 	unplaceable: { slot: number; unplaceable: boolean };
+	/** No bank piece fits: the lose delay (ms) has just started; `lose` follows. */
+	loseStart: { delayMs: number; score: number };
 	lose: { score: number };
 	score: { score: number };
 };

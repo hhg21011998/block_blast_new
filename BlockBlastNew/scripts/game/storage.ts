@@ -39,16 +39,42 @@ export async function loadHighScore(runtime: IRuntime): Promise<number> {
 	return highScore;
 }
 
+/** Minimum time between storage writes while the record keeps climbing. */
+const WRITE_INTERVAL_MS = 1000;
+let lastWriteAt = -Infinity;
+let writeTimer: ReturnType<typeof setTimeout> | null = null;
+let dirty = false;
+
 /**
- * Record a finished run. Returns true when it beats the stored best.
- * The write is fire-and-forget; the in-memory value updates immediately.
+ * Offer a score. Returns true when it beats the stored best. The in-memory value
+ * updates immediately; the storage write is throttled to at most one per
+ * WRITE_INTERVAL_MS (trailing write guaranteed). Call flushHighScore() on game
+ * over and layout end to write straight away.
  */
 export function submitScore(runtime: IRuntime, score: number): boolean {
 	const value = sanitize(score);
 	if (value <= highScore) return false;
 	highScore = value;
-	void persist(runtime, value);
+	dirty = true;
+	const wait = WRITE_INTERVAL_MS - (Date.now() - lastWriteAt);
+	if (wait <= 0) {
+		flushHighScore(runtime);
+	} else if (writeTimer === null) {
+		writeTimer = setTimeout(() => flushHighScore(runtime), wait);
+	}
 	return true;
+}
+
+/** Write a pending best now (game over, layout end, teardown). No-op if nothing changed. */
+export function flushHighScore(runtime: IRuntime): void {
+	if (writeTimer !== null) {
+		clearTimeout(writeTimer);
+		writeTimer = null;
+	}
+	if (!dirty) return;
+	dirty = false;
+	lastWriteAt = Date.now();
+	void persist(runtime, highScore);
 }
 
 async function persist(runtime: IRuntime, value: number): Promise<void> {

@@ -20,6 +20,13 @@ import {
 } from "./game/input.js";
 import { GameApp } from "./game/view.js";
 
+// Combo FX hooks for the animator / event sheets (Game.onComboShown etc.).
+export { onComboShown, onGameOverStart, onHudRelayout } from "./game/comboFx.js";
+export type { ComboShownInfo, GameOverStartInfo, HudRelayoutInfo } from "./game/comboFx.js";
+// Lose-panel slide hooks (Game.setLosePanelOffset etc.).
+export { getLosePanelOffset, onLosePanelLayout, setLosePanelOffset } from "./game/ui.js";
+export type { LosePanelLayoutInfo, Rect as LosePanelRect } from "./game/ui.js";
+
 let app: GameApp | null = null;
 let pointerBound = false;
 let autoInput = true;
@@ -167,11 +174,26 @@ function bindHudResize(runtime: IRuntime): void {
 function bindPointer(runtime: IRuntime): void {
 	let held = false;
 	let source: "none" | "pointer" | "mouse" = "none";
+	/**
+	 * pointerId that owns the current press (multi-touch): other fingers are ignored
+	 * until it lifts. null = no owner / event without a pointerId.
+	 */
+	let ownerId: number | null = null;
+	const pointerIdOf = (event?: unknown): number | null => {
+		const id = (event as { pointerId?: unknown } | undefined)?.pointerId;
+		return typeof id === "number" ? id : null;
+	};
+	const isOwner = (event?: unknown): boolean => {
+		if (ownerId === null) return true;
+		const id = pointerIdOf(event);
+		return id === null || id === ownerId;
+	};
 
 	const down = (p: { x: number; y: number }, src: "pointer" | "mouse", event?: unknown) => {
 		if (!autoInput || !app || held) return;
 		held = true;
 		source = src;
+		ownerId = src === "pointer" ? pointerIdOf(event) : null;
 		const pointerType = (event as { pointerType?: string } | undefined)?.pointerType;
 		setPrecisionPointer(src === "mouse" || pointerType === "mouse" || pointerType === "pen");
 		pointerDown(p.x, p.y);
@@ -184,21 +206,38 @@ function bindPointer(runtime: IRuntime): void {
 		if (!autoInput || !held) return;
 		held = false;
 		source = "none";
+		ownerId = null;
 		pointerUp(p.x, p.y);
+	};
+	/** Abort the press: a dragged piece goes back to its bank slot, nothing is placed. */
+	const cancel = () => {
+		if (!held) return;
+		held = false;
+		source = "none";
+		ownerId = null;
+		cancelDrag();
 	};
 
 	runtime.addEventListener("pointerdown", (event?: unknown) => {
 		if (!isPrimaryButton(event)) return;
+		// A second finger while one is pressed: ignored (down() also checks `held`).
+		if (held) return;
 		down(layoutPosFromEvent(runtime, event), "pointer", event);
 	});
 	runtime.addEventListener("pointermove", (event?: unknown) => {
+		if (source === "pointer" && !isOwner(event)) return;
 		move(layoutPosFromEvent(runtime, event));
 	});
-	const pointerUpEv = (event?: unknown) => {
+	runtime.addEventListener("pointerup", (event?: unknown) => {
+		if (source === "pointer" && !isOwner(event)) return;
 		up(layoutPosFromEvent(runtime, event));
-	};
-	runtime.addEventListener("pointerup", pointerUpEv);
-	runtime.addEventListener("pointercancel", pointerUpEv);
+	});
+	runtime.addEventListener("pointercancel", (event?: unknown) => {
+		if (source === "pointer" && !isOwner(event)) return;
+		cancel();
+	});
+	// Tab hidden / app backgrounded mid-drag (Construct "suspend"): return the piece.
+	runtime.addEventListener("suspend", cancel);
 
 	runtime.addEventListener("tick", () => {
 		if (!autoInput || !app) return;

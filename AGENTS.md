@@ -17,7 +17,7 @@ Clone of **Block Blast / Woodoku Blast**. Gameplay is a Construct 3 project. The
 - Clear **full rows and full columns**.
 - Lose when **no remaining bank piece** can be placed.
 - Bank pieces stay fully opaque even if they cannot be placed. The drag ghost is opaque; the board snap-shadow is faded.
-- Portrait **1080×1920**, letterbox.
+- Viewport **1080×1920** design size, `scale-outer`, orientations **any** (no letterbox). Portrait layout on mobile / tall windows; landscape layout on PC/web wide windows (left HUD strip, board, bank column). Geometry lives in `BlockBlastNew/scripts/game/hud.ts`.
 - Numbers (score table, drag offset, combo, shapes) live in `Docs/phan-tich-assets-block-blast.md`. Read it before implementing scoring, piece spawn, or feel.
 
 ## Graft first (required)

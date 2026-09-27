@@ -1,5 +1,6 @@
 /**
- * On-screen HUD (score, combo, best) and the game-over overlay with a replay button.
+ * On-screen HUD (score, best) and the game-over overlay with a replay button.
+ * The combo is shown by the sprite cluster in comboFx.ts, not here.
  * Uses the `HudText` Text object (created at runtime; one template instance sits
  * off-screen on the ObjectBanks layout) and the `Block` sprite for the button face
  * and the dark panel. Positions follow the live geometry in `hud` (hud.ts):
@@ -27,46 +28,83 @@ const NO_WRAP_BOX_SCALE = 3;
 /** Ticks to keep re-measuring after a change (textWidth can lag a draw). */
 const REFIT_TICKS = 3;
 
-/**
- * Fitted base font size (pt) of the combo text; 0 until the HUD has laid out and
- * again after the HUD is disposed. Owned by `activeUi`: only the live GameUi writes
- * it, and its dispose() resets the value and drops every listener.
- */
-let comboFitSizePt = 0;
-const comboFitListeners = new Set<(sizePt: number) => void>();
+/** The live GameUi. */
 let activeUi: GameUi | null = null;
-/** Advanced once per tick by the live GameUi; see `place` for why. */
+/**
+ * Count of real draws of the Board layer (its "afterdraw" event), advanced by the
+ * live GameUi. A textWidth read is trusted only once this has advanced past the
+ * last text/size write (see `place`). If the runtime has no layer draw events it
+ * never advances and fitting stays on the conservative estimate.
+ */
 let fitFrame = 0;
+/** "HudText missing / HUD failed" is logged once per session, not per layout. */
+let hudWarned = false;
+/** Extra width margin while a changed text has not been measured yet. */
+const UNMEASURED_MARGIN = 1.06;
 
 /**
- * Current fitted `sizePt` of the COMBO text (base size for a scale/size tween).
- * Changes after score updates and resize refits; subscribe with onComboFitSizeChange.
+ * Lose/game-over panel offset (animator slide-in). Added to the computed panel
+ * position every time ui.ts places the panel (show, relayout, refit ticks, and
+ * immediately on setLosePanelOffset). Layout px, absolute: NOT scaled by the HUD
+ * cell size. Reset to 0 when the panel is hidden (replay / new run) and when the
+ * HUD is disposed (layout end / game rebuild). Owned by `activeUi`.
  */
-export function getComboFitSizePt(): number {
-	return comboFitSizePt;
+let losePanelOffsetX = 0;
+let losePanelOffsetY = 0;
+
+export interface Rect {
+	/** Centre, layout px. */
+	x: number;
+	y: number;
+	width: number;
+	height: number;
+}
+
+export interface LosePanelLayoutInfo {
+	/** "show" = panel just created; "relayout" = HUD geometry recomputed (resize / rotation). */
+	reason: "show" | "relayout";
+	/** Computed positions WITHOUT the offset (the slide target at offset 0,0). */
+	panel: Rect;
+	button: Rect;
+	/** Offset in effect when this fired. */
+	offsetX: number;
+	offsetY: number;
+}
+
+const losePanelLayoutListeners = new Set<(info: LosePanelLayoutInfo) => void>();
+
+/** Shift the whole lose panel (panel, texts, REPLAY button + its hit area) by dx, dy layout px. */
+export function setLosePanelOffset(dx: number, dy: number): void {
+	losePanelOffsetX = Number.isFinite(dx) ? dx : 0;
+	losePanelOffsetY = Number.isFinite(dy) ? dy : 0;
+	activeUi?.applyLosePanelOffset();
+}
+
+export function getLosePanelOffset(): { dx: number; dy: number } {
+	return { dx: losePanelOffsetX, dy: losePanelOffsetY };
 }
 
 /**
- * Called whenever the fitted combo size changes (e.g. after a resize refit or a new
- * combo value; not while the combo text is hidden). Listeners are cleared when the
- * HUD is disposed (layout end / game rebuild), so subscribe again for a new layout.
+ * Fired when ui.ts lays out the lose panel: once on show, then on every HUD relayout
+ * while it is visible (not on the internal refit ticks or offset changes). Cleared
+ * with the other HUD state on layout end / game rebuild; subscribe again per layout.
  */
-export function onComboFitSizeChange(listener: (sizePt: number) => void): () => void {
-	comboFitListeners.add(listener);
-	return () => comboFitListeners.delete(listener);
+export function onLosePanelLayout(listener: (info: LosePanelLayoutInfo) => void): () => void {
+	losePanelLayoutListeners.add(listener);
+	return () => {
+		losePanelLayoutListeners.delete(listener);
+	};
 }
 
-function setComboFitSizePt(sizePt: number): void {
-	if (sizePt === comboFitSizePt) return;
-	comboFitSizePt = sizePt;
-	for (const listener of comboFitListeners) {
-		try {
-			listener(sizePt);
-		} catch (err) {
-			console.warn("[BlockBlast] combo fit listener failed", err);
-		}
-	}
+function resetLosePanelOffset(): void {
+	losePanelOffsetX = 0;
+	losePanelOffsetY = 0;
 }
+
+type DrawLayer = {
+	addEventListener?(type: string, listener: () => void): void;
+	removeEventListener?(type: string, listener: () => void): void;
+};
 
 type Rgb = [number, number, number];
 type HAlign = "left" | "center" | "right";
@@ -118,7 +156,6 @@ interface Box {
 
 export interface HudValues {
 	score: number;
-	combo: number;
 	best: number;
 }
 
@@ -139,23 +176,23 @@ interface Overlay {
 
 const WHITE: Rgb = [1, 1, 1];
 const GOLD: Rgb = [1, 0.84, 0.3];
-const CYAN: Rgb = [0.55, 0.9, 1];
 const PANEL_TINT: Rgb = [0.05, 0.04, 0.1];
 
 export class GameUi {
 	private readonly runtime: IRuntime;
 	private scoreText: TextInst | null = null;
-	private comboText: TextInst | null = null;
 	private bestText: TextInst | null = null;
 	private overlay: Overlay | null = null;
 	private info: GameOverInfo | null = null;
-	private values: HudValues = { score: 0, combo: 0, best: 0 };
+	private values: HudValues = { score: 0, best: 0 };
 	/** Set after any HUD failure: stop creating text, keep hit-testing working. */
 	private textBroken = false;
-	private warned = false;
 	private refitTicks = 0;
-	private readonly onTick = (): void => {
+	private drawLayer: DrawLayer | null = null;
+	private readonly onAfterDraw = (): void => {
 		if (activeUi === this) fitFrame++;
+	};
+	private readonly onTick = (): void => {
 		if (this.refitTicks <= 0) return;
 		this.refitTicks--;
 		this.guard("refit HUD", () => {
@@ -168,6 +205,15 @@ export class GameUi {
 		this.runtime = runtime;
 		activeUi = this;
 		runtime.addEventListener("tick", this.onTick);
+		try {
+			const layer = runtime.layout.getLayer(BOARD_LAYER) as unknown as DrawLayer | null;
+			if (layer?.addEventListener) {
+				layer.addEventListener("afterdraw", this.onAfterDraw);
+				this.drawLayer = layer;
+			}
+		} catch (err) {
+			console.warn("[BlockBlast] no layer afterdraw; HUD text uses estimated sizes", err);
+		}
 	}
 
 	create(): void {
@@ -175,7 +221,6 @@ export class GameUi {
 			this.destroyHud();
 			this.bestText = this.makeText(BOARD_LAYER, GOLD);
 			this.scoreText = this.makeText(BOARD_LAYER, WHITE);
-			this.comboText = this.makeText(BOARD_LAYER, CYAN);
 			this.layoutHud();
 		});
 	}
@@ -189,7 +234,10 @@ export class GameUi {
 	layout(): void {
 		this.guard("layout HUD", () => {
 			this.layoutHud();
-			if (this.overlay) this.layoutOverlay(this.overlay);
+			if (this.overlay) {
+				this.layoutOverlay(this.overlay);
+				this.emitLosePanelLayout("relayout");
+			}
 		});
 	}
 
@@ -198,7 +246,8 @@ export class GameUi {
 	 * every instance failed to spawn, so the player can always restart.
 	 */
 	showGameOver(info: GameOverInfo): void {
-		this.hideGameOver();
+		// Keep any offset the animator set before show (slide-in start position).
+		this.destroyOverlay();
 		this.info = info;
 		const overlay: Overlay = {
 			panel: null,
@@ -219,9 +268,42 @@ export class GameUi {
 			overlay.label = this.makeText(DRAG_LAYER, WHITE);
 			this.layoutOverlay(overlay);
 		});
+		this.emitLosePanelLayout("show");
 	}
 
+	/** Remove the panel (replay / new run) and reset the slide offset to 0. */
 	hideGameOver(): void {
+		this.destroyOverlay();
+		resetLosePanelOffset();
+	}
+
+	/** Re-place the visible panel with the current offset (no refit restart). */
+	applyLosePanelOffset(): void {
+		if (!this.overlay) return;
+		const o = this.overlay;
+		this.guard("offset lose panel", () => this.fitOverlay(o));
+	}
+
+	private emitLosePanelLayout(reason: LosePanelLayoutInfo["reason"]): void {
+		if (!this.overlay || activeUi !== this) return;
+		const b = this.baseOverlayBoxes();
+		const info: LosePanelLayoutInfo = {
+			reason,
+			panel: { x: b.panel.cx, y: b.panel.cy, width: b.panel.w, height: b.panel.h },
+			button: { x: b.button.cx, y: b.button.cy, width: b.button.w, height: b.button.h },
+			offsetX: losePanelOffsetX,
+			offsetY: losePanelOffsetY
+		};
+		for (const listener of [...losePanelLayoutListeners]) {
+			try {
+				listener(info);
+			} catch (err) {
+				console.warn("[BlockBlast] onLosePanelLayout listener failed", err);
+			}
+		}
+	}
+
+	private destroyOverlay(): void {
 		const o = this.overlay;
 		this.overlay = null;
 		this.info = null;
@@ -244,12 +326,18 @@ export class GameUi {
 
 	dispose(): void {
 		this.runtime.removeEventListener("tick", this.onTick);
+		try {
+			this.drawLayer?.removeEventListener?.("afterdraw", this.onAfterDraw);
+		} catch {
+			// Layer already gone (layout ended).
+		}
+		this.drawLayer = null;
 		this.hideGameOver();
 		this.destroyHud();
 		if (activeUi === this) {
 			activeUi = null;
-			comboFitSizePt = 0;
-			comboFitListeners.clear();
+			resetLosePanelOffset();
+			losePanelLayoutListeners.clear();
 		}
 	}
 
@@ -265,13 +353,10 @@ export class GameUi {
 	}
 
 	private fitHud(): void {
-		const { score, combo, best } = this.values;
+		const { score, best } = this.values;
 		const boxes = this.hudBoxes();
 		place(this.bestText, boxes.best, `BEST ${Math.max(best, score)}`);
 		place(this.scoreText, boxes.score, String(score));
-		// Hidden combo ("") returns 0: keep the previous base size, fire nothing.
-		const comboPt = place(this.comboText, boxes.combo, combo > 0 ? `COMBO x${combo}` : "");
-		if (comboPt > 0 && activeUi === this) setComboFitSizePt(comboPt);
 	}
 
 	private fitOverlay(o: Overlay): void {
@@ -286,7 +371,7 @@ export class GameUi {
 		place(o.label, b.label, "REPLAY");
 	}
 
-	private hudBoxes(): { best: Box; score: Box; combo: Box } {
+	private hudBoxes(): { best: Box; score: Box } {
 		const cell = hud.cellSize;
 		const boardPx = cell * BOARD_SIZE;
 		if (hud.landscape && hud.uiWidth > 0) {
@@ -295,29 +380,36 @@ export class GameUi {
 			const midY = hud.boardTop + boardPx * 0.4;
 			return {
 				best: box(cx, hud.boardTop + cell * 0.6, w, cell * 0.36, "center"),
-				score: box(cx, midY, w, cell * 0.62, "center"),
-				combo: box(cx, midY + cell * 1.3, w, cell * 0.34, "center")
+				score: box(cx, midY, w, cell * 0.62, "center")
 			};
 		}
 		const left = hud.boardLeft;
-		const right = left + boardPx;
 		const half = boardPx / 2;
 		const rowY = hud.boardTop - cell * 1.9;
 		return {
 			best: box(left + half / 2, rowY, half, cell * 0.3, "left"),
-			score: box(left + half, hud.boardTop - cell * 0.8, boardPx, cell * 0.62, "center"),
-			combo: box(right - half / 2, rowY, half, cell * 0.3, "right")
+			score: box(left + half, hud.boardTop - cell * 0.8, boardPx, cell * 0.62, "center")
 		};
 	}
 
-	private overlayBoxes(): {
-		panel: Box;
-		title: Box;
-		score: Box;
-		best: Box;
-		button: Box;
-		label: Box;
-	} {
+	/** Panel layout with the animator offset applied (what is drawn and hit-tested). */
+	private overlayBoxes(): OverlayBoxes {
+		const b = this.baseOverlayBoxes();
+		const dx = losePanelOffsetX;
+		const dy = losePanelOffsetY;
+		if (dx === 0 && dy === 0) return b;
+		return {
+			panel: shiftBox(b.panel, dx, dy),
+			title: shiftBox(b.title, dx, dy),
+			score: shiftBox(b.score, dx, dy),
+			best: shiftBox(b.best, dx, dy),
+			button: shiftBox(b.button, dx, dy),
+			label: shiftBox(b.label, dx, dy)
+		};
+	}
+
+	/** Panel layout from the HUD geometry only (offset 0,0). */
+	private baseOverlayBoxes(): OverlayBoxes {
 		const cell = hud.cellSize;
 		const boardPx = cell * BOARD_SIZE;
 		const cx = hud.boardLeft + boardPx / 2;
@@ -398,10 +490,8 @@ export class GameUi {
 	private destroyHud(): void {
 		safeDestroy(this.bestText);
 		safeDestroy(this.scoreText);
-		safeDestroy(this.comboText);
 		this.bestText = null;
 		this.scoreText = null;
-		this.comboText = null;
 	}
 
 	/** Run a HUD step; on error hide the HUD instead of breaking the game. */
@@ -416,8 +506,8 @@ export class GameUi {
 
 	private fail(message: string, err?: unknown): void {
 		this.textBroken = true;
-		if (this.warned) return;
-		this.warned = true;
+		if (hudWarned) return;
+		hudWarned = true;
 		console.warn(`[BlockBlast] ${message}; HUD hidden, gameplay continues`, err ?? "");
 	}
 }
@@ -430,9 +520,22 @@ function rect(cx: number, cy: number, w: number, h: number): Box {
 	return { cx, cy, w, h, size: 0, align: "center" };
 }
 
+interface OverlayBoxes {
+	panel: Box;
+	title: Box;
+	score: Box;
+	best: Box;
+	button: Box;
+	label: Box;
+}
+
+function shiftBox(b: Box, dx: number, dy: number): Box {
+	return { ...b, cx: b.cx + dx, cy: b.cy + dy };
+}
+
 /**
  * Set text and fit it on one line. `b.size` is the preferred glyph height in layout
- * px; the font shrinks so the line fits inside `b.w` (e.g. "COMBO x12" or a 6-digit
+ * px; the font shrinks so the line fits inside `b.w` (e.g. "BEST 123456" or a 6-digit
  * score in the narrow landscape strip). Uses the runtime's measured `textWidth`
  * when it reports one, else a per-character estimate; the caller re-runs this on
  * the next few ticks so a lagging measurement converges. Returns the sizePt set.
@@ -456,8 +559,8 @@ function place(inst: TextInst | null, b: Box, text: string): number {
 	// Hidden/empty text: leave the size alone (no jump to the box maximum).
 	if (text.length === 0) return 0;
 
-	// Harvest `textWidth` only when it must describe what we see now: our last
-	// text/size write happened on an earlier tick (so a draw has run since) and
+	// Harvest `textWidth` only when it must describe what we see now: at least one
+	// real draw (layer afterdraw) has happened since our last text/size write, and
 	// nobody else (e.g. a size tween) has changed sizePt in between.
 	const measured = inst.textWidth;
 	if (
@@ -466,14 +569,20 @@ function place(inst: TextInst | null, b: Box, text: string): number {
 		typeof measured === "number" &&
 		measured > 0
 	) {
-		st.good = { pt: st.pt, width: measured, len: text.length };
+		st.good = { pt: st.pt, width: measured, len: text.length, text };
 	}
 
-	// Width per pt: from the last trustworthy measurement (scaled by character
-	// count if the text changed since), else the per-character estimate.
-	const perPt = st.good
-		? (st.good.width / st.good.pt) * (text.length / st.good.len)
-		: (text.length * GLYPH_WIDTH) / 0.75;
+	// Width per pt: exact from a measurement of this same text; for a changed,
+	// not-yet-drawn text, the last measurement scaled by character count plus a
+	// safety margin; with no measurement at all, the generous per-char estimate.
+	let perPt: number;
+	if (st.good && st.good.text === text) {
+		perPt = st.good.width / st.good.pt;
+	} else if (st.good) {
+		perPt = (st.good.width / st.good.pt) * (text.length / st.good.len) * UNMEASURED_MARGIN;
+	} else {
+		perPt = (text.length * GLYPH_WIDTH) / 0.75;
+	}
 	const maxPt = Math.max(8, Math.floor(b.size * 0.75));
 	// 2% margin for rounding.
 	const pt = Math.max(8, Math.min(maxPt, Math.floor((b.w * 0.98) / perPt)));
@@ -489,10 +598,10 @@ function place(inst: TextInst | null, b: Box, text: string): number {
 interface FitState {
 	/** sizePt we last wrote. */
 	pt: number;
-	/** fitFrame of our last text/size write; textWidth is stale until a later tick. */
+	/** fitFrame (draw count) at our last text/size write; textWidth is stale until a draw follows. */
 	frame: number;
-	/** Last measurement known to match its sizePt and text length. */
-	good: { pt: number; width: number; len: number } | null;
+	/** Last measurement known to match its sizePt and text. */
+	good: { pt: number; width: number; len: number; text: string } | null;
 }
 
 const fitStates = new WeakMap<object, FitState>();

@@ -30,6 +30,10 @@ export const HOVER_SCALE = 1.0;
 export let SCORE_PER_CELL = 1;
 export let LINE_CLEAR_SCORES: number[] = [10, 20, 60, 100, 150, 250];
 export let BOARD_CLEAR_BONUS = 300;
+/** Multiply the line/column clear points by the combo (after this move's +1). */
+export let COMBO_SCORE_MULTIPLIER = true;
+/** Max combo multiplier; 0 = no cap. */
+export let COMBO_MULTIPLIER_CAP = 0;
 
 export let STREAK_START_AFTER_CLEARS = 2;
 export let RESET_STREAK_AFTER_NON_CLEARS = 3;
@@ -50,6 +54,10 @@ export interface ClassicFile {
 		streakStartAfterClears: number;
 		resetStreakAfterNonClears: number;
 		resetStreakAfterBoardClear: number;
+		/** Default true. */
+		comboScoreMultiplier?: boolean;
+		/** 0 or absent = no cap. */
+		comboMultiplierCap?: number;
 	};
 	feel: {
 		dragOffsetY: number;
@@ -67,6 +75,9 @@ export function applyClassicConfig(data: ClassicFile): void {
 	STREAK_START_AFTER_CLEARS = data.score.streakStartAfterClears;
 	RESET_STREAK_AFTER_NON_CLEARS = data.score.resetStreakAfterNonClears;
 	RESET_STREAK_AFTER_BOARD_CLEAR = data.score.resetStreakAfterBoardClear;
+	COMBO_SCORE_MULTIPLIER = data.score.comboScoreMultiplier !== false;
+	const cap = Number(data.score.comboMultiplierCap ?? 0);
+	COMBO_MULTIPLIER_CAP = Number.isFinite(cap) && cap > 0 ? Math.floor(cap) : 0;
 	DRAG_OFFSET_Y = data.feel.dragOffsetY;
 	BANK_SCALE = data.feel.bankScale;
 	LOSE_DELAY_MS = data.feel.loseDelayMs;

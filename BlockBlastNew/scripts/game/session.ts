@@ -1,5 +1,5 @@
 import { Board } from "./board.js";
-import { BANK_COUNT, LOSE_DELAY_MS, RESET_STREAK_AFTER_NON_CLEARS } from "./constants.js";
+import { BANK_COUNT, LOSE_DELAY_MS } from "./constants.js";
 import { EventBus } from "./events.js";
 import { advanceBrc, spawnBank } from "./hand.js";
 import {
@@ -7,8 +7,8 @@ import {
 	noteClear,
 	noteNonClear,
 	notePlace,
-	scoreForLines,
-	scoreForPlace,
+	comboMultiplier,
+	resetScoreState,
 	type ScoreState
 } from "./score.js";
 import type { Shape } from "./shape.js";
@@ -55,11 +55,7 @@ export class Session {
 		this.lost = false;
 		this.clearLoseTimer();
 		this.board.reset();
-		this.score.score = 0;
-		this.score.combo = 0;
-		this.score.consecutiveClears = 0;
-		this.score.nonClearStreak = 0;
-		this.score.nonClearLimit = RESET_STREAK_AFTER_NON_CLEARS;
+		resetScoreState(this.score);
 		this.brc = 0;
 		this.refillBank();
 		this.events.emit("started", { score: 0 });
@@ -90,8 +86,8 @@ export class Session {
 
 		this.board.place(shape, originCol, originRow);
 		const cells = shape.cells.length;
-		let scoreDelta = notePlace(this.score, cells);
-		const placeDelta = scoreForPlace(cells);
+		const placeDelta = notePlace(this.score, cells);
+		let scoreDelta = placeDelta;
 
 		const lines = this.board.findFullLines();
 		const lineCount = lines.rows.length + lines.cols.length;
@@ -101,8 +97,9 @@ export class Session {
 		if (lineCount > 0) {
 			cellsRemoved = this.board.clearLines(lines);
 			boardClear = this.board.isAllEmpty();
-			clearDelta = scoreForLines(lineCount, boardClear);
-			scoreDelta += noteClear(this.score, lineCount, boardClear);
+			// Line points x combo (after this move's +1) + board bonus; see score.ts.
+			clearDelta = noteClear(this.score, lineCount, boardClear);
+			scoreDelta += clearDelta;
 			this.brc = advanceBrc(this.brc, lineCount);
 		} else {
 			noteNonClear(this.score);
@@ -126,6 +123,7 @@ export class Session {
 				cellsRemoved,
 				boardClear,
 				combo: this.score.combo,
+				multiplier: comboMultiplier(this.score.combo),
 				scoreDelta: clearDelta,
 				score: this.score.score
 			});
@@ -195,6 +193,7 @@ export class Session {
 			this.lost = true;
 			this.events.emit("lose", { score: this.score.score });
 		}, LOSE_DELAY_MS);
+		this.events.emit("loseStart", { delayMs: LOSE_DELAY_MS, score: this.score.score });
 	}
 
 	/** Stop pending timers and drop listeners. Call when the view/layout goes away. */

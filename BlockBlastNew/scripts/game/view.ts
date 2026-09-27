@@ -1,6 +1,7 @@
 import { animationFor } from "./colors.js";
 import {
 	BANK_COUNT,
+	BOARD_CLEAR_BONUS,
 	BANK_LAYER,
 	BOARD_LAYER,
 	BOARD_SIZE,
@@ -9,12 +10,15 @@ import {
 	HIT_STOP_MS,
 	PREVIEW_OPACITY
 } from "./constants.js";
-import { cellCenterX, cellCenterY, hud, liftedDragPoint } from "./hud.js";
+import { cellCenterX, cellCenterY, hud, liftedDragPoint, readViewport } from "./hud.js";
 import { hitBankSlot, instanceContains, snapOrigin } from "./input.js";
 import { Session } from "./session.js";
 import type { Shape } from "./shape.js";
-import { getHighScore, submitScore } from "./storage.js";
-import { GameUi } from "./ui.js";
+import { ComboFx } from "./comboFx.js";
+import type { Fx, FxSprite } from "./fx.js";
+import { comboFxMin } from "./score.js";
+import { flushHighScore, getHighScore, submitScore } from "./storage.js";
+import { GameUi, onLosePanelLayout, setLosePanelOffset } from "./ui.js";
 
 /** Opacity of board + bank while the game-over overlay is up. */
 const GAME_OVER_DIM = 0.3;
@@ -44,22 +48,47 @@ export class GameApp {
 	private drag: { slot: number; shape: Shape } | null = null;
 	private dragging = false;
 	private readonly ui: GameUi;
+	private readonly comboFx: ComboFx;
 	/** Replay button was pressed; fire on release inside it. */
 	private replayArmed = false;
 	/** Stored best when this run began; decides "NEW BEST!" on game over. */
 	private bestAtStart = 0;
+	/** Lose delay running (loseStart fired, lose not yet): keep the board dimmed on relayout. */
+	private losePending = false;
+	/** Clear points of the move being placed (from "cleared"), for the "+N" popups. */
+	private lastClear: { lineScore: number; bonus: number } | null = null;
+
+	/** Shared effect engine (created by ComboFx, see fx.ts). */
+	private get fx(): Fx {
+		return this.comboFx.fx;
+	}
 
 	constructor(runtime: IRuntime, rng?: () => number) {
 		this.runtime = runtime;
 		this.session = new Session(rng);
 		this.ui = new GameUi(runtime);
+		this.comboFx = new ComboFx(runtime);
 		this.session.events.on("score", ({ score }) => this.updateHud(score));
+		this.session.events.on("cleared", ({ combo, rows, cols, scoreDelta, boardClear }) => {
+			// scoreDelta = line points x combo multiplier + board-clear bonus (not multiplied).
+			const bonus = boardClear ? BOARD_CLEAR_BONUS : 0;
+			this.lastClear = { lineScore: Math.max(0, scoreDelta - bonus), bonus };
+			if (combo >= comboFxMin()) this.comboFx.show(combo, rows, cols);
+		});
+		this.session.events.on("loseStart", (info) => {
+			this.losePending = true;
+			this.comboFx.notifyGameOverStart(info);
+		});
 		this.session.events.on("lose", ({ score }) => this.onLose(score));
 	}
 
 	start(): void {
 		this.saveBest();
 		this.ui.hideGameOver();
+		this.comboFx.resetRun();
+		// Drop leftover effects (grey-out, shake, clears) before resetting opacity.
+		this.fx.cancelAll();
+		this.losePending = false;
 		this.replayArmed = false;
 		this.bestAtStart = getHighScore();
 		this.destroyAllDynamic();
@@ -71,6 +100,7 @@ export class GameApp {
 		this.renderFilled();
 		this.ui.create();
 		this.updateHud(this.session.score.score);
+		this.popBank();
 	}
 
 	/** New run on the same layout (game-over replay button). */
@@ -80,16 +110,21 @@ export class GameApp {
 
 	relayout(): void {
 		if (this.dragging) this.cancelDrag();
+		// Before repositioning: ending the shake restores the old grid positions.
+		this.fx.cancelAll();
 		this.repositionGrid();
 		this.renderFilled();
 		this.renderBank();
 		this.ui.layout();
-		if (this.session.lost) this.setBoardDim(true);
+		// Resize during the 0.5s lose delay: the grey-out was cut short, stay dimmed.
+		if (this.session.lost || this.losePending) this.setBoardDim(true);
+		this.comboFx.notifyRelayout();
 	}
 
 	dispose(): void {
 		this.saveBest();
 		this.session.dispose();
+		this.comboFx.dispose();
 		this.ui.dispose();
 		this.destroyAllDynamic();
 		for (const inst of this.grid) inst.destroy();
@@ -100,6 +135,7 @@ export class GameApp {
 	detach(): void {
 		this.saveBest();
 		this.session.dispose();
+		this.comboFx.dispose();
 		// Drops the HUD tick listener; destroying dead instances is caught in ui.ts.
 		this.ui.dispose();
 	}
@@ -145,9 +181,7 @@ export class GameApp {
 		if (result.ok) {
 			this.renderFilled();
 			this.renderBank();
-			if (result.lines >= HIT_STOP_AFTER_LINES) {
-				this.hitStop();
-			}
+			this.playPlaceFx(shape, result);
 		} else {
 			this.setBankVisible(slot, true);
 		}
@@ -155,6 +189,7 @@ export class GameApp {
 	}
 
 	cancelDrag(): void {
+		this.replayArmed = false;
 		if (!this.drag) return;
 		this.setBankVisible(this.drag.slot, true);
 		this.dragging = false;
@@ -202,6 +237,9 @@ export class GameApp {
 	}
 
 	private renderFilled(): void {
+		// Stop bounce tweens and leave the hit-stop shake first, so no effect
+		// writes to the cells destroyed here.
+		this.fx.forgetSprites(this.filled);
 		for (const inst of this.filled) inst?.destroy();
 		this.filled = emptyFilled();
 		this.highlighted = [];
@@ -221,10 +259,14 @@ export class GameApp {
 				);
 			}
 		}
+		// Re-created cells shake with the board if a hit-stop is still running.
+		this.fx.joinShake(this.filled);
 	}
 
 	private renderBank(): void {
 		for (let slot = 0; slot < BANK_COUNT; slot++) {
+			// Stop a running bank pop first so it never writes to destroyed sprites.
+			this.fx.cancelTag(this.bankSprites[slot]!);
 			for (const inst of this.bankSprites[slot]!) inst.destroy();
 			this.bankSprites[slot] = [];
 			const shape = this.session.bank[slot];
@@ -437,7 +479,6 @@ export class GameApp {
 		if (score > getHighScore()) submitScore(this.runtime, score);
 		this.ui.setValues({
 			score,
-			combo: this.session.score.combo,
 			best: getHighScore()
 		});
 	}
@@ -446,14 +487,16 @@ export class GameApp {
 		this.cancelDrag();
 		submitScore(this.runtime, score);
 		const newBest = score > this.bestAtStart;
+		flushHighScore(this.runtime);
 		this.updateHud(score);
 		this.setBoardDim(true);
-		this.ui.showGameOver({ score, best: getHighScore(), newBest });
+		this.showGameOverPanel({ score, best: getHighScore(), newBest });
 	}
 
 	/** Idempotent: only writes when the current score beats the stored best. */
 	private saveBest(): void {
 		submitScore(this.runtime, this.session.score.score);
+		flushHighScore(this.runtime);
 	}
 
 	private setBoardDim(dim: boolean): void {
@@ -467,11 +510,115 @@ export class GameApp {
 		}
 	}
 
-	private hitStop(): void {
-		this.runtime.timeScale = 0;
-		setTimeout(() => {
-			this.runtime.timeScale = 1;
-		}, HIT_STOP_MS);
+	/**
+	 * Cosmetic only: board, score and bank are already final. Order matters so the
+	 * hit-stop freezes the clear copies at their first frame.
+	 */
+	private playPlaceFx(
+		shape: Shape,
+		r: {
+			originCol: number;
+			originRow: number;
+			lines: number;
+			rows: number[];
+			cols: number[];
+			boardClear: boolean;
+			scoreDelta: number;
+			refilled: boolean;
+			lost: boolean;
+		}
+	): void {
+		const fx = this.fx;
+		const cs = hud.cellSize;
+		// Place bounce on the placed cells that survived the clear.
+		const placed: FxSprite[] = [];
+		for (const cell of shape.cells) {
+			const inst = this.filled[cellIndex(r.originCol + cell.col, r.originRow + cell.row)];
+			if (inst) placed.push(inst);
+		}
+		fx.placeBounce(placed);
+		const pieceCol = r.originCol + (shape.cols - 1) / 2;
+		const pieceRow = r.originRow + (shape.rows - 1) / 2;
+		if (r.lines > 0) {
+			const seen = new Set<number>();
+			const cells: { x: number; y: number; col: number; row: number }[] = [];
+			const add = (col: number, row: number) => {
+				const i = cellIndex(col, row);
+				if (seen.has(i)) return;
+				seen.add(i);
+				cells.push({ x: cellCenterX(col), y: cellCenterY(row), col, row });
+			};
+			for (const row of r.rows) for (let col = 0; col < BOARD_SIZE; col++) add(col, row);
+			for (const col of r.cols) for (let row = 0; row < BOARD_SIZE; row++) add(col, row);
+			fx.lineClear(cells, cs, animationFor(shape.color), {
+				col: Math.round(pieceCol),
+				row: Math.round(pieceRow)
+			});
+			if (r.lines >= HIT_STOP_AFTER_LINES) {
+				// Replaces the old runtime.timeScale = 0: only board tweens pause.
+				const targets: FxSprite[] = [...this.grid];
+				for (const inst of this.filled) if (inst) targets.push(inst);
+				fx.hitStop(HIT_STOP_MS, targets, cs);
+			}
+			// "+N" shows the clear points only (original: pointsNumberPopupShowsClearScoreOnly);
+			// no popup on a non-clearing move, placement points never included.
+			const clear = this.lastClear;
+			fx.floatScore(cellCenterX(pieceCol), cellCenterY(pieceRow), clear?.lineScore ?? 0, cs);
+			if (r.boardClear) {
+				const mid = (BOARD_SIZE - 1) / 2;
+				fx.boardClear(cellCenterX(mid), cellCenterY(mid), cs);
+				// Board-clear bonus as its own "+300" under "CLEAR!".
+				fx.floatScore(cellCenterX(mid), cellCenterY(mid) + cs * 1.6, clear?.bonus ?? 0, cs);
+			}
+		}
+		this.lastClear = null;
+		if (r.refilled) this.popBank();
+		if (r.lost) this.greyOutBoard();
+	}
+
+	/**
+	 * Show the lose panel and slide it up from just below the visible screen.
+	 * The one-shot listener runs inside showGameOver, before the first draw, so
+	 * the panel never flashes at its final position.
+	 */
+	private showGameOverPanel(info: { score: number; best: number; newBest: boolean }): void {
+		const off = onLosePanelLayout((layout) => {
+			if (layout.reason !== "show") return;
+			off();
+			const view = readViewport(this.runtime);
+			const panelTop = layout.panel.y - layout.panel.height / 2;
+			const fromDy = Math.max(layout.panel.height, view.top + view.height - panelTop);
+			this.fx.panelSlideIn(fromDy, setLosePanelOffset);
+		});
+		try {
+			this.ui.showGameOver(info);
+		} finally {
+			off();
+		}
+	}
+
+	private popBank(): void {
+		const centers = this.bankSprites.map((_, i) => ({
+			x: hud.bankX[i] ?? 0,
+			y: hud.bankY[i] ?? 0
+		}));
+		this.fx.bankPop(this.bankSprites, centers);
+	}
+
+	/** Lose delay started: rows fade to the game-over dim top to bottom (~0.4s). */
+	private greyOutBoard(): void {
+		const rows: FxSprite[][] = [];
+		for (let row = 0; row < BOARD_SIZE; row++) {
+			const list: FxSprite[] = [];
+			for (let col = 0; col < BOARD_SIZE; col++) {
+				const g = this.grid[cellIndex(col, row)];
+				if (g) list.push(g);
+				const f = this.filled[cellIndex(col, row)];
+				if (f) list.push(f);
+			}
+			rows.push(list);
+		}
+		this.fx.greyOut(rows, this.bankSprites.flat());
 	}
 
 	private destroyAllDynamic(): void {

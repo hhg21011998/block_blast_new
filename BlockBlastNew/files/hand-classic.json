@@ -2,7 +2,7 @@
   "version": "Super Easy (Better End Game) - (Classic BakedIn)",
   "source": "Assets/Resources/offlinedata/inv-hand-classic.bytes",
   "maxBrc": 100,
-  "brcPerLine": 1,
+  "brcValueOnClear": 1,
   "perfectFitModValue": 100,
   "minimumPerfectFitPercentage": 0.67,
   "minimumCellsFilledPercentage": 0.26,

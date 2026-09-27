@@ -6,7 +6,7 @@ This folder is a Construct 3 project. Format notes: `llm-context.md`. Official g
 
 - Before editing scripts here, run graft from the repo root (`graft ask` / `graft grep` / `graft callers`). See root `AGENTS.md`.
 
-- Viewport is **1080×1920**, portrait, `letterbox-scale`.
+- Viewport is **1080×1920** (design size), `fullscreenMode: scale-outer`, `orientations: any`. No letterbox: `scripts/game/hud.ts` lays out portrait (mobile / tall) or landscape (PC/web wide) from the visible viewport.
 - `project.c3proj` is the index. New files are invisible until listed there.
 - Ignore `*.uistate.json`.
 - Object type JSON lives in `objectTypes/`. Sprite frames: `images/<object>-<animation>-<frame padded to 3>.png`.
