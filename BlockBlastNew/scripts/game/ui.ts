@@ -10,7 +10,7 @@
  * Every public method is fail-safe: if Text/Sprite creation or a property write
  * throws, the HUD hides itself and gameplay keeps running.
  */
-import { BOARD_LAYER, BOARD_SIZE, DRAG_LAYER } from "./constants.js";
+import { BOARD_LAYER, BOARD_SIZE, DRAG_LAYER, SCORE_LAYER } from "./constants.js";
 import { hud } from "./hud.js";
 
 export const HUD_TEXT_OBJECT = "HudText";
@@ -220,7 +220,7 @@ export class GameUi {
 		this.guard("create HUD", () => {
 			this.destroyHud();
 			this.bestText = this.makeText(BOARD_LAYER, GOLD);
-			this.scoreText = this.makeText(BOARD_LAYER, WHITE);
+			this.scoreText = this.makeText(SCORE_LAYER, WHITE);
 			this.layoutHud();
 		});
 	}
@@ -388,20 +388,18 @@ export class GameUi {
 		const rowY = hud.boardTop - cell * 1.9;
 		return {
 			best: box(left + half / 2, rowY, half, cell * 0.3, "left"),
-			// Lifted above the board so the combo heart fits between the score and the grid.
-			score: box(left + half, hud.boardTop - cell * 1.15, boardPx, cell * 0.62, "center")
+			score: box(left + half, hud.boardTop - cell * 0.8, boardPx, cell * 0.62, "center")
 		};
 	}
 
-	/** Centre and edge of the combo heart, just under the score. */
+	/**
+	 * Heart centre, the same point as the score. The digits are on the Score
+	 * layer, so they draw on top of the heart. Sprite edge is larger than the
+	 * glyphs; the heart artwork itself sits inside that box.
+	 */
 	scoreAnchor(): { x: number; y: number; size: number } {
-		const cell = hud.cellSize;
 		const score = this.hudBoxes().score;
-		const size = cell * 0.5;
-		if (hud.landscape && hud.uiWidth > 0) {
-			return { x: score.cx, y: score.cy + cell * 0.95, size };
-		}
-		return { x: score.cx, y: hud.boardTop - cell * 0.42, size };
+		return { x: score.cx, y: score.cy, size: hud.cellSize * 1.6 };
 	}
 
 	/** Panel layout with the animator offset applied (what is drawn and hit-tested). */

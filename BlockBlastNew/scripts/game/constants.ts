@@ -13,8 +13,10 @@ export const BOARD_TOP = 340;
 export const BOARD_LAYER = "Board";
 export const BANK_LAYER = "Bank";
 export const DRAG_LAYER = "Drag";
-/** Combo heart only. Own texture so the gradient's source-in blend stays inside the heart. */
+/** Combo heart. Own texture so the gradient's source-in blend stays inside the heart. */
 export const STREAK_LAYER = "Streak";
+/** Score digits. Above the heart, below the dragged piece and the lose panel. */
+export const SCORE_LAYER = "Score";
 
 export const EMPTY_CELL_OPACITY = 0.22;
 export const UNPLACEABLE_OPACITY = 0.32;

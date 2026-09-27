@@ -1,5 +1,5 @@
 /**
- * Rainbow combo heart under the score.
+ * Rainbow combo heart drawn behind the score. The digits sit on the same point, on a higher layer.
  * The heart frames are white masks; T_VFX_Heart_OverlayGradient supplies the colour.
  * Both sit on the Streak layer (its own texture) and the gradient is drawn source-in,
  * so the rainbow exists only where the heart has alpha.
@@ -54,12 +54,14 @@ export function heartBand(remaining: number): HeartBand {
 	return "rest";
 }
 
-/** Scale through one beat. Phase 0 and 1 are rest; the thump peaks at 0.2. */
+/**
+ * One breath. Scale rests at both ends of the phase and reaches `peak` in the
+ * middle. The slope is 0 at the turnaround, so the beat eases in and out.
+ */
 export function beatScale(phase: number, peak: number): number {
 	const p = phase - Math.floor(phase);
-	if (p < 0.2) return lerp(1, peak, ease.outQuad(p / 0.2));
-	if (p < 0.48) return lerp(peak, 1, (p - 0.2) / 0.28);
-	return 1;
+	const lobe = Math.sin(p * Math.PI);
+	return 1 + (peak - 1) * lobe * lobe;
 }
 
 /** Degrees per second. Calm at 3+ misses left, fastest when one miss remains. */
@@ -97,7 +99,7 @@ export class StreakHeart {
 		runtime.addEventListener("tick", this.onTick);
 	}
 
-	/** Place under the score. Safe before the sprites exist. */
+	/** Centre the heart on the score. Safe before the sprites exist. */
 	layout(anchor: HeartAnchor): void {
 		if (!Number.isFinite(anchor.x) || !Number.isFinite(anchor.y) || !(anchor.size > 0)) return;
 		this.anchor = anchor;
