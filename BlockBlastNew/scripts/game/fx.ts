@@ -105,7 +105,31 @@ export const FX = {
 	/** On game-over start: fade this long, finished before the panel appears. */
 	comboGameOverFadeSec: 0.15,
 	/** Game-over panel slides up from below the screen edge (own). */
-	panelSlideSec: 0.4
+	panelSlideSec: 0.4,
+	/**
+	 * Combo heart under the score (own). Periods are one beat.
+	 * Rest while 3+ misses remain, warn at 2, panic at 1 (the last miss breaks the combo).
+	 */
+	heartRestPeriod: 0.95,
+	heartWarnPeriod: 0.55,
+	heartPanicPeriod: 0.32,
+	heartRestPeak: 1.08,
+	heartWarnPeak: 1.14,
+	heartPanicPeak: 1.22,
+	heartAccentPeak: 1.28,
+	heartRestGlow: 0.28,
+	heartWarnGlow: 0.5,
+	heartPanicGlow: 0.75,
+	heartPopSec: 0.18,
+	heartPopFrom: 0.35,
+	heartBreakSec: 0.22,
+	heartBreakFrom: 1.15,
+	heartBreakTo: 0.45,
+	/** Gradient spin, degrees per second (own). */
+	heartSpinRest: 25,
+	heartSpinPanic: 110,
+	heartGlowScale: 1.12,
+	heartGradientScale: 1.6
 };
 
 interface Tween {

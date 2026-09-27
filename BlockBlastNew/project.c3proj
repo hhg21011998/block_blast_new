@@ -39,7 +39,9 @@
 	"objectTypes": {
 		"items": [
 			"NumberCombo",
-			"ComboText"
+			"ComboText",
+			"T_UI_Streak_Indicator_Heart",
+			"T_VFX_Heart_OverlayGradient"
 		],
 		"subfolders": [
 			{
@@ -245,6 +247,14 @@
 							"name": "fx.ts",
 							"type": "application/typescript",
 							"sid": 418273645190527,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "streakHeart.ts",
+							"type": "application/typescript",
+							"sid": 581029384756323,
 							"script-info": {
 								"purpose": "none"
 							}

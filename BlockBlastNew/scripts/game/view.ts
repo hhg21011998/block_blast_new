@@ -18,6 +18,7 @@ import { ComboFx } from "./comboFx.js";
 import type { Fx, FxSprite } from "./fx.js";
 import { comboFxMin } from "./score.js";
 import { flushHighScore, getHighScore, submitScore } from "./storage.js";
+import { StreakHeart } from "./streakHeart.js";
 import { GameUi, onLosePanelLayout, setLosePanelOffset } from "./ui.js";
 
 /** Opacity of board + bank while the game-over overlay is up. */
@@ -49,6 +50,7 @@ export class GameApp {
 	private dragging = false;
 	private readonly ui: GameUi;
 	private readonly comboFx: ComboFx;
+	private readonly streakHeart: StreakHeart;
 	/** Replay button was pressed; fire on release inside it. */
 	private replayArmed = false;
 	/** Stored best when this run began; decides "NEW BEST!" on game over. */
@@ -68,7 +70,12 @@ export class GameApp {
 		this.session = new Session(rng);
 		this.ui = new GameUi(runtime);
 		this.comboFx = new ComboFx(runtime);
-		this.session.events.on("score", ({ score }) => this.updateHud(score));
+		this.streakHeart = new StreakHeart(runtime);
+		this.session.events.on("score", ({ score }) => {
+			this.updateHud(score);
+			this.streakHeart.layout(this.ui.scoreAnchor());
+			this.streakHeart.sync(this.session.score);
+		});
 		this.session.events.on("cleared", ({ combo, rows, cols, scoreDelta, boardClear }) => {
 			// scoreDelta = line points x combo multiplier + board-clear bonus (not multiplied).
 			const bonus = boardClear ? BOARD_CLEAR_BONUS : 0;
@@ -78,6 +85,7 @@ export class GameApp {
 		this.session.events.on("loseStart", (info) => {
 			this.losePending = true;
 			this.comboFx.notifyGameOverStart(info);
+			this.streakHeart.fadeOut();
 		});
 		this.session.events.on("lose", ({ score }) => this.onLose(score));
 	}
@@ -94,6 +102,8 @@ export class GameApp {
 		this.destroyAllDynamic();
 		this.ensureGrid();
 		this.setBoardDim(false);
+		// Before start(), so the combo-0 event it emits does not play the break.
+		this.streakHeart.reset();
 		// Core board first; the HUD is optional and fail-safe (see ui.ts).
 		this.session.start();
 		this.renderBank();
@@ -116,6 +126,7 @@ export class GameApp {
 		this.renderFilled();
 		this.renderBank();
 		this.ui.layout();
+		this.streakHeart.layout(this.ui.scoreAnchor());
 		// Resize during the 0.5s lose delay: the grey-out was cut short, stay dimmed.
 		if (this.session.lost || this.losePending) this.setBoardDim(true);
 		this.comboFx.notifyRelayout();
@@ -125,6 +136,7 @@ export class GameApp {
 		this.saveBest();
 		this.session.dispose();
 		this.comboFx.dispose();
+		this.streakHeart.dispose();
 		this.ui.dispose();
 		this.destroyAllDynamic();
 		for (const inst of this.grid) inst.destroy();
@@ -136,6 +148,7 @@ export class GameApp {
 		this.saveBest();
 		this.session.dispose();
 		this.comboFx.dispose();
+		this.streakHeart.dispose();
 		// Drops the HUD tick listener; destroying dead instances is caught in ui.ts.
 		this.ui.dispose();
 	}

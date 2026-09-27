@@ -388,8 +388,20 @@ export class GameUi {
 		const rowY = hud.boardTop - cell * 1.9;
 		return {
 			best: box(left + half / 2, rowY, half, cell * 0.3, "left"),
-			score: box(left + half, hud.boardTop - cell * 0.8, boardPx, cell * 0.62, "center")
+			// Lifted above the board so the combo heart fits between the score and the grid.
+			score: box(left + half, hud.boardTop - cell * 1.15, boardPx, cell * 0.62, "center")
 		};
+	}
+
+	/** Centre and edge of the combo heart, just under the score. */
+	scoreAnchor(): { x: number; y: number; size: number } {
+		const cell = hud.cellSize;
+		const score = this.hudBoxes().score;
+		const size = cell * 0.5;
+		if (hud.landscape && hud.uiWidth > 0) {
+			return { x: score.cx, y: score.cy + cell * 0.95, size };
+		}
+		return { x: score.cx, y: hud.boardTop - cell * 0.42, size };
 	}
 
 	/** Panel layout with the animator offset applied (what is drawn and hit-tested). */
