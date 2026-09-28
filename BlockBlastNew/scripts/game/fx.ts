@@ -156,11 +156,11 @@ export const FX = {
 	/**
 	 * Combo heart behind the score (own). Periods are one full breath.
 	 * Rest while 3+ misses remain, warn at 2, panic at 1 (the last miss breaks the combo).
-	 * Panic stays slower than a flicker: the urgency is a deeper breath, not a shock.
+	 * The last band is the only fast one. Warn stays near the resting breath.
 	 */
 	heartRestPeriod: 1.2,
 	heartWarnPeriod: 0.95,
-	heartPanicPeriod: 0.75,
+	heartPanicPeriod: 0.46,
 	heartRestPeak: 1.06,
 	heartWarnPeak: 1.08,
 	heartPanicPeak: 1.1,
