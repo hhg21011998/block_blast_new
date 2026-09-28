@@ -20,6 +20,13 @@
  * of the best. While any eligible piece fits, unplaceable pieces stay
  * out of the draw. Shape_15–17 are in the hand file and spawn only once
  * their matrices are in shapes.json.
+ *
+ * Each bank is a scripted trio when the board allows it. Slot 0 can be
+ * placed without clearing. Slot 1 then fits beside it and clears a line
+ * that still holds slot 0's cells. Slot 2 is the hard piece: it fits
+ * after that clear, does not clear itself, and even its kindest spot
+ * leaves fewer pieces placeable than before. The weighted draw is only
+ * the fallback when no such trio exists.
  */
 import { Board } from "./board.js";
 import { BANK_COUNT, BOARD_SIZE } from "./constants.js";
@@ -121,6 +128,13 @@ export function spawnBank(board: Board, brc: number, rng: () => number): Shape[]
 	}
 	const placeable = eligible.filter((item) => board.canPlaceAnywhere(item.shape));
 	const source = placeable.length > 0 ? placeable : eligible;
+	const scripted = scriptedTrio(
+		board,
+		eligible.map((item) => item.shape),
+		source.map((item) => item.shape),
+		rng
+	);
+	if (scripted) return scripted;
 	const taken = new Set<string>();
 	const fill = board.occupiedCount() / (BOARD_SIZE * BOARD_SIZE);
 	const bank: Shape[] = [];
@@ -134,6 +148,193 @@ export function spawnBank(board: Board, brc: number, rng: () => number): Shape[]
 		if (picked.read) takeLines(picked.read, taken);
 	}
 	return bank;
+}
+
+interface Origin {
+	col: number;
+	row: number;
+}
+
+interface ComboPair {
+	setup: Shape;
+	finish: Shape;
+	setupAt: Origin;
+	finishAt: Origin;
+}
+
+/**
+ * [setup, finisher, hard]. Setup does not clear. Finisher then clears a
+ * line that still contains the setup's cells. Hard fits only after that
+ * clear when possible, and its best non-clearing spot cuts future fits.
+ */
+function scriptedTrio(
+	board: Board,
+	pool: readonly Shape[],
+	placeable: readonly Shape[],
+	rng: () => number
+): Shape[] | null {
+	if (placeable.length < 2) return null;
+	const pair = findComboPair(board, placeable, rng);
+	if (!pair) return null;
+	const after = board.clone();
+	after.place(pair.setup, pair.setupAt.col, pair.setupAt.row);
+	after.clearLines(after.findFullLines());
+	after.place(pair.finish, pair.finishAt.col, pair.finishAt.row);
+	after.clearLines(after.findFullLines());
+	const hard = findHardPiece(board, after, pool, pair, rng);
+	if (!hard) return null;
+	return [pair.setup, pair.finish, hard];
+}
+
+function findComboPair(board: Board, placeable: readonly Shape[], rng: () => number): ComboPair | null {
+	const setups = shuffle(placeable, rng);
+	for (const setup of setups) {
+		if (setup.cells.length < 3) continue;
+		const spots = shuffle(listOrigins(board, setup), rng).slice(0, 8);
+		for (const spot of spots) {
+			const next = board.clone();
+			next.place(setup, spot.col, spot.row);
+			const planted = cellsOf(setup, spot);
+			const opened = next.findFullLines();
+			if (hasLines(opened)) {
+				for (const index of planted) {
+					const col = index % BOARD_SIZE;
+					const row = Math.floor(index / BOARD_SIZE);
+					if (opened.rows.includes(row) || opened.cols.includes(col)) planted.delete(index);
+				}
+				next.clearLines(opened);
+			}
+			if (planted.size === 0) continue;
+			const finish = findFinisher(next, placeable, setup.guid, planted, rng);
+			if (!finish) continue;
+			return { setup, finish: finish.shape, setupAt: spot, finishAt: finish.at };
+		}
+	}
+	return null;
+}
+
+function findFinisher(
+	board: Board,
+	placeable: readonly Shape[],
+	setupGuid: string,
+	planted: ReadonlySet<number>,
+	rng: () => number
+): { shape: Shape; at: Origin } | null {
+	const order = shuffle(
+		placeable.filter((shape) => shape.guid !== setupGuid),
+		rng
+	);
+	for (const shape of order) {
+		const maxCol = BOARD_SIZE - shape.cols;
+		const maxRow = BOARD_SIZE - shape.rows;
+		for (let row = 0; row <= maxRow; row++) {
+			for (let col = 0; col <= maxCol; col++) {
+				if (!board.canPlace(shape, col, row)) continue;
+				const next = board.clone();
+				next.place(shape, col, row);
+				const lines = next.findFullLines();
+				if (!hasLines(lines)) continue;
+				if (!cellsOnClearedLines(planted, lines)) continue;
+				return { shape, at: { col, row } };
+			}
+		}
+	}
+	return null;
+}
+
+function findHardPiece(
+	original: Board,
+	afterClear: Board,
+	pool: readonly Shape[],
+	pair: ComboPair,
+	rng: () => number
+): Shape | null {
+	const used = new Set([pair.setup.guid, pair.finish.guid]);
+	const before = countPlaceable(afterClear, pool);
+	let best: { shape: Shape; score: number } | null = null;
+	for (const shape of shuffle(pool, rng)) {
+		if (used.has(shape.guid)) continue;
+		const spots = listOrigins(afterClear, shape);
+		if (spots.length === 0) continue;
+		let bestMobility = -1;
+		let quiet = 0;
+		let scored = 0;
+		for (const spot of spots) {
+			const next = afterClear.clone();
+			next.place(shape, spot.col, spot.row);
+			if (hasLines(next.findFullLines())) continue;
+			quiet++;
+			if (scored >= 4) continue;
+			scored++;
+			const mobility = countPlaceable(next, pool);
+			if (mobility > bestMobility) bestMobility = mobility;
+		}
+		if (quiet === 0 || bestMobility < 0) continue;
+		const lockedUntilClear = !original.canPlaceAnywhere(shape);
+		// Few legal spots, and the kindest of them still removes future pieces.
+		const scarcity = Math.max(0, 6 - quiet);
+		const score =
+			scarcity * 8 +
+			(before - bestMobility) * 4 +
+			(lockedUntilClear ? 10 : 0) +
+			rng() * 3;
+		if (!best || score > best.score) best = { shape, score };
+	}
+	return best?.shape ?? null;
+}
+
+function listOrigins(board: Board, shape: Shape): Origin[] {
+	const found: Origin[] = [];
+	const maxCol = BOARD_SIZE - shape.cols;
+	const maxRow = BOARD_SIZE - shape.rows;
+	for (let row = 0; row <= maxRow; row++) {
+		for (let col = 0; col <= maxCol; col++) {
+			if (board.canPlace(shape, col, row)) found.push({ col, row });
+		}
+	}
+	return found;
+}
+
+function cellsOf(shape: Shape, at: Origin): Set<number> {
+	const cells = new Set<number>();
+	for (const cell of shape.cells) {
+		cells.add((at.row + cell.row) * BOARD_SIZE + (at.col + cell.col));
+	}
+	return cells;
+}
+
+function cellsOnClearedLines(cells: ReadonlySet<number>, lines: { rows: number[]; cols: number[] }): boolean {
+	const rows = new Set(lines.rows);
+	const cols = new Set(lines.cols);
+	for (const index of cells) {
+		const col = index % BOARD_SIZE;
+		const row = Math.floor(index / BOARD_SIZE);
+		if (rows.has(row) || cols.has(col)) return true;
+	}
+	return false;
+}
+
+function hasLines(lines: { rows: number[]; cols: number[] }): boolean {
+	return lines.rows.length > 0 || lines.cols.length > 0;
+}
+
+function countPlaceable(board: Board, shapes: readonly Shape[]): number {
+	let n = 0;
+	for (const shape of shapes) {
+		if (board.canPlaceAnywhere(shape)) n++;
+	}
+	return n;
+}
+
+function shuffle<T>(items: readonly T[], rng: () => number): T[] {
+	const out = items.slice();
+	for (let i = out.length - 1; i > 0; i--) {
+		const j = Math.floor(rng() * (i + 1));
+		const swap = out[i]!;
+		out[i] = out[j]!;
+		out[j] = swap;
+	}
+	return out;
 }
 
 function requireConfig(): HandFile {

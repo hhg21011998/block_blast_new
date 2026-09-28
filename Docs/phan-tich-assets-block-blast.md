@@ -340,7 +340,13 @@ Revive (`OnReviveOnlyGenTheseShapeNames` và `journeyConfig.reviveConfig.reviveT
 
 ### Bản clone Classic
 
-`BlockBlastNew/files/hand-classic.json` chép số từ `inv-hand-classic.bytes`. `scripts/game/hand.ts` chấm và rút 3 quân. Dump không có công thức cộng điểm, nên clone chốt như sau:
+`BlockBlastNew/files/hand-classic.json` chép số từ `inv-hand-classic.bytes`. `scripts/game/hand.ts` sinh một bộ 3 quân khi bàn cho phép:
+
+1. Quân 1 đặt được và chưa xóa line.
+2. Quân 2 đặt ngay sau quân 1 và xóa một line còn dính ô của quân 1.
+3. Quân 3 là quân khó: đặt được sau nước xóa đó, bản thân không xóa, và chỗ đặt “dễ chịu” nhất vẫn làm ít quân khác đặt được hơn lúc trước. Đặt nó làm bàn nghẽn hơn, nên tỉ lệ thua ván sau cao hơn.
+
+Không tìm được bộ thì mới rút theo trọng số Invisible Hand bên dưới. Dump không có công thức cộng điểm, nên clone chốt như sau:
 
 - BRC +1 mỗi nước có xóa (`brcValueOnClear`; xóa nhiều line vẫn +1), trần 100. Bank mới đọc BRC sau nước xóa.
 - Cổng lấy từ hand, không lấy `brc` trong `shapes.json`. `Shape_15`–`17` có trong hand, chưa có matrix nên chưa vào pool.
