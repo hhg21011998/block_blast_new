@@ -65,7 +65,7 @@ Current `project.c3proj` values (approved setup; do not change unless the user a
 Mobile and PC/web are both supported. Layout is computed in TypeScript, not by the editor:
 
 - `scripts/game/hud.ts` `applyHud()` picks the fixed mobile layout on phones, a portrait layout for tall windows, or a landscape layout for wide PC/web windows (left HUD strip, board, bank column), from the visible viewport (`readViewport()`).
-- `main.ts` re-runs `applyHud()` + `GameApp.relayout()` on resize / rotation; animators hook `onHudRelayout` (comboFx.ts).
+- `scripts/game/boot.ts` re-runs `applyHud()` + `GameApp.relayout()` on resize / rotation; animators hook `onHudRelayout` (comboFx.ts). `main.ts` only imports that module.
 - Place new on-screen UI from `hud` geometry / `readViewport()`, never from fixed 1080×1920 coordinates, and re-place it on relayout.
 
 ## After edits
