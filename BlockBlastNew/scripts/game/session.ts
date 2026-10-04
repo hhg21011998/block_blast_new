@@ -44,6 +44,8 @@ export class Session {
 	/** Lines cleared this run, capped by the classic hand. */
 	brc = 0;
 	lost = false;
+	/** Even refills use the hand. Odd refills try a full-board clear first. */
+	private refillSerial = 0;
 	private loseTimer: ReturnType<typeof setTimeout> | null = null;
 	private readonly rng: () => number;
 
@@ -57,6 +59,7 @@ export class Session {
 		this.board.reset();
 		resetScoreState(this.score);
 		this.brc = 0;
+		this.refillSerial = 0;
 		this.refillBank();
 		this.events.emit("started", { score: 0 });
 		this.events.emit("score", { score: 0 });
@@ -159,7 +162,9 @@ export class Session {
 	}
 
 	private refillBank(): void {
-		const picked = spawnBank(this.board, this.brc, this.rng);
+		const sweep = this.refillSerial % 2 === 1;
+		this.refillSerial++;
+		const picked = spawnBank(this.board, this.brc, this.rng, sweep);
 		for (let i = 0; i < BANK_COUNT; i++) {
 			this.bank[i] = picked[i] ?? null;
 		}

@@ -346,7 +346,7 @@ Revive (`OnReviveOnlyGenTheseShapeNames` và `journeyConfig.reviveConfig.reviveT
 2. Quân 2 đặt ngay sau quân 1 và xóa một line còn dính ô của quân 1.
 3. Quân 3 là quân khó: đặt được sau nước xóa đó, bản thân không xóa, và chỗ đặt “dễ chịu” nhất vẫn làm ít quân khác đặt được hơn lúc trước. Đặt nó làm bàn nghẽn hơn, nên tỉ lệ thua ván sau cao hơn.
 
-Không tìm được bộ thì mới rút theo trọng số Invisible Hand bên dưới. Dump không có công thức cộng điểm, nên clone chốt như sau:
+Không tìm được bộ thì mới rút theo trọng số Invisible Hand bên dưới. Bank lẻ (refill thứ 2, 4, …) thử trước một bộ 3 quân chơi đúng thứ tự trong bank thì bàn trống sau nước thứ 3. Nước 1 hoặc 2 làm trống bàn thì bỏ, vì quân còn lại không tự biến mất trên bàn trống. Hết ngân sách tìm hoặc không có bộ thì bank đó dùng logic thường. Dump không có công thức cộng điểm, nên clone chốt như sau:
 
 - BRC +1 mỗi nước có xóa (`brcValueOnClear`; xóa nhiều line vẫn +1), trần 100. Bank mới đọc BRC sau nước xóa.
 - Cổng lấy từ hand, không lấy `brc` trong `shapes.json`. `Shape_15`–`17` có trong hand, chưa có matrix nên chưa vào pool.

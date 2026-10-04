@@ -21,12 +21,18 @@
  * out of the draw. Shape_15–17 are in the hand file and spawn only once
  * their matrices are in shapes.json.
  *
- * Each bank is a scripted trio when the board allows it. Slot 0 can be
- * placed without clearing. Slot 1 then fits beside it and clears a line
- * that still holds slot 0's cells. Slot 2 is the hard piece: it fits
- * after that clear, does not clear itself, and even its kindest spot
- * leaves fewer pieces placeable than before. The weighted draw is only
- * the fallback when no such trio exists.
+ * Each normal bank is a scripted trio when the board allows it. Slot 0
+ * can be placed without clearing. Slot 1 then fits beside it and clears
+ * a line that still holds slot 0's cells. Slot 2 is the hard piece: it
+ * fits after that clear, does not clear itself, and even its kindest
+ * spot leaves fewer pieces placeable than before. The weighted draw is
+ * only the fallback when no such trio exists.
+ *
+ * Odd refills instead try a full-board trio: three pieces, in that bank
+ * order, that leave the board empty after the third clear. A wipe on
+ * move 1 or 2 is rejected, because the leftover pieces cannot disappear
+ * on an empty board (nothing we spawn fills a row of 8). If no trio is
+ * found inside the search budget, that refill uses the normal hand.
  */
 import { Board } from "./board.js";
 import { BANK_COUNT, BOARD_SIZE } from "./constants.js";
@@ -113,7 +119,7 @@ export function handCurveAt(name: keyof HandFile["curves"], brc: number): number
 	return evalCurve(cfg.curves[name], brcTime(brc));
 }
 
-export function spawnBank(board: Board, brc: number, rng: () => number): Shape[] {
+export function spawnBank(board: Board, brc: number, rng: () => number, sweep = false): Shape[] {
 	const cfg = requireConfig();
 	const catalog = new Map(getShapes().map((shape) => [shape.guid, shape]));
 	const eligible: { shape: Shape; spec: HandShape }[] = [];
@@ -128,6 +134,14 @@ export function spawnBank(board: Board, brc: number, rng: () => number): Shape[]
 	}
 	const placeable = eligible.filter((item) => board.canPlaceAnywhere(item.shape));
 	const source = placeable.length > 0 ? placeable : eligible;
+	if (sweep && board.occupiedCount() > 0) {
+		const clearing = findBoardClear(
+			board,
+			eligible.map((item) => item.shape),
+			rng
+		);
+		if (clearing) return clearing;
+	}
 	const scripted = scriptedTrio(
 		board,
 		eligible.map((item) => item.shape),
@@ -335,6 +349,220 @@ function shuffle<T>(items: readonly T[], rng: () => number): T[] {
 		out[j] = swap;
 	}
 	return out;
+}
+
+const SWEEP_SIMS = 1600;
+const SWEEP_DRAFTS = 64;
+const SWEEP_CLEARS = 12;
+const SWEEP_QUIETS = 4;
+
+interface SweepDraft {
+	shape: Shape;
+	col: number;
+	row: number;
+	hot: number;
+	bonus: number;
+}
+
+interface SweepMove {
+	shape: Shape;
+	col: number;
+	row: number;
+	next: Board;
+	clears: boolean;
+	removed: number;
+}
+
+/**
+ * Three shapes in play order whose placements empty the board on the
+ * third clear. Lines with material and 1–9 holes are the only anchors,
+ * so a nearly empty board fails fast and the normal hand runs instead.
+ */
+interface SweepStep {
+	shape: Shape;
+	col: number;
+	row: number;
+}
+
+function findBoardClear(board: Board, shapes: readonly Shape[], rng: () => number): Shape[] | null {
+	if (shapes.length === 0 || board.occupiedCount() === 0) return null;
+	const order = shuffle(shapes, rng);
+	let budget = SWEEP_SIMS;
+
+	function dfs(current: Board, depth: number, path: SweepStep[]): Shape[] | null {
+		if (budget <= 0) return null;
+		const options = sweepMoves(current, order, depth < 2, () => {
+			budget--;
+			return budget > 0;
+		});
+		for (const move of options) {
+			const step: SweepStep = { shape: move.shape, col: move.col, row: move.row };
+			if (move.next.isAllEmpty()) {
+				const steps = [...path, step];
+				if (depth === 2 && sweepReallyClears(board, steps)) {
+					return steps.map((item) => item.shape);
+				}
+				continue;
+			}
+			if (depth === 2) continue;
+			const found = dfs(move.next, depth + 1, [...path, step]);
+			if (found) return found;
+		}
+		return null;
+	}
+
+	return dfs(board, 0, []);
+}
+
+function sweepReallyClears(start: Board, steps: readonly SweepStep[]): boolean {
+	let board = start;
+	for (let i = 0; i < steps.length; i++) {
+		const step = steps[i]!;
+		if (!board.canPlace(step.shape, step.col, step.row)) return false;
+		const next = board.clone();
+		next.place(step.shape, step.col, step.row);
+		const lines = next.findFullLines();
+		if (hasLines(lines)) next.clearLines(lines);
+		if (next.isAllEmpty() && i < steps.length - 1) return false;
+		board = next;
+	}
+	return board.isAllEmpty();
+}
+
+function sweepMoves(
+	board: Board,
+	shapes: readonly Shape[],
+	allowQuiet: boolean,
+	spend: () => boolean
+): SweepMove[] {
+	const hot = hotCells(board);
+	const drafts: SweepDraft[] = [];
+	for (const shape of shapes) {
+		const maxCol = BOARD_SIZE - shape.cols;
+		const maxRow = BOARD_SIZE - shape.rows;
+		for (let row = 0; row <= maxRow; row++) {
+			for (let col = 0; col <= maxCol; col++) {
+				let covered = 0;
+				let touches = false;
+				for (const cell of shape.cells) {
+					const index = (row + cell.row) * BOARD_SIZE + (col + cell.col);
+					if (hot[index] !== 1) continue;
+					touches = true;
+					covered++;
+				}
+				if (!touches || !board.canPlace(shape, col, row)) continue;
+				drafts.push({
+					shape,
+					col,
+					row,
+					hot: covered,
+					bonus: completionBonus(board, shape, col, row)
+				});
+			}
+		}
+	}
+	drafts.sort((a, b) => b.bonus - a.bonus || b.hot - a.hot);
+	const moves: SweepMove[] = [];
+	const limit = Math.min(SWEEP_DRAFTS, drafts.length);
+	for (let i = 0; i < limit; i++) {
+		if (!spend()) break;
+		const draft = drafts[i]!;
+		const next = board.clone();
+		next.place(draft.shape, draft.col, draft.row);
+		const lines = next.findFullLines();
+		const clears = hasLines(lines);
+		if (!clears && (!allowQuiet || draft.hot < 2)) continue;
+		let removed = 0;
+		if (clears) {
+			const before = next.occupiedCount();
+			next.clearLines(lines);
+			removed = before - next.occupiedCount();
+		}
+		moves.push({ shape: draft.shape, col: draft.col, row: draft.row, next, clears, removed });
+	}
+	moves.sort((a, b) => {
+		if (a.clears !== b.clears) return a.clears ? -1 : 1;
+		if (b.removed !== a.removed) return b.removed - a.removed;
+		return a.next.occupiedCount() - b.next.occupiedCount();
+	});
+	const kept: SweepMove[] = [];
+	let clears = 0;
+	let quiets = 0;
+	for (const move of moves) {
+		if (move.clears) {
+			if (clears >= SWEEP_CLEARS) continue;
+			clears++;
+		} else {
+			if (!allowQuiet || quiets >= SWEEP_QUIETS) continue;
+			quiets++;
+		}
+		kept.push(move);
+	}
+	return kept;
+}
+
+function completionBonus(board: Board, shape: Shape, col: number, row: number): number {
+	const covered = new Set<number>();
+	const rows = new Set<number>();
+	const cols = new Set<number>();
+	for (const cell of shape.cells) {
+		const r = row + cell.row;
+		const c = col + cell.col;
+		covered.add(r * BOARD_SIZE + c);
+		rows.add(r);
+		cols.add(c);
+	}
+	let bonus = 0;
+	for (const r of rows) {
+		let empties = 0;
+		let hit = 0;
+		for (let c = 0; c < BOARD_SIZE; c++) {
+			if (board.get(c, r) !== 0) continue;
+			empties++;
+			if (covered.has(r * BOARD_SIZE + c)) hit++;
+		}
+		if (empties > 0 && hit === empties) bonus += 100 + hit;
+	}
+	for (const c of cols) {
+		let empties = 0;
+		let hit = 0;
+		for (let r = 0; r < BOARD_SIZE; r++) {
+			if (board.get(c, r) !== 0) continue;
+			empties++;
+			if (covered.has(r * BOARD_SIZE + c)) hit++;
+		}
+		if (empties > 0 && hit === empties) bonus += 100 + hit;
+	}
+	return bonus;
+}
+
+function hotCells(board: Board): Uint8Array {
+	const hot = new Uint8Array(BOARD_SIZE * BOARD_SIZE);
+	for (let row = 0; row < BOARD_SIZE; row++) {
+		let gap = 0;
+		let filled = 0;
+		for (let col = 0; col < BOARD_SIZE; col++) {
+			if (board.get(col, row) === 0) gap++;
+			else filled++;
+		}
+		if (filled === 0 || gap === 0 || gap > 9) continue;
+		for (let col = 0; col < BOARD_SIZE; col++) {
+			if (board.get(col, row) === 0) hot[row * BOARD_SIZE + col] = 1;
+		}
+	}
+	for (let col = 0; col < BOARD_SIZE; col++) {
+		let gap = 0;
+		let filled = 0;
+		for (let row = 0; row < BOARD_SIZE; row++) {
+			if (board.get(col, row) === 0) gap++;
+			else filled++;
+		}
+		if (filled === 0 || gap === 0 || gap > 9) continue;
+		for (let row = 0; row < BOARD_SIZE; row++) {
+			if (board.get(col, row) === 0) hot[row * BOARD_SIZE + col] = 1;
+		}
+	}
+	return hot;
 }
 
 function requireConfig(): HandFile {
